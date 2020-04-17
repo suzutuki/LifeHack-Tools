@@ -1,13 +1,40 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-// /* universal */
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
 body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
   padding-top: 5rem;
   font-family: "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
   line-height: 150%;
 }
-/* typography */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #black;
+}
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+// // /* universal */
+body {
+
+}
+// /* typography */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
@@ -19,145 +46,146 @@ h1 {
   text-align: center;
 }
 
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
-}
-// body,
-// #wrapper {
-//   display: flex;
-//   flex-direction: column;
-//   min-height: 100vh;
+// p {
+//   font-size: 1.1em;
+//   line-height: 1.7em;
 // }
-// 全体的に真ん中にする
-.main-width {
-width: 85%;
-margin: 0 auto;
-overflow: auto;
-}
-// ナビバーから少し下にする
-#view-list {
-    float: left;
-    width: 70%;
-    margin: 75px auto;
-  }
+// // body,
+// // #wrapper {
+// //   display: flex;
+// //   flex-direction: column;
+// //   min-height: 100vh;
+// // }
+// // 全体的に真ん中にする
+// .main-width {
+// width: 85%;
+// margin: 0 auto;
+// overflow: auto;
+// }
+// // ナビバーから少し下にする
+// #view-list {
+//     float: left;
+//     width: 70%;
+//     margin: 75px auto;
+//   }
 
-.nav-wrapper {
-    overflow: hidden;
-    width: 100%;
-    margin: 10px 0;
-}
+// .nav-wrapper {
+//     overflow: hidden;
+//     width: 100%;
+//     margin: 10px 0;
+// }
 
-.nav-left {
-    font-size: 36px;
-    float: left;
-    margin-left: 40px;
-}
+// .nav-left {
+//     font-size: 36px;
+//     float: left;
+//     margin-left: 40px;
+// }
 
-.nav-right {
-    float: right;
-    font-size: 16px;
-    margin: 20px 0px 30px 0px;
-    color: black;
-  &:hover {
-    text-decoration: underline;
-}
-}
-// section {
+// .nav-right {
+//     float: right;
+//     font-size: 16px;
+//     margin: 20px 0px 30px 0px;
+//     color: black;
+//   &:hover {
+//     text-decoration: underline;
+// }
+// }
+// // section {
+// //   overflow: auto;
+// // }
+// // メイン部分のスタイル
+// // .panel {
+// //     border: 3px solid #00BFFF;
+// //     border-radius: 10px;
+// //     padding: 10px;
+// //     margin-bottom: 30px;
+// //     overflow: hidden;
+// // }
+
+// .panel-left {
+//     float: left;
+//     width: 80%;
+// }
+
+// // indexの配置
+// .center {
+//   text-align: center;
+//   h1 {
+//     margin-bottom: 0px;
+//   }
+// }
+// .Icon-position {
+//   text-align: right;
+
+// }
+
+// // リストのレイアウト
+// #panel{
+//   font-size: 2em;
+//   // letter-spacing: 0px;
+//   margin-bottom: 30px;
+//   list-style: none;
+//   width: 250;
+//   height: 100px;
+//   border: 3px solid #05BFFE;
+//   text-align: left;
+//   border-radius: 10px;
+//   padding: 10px;
 //   overflow: auto;
 // }
-// メイン部分のスタイル
-// .panel {
-//     border: 3px solid #00BFFF;
-//     border-radius: 10px;
-//     padding: 10px;
-//     margin-bottom: 30px;
-//     overflow: hidden;
+// /* header */
+// // Homeの部分
+// #logo {
+//   float: left;
+//   margin-right: 10px;
+//   font-size: 1em;
+//   color: white;
+//   text-transform: uppercase;
+//   letter-spacing: -1px;
+//   padding-top: 9px;
+//   font-weight: bold;
+//   &:hover {
+//     color: white;
+//     text-decoration: none;
+//   }
+// }
+// /* footer */
+// footer {
+
+//   margin-top: auto;
+//   text-align: center;
+//   color: #fff;
+//   background-color: #614226;
+//   width: 100%;
+// // height: 80px;
+// // color: #FFFFFA;
+// // background: #00BFFF;
+// // text-align: center;
+// // line-height: 80px;
 // }
 
-.panel-left {
-    float: left;
-    width: 80%;
-}
+// footer ul {
+//   margin-bottom: 10px;
 
-// indexの配置
-.center {
-  text-align: center;
-  h1 {
-    margin-bottom: 0px;
-  }
-}
-.Icon-position {
-  text-align: right;
+// }
 
-}
+// footer ul li {
+//   display: inline;
+// }
 
-// リストのレイアウト
-#panel{
-  font-size: 2em;
-  // letter-spacing: 0px;
-  margin-bottom: 30px;
-  list-style: none;
-  width: 250;
-  height: 100px;
-  border: 3px solid #05BFFE;
-  text-align: left;
-  border-radius: 10px;
-  padding: 10px;
-  overflow: auto;
-}
-/* header */
-// Homeの部分
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1em;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  &:hover {
-    color: white;
-    text-decoration: none;
-  }
-}
-/* footer */
-footer {
-  margin-top: auto;
-  text-align: center;
-  color: #fff;
-  background-color: #614226;
-// width: 100%;
-// height: 80px;
-// color: #FFFFFA;
-// background: #00BFFF;
-// text-align: center;
-// line-height: 80px;
-}
+// footer ul li a {
+//   color: #fff;
+// }
 
-footer ul {
-  margin-bottom: 10px;
+// footer ul li a:link {
+//   text-decoration: none;
+// }
 
-}
+// footer ul li a:hover,
+// footer ul li a:active {
+//   text-decoration: underline;
+// }
 
-footer ul li {
-  display: inline;
-}
-
-footer ul li a {
-  color: #fff;
-}
-
-footer ul li a:link {
-  text-decoration: none;
-}
-
-footer ul li a:hover,
-footer ul li a:active {
-  text-decoration: underline;
-}
-
-.large {
-  font-size: 1.5em;
-}
+// .large {
+//   font-size: 1.5em;
+// }
