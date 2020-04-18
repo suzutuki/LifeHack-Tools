@@ -22,10 +22,8 @@
     <div id="current">
     <!--<div class="Icon-position">-->
     <div class= "panel-right">
-    <%=link_to(content_tag(:i,'',class:"fas fa-edit fa-2x faa-horizontal animated-hover fa-pull-right",style: "color: rgb(30,0,0);"), edit_task_path(task.id))%>
-    </section>
-     <section>
     <%=link_to(content_tag(:i,'',class:"fas fa-trash-alt fa-2x faa-horizontal animated-hover fa-pull-right",style: "color: rgb(30,0,0);"), task_path(task.id), method: :delete,data: { confirm: "本当に削除しますか？" }  )%>
+    <%=link_to(content_tag(:i,'',class:"fas fa-edit fa-2x faa-horizontal animated-hover fa-pull-right",style: "color: rgb(30,0,0);"), edit_task_path(task.id))%>
     </section>
     <!--</div>-->
     <!--</div>-->
