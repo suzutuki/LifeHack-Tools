@@ -1,12 +1,12 @@
 <!--全体的に真ん中に寄せる-->
 <div id= "main-view" class="main-width">
   <div id= "view-list">
-    <div class="nav-wrapper">
       <h1 class="nav-left">To Do リスト!</h1>
         <div class="nav-right">
     <%=link_to '新しいTodoリストを登録', new_task_path%>
         </div>
-    </div>
+   
+  </div>
 <ul>
   　<section> 
     <div class="panel-left">
@@ -15,7 +15,8 @@
       </p>
     <li id= "panel-raight">
     <%= check_box_tag '', '', task.done, {'data-id' => task.id} %>
-    <%= task.title =%>
+    <%= task.title %>
+    <%= task.content %>
     <!--link_toでリンクを作り↓ルートを指定しているのでidもいるよ-->
     <div class="Icon-position">
     <%=link_to(content_tag(:i,'',class:"fas fa-edit fa-1.5x",style: "color: rgb(30,0,0);"), edit_task_path(task.id))%>
@@ -24,7 +25,7 @@
     </li>
     </section>
     <% end %>
-    
+</div>
 </ul>
 
 <!--Ajaxでチェックボタンを動的にする-->
