@@ -14,10 +14,11 @@
     <div class="panel-left">
       <p>
         </thead>
+        </p>
       <% @tasks.each do |task| %>
-      </p>
+      
+    <%= check_box_tag '', '', task.done, {'data-id' => task.id } %>
     <li id= "panel-raight">
-    <%= check_box_tag '', '', task.done, {'data-id' => task.id} %>
     <%= task.title %>
     <%= task.content %>
     <!--link_toでリンクを作り↓ルートを指定しているのでidもいるよ-->
@@ -25,26 +26,25 @@
     <div class="Icon-position">
     <%=link_to(content_tag(:i,'',class:"fas fa-edit fa-1.5x",style: "color: rgb(30,0,0);"), edit_task_path(task.id))%>
     <%=link_to(content_tag(:i,'',class:"fas fa-trash-alt fa-1.5x",style: "color: rgb(30,0,0);"), task_path(task.id), method: :delete,data: { confirm: "本当に削除しますか？" }  )%>
-    </div>
-    </div>
+    <!--</div>-->
+    <!--</div>-->
     </li>
     </section>
     <% end %>
     </tr>
     </table>
-</div>
-</ul>
-</div>
-</div>
-</div>
-</div>
-
-
-<!--Ajaxでチェックボタンを動的にする-->
-<script>
+    <script>
   $(function(){
     $("input[type=checkbox]").click(function(){
       $.post('/tasks/' + $(this).data('id') + '/toggle');
     });
   });
 </script>
+</div>
+</ul>
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--Ajaxでチェックボタンを動的にする-->

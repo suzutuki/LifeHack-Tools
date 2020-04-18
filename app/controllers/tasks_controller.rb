@@ -37,10 +37,11 @@ class TasksController < ApplicationController
   
   def toggle
     head :no_content
-    @task = Task.find(params[:id])
-    @task.done = !task.done
-    @task.save
+    task = Task.find(params[:id])
+    task.done = !task.done
+    task.save
   end
+  
   private
     def task_params
       params[:task].permit(:title, :content)
