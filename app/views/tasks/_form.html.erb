@@ -1,0 +1,27 @@
+      <div class="col-md-6 col-md-offset-3">
+        <div class=container>
+          <div class=prev-left>
+      <%=link_to(content_tag(:i,'Return',class:"fas fa-angle-double-left fa-3x",style: "color: rgb(80,80,80);"),root_path)%>
+          </div>
+    <div class="new-todo-list-form">
+<%= form_for @task do |f| %>
+  <li id="new-list">
+    <%= f.label :タイトル %><br>
+    <%= f.text_field :title, class: 'form-field'%>
+    <%= f.label :メモ %>
+    <%= f.text_area :content,class: 'form-area'%>
+    <% if @task.errors.any? %>
+    <%= @task.errors.messages[:title][0] %>
+    <% end %>
+  </li>
+    <p>
+<%= f.submit "登録", class: "btn-submit" %>
+    </p>
+<% end %>
+    </div>
+    </div>
+    </div>
+    </div> 
+ </div>
+</section>
+</div>

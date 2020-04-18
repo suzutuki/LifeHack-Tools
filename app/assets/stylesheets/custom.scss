@@ -43,7 +43,7 @@ p {
 header {
     width: 100%;
     height: 60px;
-    background: #00AFFF;
+    background: #FFFFFF;
     overflow: hidden;
 }
 // ※ここからindexの設定だよ
@@ -107,27 +107,54 @@ section {
 // ここからnewとeditの部分黒丸消し、フォント整え
 // 幅とか色々
 .site-width {
-  width: 80%;
+  width: auto;
 margin: 0 auto;
 overflow: hidden;
 }
 
 #new-list {
   list-style: none;
-  font-size: 14px;
-  margin-bottom: 20px;
+  font-size: 16px;
+  margin-bottom: 30px;
 }
 
 .prev-left {
   text-align: left;
-  margin: 15px;
 }
 
 .new-todo-list-form {
     padding: 40px;
-    border: 3px solid #00BFFF;
+    border: 2.5px solid #9E8A5B;
     border-radius: 10px;
     overflow: hidden;
+}
+.form-field {
+  margin: 10px auto;
+  width: 100%;
+  height: 50px;
+  display: block;
+  box-sizing: border-box;
+  border: 2.5px solid #200200200;
+  border-radius: 10px
+}
+.form-area {
+  margin: 10px auto;
+  width: 100%;
+  height: 100px;
+  display: block;
+  box-sizing: border-box;
+  border: 2.5px solid #200200200;
+  border-radius: 10px
+}
+//ボタン
+.btn-submit {
+  width: 70%;
+  margin: 10px 10px 0px 40px;
+  height: 50px;
+  color: white;
+  background-color: #6f4f4b;
+  border-color: #614226;
+  border-radius: 10px
 }
 // // リストのレイアウト
 // #panel{
@@ -192,12 +219,12 @@ footer ul li {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 75px;
-  background-color: #333333;
+  background-color: #614226;
 }
 
 .container {
   width: auto;
-  max-width: 680px;
+  max-width: 880px;
   
 .text{
   text-align: center;
