@@ -14,7 +14,7 @@ body {
   padding-top: 5rem;
   font-family: "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
   line-height: 150%;
-  background: rgba(250,240,200, 0.4)
+  background: rgba(250,240,230, 0.4)
 }
   li{
   list-style: none;
@@ -27,7 +27,6 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 3em;
   letter-spacing: -3px;
-  margin-bottom: 30px;
   text-align: center;
 }
 h3 {
@@ -63,7 +62,7 @@ overflow: hidden;
 // ナビバーから少し下にする
 #view-list {
     float: left;
-    width: 70%;
+    width: 100%;
     margin: 80px 0px auto;
 }
 .nav-wrapper {
@@ -73,12 +72,13 @@ overflow: hidden;
 }
 
 .nav-left {
-    font-size: 24px;
+    font-size: 34px;
     float: left;
 }
 
 .nav-right {
     float: right;
+    margin: 10px 0px; 
 }
 // メイン部分のスタイル
 .panel {
@@ -108,7 +108,9 @@ overflow: hidden;
   text-align: right;
 
 }
-
+.square {
+  // transform: scale(1.5);
+}
 // リストのレイアウト
 #panel{
   font-size: 2em;

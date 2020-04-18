@@ -9,14 +9,14 @@
           </div>
   　   </div>
   　   </div>
-  　   
     <% @tasks.each do |task| %>
      <section class="panel"> 
       <div class="panel-left">
+      <div class="square">
     <%= check_box_tag '', '', task.done, {'data-id' => task.id } %>
-    <%= task.title %>
-    
-    <%= task.content %>
+      </div>
+    <h2>タイトル:<%= task.title %></h2>
+    <h2>メモ:<%= task.content %></h2>
 <!--<li id= "panel-right">-->
       </div>
     <!--link_toでリンクを作り↓ルートを指定しているのでidもいるよ-->
