@@ -11,7 +11,7 @@ html {
 /* universal */
 body {
   margin-bottom: 60px;
-  padding-top: 5rem;
+  padding-top: 1rem;
   font-family: "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
   line-height: 150%;
   background: rgba(250,240,230, 0.4)
@@ -63,7 +63,7 @@ overflow: hidden;
 #view-list {
     float: left;
     width: 100%;
-    margin: 80px 0px auto;
+    margin: 20px 0px auto;
 }
 .nav-wrapper {
     overflow: hidden;
@@ -82,7 +82,7 @@ overflow: hidden;
 }
 // メイン部分のスタイル
 .panel {
-    border: 3px solid #00BFFF;
+    border: 2.5px solid #905523;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 30px;
