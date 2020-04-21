@@ -18,7 +18,9 @@
     <nav>
       <%=link_to(content_tag(:i,'HOME',class:"fas fa-home fa-3x fas fa-heartbeat faa-pulse animated-hover",style: "color: rgb(50,50,50);"),root_path)%>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "ログイン", '#' %></li>
+        <li><%= link_to "ログイン", '#', class: "btn btn-lg btn-primary" %></li>
+        <li><%= link_to "ユーザー登録", signup_path, class: "btn btn-lg btn-primary" %>
+        </li>
       </ul>
     </nav>
   </div>
