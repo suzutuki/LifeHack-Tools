@@ -12,32 +12,25 @@
     <% @tasks.each do |task| %>
      <section class="panel"> 
       <div class="panel-left">
-      <div class="square">
+      <ul class="checkbox">
     <%= check_box_tag '', '', task.done, {'data-id' => task.id } %>
-      </div>
-    <h2>タイトル:<%= task.title %></h2>
+    <h2>Todo:<%= task.title %></h2>
     <h2>メモ:<%= task.content %></h2>
-<!--<li id= "panel-right">-->
+    </ul>
       </div>
     <!--link_toでリンクを作り↓ルートを指定しているのでidもいるよ-->
     <div id="current">
     <!--<div class="Icon-position">-->
     <div class= "panel-right">
-    <%=link_to(content_tag(:i,'',class:"fas fa-trash-alt fa-2x faa-horizontal animated-hover fa-pull-right",style: "color: rgb(30,0,0);"), task_path(task.id), method: :delete,data: { confirm: "本当に削除しますか？" }  )%>
-    <%=link_to(content_tag(:i,'',class:"fas fa-edit fa-2x faa-horizontal animated-hover fa-pull-right",style: "color: rgb(30,0,0);"), edit_task_path(task.id))%>
-    
-    <!--</div>-->
-    <!--</div>-->
-    <!--</li>-->
+    <%=link_to(content_tag(:i,'',class:"fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right",style: "color: #00C0FE;"), task_path(task.id), method: :delete,data: { confirm: "本当に削除しますか？" }  )%>
+    <%=link_to(content_tag(:i,'',class:"fas fa-edit fa-3x faa-horizontal animated-hover fa-pull-right",style: "color: 00C0FE"), edit_task_path(task.id))%>
     </section>
     <% end %>
-    
-
-    </div>
-    </table>
-
+      <li class="active">
+    <%= paginate @tasks -%>
+      </li>  
+      </div>
 </div>
-</ul>
 </div>
 </div>
 </div>
