@@ -19,8 +19,9 @@
       <%=link_to(content_tag(:i,'HOME',class:"fas fa-home fa-3x fas fa-heartbeat faa-pulse animated-hover",style: "color: rgb(50,50,50);"),root_path)%>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
-          <li><%= link_to "Users", '#' %></li>
-            <li>
+          <li><%= link_to "My ToDoリスト！", users_path %></li>
+          <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+           <li> 
               <%= link_to "Log out", logout_path, method: :delete %>
             </li>
             <% else %>
