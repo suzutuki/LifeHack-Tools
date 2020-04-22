@@ -1,11 +1,16 @@
 <!-- header begin -->
 <!--_header.html.erb予定地-->
 <%= render 'layouts/header' %>
+  <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end %>
+    <%= debug(params) if Rails.env.development? %>
 <!--ヘッダーは問題ないよ-->
   <!-- header end -->
   <%= yield %>
   <!--footer bigin-->
 <%= render 'layouts/footer' %>
+
 <!-- footer end -->
   </body>
 </html>
