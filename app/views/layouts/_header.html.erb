@@ -2,12 +2,12 @@
 <html>
   <head>
     <title><%= full_title(yield(:title)) %></title>
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all',
-                               'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application',
-                               'data-turbolinks-track': 'reload' %>
-    <script src="https://kit.fontawesome.com/c9ec8f1a4e.js" crossorigin="anonymous"></script>
+      <%= csrf_meta_tags %>
+      <%= stylesheet_link_tag    'application', media: 'all',
+                                 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application',
+                                 'data-turbolinks-track': 'reload' %>
+      <script src="https://kit.fontawesome.com/c9ec8f1a4e.js" crossorigin="anonymous"></script>
     <!--CDN 経由で読み込む場合-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.2.1/font-awesome-animation.min.css">
     <%= render 'layouts/shim' %>
@@ -19,16 +19,17 @@
       <%=link_to(content_tag(:i,'HOME',class:"fas fa-home fa-3x fas fa-heartbeat faa-pulse animated-hover",style: "color: rgb(50,50,50);"),root_path)%>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
-          <li><%= link_to "My ToDoリスト！", users_path %></li>
-          <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+          <li>
+        <%=link_to(content_tag(:i,'My ToDoリスト！',class:"fas fa-address-book fa-2x faa-pulse animated-hover",style: "color: rgb(50,50,50);"),users_path)%>
+          </li>
+          <li><%= link_to "ユーザー設定", edit_user_path(current_user) %></li>
            <li> 
-              <%= link_to "Log out", logout_path, method: :delete %>
-            </li>
+              <%= link_to "ログアウト", logout_path, method: :delete %>
+           </li>
             <% else %>
-          <li><%= link_to "Log in", login_path %></li>
+          <li><%= link_to "ログイン", login_path %></li>
           <li><%= link_to "ユーザー登録", signup_path, class: "btn btn-lg btn-primary" %>
         <% end %>
-        
         </li>
       </ul>
     </nav>

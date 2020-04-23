@@ -1,3 +1,4 @@
+<% if logged_in? %>
 <!--全体的に真ん中に寄せる-->
 <div class=container>
   <div id= "main-view" class="main-width">
@@ -44,3 +45,5 @@
     });
   });
 </script>
+<% else %>
+<% end %>

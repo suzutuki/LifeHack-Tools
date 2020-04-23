@@ -4,11 +4,13 @@ class UsersController < ApplicationController
   before_action :admin_user,     only: :destroy
   
   def index
-    @tasks = Task.page(params[:page]).per(10)
+    @tasks = Task.page(params[:page]).per(5)
   end
   
   def show
     @user = User.find_by(params[:id])
+    @tasks = Task.page(params[:page]).per(5)
+    # @tasks = @user.tasks.page(page: params[:page])
   end
   
   def new
@@ -52,15 +54,6 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email,:password,
                                    :password_confirmation)
-    end
-    
-    # ログイン済みユーザーかどうか確認する
-    def logged_in_user
-      unless logged_in?
-      store_location
-        flash[:danger] = "ログインしてください。"
-        redirect_to login_url
-      end
     end
     
     # 正しいユーザーかどうか確認する

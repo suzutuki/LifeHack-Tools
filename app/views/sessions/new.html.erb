@@ -1,24 +1,28 @@
 <% provide(:title, "ログイン") %>
+<div class= "site-width">
+  <div class="row">
+    <div class=container>
 <h1>ログイン</h1>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
+      <div class="login-form">
     <%= form_for(:session, url: login_path) do |f| %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+    <%= f.label :メールアドレス, class: 'label'%>
+    <%= f.email_field :email, class: 'form-field' %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+    <%= f.label :パスワード, class: 'label' %>
+    <%= f.password_field :password, class: 'form-field' %>
 
-      <%= f.label :remember_me, class: "checkbox inline" do %>
-      <%= f.check_box :remember_me %>
-        <span>Remember me on this computer</span>
-      <% end %>
-      
-      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <%= f.label :次回ログインを省略する, class: "checkbox inline" do %>
+    <%= f.check_box :remember_me %>
+      <span>次回ログインを省略する</span>
     <% end %>
+      <%= f.submit "ログイン", class: "btn btn-submit" %>
+    <% end %>
+    <br>
 
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+    <%=link_to(content_tag(:i,'登録がまだの方はこちら',class:"fas fa-angle-double-right faa-horizontal animated-hover fa-pull-left",style: "color: rgb(100,100,100);"),signup_path)%>
+        </div>
+    </div>
   </div>
+</div>
 </div>

@@ -3,7 +3,17 @@
 one:
   title: MyString
   done: false
-
+  content: MyText
+  user: one
+  created_at: <%= 3.years.ago %>
 two:
   title: MyString
   done: false
+  content: MyText
+  user: two
+  created_at: <%= 2.hours.ago %>
+most_recent:
+  title: MyString
+  done: false
+  content: "Writing a short test"
+  created_at: <%= Time.zone.now %>
