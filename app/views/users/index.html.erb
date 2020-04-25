@@ -1,49 +1,18 @@
 <% if logged_in? %>
-<!--全体的に真ん中に寄せる-->
-<div class=container>
-  <div id= "main-view" class="main-width">
-    <div id= "view-list">
-      <div class= "nav-wrapper"></div>
-        <h1 class="nav-left">To Do リスト!</h1>
-          <div class="nav-right">
-<%=link_to(content_tag(:i,'Create！',class:"fas fa-angle-double-right fa-3x faa-horizontal animated-hover fa-pull-right",style: "color: rgb(80,80,80);"),new_task_path)%>
-          </div>
-  　   </div>
-  　   </div>
-    <% @tasks.each do |task| %>
-     <section class="panel"> 
-      <div class="panel-left">
-      <ul class="checkbox">
-    <%= check_box_tag '', '', task.done, {'data-id' => task.id } %>
-    <h2>Todo:<%= task.title %></h2>
-    <h2>メモ:<%= task.content %></h2>
-    </ul>
+<%= render 'home' %>
+    <%= link_to "ToDoリスト！を見る", user_path(current_user),
+    class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
       </div>
-    <!--link_toでリンクを作り↓ルートを指定しているのでidもいるよ-->
-    <div id="current">
-    <!--<div class="Icon-position">-->
-    <div class= "panel-right">
-    <%=link_to(content_tag(:i,'',class:"fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right",style: "color: #00C0FE;"), task_path(task.id), method: :delete,data: { confirm: "本当に削除しますか？" }  )%>
-    <%=link_to(content_tag(:i,'',class:"fas fa-edit fa-3x faa-horizontal animated-hover fa-pull-right",style: "color: 00C0FE"), edit_task_path(task.id))%>
-    </section>
-    <% end %>
-      <li class="active">
-    <%= paginate @tasks -%>
-      </li>  
       </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!--Ajaxでチェックボタンを動的にする-->
-    <script>
-  $(function(){
-    $("input[type=checkbox]").click(function(){
-      $.post('/tasks/' + $(this).data('id') + '/toggle');
-    });
-  });
-</script>
 <% else %>
+<%= render 'home' %>
+    <%= link_to "ユーザー登録する！", signup_path, class: "btn-sticky",
+    style: "font-size: 28px; color: #333;" %>
+      </div>
+    </div>
+  </div>
+</div>
 <% end %>

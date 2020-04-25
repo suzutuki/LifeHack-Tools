@@ -14,11 +14,13 @@ body {
   border-top: 8px solid #614226;
   font-family: "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
   line-height: 150%;
-  background: rgba(250,240,230, 0.4)
+  background: rgba(250,240,230, 0.4);
+  overflow-x: hidden;
 }
-  li{
+
+li　{
   list-style: none;
-  }
+}
 /* typography */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
@@ -29,6 +31,7 @@ h1 {
   letter-spacing: -3px;
   text-align: center;
 }
+
 h3 {
   letter-spacing: -3px;
   text-align: left;
@@ -45,9 +48,51 @@ header {
     overflow: hidden;
     margin-bottom: 20px;
     padding: 20px;
+
+nav ul li a {
+  display: block;
+  padding: 10px 0;
+  text-decoration: none;
+  height: 200px;
+  color: #333;
+  background-color: rgba(250, 240, 200, 0.1);
 }
-// ※ここからindexの設定だよ
+}
+header nav ul li a:hover,
+header nav ul li a:active {
+  background: rgba(250, 240, 200, 0.1);
+  text-decoration: underline;
+}
+
+.head-link {
+  font-size: 18px;
+}
+// ※ここからindexの設定だよOK
 // 全体的に真ん中にする
+.guidance {
+  font-size: 26px;
+  list-style: none;
+  margin-top: 30px;
+  line-height: 200%;
+}
+.btn-sticky {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #f7f7f7;
+  border-left: solid 6px #ff7c5c;/*左線*/
+  color: #ff7c5c;/*文字色*/
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+.btn-sticky:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}
+.btn-stickey:hover {
+  color: #ff7c5c;
+}
+  
 .site-width {
   width: 60%;
   margin: 0 auto;
@@ -59,7 +104,7 @@ height: 800;
 margin: 0 auto;
 overflow: hidden;
 }
-// ナビバーから少し下にする
+// ナビバーから少し下にするOK
 #view-list {
     float: left;
     width: 100%;
@@ -80,7 +125,7 @@ overflow: hidden;
     float: right;
     margin: 10px 0px; 
 }
-// メイン部分のスタイル
+// メイン部分のスタイルOK
 .panel {
     border: 2.5px solid #905523;
     border-radius: 10px;
@@ -97,7 +142,7 @@ overflow: hidden;
     padding-bottom: 10px;
 }
 
-// // indexの配置
+// // indexの配置概ねOK
 .center {
   text-align: center;
   h1 {
@@ -121,7 +166,6 @@ ul h2 {
 #panel{
   font-size: 2em;
   margin-bottom: 30px;
-  list-style: none;
   width: 250;
   height: 100px;
   border: 3px solid #05BFFE;
@@ -131,14 +175,13 @@ ul h2 {
   overflow: auto;
 }
 
-// ここからnewとeditの部分黒丸消し、フォント整え
+// ここからnewとeditの部分、フォント整え
 // 幅とか色々
 
 #new-list {
   list-style: none;
   font-size: 16px;
   margin-bottom: 30px;
-  
 }
 
 .new-todo-list-form {
@@ -183,7 +226,7 @@ ul h2 {
   
 }
 
-
+// ココから下もOK
 
 /* forms */
 .login-form {
@@ -282,17 +325,14 @@ input {
   background-color: #614226;
 ul li {
   display: inline;
-  list-style: none;
 }
 }
 
 .container {
   width: auto;
   max-width: 880px;
-  
 .text{
   text-align: center;
-  color: white;
 }  
 }
 @mixin box_sizing {

@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user,   only: :destroy
+  skip_before_action :verify_authenticity_token
   
   def index
     # @tasks = Task.all
@@ -20,7 +21,7 @@ class TasksController < ApplicationController
     @task = current_user.tasks.build(task_params)
     if @task.save
       flash[:success] = "成功しました！"
-      redirect_to root_url
+      redirect_to user_path(current_user)
     else
       render 'tasks/new'
     end
@@ -37,7 +38,7 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     if @task.update(task_params)
-      redirect_to root_url
+      redirect_to user_path(current_user)
     else
     render 'edit'
     end
@@ -48,11 +49,6 @@ class TasksController < ApplicationController
     flash[:success] = "削除しました"
     redirect_to request.referrer || root_url
   end
-  # def destroy
-  #   @task = Task.find(params[:id])
-  #   @task.destroy
-  #   redirect_to root_url
-  # end
   
   def toggle
     head :no_content
@@ -62,6 +58,7 @@ class TasksController < ApplicationController
   end
   
   private
+  #ストロングパラメーター
     def task_params
       params.require(:task).permit(:title, :content)
     end

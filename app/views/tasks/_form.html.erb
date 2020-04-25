@@ -2,7 +2,8 @@
 <div class="col-md-12">
   <div class=container>
     <div class=prev-left>
-      <%=link_to(content_tag(:i,'Return',class:"fas fa-angle-double-left fa-3x faa-horizontal animated-hover",style: "color: rgb(80,80,80);"),root_path)%>
+      <%=link_to(content_tag(:i,'Return',class:"fas fa-angle-double-left fa-3x 
+      faa-horizontal animated-hover",style: "color: rgb(80,80,80);"),user_path(current_user))%>
     </div>
   <div class="new-todo-list-form">
 <%= form_for @task do |f| %>

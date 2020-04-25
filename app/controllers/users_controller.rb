@@ -1,15 +1,17 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
   before_action :correct_user,   only: [:edit, :update]
-  before_action :admin_user,     only: :destroy
+  # before_action :admin_user,     only: :destroy
   
   def index
+    # @tasks = user.tasks.find_by(params[:id])
     @tasks = Task.page(params[:page]).per(5)
   end
   
   def show
-    @user = User.find_by(params[:id])
-    @tasks = Task.page(params[:page]).per(5)
+    @user = User.find(params[:id])
+    @tasks = @user.tasks.page(params[:page]).per(8)
+    # @tasks = Task.page(params[:page]).per(5)
     # @tasks = @user.tasks.page(page: params[:page])
   end
   
@@ -18,9 +20,10 @@ class UsersController < ApplicationController
   end
   
   def destroy
-    User.find(params[:id]).destroy
-    flash[:success] = "User deleted"
-    redirect_t
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:success] = "退会しました"
+    redirect_to root_url
   end
   
   def create
@@ -37,7 +40,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = "変更しました"
       redirect_to @user
       # 更新に成功した場合を扱う。
     else
@@ -50,7 +53,7 @@ class UsersController < ApplicationController
   end
 
   private
-  
+    #ストロングパラメーター
     def user_params
       params.require(:user).permit(:name, :email,:password,
                                    :password_confirmation)
