@@ -15,6 +15,9 @@
 //= require_tree .
 //= require jquery3
 //= require jquery_ujs
-// 最近追加
 //= require jquery
 //= require bootstrap
+
+$(function(){
+  setTimeout("$('.time-limit').fadeOut('slow')", 2000) 
+})

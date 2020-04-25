@@ -15,12 +15,15 @@ class TasksController < ApplicationController
   
   def edit
     @task = Task.find(params[:id])
+    if @task.save
+    flash[:success] = "リストを編集しました！"
+    end
   end
   
   def create
     @task = current_user.tasks.build(task_params)
     if @task.save
-      flash[:success] = "成功しました！"
+      flash[:success] = "リストを作成しました！"
       redirect_to user_path(current_user)
     else
       render 'tasks/new'
