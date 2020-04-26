@@ -5,12 +5,12 @@ class UsersController < ApplicationController
   
   def index
     # @tasks = user.tasks.find_by(params[:id])
-    @tasks = Task.page(params[:page]).per(5)
+    @tasks = Task.page(params[:page]).per(8)
   end
   
   def show
     @user = User.find(params[:id])
-    @tasks = @user.tasks.page(params[:page]).per(8)
+    @tasks = @user.tasks.page(params[:page]).per(10)
     # @tasks = Task.page(params[:page]).per(5)
     # @tasks = @user.tasks.page(page: params[:page])
   end
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    flash[:success] = "退会しました"
+    flash[:success] = "退会しました。ご利用ありがとうございました！"
     redirect_to root_url
   end
   

@@ -15,9 +15,6 @@ class TasksController < ApplicationController
   
   def edit
     @task = Task.find(params[:id])
-    if @task.save
-    flash[:success] = "リストを編集しました！"
-    end
   end
   
   def create
@@ -41,6 +38,7 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     if @task.update(task_params)
+      flash[:success] = "リストを編集しました！"
       redirect_to user_path(current_user)
     else
     render 'edit'
