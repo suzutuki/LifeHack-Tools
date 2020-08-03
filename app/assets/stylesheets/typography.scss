@@ -1,0 +1,24 @@
+/* typography */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -3px;
+  text-align: center;
+}
+
+h3 {
+  letter-spacing: -3px;
+  text-align: left;
+  list-style: none;
+}
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+a:hover {
+  background: rgba(250, 240, 230, 0.1) !important;
+}
