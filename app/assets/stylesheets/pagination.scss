@@ -1,0 +1,35 @@
+/*ページネーション自体のデザイン*/
+.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1.3);
+  width: auto;
+  max-width: 880px
+}
+
+.pagination>li>a {
+  display: block;
+  width: 40px;
+  height: 48px;
+  text-align: center;
+  line-height: 40px;
+  margin: 0px 10px 10px;
+  background: #905523;
+  color: #F5FFFA;
+  float: left;
+  font-size: 18px;
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {
+  color: #330000;
+  background: #EEEEEE;
+  border: 1px solid rgba(3,0,0,0.4);
+  box-sizing: border-box;
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {
+  border-radius: 25px;    /*角を丸くする*/
+}
