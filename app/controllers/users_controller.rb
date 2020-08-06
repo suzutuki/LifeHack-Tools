@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @tasks = @user.tasks.page(params[:page]).per(10)
+    @tasks = @user.tasks.page(params[:page]).per(8)
     # @tasks = Task.page(params[:page]).per(5)
     # @tasks = @user.tasks.page(page: params[:page])
   end
