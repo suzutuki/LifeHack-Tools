@@ -1,0 +1,25 @@
+// フッターを固定、黒丸消し、センター
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 75px;
+  background-color: #614226;
+  ul li {
+    display: inline;
+  }
+}
+
+.container {
+  width: auto;
+  max-width: 880px;
+  .text{
+    text-align: center;
+  }
+}
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}

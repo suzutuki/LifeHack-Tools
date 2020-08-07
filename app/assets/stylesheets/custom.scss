@@ -26,7 +26,7 @@
 .btn-stickey:hover {
   color: #ff7c5c;
 }
-  
+
 .site-width {
   width: 60%;
   margin: 0 auto;
@@ -57,7 +57,7 @@ overflow: hidden;
 
 .nav-right {
     float: right;
-    margin: 10px 0px; 
+    margin: 10px 0px;
 }
 // メイン部分のスタイルOK
 .panel {
@@ -97,7 +97,7 @@ overflow: hidden;
 ul input {
   width: 5%;
   transform: scale(3);
-  
+
 }
 ul h2 {
   margin: 10px 0px 15px 15px;
@@ -126,10 +126,11 @@ ul h2 {
 }
 
 .new-todo-list-form {
-    padding: 40px;
-    border: 2.5px solid #905523;
-    border-radius: 10px;
-    overflow: hidden;
+  padding: 40px;
+  border: 2.5px solid #905523;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .label {
   background: #fffaf4;/*背景色*/
@@ -164,7 +165,7 @@ ul h2 {
   background-color: #ffaf58;
   border-color: #614226;
   border-radius: 10px;
-  
+
 }
 
 // ココから下もOK
@@ -217,31 +218,4 @@ input, textarea, select, .uneditable-input {
 #session_remember_me {
   width: auto;
   margin-left: 0;
-}
-// ここから↓はOK
-
-// フッターを固定、黒丸消し、センター
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-/* Set the fixed height of the footer here */
-  height: 75px;
-  background-color: #614226;
-ul li {
-  display: inline;
-}
-}
-
-.container {
-  width: auto;
-  max-width: 880px;
-.text{
-  text-align: center;
-}  
-}
-@mixin box_sizing {
-  -moz-box-sizing:    border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
 }

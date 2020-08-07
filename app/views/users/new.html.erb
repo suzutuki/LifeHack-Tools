@@ -1,24 +1,3 @@
 <% provide(:title, 'ユーザー登録') %>
 <h1>ToDoリスト！ユーザー登録</h1>
 <%= render 'form' %>
-<%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
-      <h3>
-      <%= f.label :名前, class: 'label'%>
-      <%= f.text_field :name, class: 'form-field' %>
-      
-      <%= f.label :メールアドレス,  class: 'label'%>
-      <%= f.email_field :email, class: 'form-field' %>
-
-      <%= f.label :パスワード, class: 'label' %>
-      <%= f.password_field :password, class: 'form-field' %>
-
-      <%= f.label :パスワード確認, class: 'label' %>
-      <%= f.password_field :password_confirmation, class: 'form-field' %>
-
-      <%= f.submit "登録", class: "btn btn-submit"%>
-      </h3>
-    <% end %>
-    </div>
-  </div>
-</div>

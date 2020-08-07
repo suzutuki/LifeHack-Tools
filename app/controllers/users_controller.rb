@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   
   def index
     # @tasks = user.tasks.find_by(params[:id])
-    @tasks = Task.page(params[:page]).per(8)
+    # @tasks = Task.page(params[:page]).per(8)
   end
   
   def show

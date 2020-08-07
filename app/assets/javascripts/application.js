@@ -12,12 +12,11 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
 //= require jquery3
 //= require jquery_ujs
 //= require jquery
 //= require bootstrap
-
+//= require_tree .
 $(function(){
   setTimeout("$('.time-limit').fadeOut('slow')", 2000) 
 })

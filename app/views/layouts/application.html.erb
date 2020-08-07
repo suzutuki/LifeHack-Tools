@@ -1,3 +1,4 @@
+<%= render 'layouts/head' %>
 <%= render 'layouts/header' %>
   <% flash.each do |message_type, message| %>
   <div class="flash time-limit">
@@ -6,5 +7,4 @@
   <% end %>
   <%= yield %>
 <%= render 'layouts/footer' %>
-  </body>
-</html>
+
