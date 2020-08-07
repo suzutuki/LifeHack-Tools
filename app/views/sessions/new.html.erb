@@ -1,6 +1,5 @@
 <% provide(:title, "ログイン") %>
 <div class= "site-width">
-  <div class="row">
     <div class=container>
 <h1>ログイン</h1>
       <div class="login-form">
@@ -19,10 +18,7 @@
       <%= f.submit "ログイン", class: "btn btn-submit" %>
     <% end %>
     <br>
-
-    <%=link_to(content_tag(:i,'はじめての方はこちら',class:"fas fa-angle-double-right faa-horizontal animated-hover fa-pull-left",style: "color: sienna;"),signup_path)%>
+        <%=link_to(content_tag(:i,'はじめての方はこちら',class:"fas fa-angle-double-right faa-horizontal animated-hover fa-pull-left",style: "color: sienna;"),signup_path)%>
       </div>
     </div>
-  </div>
-</div>
 </div>

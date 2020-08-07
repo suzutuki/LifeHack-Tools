@@ -1,10 +1,6 @@
 <%= render 'layouts/head' %>
 <%= render 'layouts/header' %>
-  <% flash.each do |message_type, message| %>
-  <div class="flash time-limit">
-    <div class="alert alert-<%= message_type %>"><%= message %></div>
-</div>
-  <% end %>
-  <%= yield %>
+<%= render 'layouts/flash_messages' %>
+<%= yield %>
 <%= render 'layouts/footer' %>
 

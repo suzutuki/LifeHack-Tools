@@ -20,7 +20,7 @@ class TasksController < ApplicationController
   def create
     @task = current_user.tasks.build(task_params)
     if @task.save
-      flash[:success] = "リストを作成しました！"
+      flash[:success] = "｢#{@task.title}｣を作成しました！"
       redirect_to user_path(current_user)
     else
       render 'tasks/new'
@@ -38,7 +38,7 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     if @task.update(task_params)
-      flash[:success] = "リストを編集しました！"
+      flash[:success] = "｢#{@task.title}｣に変更しました！"
       redirect_to user_path(current_user)
     else
     render 'edit'
@@ -47,7 +47,7 @@ class TasksController < ApplicationController
   
   def destroy
     @task.destroy
-    flash[:success] = "削除しました"
+    flash[:danger] = "｢#{@task.title}｣を削除しました!"
     redirect_to request.referrer || root_url
   end
   
