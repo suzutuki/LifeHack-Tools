@@ -3,7 +3,7 @@
     <div class= "site-width">
       <section id="new-todo-list">
     <div class="new-todo-list-form">
-      <%= form_for(@user) do |f| %>
+      <%= form_for user do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
         <h3>
           <%= f.label :名前, class: 'label'%>
