@@ -1,7 +1,4 @@
-<div class="row">
-  <div class="col-md-12">
-    <div class= "site-width">
-      <section id="new-todo-list">
+<div class= "site-width">
     <div class="new-todo-list-form">
       <%= form_for user do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
@@ -18,9 +15,8 @@
           <%= f.label :パスワード確認, class: 'label' %>
           <%= f.password_field :password_confirmation, class: 'form-field' %>
 
-          <%= f.submit "登録", class: "btn btn-submit"%>
+          <%= f.submit "登録", class: "btn btn-submit" %>
         </h3>
-<% end %>
+      <% end %>
     </div>
-    </div>
-  </div>
+</div>
