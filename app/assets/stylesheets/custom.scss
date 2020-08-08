@@ -1,8 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+//Sign-up,new
 .site-width {
-  width: 60%;
+  width: 70%;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -34,28 +35,7 @@ overflow: hidden;
     margin: 10px 0px;
 }
 // メイン部分のスタイルOK
-.panel {
-    border: 2.5px solid #905523;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 30px;
-    overflow: hidden;
-}
-.panel-empty {
-    border: 2.5px solid #905523;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 30px;
-    overflow: hidden;
-    background: rgba(250, 240, 240, 0.1);
-}
-.panel-left {
-    float: left;
-    width: 80%;
-}
-.panel-left p {
-    padding-bottom: 10px;
-}
+
 
 // // indexの配置概ねOK
 .center {
