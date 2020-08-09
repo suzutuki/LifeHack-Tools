@@ -1,54 +1,55 @@
 <div class=container>
-  <div id= "main-view" class="main-width">
-    <div id= "view-list">
-      <div class= "nav-wrapper"></div>
-        <h1 class="nav-left">To Do リスト!</h1>
-          <div class="nav-right">
-        <%=link_to(content_tag(:i,'Create！',class:"fas fa-angle-double-right fa-3x 
+  <div id="main-view" class="main-width">
+    <div id="view-list">
+      <div class="nav-wrapper"></div>
+      <h1 class="nav-left">To Do リスト!</h1>
+      <div class="nav-right">
+        <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-double-right fa-3x
                                 faa-horizontal animated-hover fa-pull-right",
-                                style: "color: rgb(80,80,80);"),new_task_path)%>
-          </div>
-  　   </div>
+                                style: "color: rgb(80,80,80);"), new_task_path) %>
+      </div>
+      　
     </div>
-    <% if @user.tasks.empty? %>
-      <section class="panel-empty"> 
-        <div id="current">
-          <h1>
+  </div>
+  <% if @user.tasks.empty? %>
+    <section class="panel-empty">
+      <div id="current">
+        <h1>
           <p>ToDoリスト！にようこそ!</p>
           <p>Create!からToDoリスト！を</p>
           <p>作成しましょう！</p>
-          </h1>
-        </div>
+        </h1>
       </div>
+    </div>
   <% end %>
-    <% if @user.tasks.any? %>
-      <% @user.tasks.each do |task| %>
-       <section class="panel"> 
+  <% if @user.tasks.any? %>
+    <% @user.tasks.each do |task| %>
+      <section class="panel">
         <div class="panel-left">
           <ul class="checkbox">
-    <%= check_box_tag '', '', task.done, {'data-id' => task.id } %>
-    <h2>ToDo:<%= task.title %></h2>
-    <h2>メモ:<%= task.content %></h2>
+            <%= check_box_tag '', '', task.done, {'data-id' => task.id} %>
+            <h2>ToDo:<%= task.title %></h2>
+            <h2>メモ:<%= task.content %></h2>
             <h2>更新日時:<%= task.updated_at.to_s(:datetime_jp) %></h2>
             <h2>作成日時:<%= task.created_at.to_s(:datetime_jp) %></h2>
           </ul>
         </div>
-      <div id="current">
-    <div class= "panel-right">
-    <%=link_to(content_tag(:i,'',class:"fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right",style: "color: #00C0FE;"), task_path(task.id), method: :delete,data: { confirm: "本当に削除しますか？" }  )%>
-    <%=link_to(content_tag(:i,'',class:"fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right",style: "color: 00C0FE"), edit_task_path(task.id))%>
-    </section>
+        <div id="current">
+          <div class="panel-right">
+            <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right", style: "color: #00C0FE;"), task_path(task.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
+            <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right", style: "color: 00C0FE"), edit_task_path(task.id)) %>
+      </section>
     <% end %>
-      <li class="active">
-    <%= paginate @tasks%>
-      </li>
-<!--Ajaxでチェックボタンを動的にする-->
+    <li class="active">
+      <%= paginate @tasks %>
+    </li>
+    <!--Ajaxでチェックボタンを動的にする-->
     <script>
-  $(function(){
-    $("input[type=checkbox]").click(function(){
-      $.post('/tasks/' + $(this).data('id') + '/toggle');
-    });
-  });
-</script>
-  </div>
-<% end %>
+        $(function () {
+            $("input[type=checkbox]").click(function () {
+                $.post('/tasks/' + $(this).data('id') + '/toggle');
+            });
+        });
+    </script>
+    </div>
+  <% end %>

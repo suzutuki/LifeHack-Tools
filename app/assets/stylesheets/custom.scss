@@ -7,67 +7,60 @@
   margin: 0 auto;
   overflow: hidden;
 }
+
 .main-width {
-width: 85%;
-height: 800;
-margin: 0 auto;
-overflow: hidden;
+  width: 85%;
+  height: 800;
+  margin: 0 auto;
+  overflow: hidden;
 }
+
 // ナビバーから少し下にするOK
 #view-list {
-    float: left;
-    width: 100%;
-    margin: 20px 0px auto;
+  float: left;
+  width: 100%;
+  margin: 20px 0px auto;
 }
+
 .nav-wrapper {
-    overflow: hidden;
-    width: 100%;
-    margin: 10px 0;
+  overflow: hidden;
+  width: 100%;
+  margin: 10px 0;
 }
 
 .nav-left {
-    font-size: 34px;
-    float: left;
+  font-size: 34px;
+  float: left;
 }
 
 .nav-right {
-    float: right;
-    margin: 10px 0px;
+  float: right;
+  margin: 10px 0px;
 }
-// メイン部分のスタイルOK
-
 
 // // indexの配置概ねOK
 .center {
   text-align: center;
+
   h1 {
     margin-bottom: 0px;
   }
 }
+
 .Icon-position {
   text-align: right;
 
 }
+
 ul input {
   width: 5%;
   transform: scale(3);
 
 }
+
 ul h2 {
   margin: 10px 0px 15px 15px;
   font-size: 30px;
-}
-// リストのレイアウト
-#panel{
-  font-size: 2em;
-  margin-bottom: 30px;
-  width: 250;
-  height: 100px;
-  border: 3px solid #05BFFE;
-  text-align: left;
-  border-radius: 10px;
-  padding: 10px;
-  overflow: auto;
 }
 
 // ここからnewとeditの部分、フォント整え
@@ -87,11 +80,13 @@ ul h2 {
   overflow: hidden;
 
 }
+
 .label {
-  background: #fffaf4 !important;/*背景色*/
-  border-left: solid 5px #ffaf58;/*左線（実線 太さ 色）*/
+  background: #fffaf4 !important; /*背景色*/
+  border-left: solid 5px #ffaf58; /*左線（実線 太さ 色）*/
   color: #333;
 }
+
 .form-field {
   margin: 16px auto;
   width: 100%;
@@ -101,6 +96,7 @@ ul h2 {
   border: 2.5px solid #200200200;
   border-radius: 10px
 }
+
 .form-area {
   margin: 10px auto;
   width: 100%;
@@ -110,6 +106,7 @@ ul h2 {
   border: 2.5px solid #200200200;
   border-radius: 10px
 }
+
 //ボタン
 .btn-submit {
   width: 70%;
@@ -120,10 +117,8 @@ ul h2 {
   background-color: #ffaf58;
   border-color: #614226;
   border-radius: 10px;
-
 }
 
-// ココから下もOK
 /* forms */
 .login-form {
   font-size: 20px;
@@ -133,7 +128,6 @@ ul h2 {
   border: 2.5px solid #905523;
   border-radius: 10px;
   overflow: hidden;
-
 }
 
 input, textarea, select, .uneditable-input {
@@ -146,6 +140,7 @@ input, textarea, select, .uneditable-input {
 //   height: auto !important;
 // }
 
+//エラーメッセージの設定
 #error_explanation {
   color: red;
   ul {
@@ -161,4 +156,6 @@ input, textarea, select, .uneditable-input {
   }
 }
 
-
+.navbar {
+  border-radius: 0 !important;
+}
