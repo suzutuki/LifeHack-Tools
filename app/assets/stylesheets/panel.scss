@@ -1,3 +1,4 @@
+//□で囲まれているものの設定Taskなど
 .panel {
   border: 2.5px solid #905523;
   border-radius: 10px;
@@ -5,6 +6,7 @@
   margin-bottom: 30px;
   overflow: hidden;
 }
+
 .panel-empty {
   border: 2.5px solid #905523;
   border-radius: 10px;
@@ -13,10 +15,12 @@
   overflow: hidden;
   background: rgba(250, 240, 240, 0.1);
 }
+
 .panel-left {
   float: left;
   width: 80%;
 }
+
 .panel-left p {
   padding-bottom: 10px;
 }

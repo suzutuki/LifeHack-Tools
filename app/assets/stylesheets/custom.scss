@@ -10,33 +10,10 @@
 
 .main-width {
   width: 85%;
-  height: 800;
   margin: 0 auto;
   overflow: hidden;
 }
 
-// ナビバーから少し下にするOK
-#view-list {
-  float: left;
-  width: 100%;
-  margin: 20px 0px auto;
-}
-
-.nav-wrapper {
-  overflow: hidden;
-  width: 100%;
-  margin: 10px 0;
-}
-
-.nav-left {
-  font-size: 34px;
-  float: left;
-}
-
-.nav-right {
-  float: right;
-  margin: 10px 0px;
-}
 
 // // indexの配置概ねOK
 .center {
@@ -63,61 +40,6 @@ ul h2 {
   font-size: 30px;
 }
 
-// ここからnewとeditの部分、フォント整え
-// 幅とか色々
-
-#new-list {
-  list-style: none;
-  font-size: 16px;
-  margin-bottom: 30px;
-}
-
-.new-todo-list-form {
-  padding: 40px;
-  border: 2.5px solid #905523;
-  margin-bottom: 30px;
-  border-radius: 10px;
-  overflow: hidden;
-
-}
-
-.label {
-  background: #fffaf4 !important; /*背景色*/
-  border-left: solid 5px #ffaf58; /*左線（実線 太さ 色）*/
-  color: #333;
-}
-
-.form-field {
-  margin: 16px auto;
-  width: 100%;
-  height: 40px;
-  display: block;
-  box-sizing: border-box;
-  border: 2.5px solid #200200200;
-  border-radius: 10px
-}
-
-.form-area {
-  margin: 10px auto;
-  width: 100%;
-  height: 100px;
-  display: block;
-  box-sizing: border-box;
-  border: 2.5px solid #200200200;
-  border-radius: 10px
-}
-
-//ボタン
-.btn-submit {
-  width: 70%;
-  margin: 10px 10px 0px 80px;
-  font-size: 18px;
-  height: 50px;
-  color: #333;
-  background-color: #ffaf58;
-  border-color: #614226;
-  border-radius: 10px;
-}
 
 /* forms */
 .login-form {
@@ -143,6 +65,7 @@ input, textarea, select, .uneditable-input {
 //エラーメッセージの設定
 #error_explanation {
   color: red;
+
   ul {
     color: red;
     margin: 0 0 30px 0;
@@ -151,6 +74,7 @@ input, textarea, select, .uneditable-input {
 
 .field_with_errors {
   @extend .has-error;
+
   .form-control {
     color: $state-danger-text;
   }

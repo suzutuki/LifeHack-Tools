@@ -1,4 +1,18 @@
+//全体の設定
 html {
   position: relative;
   min-height: 100%;
+}
+/* bodyからの設定 */
+body {
+  margin-bottom: 60px;
+  border-top: 8px solid #614226;
+  font-family: "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+  line-height: 150%;
+  background: rgba(250,240,230, 0.4);
+  overflow-x: hidden;
+}
+
+li　{
+  list-style: none !important;
 }

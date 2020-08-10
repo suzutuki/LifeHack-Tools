@@ -1,7 +1,6 @@
 <div class=container>
   <div id="main-view" class="main-width">
     <div id="view-list">
-      <div class="nav-wrapper"></div>
       <h1 class="nav-left">To Do リスト!</h1>
       <div class="nav-right">
         <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-double-right fa-3x
@@ -11,8 +10,7 @@
     </div>
   </div>
   <% if @user.tasks.empty? %>
-    <section class="panel-empty">
-      <div id="current">
+    <div class="panel-empty">
         <h1>
           <p>ToDoリスト！にようこそ!</p>
           <p>Create!からToDoリスト！を</p>
@@ -30,7 +28,6 @@
     </div>
 
     <script language="JavaScript" type="text/javascript">
-        <!--
         var elem2_1 = document.getElementById("area_hoge2");
         var elem2_2 = document.getElementById("link_view2");
         var elem2_3 = document.getElementById("link_hidden2");
@@ -56,11 +53,10 @@
             <h2>メモ:<%= task.content %></h2>
             <h2>優先順位:<%= task.priority %></h2>
             <button>更新、作成日時を非表示</button>
-            <h3>更新日時:<%= task.updated_at.to_s(:datetime_jp) %></h3>
-            <h3>作成日時:<%= task.created_at.to_s(:datetime_jp) %></h3>
+            <li><h3>更新日時:<%= task.updated_at.to_s(:datetime_jp) %>
+            作成日時:<%= task.created_at.to_s(:datetime_jp) %></h3></li>
           </ul>
         </div>
-        <div id="current">
           <div class="panel-right">
             <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right", style: "color: #00C0FE;"), task_path(task.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
             <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right", style: "color: 00C0FE"), edit_task_path(task.id)) %>
