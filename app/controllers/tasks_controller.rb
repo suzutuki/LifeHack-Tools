@@ -61,7 +61,7 @@ class TasksController < ApplicationController
   private
   #ストロングパラメーター
     def task_params
-      params.require(:task).permit(:title, :content)
+      params.require(:task).permit(:title, :content, :priority)
     end
     
     def correct_user

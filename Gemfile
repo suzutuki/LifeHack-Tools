@@ -38,6 +38,7 @@ group :development, :test do
   gem 'mysql2'
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
+  gem 'annotate'
 end
 
 group :test do

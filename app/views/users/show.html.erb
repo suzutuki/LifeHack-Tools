@@ -8,7 +8,6 @@
                                 faa-horizontal animated-hover fa-pull-right",
                                 style: "color: rgb(80,80,80);"), new_task_path) %>
       </div>
-      　
     </div>
   </div>
   <% if @user.tasks.empty? %>
@@ -23,6 +22,31 @@
     </div>
   <% end %>
   <% if @user.tasks.any? %>
+    <p><a href="#" id="link_view2" onClick="toggle_view2();return false;" style="display:none;">表示</a>
+      <a href="#" id="link_hidden2" onClick="toggle_hidden2();return false;">非表示</a>
+    </p>
+    <div id="area_hoge2">
+      <p>ここを表示する</p>
+    </div>
+
+    <script language="JavaScript" type="text/javascript">
+        <!--
+        var elem2_1 = document.getElementById("area_hoge2");
+        var elem2_2 = document.getElementById("link_view2");
+        var elem2_3 = document.getElementById("link_hidden2");
+
+        function toggle_view2() {
+            elem2_1.style.display = "";
+            elem2_2.style.display = "none";
+            elem2_3.style.display = "";
+        }
+
+        function toggle_hidden2() {
+            elem2_1.style.display = "none";
+            elem2_2.style.display = "";
+            elem2_3.style.display = "none";
+        }
+    </script>
     <% @user.tasks.each do |task| %>
       <section class="panel">
         <div class="panel-left">
@@ -30,20 +54,28 @@
             <%= check_box_tag '', '', task.done, {'data-id' => task.id} %>
             <h2>ToDo:<%= task.title %></h2>
             <h2>メモ:<%= task.content %></h2>
-            <h2>更新日時:<%= task.updated_at.to_s(:datetime_jp) %></h2>
-            <h2>作成日時:<%= task.created_at.to_s(:datetime_jp) %></h2>
+            <h2>優先順位:<%= task.priority %></h2>
+            <button>更新、作成日時を非表示</button>
+            <h3>更新日時:<%= task.updated_at.to_s(:datetime_jp) %></h3>
+            <h3>作成日時:<%= task.created_at.to_s(:datetime_jp) %></h3>
           </ul>
         </div>
         <div id="current">
           <div class="panel-right">
             <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right", style: "color: #00C0FE;"), task_path(task.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
             <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right", style: "color: 00C0FE"), edit_task_path(task.id)) %>
+
       </section>
     <% end %>
     <li class="active">
       <%= paginate @tasks %>
     </li>
-    <!--Ajaxでチェックボタンを動的にする-->
+    Ajaxでチェックボタンを動的にする
+    <script>
+        $("button").click(function () {
+            $("h3").toggle("slow");
+        });
+    </script>
     <script>
         $(function () {
             $("input[type=checkbox]").click(function () {
