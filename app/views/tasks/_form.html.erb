@@ -6,19 +6,24 @@
   </div>
   <div class="new-todo-list-form">
     <%= form_for @task do |f| %>
-      <li id="new-list">
-        <h3>
+      <div id="new-list">
+        <p>
           <%= f.label :"タイトル : あなたが達成したいことを書いてください", class: 'label' %><br>
           <%= f.text_field :title, class: 'form-field' %>
-          <%= f.label :"優先順位 :  ", class: 'label' %>
+          <% if @task.errors.include?(:title) %>
+            <div class="alert alert-danger"><%= @task.errors.messages[:title][0]%>
+          </div><% end %>
+          <%= f.label :"優先順位 :  優先順位の高い順に自動で並び替わります。", class: 'label' %>
           <%= f.select :priority, {'1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, }, {include_blank: '選択してください'}, {class: 'form-box', required: true} %>
-          <%= f.label :メモ, class: 'label' %>
+      <% if @task.errors.include?(:priority) %>
+        <div class="alert alert-danger"><%= @task.errors.messages[:priority][0]%>
+      <% end %></div>
+      <%= f.label :"メモ (５０文字まで登録できます)", class: 'label' %>
           <%= f.text_area :content, class: 'form-area' %>
-          <% if @task.errors.any? %>
-            <%= @task.errors.messages[:title][0] %>
-          <% end %>
-        </h3>
-      </li>
+        <% if @task.errors.include?(:content) %>
+          <div class="alert alert-danger"><%= @task.errors.messages[:content][0]%>
+        <% end %></div>
+        </p>
       <p><%= f.submit "登録", class: "btn-submit" %></p>
     <% end %>
   </div>
