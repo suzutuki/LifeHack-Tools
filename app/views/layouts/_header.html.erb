@@ -18,7 +18,7 @@
         <% if logged_in? %>
           <li>
             <%= link_to "My ToDoリスト！", user_path(current_user),
-                        style: "font-size: 26px;" %>
+                        style: "font-size: 26px; color: #fff;" %>
           </li>
           <li>
             <%= link_to 'Config', edit_user_path(current_user),
