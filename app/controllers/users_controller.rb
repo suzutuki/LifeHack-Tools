@@ -30,8 +30,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    flash[:success] = "退会しました。
-#{@user.name}さん。ご利用ありがとうございました！"
+    flash[:success] = "退会しました。#{@user.name}さん。ご利用ありがとうございました！"
     redirect_to root_url
   end
 
@@ -42,7 +41,6 @@ class UsersController < ApplicationController
     if @user.update_attributes(user_params)
       flash[:success] = "変更しました"
       redirect_to @user
-      # 更新に成功した場合を扱う。
     else
       render 'edit'
     end
