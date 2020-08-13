@@ -35,8 +35,8 @@
           </ul>
         </div>
         <div class="panel-right">
-          <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right", style: "color: #00C0FE;"), task_path(task.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
-          <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right", style: "color: 00C0FE"), edit_task_path(task.id)) %>
+          <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), task_path(task.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
+          <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), edit_task_path(task.id)) %>
       </section>
     <% end %>
     <li class="active">
