@@ -4,6 +4,10 @@
               class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
   <%= link_to "Macの原則を見る", mac_path(current_user),
               class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
+  <%= link_to "Macの原則を設定", new_mac_path(current_user),
+              class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
+  <%= link_to "Macの原則を編集", edit_mac_path(current_user),
+              class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
   <%= render 'footer_fix' %>
 <% else %>
   <%= render 'home' %>

@@ -1,38 +1,5 @@
 <% provide(:title, "new") %>
-<div class= "site-width">
+<div class="site-width">
   <section id="new-todo-list">
-    <h1>MACの原則</h1>
-    <div class=container>
-      <div class=prev-left>
-        <%= link_to(content_tag(:i, 'Return', class: "fas fa-angle-double-left fa-3x
-      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), mac_path(current_user)) %>
-      </div>
-      <div class="new-todo-list-form">
-        <%= form_for @mac do |f| %>
-          <div id="new-list">
-            <p>
-              <%= f.label :"M(Measurable : 測定可能性", class: 'label' %><br>
-              <%= f.text_area :content, class: 'form-area' %>
-            </p>
-            <% if @mac.errors.include?(:content) %>
-              <div class="alert alert-danger"><%= @mac.errors.messages[:content][0] %>
-              </div>
-            <% end %>
-            <p><%= f.label :"A(Actionable :  行動可能性", class: 'label' %>
-              <%= f.text_area :content, class: 'form-area' %>
-            </p>
-            <% if @mac.errors.include?(:content) %>
-              <div class="alert alert-danger"><%= @mac.errors.messages[:content][0] %>
-              </div>
-            <% end %>
-            <%= f.label :"C(Competent (適格性)", class: 'label' %>
-            <%= f.text_area :content, class: 'form-area' %>
-            <% if @mac.errors.include?(:content) %>
-              <div class="alert alert-danger"><%= @mac.errors.messages[:content][0] %>
-            <% end %></div>
-            <p><%= f.submit "登録", class: "btn-submit" %></p>
-        <% end %>
-        </div>
-      </div>
-  </section>
-</div>
+    <h1>MACの原則　新規作成</h1>
+<%= render 'form' %>

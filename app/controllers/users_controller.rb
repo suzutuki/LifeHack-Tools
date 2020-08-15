@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 
   def show
     @tasks = @user.tasks.page(params[:page]).per(8)
-    # @macs = @user.macs.new
+    @macs = @user.macs.page(params[:page]).per(8)
     # @tasks = Task.page(params[:page]).per(5)
     # @tasks = @user.tasks.page(page: params[:page])
   end
