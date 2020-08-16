@@ -12,14 +12,29 @@
 <% if @user.macs.empty? %>
   <div class="panel-empty">
     <h1>
-      <p>ToDoリスト！にようこそ!</p>
-      <p>Create!からToDoリスト！を</p>
+      <p>MACの原則にようこそ!</p>
+      <p>Create!からMACの原則を</p>
       <p>作成しましょう！</p>
     </h1>
   </div>
   </div>
 <% end %>
+<span class="btn-sticky">すべての更新、作成日時を表示,非表示</span>
 <% if @user.macs.any? %>
-  <span class="btn-sticky">すべての更新、作成日時を表示,非表示</span>
-  <b class="btn-sticky">優先順位1のみ表示</b>
+  <% @user.macs.each do |mac| %>
+    <section class="panel">
+      <div class="panel-left">
+          <h2>目標:<%= mac.measurable %></h2>
+          <h2>ゴールまでのプロセス<br><%= mac.actionable %></h2>
+          <h2>目標達成が価値観に基づいているか?<br><%= mac.competent %></h2>
+          <li><h3>更新日時:<%= mac.updated_at.to_s(:datetime_jp) %></h3>
+            <h3>作成日時:<%= mac.created_at.to_s(:datetime_jp) %></h3></li>
+        </ul>
+      </div>
+      <div class="panel-right">
+        <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), mac_path(mac.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
+        <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), edit_mac_path(mac.id)) %>
+    </section>
+  <% end %>
 <% end %>
+<%= render 'shared/script' %>

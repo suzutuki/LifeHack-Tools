@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update]
+  #リファクタリング用
   before_action :set_target_user, only: [:show, :destroy, :edit, :update]
   # before_action :admin_user,     only: :destroy
 
@@ -22,11 +23,9 @@ class UsersController < ApplicationController
     end
   end
 
+  # userに紐付いたタスクを返す
   def show
     @tasks = @user.tasks.page(params[:page]).per(8)
-    @macs = @user.macs.page(params[:page]).per(8)
-    # @tasks = Task.page(params[:page]).per(5)
-    # @tasks = @user.tasks.page(page: params[:page])
   end
 
   def destroy
