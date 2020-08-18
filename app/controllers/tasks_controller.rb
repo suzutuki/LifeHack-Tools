@@ -3,11 +3,12 @@ class TasksController < ApplicationController
   before_action :correct_user, only: :destroy
   skip_before_action :verify_authenticity_token
   before_action :set_target_user, only: [:edit, :update]
-  # def index
+
+  def index
   # @tasks = Task.all
   # @tasks = Task.page(params[:page]).per(10)
   # @task = current_user.tasks.build if logged_in?
-  # end
+  end
 
   def new
     @task = Task.new
@@ -16,6 +17,10 @@ class TasksController < ApplicationController
   def edit
   end
 
+  def show
+    @user = User.find(params[:id])
+    @tasks = @user.tasks.page(params[:page]).per(8)
+  end
   # ユーザーidに紐付いたタスクを作成
   def create
     @task = current_user.tasks.build(task_params)

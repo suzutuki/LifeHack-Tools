@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
   #リファクタリング用
   before_action :set_target_user, only: [:show, :destroy, :edit, :update]
-  # before_action :admin_user,     only: :destroy
+  before_action :admin_user,     only: :destroy
 
   def index
   end
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = "ユーザー登録に成功しました!"
-      redirect_to @user
+      redirect_to root_path
     else
       render 'new'
     end
@@ -25,13 +25,13 @@ class UsersController < ApplicationController
 
   # userに紐付いたタスクを返す
   def show
-    @tasks = @user.tasks.page(params[:page]).per(8)
+
   end
 
   def destroy
-    @user.destroy
-    flash[:success] = "退会しました。#{@user.name}さん。ご利用ありがとうございました！"
-    redirect_to root_url
+    User.find(params[:id]).destroy
+      flash[:success] = "退会しました。#{@user.name}さん。ご利用ありがとうございました！"
+      redirect_to root_path
   end
 
   def edit

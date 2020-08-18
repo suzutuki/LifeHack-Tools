@@ -1,23 +1,23 @@
 <footer class="footer">
-  <div class="container">
+<!--  <div class="container">-->
     <div class="text">
       <ul>
         <li>
-    <%=link_to(content_tag(:i,'',class:"fab fa-twitter fa-3x faa-wrench animated-hover",
-                 style: "color: rgb(230,230,240);"),"https://twitter.com/suzutuki0149")%>
-    <%=link_to(content_tag(:i,'',class:"fab fa-bootstrap fa-3x faa-vertical animated-hover",
-                 style: "color: rgb(230,230,240);"),"https://getbootstrap.com/")%>
-    <%=link_to(content_tag(:i,'',class:"fab fa-font-awesome-alt fa-3x faa-vertical animated-hover",
-                 style: "color: rgb(230,230,240);"),"https://fontawesome.com/")%>
-        <% if logged_in? %> 
+          <%= link_to(content_tag(:i, '', class: "fab fa-twitter fa-3x faa-wrench animated-hover",
+                                  style: "color: #fff;"), "https://twitter.com/suzutuki0149") %>
+          <%= link_to(content_tag(:i, '', class: "fab fa-bootstrap fa-3x faa-vertical animated-hover",
+                                  style: "color: #fff;"), "https://getbootstrap.com/") %>
+          <%= link_to(content_tag(:i, '', class: "fab fa-font-awesome-alt fa-3x faa-vertical animated-hover",
+                                  style: "color: #fff;"), "https://fontawesome.com/") %>
         </li>
-        <% end %>
       </ul>
-    <%=link_to 'Copyright © To Do リスト!All Rights Reserved.', root_url, style: "color: rgb(250,250,250);"%>
-    <%= link_to "ToDoリストから退会する", @user_path, method: :delete,
-    data: {confirm: "本当に退会しますか？ユーザー情報もリストも全て削除されてしまいます"}, style: "color: #fff; font-size: 13px;"%>
+      <%= link_to 'Copyright © LifeHack Tools！!All Rights Reserved.', root_url, style: "color: #fff;" %>
+      <% if logged_in? %>
+        <%= link_to "ToDoリストから退会する", @user_path, method: :delete,
+                    data: {confirm: "本当に退会しますか？ユーザー情報もリストも全て削除されてしまいます"}, style: "color: #fff; font-size: 13px;" %>
+      <% end %>
     </div>
   </div>
 </footer>
-  </body>
+</body>
 </html>

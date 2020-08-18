@@ -5,22 +5,28 @@
       <div class="nav-right">
         <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-double-right fa-3x faa-horizontal animated-hover fa-pull-right",
                                 style: "color: rgb(80,80,80);"), new_mac_path) %>
-      </div>
     </div>
   </div>
 </div>
 <% if @user.macs.empty? %>
   <div class="panel-empty">
     <h1>
-      <p>MACの原則にようこそ!</p>
+      <p>MACの原則とは？</p>
+      <p>現時点で最も効果のあるゴール(目標)設定方法</p>
+      <div id="align-left"><p>M(Measurable : 測定可能性)<br>
+      ゴールが数字として</p>
+        <p>A(Actionable : 行動可能性) <br>
+          ゴールまでのプロセスを明確化させる</p>
+        <p> C(Competent : 適格性 )<br>
+          目標達成が自分の価値観に基づいているかどうか</p></div>
       <p>Create!からMACの原則を</p>
       <p>作成しましょう！</p>
     </h1>
   </div>
   </div>
 <% end %>
-<span class="btn-sticky">すべての更新、作成日時を表示,非表示</span>
 <% if @user.macs.any? %>
+  <span class="btn-sticky">すべての更新、作成日時を表示,非表示</span>
   <% @user.macs.each do |mac| %>
     <section class="panel">
       <div class="panel-left">
@@ -35,6 +41,7 @@
         <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), mac_path(mac.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
         <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), edit_mac_path(mac.id)) %>
     </section>
+      </div>
   <% end %>
 <% end %>
 <%= render 'shared/script' %>
