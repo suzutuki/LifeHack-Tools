@@ -2,13 +2,15 @@
   <%= render 'home' %>
   <%= link_to "ToDoリスト！", tasks_path,
               class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
-  <%= link_to "Macの原則(目標設定)とは？", macs_path,
+  <%= link_to "Macの原則(目標設定)とは？", details_path,
               class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
   <%= link_to "Macの原則(目標設定)", mac_path(current_user),
               class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
   <%= link_to "Macの原則を設定", new_mac_path(current_user),
               class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
   <%= link_to "Macの原則を編集", edit_mac_path(current_user),
+              class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
+  <%= link_to "If-Thenテクニック", if_then_path(current_user),
               class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
   </div>
 <% else %>
