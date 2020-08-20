@@ -5,42 +5,41 @@
       <div class="nav-right">
         <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-double-right fa-3x faa-horizontal animated-hover fa-pull-right",
                                 style: "color: rgb(80,80,80);"), new_mac_path) %>
+      </div>
     </div>
   </div>
-</div>
-<% if @user.macs.empty? %>
-  <div class="panel-empty">
-    <h1>
-      <p>MACの原則とは？</p></h1>
-      <h2><div id="align-left"><p>現時点で最も効果のあるゴール(目標)設定方法のことで</p>
-      <p>M(Measurable : 測定可能性)<br>
-      ゴールが数字で表すことができる</p>
-        <p>A(Actionable : 行動可能性) <br>
-          ゴールまでのプロセスを明確化させる</p>
-        <p> C(Competent : 適格性 )<br>
-          目標達成が自分の価値観に基づいているかどうか</p></div>
-      <p>Create!からMACの原則を</p>
-      <p>作成しましょう！</p></h2>
-  </div>
-  </div>
-<% end %>
-<% if @user.macs.any? %>
-  <span class="btn-sticky">すべての更新、作成日時を表示,非表示</span>
-  <% @user.macs.each do |mac| %>
-    <section class="panel">
-      <div class="panel-left">
+  <% if @user.macs.empty? %>
+    <div class="panel-empty">
+      <h1>
+        <p>MACの原則とは？</p></h1>
+      <h2>
+        <div id="align-left"><p>現時点で最も効果のあるゴール(目標)設定方法のこと</p>
+          <p>M(Measurable : 測定可能性): ゴールを数字で表すことができる</p>
+          <p>A(Actionable : 行動可能性)  : ゴールまでのプロセスを明確化させる</p>
+          <p>C(Competent  : 適格性)        : 目標達成が自分の価値観に基づいているかどうか</p></div>
+      </h2>
+      <%= link_to "目標設定をする", new_mac_path,
+                  class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
+    </div>
+    </div>
+  <% end %>
+  <% if @user.macs.any? %>
+    <span class="btn-sticky">すべての更新、作成日時を表示,非表示</span>
+    <% @user.macs.each do |mac| %>
+      <section class="panel">
+        <div class="panel-left">
           <h2>目標:<%= mac.measurable %></h2>
           <h2>ゴールまでのプロセス<br><%= mac.actionable %></h2>
           <h2>目標達成が価値観に基づいているか?<br><%= mac.competent %></h2>
           <li><h3>更新日時:<%= mac.updated_at.to_s(:datetime_jp) %></h3>
             <h3>作成日時:<%= mac.created_at.to_s(:datetime_jp) %></h3></li>
-        </ul>
+          </ul>
+        </div>
+        <div class="panel-right">
+          <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), mac_path(mac.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
+          <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), edit_mac_path(mac.id)) %>
+      </section>
       </div>
-      <div class="panel-right">
-        <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), mac_path(mac.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
-        <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), edit_mac_path(mac.id)) %>
-    </section>
-      </div>
+    <% end %>
   <% end %>
-<% end %>
-<%= render 'shared/script' %>
+  <%= render 'shared/script' %>

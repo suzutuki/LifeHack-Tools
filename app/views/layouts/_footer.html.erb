@@ -1,5 +1,4 @@
 <footer class="footer">
-<!--  <div class="container">-->
     <div class="text">
       <ul>
         <li>
@@ -13,7 +12,7 @@
       </ul>
       <%= link_to 'Copyright © LifeHack Tools！!All Rights Reserved.', root_url, style: "color: #fff;" %>
       <% if logged_in? %>
-        <%= link_to "ToDoリストから退会する", @user_path, method: :delete,
+        <%= link_to "ToDoリストから退会する", user_path(current_user), method: :delete,
                     data: {confirm: "本当に退会しますか？ユーザー情報もリストも全て削除されてしまいます"}, style: "color: #fff; font-size: 13px;" %>
       <% end %>
     </div>

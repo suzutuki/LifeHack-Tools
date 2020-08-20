@@ -14,25 +14,16 @@
   overflow: hidden;
 }
 
-//チェックボックスの設定
-ul input {
-  width: 5%;
-  transform: scale(3);
-}
 
 //リストの中の設定
 ul h2 {
   margin: 10px 0 15px 15px;
   font-size: 30px;
-
 }
 
-li {
-  list-style: none;
-
-  h3 {
+ul li h3 {
+    color : rgb(80,80,80);
     margin: 10px 0 15px 15px;
-  }
 }
 
 //エラーメッセージの設定

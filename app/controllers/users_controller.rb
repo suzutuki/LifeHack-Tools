@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
-  before_action :correct_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   #リファクタリング用
   before_action :set_target_user, only: [:show, :destroy, :edit, :update]
   before_action :admin_user,     only: :destroy
@@ -23,14 +23,12 @@ class UsersController < ApplicationController
     end
   end
 
-  # userに紐付いたタスクを返す
   def show
-
   end
 
   def destroy
     User.find(params[:id]).destroy
-      flash[:success] = "退会しました。#{@user.name}さん。ご利用ありがとうございました！"
+      flash[:success] = "退会しました。ご利用ありがとうございました！"
       redirect_to root_path
   end
 

@@ -1,24 +1,26 @@
 <% provide(:title, "ログイン") %>
-<div class= "site-width">
-    <div class=container>
-<h1>ログイン</h1>
-      <div class="login-form">
-    <%= form_for(:session, url: login_path) do |f| %>
+<div class="site-width">
+  <div class=container>
+    <h1>ログイン</h1>
+    <div class="login-form">
+      <%= form_for(:session, url: login_path) do |f| %>
 
-    <%= f.label :メールアドレス, class: 'label'%>
-    <%= f.email_field :email, class: 'form-field' %>
+        <%= f.label :メールアドレス, class: 'label' %>
+        <%= f.email_field :email, class: 'form-field' %>
 
-    <%= f.label :パスワード, class: 'label' %>
-    <%= f.password_field :password, class: 'form-field' %>
+        <%= f.label :パスワード, class: 'label' %>
+        <%= f.password_field :password, class: 'form-field' %>
 
-    <%= f.label :次回ログインを省略する, class: "checkbox inline" do %>
-    <%= f.check_box :remember_me %>
-      <span>次回ログインを省略する</span>
-    <% end %>
-      <%= f.submit "ログイン", class: "btn btn-submit" %>
-    <% end %>
-    <br>
-        <%=link_to(content_tag(:i,'はじめての方はこちら',class:"fas fa-angle-double-right faa-horizontal animated-hover fa-pull-left",style: "color: sienna;"),signup_path)%>
-      </div>
+        <%= f.label :次回ログインを省略する, class: "checkbox inline" do %>
+          <%= f.check_box :remember_me %>
+          <span>次回ログインを省略する</span>
+        <% end %>
+        <%= f.submit "ログイン", class: "btn btn-submit" %>
+      <% end %>
+      <br>
+      <%= link_to(content_tag(:i, 'はじめての方はこちら',
+                              class: "fas fa-angle-double-right faa-horizontal animated-hover fa-pull-left",
+                              style: "color: sienna;"), new_user_path) %>
     </div>
+  </div>
 </div>

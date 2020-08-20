@@ -3,6 +3,10 @@ html {
   position: relative;
   min-height: 100%;
 }
+
+li {
+  list-style: none;
+}
 /* bodyからの設定 */
 body {
   margin-bottom: 60px;
@@ -14,8 +18,4 @@ body {
   color: #1d1d1f;
   overflow-x: hidden;
   font-style: normal;
-}
-
-li　{
-  list-style: none !important;
 }

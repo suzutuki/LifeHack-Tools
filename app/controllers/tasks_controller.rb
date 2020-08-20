@@ -26,7 +26,7 @@ class TasksController < ApplicationController
     @task = current_user.tasks.build(task_params)
     if @task.save
       flash[:success] = "｢#{@task.title}｣を作成しました！"
-      redirect_to user_path(current_user)
+      redirect_to task_path(current_user)
     else
       render 'tasks/new'
     end

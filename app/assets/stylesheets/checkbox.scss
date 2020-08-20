@@ -8,9 +8,14 @@
     font-weight: normal;
   }
 }
+  //チェックボックスの設定
+  ul input {
+    width: 5%;
+    transform: scale(3);
+  }
 
-//remember me機能のチェックボックス
-#session_remember_me {
-  width: auto;
-  margin-left: 0;
-}
+  //remember me機能のチェックボックス
+  #session_remember_me {
+    width: auto;
+    margin-left: 0;
+  }
