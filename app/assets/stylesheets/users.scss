@@ -2,23 +2,22 @@
 // They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 input {
-  width: 100%;
-  border: 2px solid #aaa;
-  border-radius: 4px;
-  margin: 8px 0;
-  outline: none;
-  padding: 8px;
-  box-sizing: border-box;
-  transition: 0.3s;
+  margin: 30px 0;
 }
 
-input:focus {
-  border-color: dodgerBlue;
+.inputWithIcon input:focus {
+  border-color: dodgerBlue!important;
   box-shadow: 0 0 8px 0 dodgerBlue;
 }
 
 .inputWithIcon input {
-  padding-left: 5px;
+  width: 100%;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: 0.3s;
 }
 
 .inputWithIcon {

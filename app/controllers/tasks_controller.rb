@@ -4,10 +4,7 @@ class TasksController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :set_target_user, only: [:edit, :update]
 
-  def index
-  # @tasks = Task.all
-  # @tasks = Task.page(params[:page]).per(10)
-  # @task = current_user.tasks.build if logged_in?
+  def ivy
   end
 
   def new
@@ -35,7 +32,7 @@ class TasksController < ApplicationController
   def update
     if @task.update(task_params)
       flash[:success] = "｢#{@task.title}｣に変更しました！"
-      redirect_to user_path(current_user)
+      redirect_to task_path(current_user)
     else
       render 'edit'
     end

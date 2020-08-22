@@ -2,10 +2,11 @@ Rails.application.routes.draw do
 
   root 'users#index'
   resources :if_thens
-  resources :macs
+  resources :macs, except: %i(index)
   get 'details', to: 'macs#details'
+  resources :tasks, except: %i(index)
   resources :users
-  resources :tasks
+  get 'ivy', to: 'tasks#ivy'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'

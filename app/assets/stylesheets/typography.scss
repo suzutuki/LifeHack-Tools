@@ -1,8 +1,8 @@
-/* typography */
+@import "color";
 h1, h2, h3, h4, h5, h6 {
   //line-height: 1;
   font-weight: 600;
-  color: #1d1d1f;
+  color: $color-nobleblack;
 }
 
 h1 {
@@ -31,5 +31,6 @@ p {
 }
 
 a:hover {
-  background: rgba(250, 240, 230, 0.1) !important;
+  background: $color-thin_grey!important;
 }
+

@@ -1,3 +1,4 @@
+@import "color";
 //newとeditの部分、フォント整え
 #new-list {
   list-style: none;
@@ -7,16 +8,16 @@
 
 .new-todo-list-form {
   padding: 20px 40px 40px 40px;
-  border: 2.5px solid #905523;
+  border: 2.5px solid $color-coffee_brown;
   margin: 20px 0;
   border-radius: 10px;
   overflow: hidden;
 }
 
 .label {
-  background: #fffaf4 !important; /*背景色*/
+  background: $color-white; /*背景色*/
   border-left: solid 5px #ffaf58; /*左線（実線 太さ 色）*/
-  color: #333;
+  color: $color-nobleblack;
 }
 
 .form-field {
@@ -51,10 +52,10 @@
 .btn-submit {
   width: 70%;
   margin: 10px 10px 0 80px;
-  font-size: 18px;
+  font-size: 32px;
   height: 50px;
   color: #333;
   background-color: #ffaf58;
-  border-color: #614226;
+  border-color: $color-coffee_brown;
   border-radius: 10px;
 }

@@ -1,16 +1,14 @@
 <div class="site-width">
   <div class="new-todo-list-form">
-    <%= form_with model: user do |f| %>
+    <%= form_with model: user, local: true do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
-        <div class="inputWithIcon">
-        <%= f.text_field :name, class: 'form-field', placeholder: 'Your name' %>
-        </div>
       <div class="inputWithIcon">
+        <%= f.text_field :name, class: 'form-field', placeholder: 'Your name' %>
         <%= f.email_field :email, class: 'form-field', placeholder: 'Email' %>
-      </div>
         <%= f.password_field :password, class: 'form-field', placeholder: 'パスワード' %>
         <%= f.password_field :password_confirmation, class: 'form-field', placeholder: 'パスワード確認' %>
-        <%= f.submit "登録", class: "btn btn-submit" %>
+      </div>
+      <%= f.submit "登録", class: "btn btn-submit" %>
     <% end %>
   </div>
 <%= render 'shared/footer_fix' %>

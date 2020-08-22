@@ -1,3 +1,4 @@
+@import "color";
 //全体の設定
 html {
   position: relative;
@@ -10,12 +11,12 @@ li {
 /* bodyからの設定 */
 body {
   margin-bottom: 60px;
-  border-top: 6px solid #614226;
+  border-top: 6px solid $color-coffee_brown;
   font-family: "SF Pro JP","SF Pro Text","SF Pro Icons","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","メイリオ","Meiryo","ＭＳ Ｐゴシック","Helvetica Neue","Helvetica","Arial",sans-serif;
   line-height: 1.47059;
-  background-color: #fff;
+  background-color: $color-white;
   letter-spacing: -.022em;
-  color: #1d1d1f;
+  color: $color-nobleblack;
   overflow-x: hidden;
   font-style: normal;
 }
