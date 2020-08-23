@@ -1,8 +1,6 @@
 ja:
   activerecord:
-    models:
-      task: イベント
-      attributes:
+    attributes:
         task:
           title: タイトル
           priority: 優先順位

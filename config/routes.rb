@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'users#index'
   resources :if_thens
+  get 'hint', to: 'if_thens#hint'
   resources :macs, except: %i(index)
   get 'details', to: 'macs#details'
   resources :tasks, except: %i(index)
