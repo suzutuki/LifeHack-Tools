@@ -1,3 +1,16 @@
-// Place all the styles related to the Sessions controller here.
-// They will automatically be included in application.scss.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* ログインフォームの設定 */
+.login-form {
+  font-size: 20px;
+  height: 480px;
+  margin: 10px auto;
+  padding: 40px;
+  border: 2.5px solid #905523;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 80%;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 2px solid #bbb;
+  width: 12%;
+}

@@ -1,3 +1,4 @@
+@import "color";
 //□で囲まれているものの設定Taskなど
 .panel {
   border: 2.5px solid #905523;
@@ -9,9 +10,9 @@
 }
 
 .panel-empty {
-  border: 2.5px solid #905523;
+  border: 2.5px solid $color-thin_black;
   border-radius: 10px;
-  padding: 20px;
+  padding: 30px;
   margin: 15px 0;
   overflow: hidden;
   background: rgba(250, 240, 230, 0.1);

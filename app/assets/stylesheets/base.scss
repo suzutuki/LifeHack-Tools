@@ -8,6 +8,7 @@ html {
 li {
   list-style: none;
 }
+
 /* bodyからの設定 */
 body {
   margin-bottom: 60px;
@@ -19,4 +20,10 @@ body {
   color: $color-nobleblack;
   overflow-x: hidden;
   font-style: normal;
+}
+
+.center-position {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
 }

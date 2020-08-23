@@ -1,3 +1,4 @@
+<div class="container">
 <% if logged_in? %>
   <%= render 'home' %>
   <%= link_to "ToDoリスト！", task_path(current_user),
@@ -12,11 +13,10 @@
               class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
   <%= link_to "If-Thenテクニック", if_then_path(current_user),
               class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
-  </div>
+  <%= render 'shared/footer_fix' %>
   <% else %>
   <%= render 'home' %>
   <%= link_to "ユーザー登録する！", new_user_path, class: "btn-sticky",
               style: "font-size: 28px; color: #333;" %>
-  </div>
+  <%= render 'shared/footer_fix' %>
 <% end %>
-

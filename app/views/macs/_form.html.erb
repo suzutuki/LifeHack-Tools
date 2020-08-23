@@ -1,36 +1,41 @@
-<div class="site-width">
+<div class="mac-width">
   <div class="prev-left">
     <%= link_to(content_tag(:i, 'Return', class: "fas fa-angle-left fa-2x
       faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), mac_path(current_user)) %>
     <%= link_to(content_tag(:i, '', class: "fas fa-question fa-2x
                                 faa-vertical animated-hover fa-pull-right",
                             style: "color: rgb(80,80,80);"), details_path) %></div>
-  <div class="new-todo-list-form">
+  <div class="new-mac-form">
     <%= form_for @mac do |f| %>
-    <div id="new-list">
-      <p>
-        <%= f.label :"M(Measurable : ゴールを数字で表すことができる", class: 'label' %><br>
-        <%= f.text_area :measurable, class: 'form-area' %>
-      </p>
-      <% if @mac.errors.include?(:measurable) %>
-        <div class="alert alert-danger"><%= @mac.errors.messages[:measurable][0] %>
-        </div>
-      <% end %>
-      <p><%= f.label :"A(Actionable :  ゴールまでのプロセスを明確化させる", class: 'label' %>
-        <%= f.text_area :actionable, class: 'form-area' %>
-      </p>
-      <% if @mac.errors.include?(:actionable) %>
-        <div class="alert alert-danger"><%= @mac.errors.messages[:actionable][0] %>
-        </div>
-      <% end %>
-      <%= f.label :"C(Competent 目標達成が価値観に基づいているか考える", class: 'label' %>
-      <%= f.text_area :competent, class: 'form-area' %>
-      <% if @mac.errors.include?(:competent) %>
-        <div class="alert alert-danger"><%= @mac.errors.messages[:competent][0] %>
-      <% end %></div>
-      <p><%= f.submit "登録", class: "btn-submit" %></p>
-  <% end %>
+      <div id="new-list">
+        <p>
+          <%= f.label :"M(Measurable : 数字で表すことができる目標", class: 'label' %><br>
+          <%= f.text_area :measurable, class: 'form-area' %>
+        </p>
+        <% if @mac.errors.include?(:measurable) %>
+          <div class="alert alert-danger">
+            <%= @mac.errors.messages[:measurable][0] %>
+          </div>
+        <% end %>
+        <p>
+          <%= f.label :"A(Actionable :  ゴールまでのプロセスを明確化させる", class: 'label' %>
+          <%= f.text_area :actionable, class: 'form-area' %>
+        </p>
+        <% if @mac.errors.include?(:actionable) %>
+          <div class="alert alert-danger">
+            <%= @mac.errors.messages[:actionable][0] %>
+          </div>
+        <% end %>
+        <%= f.label :"C(Competent 目標達成が価値観に基づいているか考える", class: 'label' %>
+        <%= f.text_area :competent, class: 'form-area' %>
+        <% if @mac.errors.include?(:competent) %>
+          <div class="alert alert-danger">
+            <%= @mac.errors.messages[:competent][0] %>
+          </div>
+        <% end %>
+        <p><%= f.submit "登録", class: "btn-submit" %></p>
+    <% end %>
+    </div>
   </div>
-</div>
-</section>
+  </section>
 </div>
