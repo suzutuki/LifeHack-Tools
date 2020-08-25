@@ -18,7 +18,9 @@
 class User < ApplicationRecord
   has_many :tasks, dependent: :destroy
   has_many :macs, dependent: :destroy
-  has_many :if_thens, dependent: :destroy
+  has_many :its, dependent: :destroy
+  has_many :behaviors, through: :situations, dependent: :destroy
+  has_many :situations, dependent: :destroy
   attr_accessor :remember_token
   before_save { email.downcase! }
   validates :name, presence: true, length: {maximum: 15}

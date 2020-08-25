@@ -1,0 +1,28 @@
+<div class=container>
+  <div id="main-view" class="main-width">
+    <div id="view-list">
+      <h1 class="nav-left">If thenテクニック</h1>
+      <div class="nav-right">
+        <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-double-right fa-3x faa-horizontal animated-hover fa-pull-right",
+                                style: "color: rgb(80,80,80);"), new_it_path) %>
+      </div>
+    </div>
+  </div>
+  <% if @user.its.empty? %>
+    <div class="panel-empty">
+      <h1><p class="text_color_grey">If thenテクニックとは？</p></h1>
+      <h2>
+        <div class="align-left">
+          <p>現時点でトップクラスの効果がある習慣化の方法です。</p>
+          <p>If:もし〇〇だったら→then:そのときに××する</p>
+          <p>例:外食する前にジムで運動するなど</p>
+          <p>やるべき行動(then)とそれを行う条件(If)をセットにするのがポイントです。</p>
+        </div>
+      </h2>
+      <%= link_to "具体的な例を見る", hint_path,
+                  class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
+      <%= link_to "If thenテクニックを作る", new_it_path,
+                  class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
+    </div>
+    </div>
+  <% end %>

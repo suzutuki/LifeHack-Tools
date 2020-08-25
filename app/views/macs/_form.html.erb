@@ -6,7 +6,7 @@
                                 faa-vertical animated-hover fa-pull-right",
                             style: "color: rgb(80,80,80);"), details_path) %></div>
   <div class="new-mac-form">
-    <%= form_for @mac do |f| %>
+    <%= form_with model: @mac, local: true do |f| %>
       <div id="new-list">
         <p>
           <%= f.label :"M(Measurable : 数字で表すことができる目標", class: 'label' %><br>
