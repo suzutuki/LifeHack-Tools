@@ -1,0 +1,26 @@
+@import "color";
+.it-width {
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.column {
+  width: 100%;
+}
+@media all and (min-width: 500px) {
+  .wrapper {
+    display: flex;
+  }
+}
+
+.if-list {
+  font-size: 40px;
+  margin: 20px 0;
+}
+
+.process {
+  border-top: 2px solid $color-thin_black;
+  flex-direction: column;
+  display: flex;
+}

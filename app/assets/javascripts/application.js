@@ -15,8 +15,10 @@
 //= require jquery3
 //= require jquery_ujs
 //= require jquery
+//= require Chart.min
 //= require bootstrap
 //= require_tree .
+
 $(function(){
   setTimeout("$('.time-limit').fadeOut('slow')", 2000) 
 });

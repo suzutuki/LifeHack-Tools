@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'chart_sample/index'
+
   root 'users#index'
   resources :its
   get 'hint', to: 'its#hint'
