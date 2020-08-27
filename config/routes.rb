@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'small_steps/index'
+
+  get 'smallstep/index'
+
   get 'chart_sample/index'
 
   root 'users#index'

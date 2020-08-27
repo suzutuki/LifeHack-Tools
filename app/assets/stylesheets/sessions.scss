@@ -10,7 +10,9 @@
   max-width: 80%;
 }
 
-input, textarea, select, .uneditable-input {
-  border: 2px solid #bbb;
-  width: 12%;
+.site-width {
+  width: 70%;
+  margin: 0 auto;
+  overflow: hidden;
 }
+

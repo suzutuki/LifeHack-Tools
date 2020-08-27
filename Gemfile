@@ -16,12 +16,10 @@ gem 'turbolinks', '~> 5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'kaminari'
 gem 'rails-i18n', '~> 5.1'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 gem 'chart-js-rails', '~> 0.1.4'
-# Use Redis adapter to run Action Cable in production
+gem 'gon', '~> 6.2.0'
 # gem 'redis', '~> 4.0'
-# Use ActiveModel has_secure_password
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'jquery-rails', '~>4.3.1'
@@ -41,10 +39,8 @@ group :test do
   gem 'guard-minitest',           '2.4.4'
 end
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry-byebug'
@@ -53,5 +49,4 @@ group :development do
   gem 'binding_of_caller'
 end
 group :production do
-  gem 'mysql2'
 end

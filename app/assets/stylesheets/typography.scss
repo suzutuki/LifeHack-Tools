@@ -1,6 +1,5 @@
 @import "color";
 h1, h2, h3, h4, h5, h6 {
-  //line-height: 1;
   font-weight: 600;
   color: $color-nobleblack;
 }
@@ -15,8 +14,8 @@ h2 {
   font-size: 1.5em;
   margin-block-start: 0.83em;
   margin-block-end: 0.83em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
   font-weight: bold;
 }
 

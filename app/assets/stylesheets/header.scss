@@ -28,11 +28,6 @@ header nav ul li a:active {
   text-decoration: underline;
 }
 
-.container {
-  width: auto;
-  max-width: 880px;
-  //display: flex;
-  //flex-direction: row;
-  //justify-content: flex-end;
+.navbar {
+  border-radius: 0 !important;
 }
-

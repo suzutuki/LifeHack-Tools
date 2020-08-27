@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200824035622) do
+ActiveRecord::Schema.define(version: 20200827152500) do
 
   create_table "behaviors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "name", null: false
@@ -46,6 +46,16 @@ ActiveRecord::Schema.define(version: 20200824035622) do
     t.index ["user_id"], name: "index_situations_on_user_id"
   end
 
+  create_table "steps", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.date "step_day"
+    t.integer "step_time"
+    t.text "step_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_steps_on_user_id"
+  end
+
   create_table "tasks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.boolean "done"
@@ -73,5 +83,6 @@ ActiveRecord::Schema.define(version: 20200824035622) do
   add_foreign_key "macs", "users"
   add_foreign_key "situations", "behaviors"
   add_foreign_key "situations", "users"
+  add_foreign_key "steps", "users"
   add_foreign_key "tasks", "users"
 end
