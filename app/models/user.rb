@@ -19,8 +19,12 @@ class User < ApplicationRecord
   has_many :tasks, dependent: :destroy
   has_many :macs, dependent: :destroy
   has_many :its, dependent: :destroy
+
   has_many :steps, dependent: :destroy
-  accepts_nested_attributes_for :steps
+  accepts_nested_attributes_for :steps, allow_destroy: true
+
+
+
   attr_accessor :remember_token
   before_save { email.downcase! }
   validates :name, presence: true, length: {maximum: 15}

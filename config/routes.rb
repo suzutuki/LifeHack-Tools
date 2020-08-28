@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :steps
+  get 'example', to: 'steps#example'
   root 'users#index'
   resources :its
   get 'hint', to: 'its#hint'
