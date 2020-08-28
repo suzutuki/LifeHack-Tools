@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'small_steps/index'
-
-  get 'smallstep/index'
-
-  get 'chart_sample/index'
-
+  resources :steps
   root 'users#index'
   resources :its
   get 'hint', to: 'its#hint'

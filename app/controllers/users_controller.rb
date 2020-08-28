@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    2.times { @user.steps.build }
   end
 
   def create
@@ -50,7 +51,7 @@ class UsersController < ApplicationController
   #ストロングパラメーター
   def user_params
     params.require(:user).permit(:name, :email, :password,
-                                 :password_confirmation)
+                                 :password_confirmation, steps_attributes: [:step_name])
   end
 
   #リファクタリング用
