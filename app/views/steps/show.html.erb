@@ -28,11 +28,11 @@
                               style: "color: rgb(80,80,80);"), new_step_path) %>
     </div>
   </div>
-  <% @user.steps.each do |step| %>
+  <% @user.steps.each do |s| %>
     <section class="panel-step">
       <div class="goal">
         <h1 class="text_color_grey">スモールステップ</h1>
-        <h1><%= step.step_name %></h1>
+        <h1><%= s.step_name %></h1>
       </div>
       <div class="flex-container">
         <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), edit_step_path(step.id)) %>

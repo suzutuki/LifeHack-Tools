@@ -1,4 +1,4 @@
-# ユーザーのコレクションモデル
+# Stepのコレクションモデル
 class StepCollection
   include ActiveModel::Conversion
   extend ActiveModel::Naming
