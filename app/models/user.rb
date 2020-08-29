@@ -19,18 +19,14 @@ class User < ApplicationRecord
   has_many :tasks, dependent: :destroy
   has_many :macs, dependent: :destroy
   has_many :its, dependent: :destroy
-
   has_many :steps, dependent: :destroy
   accepts_nested_attributes_for :steps, allow_destroy: true
-
-
-
   attr_accessor :remember_token
   before_save { email.downcase! }
   validates :name, presence: true, length: {maximum: 15}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: {message: 'タイトルを入力してください'},
-    length: {maximum: 100, message: '255文字以上は登録できません！'},
+            length: {maximum: 100, message: '255文字以上は登録できません！'},
             format: {with: VALID_EMAIL_REGEX},
             uniqueness: {case_sensitive: false}
   has_secure_password

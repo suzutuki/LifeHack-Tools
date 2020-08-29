@@ -1,48 +1,40 @@
-<div id="view-list-mac">
-  <h1 class="nav-left">スモールステップとビッグエリア</h1>
-  <div class="nav-right">
-    <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-double-right fa-3x faa-horizontal animated-hover fa-pull-right",
-                            style: "color: rgb(80,80,80);"), new_step_path) %>
-  </div>
-</div>
 <% if @user.steps.empty? %>
-    <h1 class="text-center">スモールステップとビッグエリアとは？</h1>
-    <h2>
-      <div class="small-step"><p>スモールステップとは最終的な目標の簡易版を数多く作りクリアすることで</p><br>
-        <p>モチベーションを上げるための仕組みです。</p><br>
-        <p>自分が前に進んでいるという感覚が重要なので、目標実現に向けてのプロセスを</p><br>
+  <h1 class="text-center">スモールステップとビッグエリアとは？</h1>
+  <h2>
+    <div class="small-step"><p>スモールステップとは最終的な目標の簡易版を数多く作りクリアすることで</p><br>
+      <p>モチベーションを上げるための仕組みです。</p><br>
+      <p>自分が前に進んでいるという感覚が重要なので、目標実現に向けてのプロセスを</p><br>
       <p>できるだけ簡単なものから、ステップ・バイ・ステップで分けていくのが重要です。</p></div>
-      <div class="big_area">
+    <div class="big_area">
       <p>ビッグエリアとは目指すべきゴールのことで、細かく分解された目標で進みがゆっくりになった時</p><br>
       <p>最終的な目標を見失ってしまわないように</p><br>
       <p>週に1,2回自分がなにを目指してステップをクリアしているか見直すためのものです。</p><br>
-      </div>
-    </h2>
+    </div>
+  </h2>
   <div class="flex-container">
     <%= link_to "具体的な例を見る", example_path,
                 class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
     <%= link_to "グラフを見る(ビッグエリア)", steps_path,
                 class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
+    <%= link_to "実際に作ってみる", new_step_path,
+                class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
   </div>
 <% end %>
 <% if @user.steps.any? %>
+  <div id="view-list-mac">
+    <h1 class="nav-left">スモールステップとビッグエリア</h1>
+    <div class="nav-right">
+      <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-double-right fa-3x faa-horizontal animated-hover fa-pull-right",
+                              style: "color: rgb(80,80,80);"), new_step_path) %>
+    </div>
+  </div>
   <% @user.steps.each do |step| %>
     <section class="panel-step">
       <div class="goal">
-        <h1 class="text_color_grey">数値で表せる目標</h1>
-        <h1><%= simple_format(step.measurable) %></h1>
-      </div>
-      <div class="process">
-        <h1 class="text_color_grey">ゴールまでの具体的なプロセス</h1>
-        <h2><%= simple_format(step.actionable) %></h2>
-      </div>
-      <div class="process">
-        <h1 class="text_color_grey">目標達成が価値観に基づいているか?</h1>
-        <h1><%= simple_format(step.competent) %></h1>
+        <h1 class="text_color_grey">スモールステップ</h1>
+        <h1><%= step.step_name %></h1>
       </div>
       <div class="flex-container">
-        <h3 class="text_color_grey">更新:<%= step.updated_at.to_s(:datetime_jp) %>
-          作成:<%= step.created_at.to_s(:datetime_jp) %></h3>
         <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), edit_step_path(step.id)) %>
         <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), step_path(step.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
       </div>

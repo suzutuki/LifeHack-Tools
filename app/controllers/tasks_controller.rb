@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user, only: :destroy
   skip_before_action :verify_authenticity_token
-  before_action :set_target_user, only: [:edit, :update]
+  before_action :set_target_task, only: [:edit, :update]
 
   def ivy
   end
@@ -11,7 +11,9 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
+  # リファクタリングで値が入ってるよ最後に削除予定
   def edit
+    # @task = Task.find(params[:id])
   end
 
   def show
@@ -29,7 +31,9 @@ class TasksController < ApplicationController
     end
   end
 
+  # リファクタリングで値が入ってるよ最後に削除予定
   def update
+    # @task = Task.find(params[:id])
     if @task.update(task_params)
       flash[:success] = "｢#{@task.title}｣に変更しました！"
       redirect_to task_path(current_user)
@@ -52,6 +56,10 @@ class TasksController < ApplicationController
   end
 
   private
+  #リファクタリング用
+  def set_target_task
+    @task = Task.find(params[:id])
+  end
 
   #ストロングパラメーター
   def task_params
@@ -63,8 +71,5 @@ class TasksController < ApplicationController
     redirect_to root_url if @task.nil?
   end
 
-  #リファクタリング用
-  def set_target_user
-    @task = Task.find(params[:id])
-  end
+
 end
