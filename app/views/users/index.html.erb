@@ -1,18 +1,22 @@
 <div class="container">
-<% if logged_in? %>
-  <%= render 'root' %>
-  <%= link_to "ToDoリスト！", task_path(current_user),
-              class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
-  <%= link_to "Small stepとBig area", step_path(current_user),
-              class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
-  <%= link_to "Macの原則", mac_path(current_user),
-              class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
-  <%= link_to "If-Thenテクニック", it_path(current_user),
-              class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
-  <%= render 'shared/footer_fix' %>
+  <% if logged_in? %>
+    <%= render 'root' %>
+    <%= link_to "ToDoリスト！", task_path(current_user),
+                class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
+    <%= link_to "Small stepとBig area", step_path(current_user),
+                class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
+    <%= link_to "Macの原則", mac_path(current_user),
+                class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
+    <%= link_to "If-Thenテクニック", it_path(current_user),
+                class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
+    <%= link_to "グラフを見る(ビッグエリア)", big_area_path,
+                class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
+    <%= link_to "価値観リストを作成する", lists_path,
+                class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
+    <%= render 'shared/footer_fix' %>
   <% else %>
-  <%= render 'root' %>
-  <%= link_to "ユーザー登録する！", new_user_path, class: "btn-sticky",
-              style: "font-size: 28px; color: #333;" %>
-  <%= render 'shared/footer_fix' %>
-<% end %>
+    <%= render 'root' %>
+    <%= link_to "ユーザー登録する！", new_user_path, class: "btn-sticky",
+                style: "font-size: 28px; color: #333;" %>
+    <%= render 'shared/footer_fix' %>
+  <% end %>

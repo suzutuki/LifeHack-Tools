@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200828083840) do
+ActiveRecord::Schema.define(version: 2020_09_02_100605) do
 
-  create_table "behaviors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "behaviors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "its", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "its", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.text "situation"
     t.text "behavior"
@@ -27,7 +27,16 @@ ActiveRecord::Schema.define(version: 20200828083840) do
     t.index ["user_id"], name: "index_its_on_user_id"
   end
 
-  create_table "macs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.text "answer"
+    t.boolean "done"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_lists_on_user_id"
+  end
+
+  create_table "macs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.text "measurable"
     t.text "actionable"
@@ -37,7 +46,7 @@ ActiveRecord::Schema.define(version: 20200828083840) do
     t.index ["user_id"], name: "index_macs_on_user_id"
   end
 
-  create_table "situations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "situations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "behavior_id"
     t.datetime "created_at", null: false
@@ -46,7 +55,7 @@ ActiveRecord::Schema.define(version: 20200828083840) do
     t.index ["user_id"], name: "index_situations_on_user_id"
   end
 
-  create_table "steps", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "steps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.date "step_day"
     t.integer "step_time"
@@ -57,7 +66,7 @@ ActiveRecord::Schema.define(version: 20200828083840) do
     t.index ["user_id"], name: "index_steps_on_user_id"
   end
 
-  create_table "tasks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.boolean "done"
     t.text "content"
@@ -69,7 +78,7 @@ ActiveRecord::Schema.define(version: 20200828083840) do
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.datetime "created_at", null: false
@@ -81,6 +90,7 @@ ActiveRecord::Schema.define(version: 20200828083840) do
   end
 
   add_foreign_key "its", "users"
+  add_foreign_key "lists", "users"
   add_foreign_key "macs", "users"
   add_foreign_key "situations", "behaviors"
   add_foreign_key "situations", "users"
