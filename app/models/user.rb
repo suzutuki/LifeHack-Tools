@@ -21,6 +21,7 @@ class User < ApplicationRecord
   has_many :tasks, dependent: :destroy
   has_many :macs, dependent: :destroy
   has_many :its, dependent: :destroy
+  has_many :lists, dependent: :destroy
   attr_accessor :remember_token
   before_save { email.downcase! }
   validates :name, length: {maximum: 15}
