@@ -2,20 +2,20 @@
   <div class="text">
     <ul>
       <li>
+        <%= link_to 'LifeHack Tools！', root_url, style: "color: #fff;" %>
         <%= link_to(content_tag(:i, '', class: "fab fa-twitter fa-3x faa-wrench animated-hover",
                                 style: "color: #fff;"), "https://twitter.com/suzutuki0149") %>
         <% if logged_in? %>
           <%= link_to "M", mac_path(current_user), class: "footer-link" %>
-            <%= link_to "I", it_path(current_user), class: "footer-link" %>
-            <%= link_to "T", task_path(current_user), class: "footer-link" %>
-            <%= link_to "L", list_path(current_user), class: "footer-link" %>
-            <%= link_to "S", step_path(current_user), class: "footer-link" %>
+          <%= link_to "I", it_path(current_user), class: "footer-link" %>
+          <%= link_to "T", task_path(current_user), class: "footer-link" %>
+          <%= link_to "L", list_path(current_user), class: "footer-link" %>
+          <%= link_to "S", step_path(current_user), class: "footer-link" %>
         <% end %>
         <%= link_to(content_tag(:i, '', class: "fab fa-font-awesome-alt fa-3x faa-vertical animated-hover",
                                 style: "color: #fff;"), "https://fontawesome.com/") %>
       </li>
     </ul>
-    <%= link_to 'Copyright © LifeHack Tools！!All Rights Reserved.', root_url, style: "color: #fff;" %>
   </div>
 </footer>
 </body>

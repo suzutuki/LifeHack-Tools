@@ -16,8 +16,7 @@
 #  index_users_on_email  (email) UNIQUE
 #
 class User < ApplicationRecord
-  has_many :steps, inverse_of: :user
-  accepts_nested_attributes_for :steps
+  has_many :steps, dependent: :destroy
   has_many :tasks, dependent: :destroy
   has_many :macs, dependent: :destroy
   has_many :its, dependent: :destroy
