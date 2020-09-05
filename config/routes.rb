@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'swipe', to: 'lists#swipe'
   resources :lists
   resources :steps
   get 'example', to: 'steps#example'
