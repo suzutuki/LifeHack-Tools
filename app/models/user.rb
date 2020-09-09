@@ -16,10 +16,10 @@
 #  index_users_on_email  (email) UNIQUE
 #
 class User < ApplicationRecord
+  has_many :its, dependent: :destroy
   has_many :steps, dependent: :destroy
   has_many :tasks, dependent: :destroy
   has_many :macs, dependent: :destroy
-  has_many :its, dependent: :destroy
   has_many :lists, dependent: :destroy
   attr_accessor :remember_token
   before_save { email.downcase! }

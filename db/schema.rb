@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_02_194906) do
+ActiveRecord::Schema.define(version: 2020_09_06_005419) do
 
   create_table "behaviors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "name", null: false
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_09_02_194906) do
     t.text "disdain"
     t.text "boss"
     t.text "guidance"
+    t.integer "rate", default: 0
     t.index ["user_id"], name: "index_lists_on_user_id"
   end
 

@@ -14,19 +14,19 @@
   text-decoration: none;
   background: #fafafa;
   border-left: solid 6px #ff7c5c; /*左線*/
-  color: $color-nobleblack!important; /*文字色*/
+  color: $color-nobleblack !important; /*文字色*/
   font-weight: bold;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.29);
   margin-bottom: 10px;
-}
 
-.btn-sticky:active {
-  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
-  transform: translateY(2px);
-  border-color: #333333 !important;
-  border-left: solid 6px #ff7c5c !important;
-}
+  &:active {
+    box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+    transform: translateY(2px);
+    border-color: #333333 !important;
+    border-left: solid 6px #ff7c5c !important;
 
-.btn-sticky:hover {
-  color: #ff7c5c;
+    &:hover {
+      color: #ff7c5c;
+    }
+  }
 }

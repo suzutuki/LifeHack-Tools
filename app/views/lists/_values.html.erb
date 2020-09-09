@@ -8,11 +8,17 @@
   </tr>
   </thead>
   <tbody>
+  <%= form_with url:lists_path, method: :post, local: true do |f| %>
   <tr>
   <td>健康：健やかで体調よく生きる</td>
-    <%= f.radio_button :, "◎" %>
+    <%= f.radio_button :rate, :◎, label: "設定1", inline: true %>
+    <%= f.radio_button :rate, :○, label: "設定2", inline: true %>
+    <%= f.radio_button :rate, :△, label: "設定3", inline: true %>
   </tr>
   <tr>
+
+
+
   <td>開放：新たな体験、発想、選択肢に心を開く</td>
 
   <td>成長：変化と成長を維持する</td>
@@ -166,5 +172,6 @@
   <td>寛大：自分の物を他人にあたえる</td>
 
   </tr>
+  <% end %>
   </tbody>
 </table>
