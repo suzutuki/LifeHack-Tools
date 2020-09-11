@@ -1,3 +1,13 @@
 <% provide(:title, "edit") %>
 <h1 class="text-center">IF-ThenテクニックEdit</h1>
-<%= render 'form' %>
+<%= form_with model: current_user, url: it_path, method: :patch, local: true do |form| %>
+  <%= form.fields_for :its do |field| %>
+    <%= field.label :situation %>
+    <%= field.text_field :situation, class: 'form-field', required: true %>
+    <br>
+    <%= field.label :behavior %>
+    <%= field.text_field :behavior, class: 'form-field', required: true %>
+  <% end %>
+  <%= form.submit '一括編集'%>
+  <%= link_to '戻る', it_path(current_user) %>
+<% end %>

@@ -1,4 +1,37 @@
-<% @user.its.each do |it| %>
+<h1 class="text-center">If thenテクニック
+  <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-right fa-x faa-horizontal animated-hover fa-pull-right",
+                          style: "color: rgb(80,80,80);"), new_it_path) %></h1>
+<% if @user.its.empty? %>
+  <div class="panel-empty">
+    <h1><p class="text_color_grey">If thenテクニックとは？</p></h1>
+    <h2>
+      <div class="align-left">
+        <p>現時点でトップクラスの効果がある習慣化の方法です。</p>
+        <p>If:もし〇〇だったら→then:そのときに××する</p>
+        <p>例:外食する前にジムで運動するなど</p>
+        <p>やるべき行動(then)とそれを行う条件(If)をセットにするのがポイントです。</p>
+      </div>
+    </h2>
+    <%= link_to "具体的な例を見る", hint_path,
+                class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
+    <%= link_to "If thenテクニックを作る", new_it_path,
+                class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
+  </div>
+<% end %>
+<% if @user.its.any? %>
+  <div class="wrapper">
+    <div class="column">
+      <h1>IF
+        <div class="color-grey">(〇〇という状況の時)→</div>
+      </h1>
+    </div>
+    <div class="column">
+      <h1>THEN
+        <div class="color-grey">(〇〇という行動をする)</div>
+      </h1>
+    </div>
+  </div>
+  <% @user.its.each do |it| %>
     <div class="wrapper">
       <div class="column">
         <h1><%= simple_format(it.situation) %></h1>
@@ -7,8 +40,9 @@
         <h1><%= simple_format(it.behavior) %></h1>
       </div>
     </div>
+    <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal
+ animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), it_path(it.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
   <% end %>
-<%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal
- animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), it_path(@its.ids), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
+<% end %>
 <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover
- fa-pull-right", style: "color: rgb(80,80,80);"), edit_it_path(@its.ids)) %>
+ fa-pull-right", style: "color: rgb(80,80,80);"), edit_it_path ) %>
