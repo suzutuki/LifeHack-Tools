@@ -17,6 +17,7 @@
 #
 class User < ApplicationRecord
   has_many :its, dependent: :destroy
+  accepts_nested_attributes_for :its
   has_many :steps, dependent: :destroy
   has_many :tasks, dependent: :destroy
   has_many :macs, dependent: :destroy
