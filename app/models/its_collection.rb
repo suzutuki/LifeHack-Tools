@@ -5,8 +5,8 @@ class ItCollection
   extend ActiveModel::Translation
   include ActiveModel::AttributeMethods
   include ActiveModel::Validations
-  IT_NUM = 3 # 同時にitを作成する数
   attr_accessor :collection
+  IT_NUM = 3 # 同時にitを作成する数
 
   # 初期化メソッド
   def initialize(current_user, attributes = [])

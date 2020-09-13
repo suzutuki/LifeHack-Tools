@@ -10,13 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_06_005419) do
-
-  create_table "behaviors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 2020_09_13_121010) do
 
   create_table "its", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -33,12 +27,12 @@ ActiveRecord::Schema.define(version: 2020_09_06_005419) do
     t.boolean "done"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "rate", default: 0
     t.text "event"
     t.text "respect"
     t.text "disdain"
     t.text "boss"
     t.text "guidance"
-    t.integer "rate", default: 0
     t.index ["user_id"], name: "index_lists_on_user_id"
   end
 
@@ -50,15 +44,6 @@ ActiveRecord::Schema.define(version: 2020_09_06_005419) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_macs_on_user_id"
-  end
-
-  create_table "situations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "behavior_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["behavior_id"], name: "index_situations_on_behavior_id"
-    t.index ["user_id"], name: "index_situations_on_user_id"
   end
 
   create_table "steps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -98,8 +83,6 @@ ActiveRecord::Schema.define(version: 2020_09_06_005419) do
   add_foreign_key "its", "users"
   add_foreign_key "lists", "users"
   add_foreign_key "macs", "users"
-  add_foreign_key "situations", "behaviors"
-  add_foreign_key "situations", "users"
   add_foreign_key "steps", "users"
   add_foreign_key "tasks", "users"
 end

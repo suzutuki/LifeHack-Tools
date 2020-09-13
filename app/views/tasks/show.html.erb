@@ -15,11 +15,12 @@
       <div class="center-position"><%= link_to "ToDoリストを作成する", new_task_path,
                                                class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
       </div>
+    </div>
   <% end %>
   <% if @user.tasks.any? %>
     <c class="btn-sticky">更新・作成日時を表示/非表示</c>
     <b class="btn-sticky">優先順位1のみ表示</b>
-    <%= link_to "アイビー・リー・メソッド", ivy_path, class: "btn-sticky-blue" %>
+    <%= link_to "アイビー・リー・メソッド", tasks_path, class: "btn-sticky-blue" %>
     <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-double-right fa-3x
                                 faa-horizontal animated-hover fa-pull-right",
                             style: "color: rgb(80,80,80);"), new_task_path) %>
@@ -46,3 +47,4 @@
     <%= render 'shared/script' %>
     </div>
   <% end %>
+  </div>

@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :set_target_task, only: [:edit, :update]
 
-  def ivy
+  def index
   end
 
   def new
@@ -65,7 +65,7 @@ class TasksController < ApplicationController
   def task_params
     params.require(:task).permit(:title, :content, :priority)
   end
-
+  # 現在のユーザーが削除対象のtaskを保有しているかどうかを確認します。
   def correct_user
     @task = current_user.tasks.find_by(id: params[:id])
     redirect_to root_url if @task.nil?

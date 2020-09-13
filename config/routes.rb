@@ -2,17 +2,25 @@ Rails.application.routes.draw do
 
   get 'swipe', to: 'lists#swipe'
   resources :lists
-  resources :steps
+  resources :steps do
+    collection do
+      delete 'destroy_all'
+    end
+  end
   get 'example', to: 'steps#example'
   root 'users#index'
-  resources :its
+  resources :its do
+    collection do
+      delete 'destroy_all'
+    end
+  end
   get 'hint', to: 'its#hint'
   resources :macs, except: %i(index)
   get 'details', to: 'macs#details'
-  resources :tasks, except: %i(index)
+  resources :tasks
   resources :users
   get 'big_area', to: 'users#big_area'
-  get 'ivy', to: 'tasks#ivy'
+  get 'index', to: 'tasks#index'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'

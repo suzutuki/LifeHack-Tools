@@ -5,14 +5,13 @@ class StepCollection
   extend ActiveModel::Translation
   include ActiveModel::AttributeMethods
   include ActiveModel::Validations
-  STEP_NUM = 3 # 同時にstepを作成する数
   attr_accessor :collection
+  STEP_NUM = 5 # 同時にstepを作成する数
 
   # 初期化メソッド
   def initialize(current_user, attributes = [])
     if attributes.present?
       self.collection = attributes.map do |value|
-        # 修正
         Step.new(
           user_id: current_user.id,
           step_name: value['step_name']

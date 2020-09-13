@@ -29,17 +29,15 @@
     </div>
   </div>
   <% @user.steps.each do |s| %>
-    <section class="panel-step">
+    <div class="panel-step">
       <div class="goal">
         <h1 class="text-center"><%= s.goal %></h1>
-        <h1 class="text-center"><%= s.step_name %></h1>
-        <h1 class="text-center">↓</h1>
+        <h1 class="text-center"><%= s.step_name %>↓</h1>
       </div>
       <div class="flex-container">
-        <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), edit_step_path(s.id)) %>
         <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), step_path(s.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
       </div>
-    </section>
+    </div>
   <% end %>
 <% end %>
 <%= render 'shared/script' %>
