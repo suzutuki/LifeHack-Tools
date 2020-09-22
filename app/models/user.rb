@@ -11,15 +11,13 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
-# Indexes
-#
-#  index_users_on_email  (email) UNIQUE
-#
 class User < ApplicationRecord
   has_many :its, dependent: :destroy
   accepts_nested_attributes_for :its, allow_destroy: true
   has_many :steps, dependent: :destroy
+  accepts_nested_attributes_for :steps, allow_destroy: true
   has_many :tasks, dependent: :destroy
+  accepts_nested_attributes_for :tasks, allow_destroy: true
   has_many :macs, dependent: :destroy
   has_many :lists, dependent: :destroy
   attr_accessor :remember_token

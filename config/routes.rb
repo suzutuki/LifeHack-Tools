@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-
+  get 'simple', to: 'steps#simple'
+  get 'sample', to: 'lists#sample'
   get 'swipe', to: 'lists#swipe'
   resources :lists
   resources :steps do
@@ -25,4 +26,5 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   post '/tasks/:id/toggle' => 'tasks#toggle'
+  post '/steps/:id/toggle' => 'steps#toggle'
 end

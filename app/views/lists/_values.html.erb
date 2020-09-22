@@ -1,177 +1,417 @@
-<table>
-  <thead>
-  <tr>
-    <th>価値観</th>
-    <th>◎</th>
-    <th>○</th>
-    <th>△</th>
-  </tr>
-  </thead>
-  <tbody>
-  <%= form_with url:lists_path, method: :post, local: true do |f| %>
-  <tr>
-  <td>健康：健やかで体調よく生きる</td>
-    <%= f.radio_button :rate, :◎, label: "設定1", inline: true %>
-    <%= f.radio_button :rate, :○, label: "設定2", inline: true %>
-    <%= f.radio_button :rate, :△, label: "設定3", inline: true %>
-  </tr>
-  <tr>
-
-
-
-  <td>開放：新たな体験、発想、選択肢に心を開く</td>
-
-  <td>成長：変化と成長を維持する</td>
-
-  <td>知識：価値ある知識を学ぶ、または生み出す</td>
-
-  <td>美的：身のまわりの美しいものを味わう</td>
-
-  <td>快適：喜びに満ちた快適な人生を送る</td>
-
-  <td>合理：理性と論理に従う</td>
-
-  <td>目的：人生の意味と方向性を定める</td>
-
-  <td>寛容：自分と違う存在を尊重して受け入れる</td>
-
-  <td>自制：自分の行動を自分でコントロールする</td>
-
-  <td>孤独：他人から離れて１人でいられる時間と空間を持つ</td>
-
-  <td>真実：自分が正しいと思うとおりに行動する</td>
-
-  <td>現実：現実的、実践的にふるまう</td>
-
-  <td>体力：丈夫で強い身体を保つ</td>
-
-  <td>冒険：新しくてワクワクする体験をする</td>
-
-  <td>精神：精神的に成長し成熟する</td>
-
-  <td>現在：いまの瞬間に集中して生きる</td>
-
-  <td>笑い：人生や世界のユーモラスな側面を見る</td>
-
-  <td>独立：他者に依存しないで生きる</td>
-
-  <td>勤勉：自分の仕事に一生懸命取り組む</td>
-
-  <td>平安：自分の内面の平和を維持する</td>
-
-  <td>余暇：自分の時間をリラックスして楽しむ</td>
-
-  <td>快楽：良い気分になること</td>
-
-  <td>自治：人まかせにしないで自分で決める</td>
-
-  <td>変化：変化に富んだバラエティ豊かな人生を送る</td>
-
-  <td>許し：他人を許しながら生きる</td>
-
-  <td>愉楽：遊んで楽しむこと</td>
-
-  <td>適度：過剰を避けてほどよいところを探す</td>
-
-  <td>挑戦：難しい仕事や問題に取り組む</td>
-
-  <td>単婚：唯一の愛し合える相手を見つける</td>
-
-  <td>反抗：権威やルールに疑問を持って挑む</td>
-
-  <td>寵愛：親しい人から愛される</td>
-
-  <td>熟達：いつもの仕事・作業に習熟する</td>
-
-  <td>慈愛：他者を心配して助ける</td>
-
-  <td>信頼：信用があって頼れる人間になる</td>
-
-  <td>安全：安心感を得る</td>
-
-  <td>受諾：ありのままの自分を受け入れる</td>
-
-  <td>自尊：自分に自信を持つ</td>
-
-  <td>自知：自分について深い理解を持つ</td>
-
-  <td>献身：誰かに奉仕する</td>
-
-  <td>単純：シンプルでミニマルな暮らしをする</td>
-
-  <td>安定：いつも一定して変化のない人生を送る</td>
-
-  <td>伝統：過去から受け継がれてきたパターンを尊重する</td>
-
-  <td>受容：ありのままの自分を受け入れてもらう</td>
-
-  <td>正確：自分の意見や信念正しく伝える</td>
-
-  <td>達成：なにか重要なことを達成する</td>
-
-  <td>性愛：活動的で満足のいく性生活を送る</td>
-
-  <td>責任：責任をもって行動する</td>
-
-  <td>危険：リスクを取ってチャンスを手に入れる</td>
-
-  <td>恋愛：興奮して燃えるような恋をする</td>
-
-  <td>人気：多くの人に好かれる</td>
-
-  <td>権力：他人をコントロールする</td>
-
-  <td>秩序：整理されて秩序のある人生を送る</td>
-
-  <td>情熱：なんらかの発想、活動、人々に深い感情を抱く</td>
-
-  <td>配慮：他人を心づかって世話すること</td>
-
-  <td>愛慕：誰かに愛をあたえる</td>
-
-  <td>親密：プライベートな体験を他人とシェアする</td>
-
-  <td>正義：すべての人を公平に扱う</td>
-
-  <td>信教：自分を超えた存在の意思を考える</td>
-
-  <td>有益：他人の役に立つこと</td>
-
-  <td>正直：ウソをつかず正直に生きる</td>
-
-  <td>希望：ポジティブで楽観的に生きる</td>
-
-  <td>謙遜：地味で控えめに生きる</td>
-
-  <td>義務：自分の義務と責任を果たす</td>
-
-  <td>調和：周囲の環境と調和しながら生きる</td>
-
-  <td>興奮：スリルと刺激に満ちた人生を送る</td>
-
-  <td>貞節：パートナーにウソをつかず誠実に生きる</td>
-
-  <td>名声：有名になって存在を認められる</td>
-
-  <td>家族：幸福で愛に満ちた家庭を作る</td>
-
-  <td>魅力：身体的な魅力を保つ</td>
-
-  <td>権威：他者に対して責任を持って指導する</td>
-
-  <td>貢献：世界の役に立つことをする</td>
-
-  <td>協調：他者と強力して何かをする</td>
-
-  <td>礼儀：他者に対して誠実で礼儀正しく接する</td>
-
-  <td>創造：新しくて斬新なアイデアを生む</td>
-
-  <td>友情：親密で助け合える友人を作る</td>
-
-  <td>寛大：自分の物を他人にあたえる</td>
-
-  </tr>
-  <% end %>
-  </tbody>
-</table>
+<div class="flex-container">
+  <table>
+    <tr>
+      <th class="text-center">価値観</th>
+      <th>◎(超重要)</th>
+      <th>○(重要)</th>
+      <th>△(普通)</th>
+    </tr>
+    <%= form_with model: @lists, url: lists_path, method: :post, local: true do |f| %>
+      <% List.rates.each do |rate| %>
+        <tr>
+          <td>健康：健やかで体調よく生きる</td>
+          <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <tr>
+          <td>開放：新たな体験、発想、選択肢に心を開く</td>
+          <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <tr>
+          <td>成長：変化と成長を維持する</td>
+          <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <tr>
+          <td>知識：価値ある知識を学ぶ、または生み出す</td>
+          <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <tr>
+          <td>美的：身のまわりの美しいものを味わう</td>
+          <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <tr>
+          <td>快適：喜びに満ちた快適な人生を送る</td>
+          <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <tr>
+          <td>合理：理性と論理に従う</td>
+          <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <tr>
+          <td>目的：人生の意味と方向性を定める</td>
+          <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <tr>
+          <td>寛容：自分と違う存在を尊重して受け入れる</td>
+          <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <tr>
+          <td>自制：自分の行動を自分でコントロールする</td>
+          <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <tr>
+          <td>孤独：他人から離れて１人でいられる時間と空間を持つ</td>
+          <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <tr>
+          <td>真実：自分が正しいと思うとおりに行動する</td>
+          <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <tr>
+          <td>現実：現実的、実践的にふるまう</td>
+          <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <tr>
+          <td>体力：丈夫で強い身体を保つ</td>
+          <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <tr>
+          <td>冒険：新しくてワクワクする体験をする</td>
+          <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <tr>
+          <td>精神：精神的に成長し成熟する</td>
+          <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+          <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>現在：いまの瞬間に集中して生きる</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>笑い：人生や世界のユーモラスな側面を見る</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>独立：他者に依存しないで生きる</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>勤勉：自分の仕事に一生懸命取り組む</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>平安：自分の内面の平和を維持する</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>余暇：自分の時間をリラックスして楽しむ</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>快楽：良い気分になること</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>自治：人まかせにしないで自分で決める</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>変化：変化に富んだバラエティ豊かな人生を送る</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>許し：他人を許しながら生きる</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>愉楽：遊んで楽しむこと</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>適度：過剰を避けてほどよいところを探す</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>挑戦：難しい仕事や問題に取り組む</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>単婚：唯一の愛し合える相手を見つける</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>反抗：権威やルールに疑問を持って挑む</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>寵愛：親しい人から愛される</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>熟達：いつもの仕事・作業に習熟する</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>慈愛：他者を心配して助ける</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>信頼：信用があって頼れる人間になる</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>安全：安心感を得る</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>受諾：ありのままの自分を受け入れる</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>自尊：自分に自信を持つ</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>自知：自分について深い理解を持つ</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>献身：誰かに奉仕する</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>単純：シンプルでミニマルな暮らしをする</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>安定：いつも一定して変化のない人生を送る</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>伝統：過去から受け継がれてきたパターンを尊重する</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>受容：ありのままの自分を受け入れてもらう</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>正確：自分の意見や信念正しく伝える</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>達成：なにか重要なことを達成する</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>性愛：活動的で満足のいく性生活を送る</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>責任：責任をもって行動する</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>危険：リスクを取ってチャンスを手に入れる</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>恋愛：興奮して燃えるような恋をする</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>人気：多くの人に好かれる</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>権力：他人をコントロールする</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>秩序：整理されて秩序のある人生を送る</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>情熱：なんらかの発想、活動、人々に深い感情を抱く</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>配慮：他人を心づかって世話すること</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>愛慕：誰かに愛をあたえる</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>親密：プライベートな体験を他人とシェアする</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>正義：すべての人を公平に扱う</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>信教：自分を超えた存在の意思を考える</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>有益：他人の役に立つこと</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>正直：ウソをつかず正直に生きる</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>希望：ポジティブで楽観的に生きる</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>謙遜：地味で控えめに生きる</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>義務：自分の義務と責任を果たす</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>調和：周囲の環境と調和しながら生きる</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>興奮：スリルと刺激に満ちた人生を送る</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>貞節：パートナーにウソをつかず誠実に生きる</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>名声：有名になって存在を認められる</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>家族：幸福で愛に満ちた家庭を作る</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>魅力：身体的な魅力を保つ</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>権威：他者に対して責任を持って指導する</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>貢献：世界の役に立つことをする</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>協調：他者と強力して何かをする</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>礼儀：他者に対して誠実で礼儀正しく接する</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>創造：新しくて斬新なアイデアを生む</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>友情：親密で助け合える友人を作る</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        <td>寛大：自分の物を他人にあたえる</td>
+        <td> <%= f.radio_button :rate, :important, label: "設定1", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :good, label: "設定2", class: "position" %></td>
+        <td> <%= f.radio_button :rate, :normal, label: "設定3", class: "position" %></td>
+        </tr>
+        </tr>
+      <% end %>
+    <% end %>
+    </tbody>
+  </table>
+</div>

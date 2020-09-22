@@ -9,8 +9,8 @@
           <%= f.password_field :password, class: 'form-field', placeholder: 'password' %>
         </div>
         <%= f.label :次回ログインを省略する, class: "checkbox inline" do %>
-          <%= f.check_box :remember_me %>
-          <span>次回ログインを省略する</span>
+          <%= f.check_box :remember_me, class: "remember_me"%>
+          <span class="check-right">次回ログインを省略する</span>
         <% end %>
         <%= f.submit "Login", class: "btn btn-submit" %>
       <% end %>

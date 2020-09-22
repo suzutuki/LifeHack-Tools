@@ -41,7 +41,7 @@
         <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), mac_path(mac.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
       </div>
     </section>
-    <span class="btn-sticky">すべての更新、作成日時を表示,非表示</span>
+    <c class="btn-sticky">更新・作成日時を表示/非表示</c>
   <% end %>
 <% end %>
 <%= render 'shared/script' %>

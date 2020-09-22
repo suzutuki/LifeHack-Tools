@@ -5,7 +5,7 @@ class CreateTasks < ActiveRecord::Migration[5.1]
       t.boolean :done
       t.text :content
       t.references :user, foreign_key: true
-      
+      t.integer :priority
       t.timestamps
     end
     add_index :tasks, [:user_id, :created_at]

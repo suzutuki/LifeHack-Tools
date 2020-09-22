@@ -6,7 +6,7 @@ class ItCollection
   include ActiveModel::AttributeMethods
   include ActiveModel::Validations
   attr_accessor :collection
-  IT_NUM = 3 # 同時にitを作成する数
+  IT_NUM = 5 # 同時にitを作成する数
 
   # 初期化メソッド
   def initialize(current_user, attributes = [])

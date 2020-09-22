@@ -20,5 +20,11 @@
         });
     });
 </script>
-
+<script>
+    $(function () {
+        $("input[type=checkbox]").click(function () {
+            $.post('/steps/' + $(this).data('id') + '/toggle');
+        });
+    });
+</script>
 

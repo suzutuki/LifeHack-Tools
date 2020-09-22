@@ -12,12 +12,15 @@
     </div>
   </h2>
   <div class="flex-container">
-    <%= link_to "具体的な例を見る", example_path,
+    <%= link_to "具体的な例を見る",  example_path,
                 class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
     <%= link_to "グラフを見る(ビッグエリア)", steps_path,
                 class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
     <%= link_to "実際に作ってみる", new_step_path,
                 class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
+    <%= link_to "シンプル", simple_path,
+                class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
+
   </div>
 <% end %>
 <% if @user.steps.any? %>
@@ -32,18 +35,19 @@
     <div class="panel-step">
       <div class="goal">
         <h1 class="text-center"><%= s.goal %></h1>
-        <h1 class="text-center"><%= s.step_name %>↓</h1>
+        <h1 class="text-center"><%= s.name %>↓</h1>
       </div>
       <div class="flex-container">
-        <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), step_path(s.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
+        <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right",
+                                style: "color: rgb(80,80,80);"), step_path(s.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
       </div>
     </div>
   <% end %>
+  <%= link_to "具体的な例を見る", example_path(current_user),
+              class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
+  <%= link_to "グラフを見る(ビッグエリア)", steps_path,
+              class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
+  <%= link_to "実際に作ってみる", new_step_path,
+              class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
 <% end %>
 <%= render 'shared/script' %>
-<%= link_to "具体的な例を見る", example_path,
-            class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
-<%= link_to "グラフを見る(ビッグエリア)", steps_path,
-            class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
-<%= link_to "実際に作ってみる", new_step_path,
-            class: "btn-sticky", style: "font-size: 28px; color: #333;" %>

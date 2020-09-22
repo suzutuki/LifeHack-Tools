@@ -19,6 +19,7 @@ gem 'rails-i18n', '~> 5.1'
 gem 'jbuilder', '~> 2.5'
 gem 'chart-js-rails', '~> 0.1.4'
 gem 'gon', '~> 6.2.0'
+gem 'flatpickr'
 # gem 'redis', '~> 4.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

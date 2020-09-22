@@ -2,26 +2,35 @@
 .checkbox {
   margin-top: -10px;
   margin-bottom: 10px;
-
-  span {
-    margin-left: 20px;
-    font-weight: normal;
-  }
 }
 
 input[type="checkbox"]{
   margin: 8px 0 0;
 }
 
-input, textarea, select, .uneditable-input {
-  border: 2px solid #bbb;
-  width: 12%;
+.remember_me {
+  width: 12%!important;
+}
+
+.check-right {
+  margin-left: 20px;
+  font-weight: normal;
 }
 
 //Todoリストのチェックボックス
 ul input {
   width: 5%;
   transform: scale(3);
+}
+
+.steps_box {
+    position: relative;
+    top: -2;
+    left: 8px;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transform: scale(4);
 }
 
 input {

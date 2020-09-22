@@ -1,28 +1,28 @@
 /* Fires these events on list elements:
 
-     - slip:swipe
-        スワイプが行われた後、指を離したときに、要素が元の位置に戻ってアニメーションします。
-        event.preventDefault()を実行すると元の位置に戻ります。
-        それ以外の場合は、リストから外れてアニメーションし、display:noneに設定されます。
+   - slip:swipe
+      スワイプが行われた後、指を離したときに、要素が元の位置に戻ってアニメーションします。
+      event.preventDefault()を実行すると元の位置に戻ります。
+      それ以外の場合は、リストから外れてアニメーションし、display:noneに設定されます。
 
-    • slip:beforeswipe
-        最初のスワイプ移動が始まる前に発生します。
-        event.preventDefault()を実行すると、要素は全く動きません。
+   • slip:beforeswipe
+      最初のスワイプ移動が始まる前に発生します。
+      event.preventDefault()を実行すると、要素は全く動きません。
 
-    • slip:cancelswipe
-        ユーザーがスワイプを開始した後に発生しますが、実際には左右にスワイプせずに離脱させます。
+   • slip:cancelswipe
+      ユーザーがスワイプを開始した後に発生しますが、実際には左右にスワイプせずに離脱させます。
 
-    • slip:animateswipe
-        ユーザーが要素から手を離す前に、スワイプ中に発火されます。
-        event.detail.xにはx方向の移動量が含まれます。
+   • slip:animateswipe
+      ユーザーが要素から手を離す前に、スワイプ中に発火されます。
+      event.detail.xにはx方向の移動量が含まれます。
 
-    • slip:reorder
-       要素が新しい場所にドロップされました。 event.detailには以下のような内容が含まれています。
-            - insertBefore。要素がドロップされた前のDOMノード(nullはリストの末尾)。
-            node.insertBefore() と一緒に使用します。
-            - spliceIndex。現在の要素が削除された前の要素のインデックス。
-             リストが何らかの配列内のオブジェクトを反映している場合に、Array.splice()と一緒に使用します。
-            - originalIndex。並び替えられる前の要素の元のインデックス。
+   • slip:reorder
+      要素が新しい場所にドロップされました。 event.detailには以下のような内容が含まれています。
+        - insertBefore。要素がドロップされた前のDOMノード(nullはリストの末尾)。
+        node.insertBefore() と一緒に使用します。
+        - spliceIndex。現在の要素が削除された前の要素のインデックス。
+          リストが何らかの配列内のオブジェクトを反映している場合に、Array.splice()と一緒に使用します。
+        - originalIndex。並び替えられる前の要素の元のインデックス。
 
     • slip:beforereorder
         並び替えが開始されると動き出します。
@@ -36,15 +36,13 @@
        要素がスワイプ/順序付けされずにタップされた場合。event.target` をチェックすることで、
        その動作をドラッグハンドルに限定することができます。
 
-Usage:
-
+使い方:
     CSS:
-         リスト要素には `user-select:none` (と WebKit prefixes, sigh) を設定する必要があります。
-        そうしないとiOSのテキスト選択が止まらなくなったり、グリッチしたりして邪魔になってしまいます。
+       リスト要素には `user-select:none` (と WebKit prefixes, sigh) を設定する必要があります。
+       そうしないとiOSのテキスト選択が止まらなくなったり、グリッチしたりして邪魔になってしまいます。
 
-        コンテナやボディの上で `overflow-x: hidden` を設定しておくと、水平スクロールバーを防ぐことができます。
-        要素がリストからスワイプされたときに表示されるようになりました。
-
+       コンテナやボディの上で `overflow-x: hidden` を設定しておくと、水平スクロールバーを防ぐことができます。
+       要素がリストからスワイプされたときに表示されるようになりました。
 
     var list = document.querySelector('ul#slippylist');
     new Slip(list);
