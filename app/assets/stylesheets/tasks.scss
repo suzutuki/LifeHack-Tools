@@ -21,3 +21,10 @@ ul li h3 {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.29);
   margin-bottom: 10px;
 }
+
+//Todoリストのチェックボックス
+.tasks-checkbox {
+  width: 5%;
+  transform: scale(3);
+  margin: 8px 0 0 -30px!important;
+}

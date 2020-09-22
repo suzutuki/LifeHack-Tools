@@ -4,10 +4,6 @@
   margin-bottom: 10px;
 }
 
-input[type="checkbox"]{
-  margin: 8px 0 0;
-}
-
 .remember_me {
   width: 12%!important;
 }
@@ -17,20 +13,14 @@ input[type="checkbox"]{
   font-weight: normal;
 }
 
-//Todoリストのチェックボックス
-ul input {
-  width: 5%;
-  transform: scale(3);
-}
-
 .steps_box {
     position: relative;
-    top: -2;
-    left: 8px;
+    top: 0;
+    left: 10px;
     right: 0;
     bottom: 0;
     margin: auto;
-    transform: scale(4);
+    transform: scale(3);
 }
 
 input {

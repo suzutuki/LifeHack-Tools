@@ -27,4 +27,29 @@
         });
     });
 </script>
+<script>
+    // 本来 Javascript をここに書くべきではありませんが，プログラムの移動方法は講義内で解説します
+
+    const today = new Date(new Date().setHours(0, 0, 0, 0))
+    const a_month_ago = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate())
+
+    // ● カレンダー
+
+    // 選択できない日付データ（自由に変更できます。）
+    const disable_dates = ['']
+
+    // カレンダーの日本語化
+    flatpickr.localize(flatpickr.l10ns.ja);
+
+    // カレンダーの表示
+    flatpickr('#date-form', {
+        // スマートフォンでもカレンダーに「flatpickr」を使用
+        disableMobile: true,
+        // 1ヶ月前から本日まで選択可
+        minDate: a_month_ago,
+        maxDate: today,
+        // 選択できない日付
+        disable: disable_dates
+    });
+</script>
 
