@@ -14,7 +14,7 @@ class StepCollection
       self.collection = attributes.map do |value|
         Step.new(
           user_id: current_user.id,
-          name: value['name']
+          name: value['name'],
         )
       end
     else

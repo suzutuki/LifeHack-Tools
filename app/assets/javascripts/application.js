@@ -22,7 +22,34 @@
 //= require bootstrap
 //= require_tree .
 
-$(function(){
-  setTimeout("$('.time-limit').fadeOut('slow')", 2000) 
+// ボタンが押されたら優先順位,1位以外を非表示にする。not-priority-1がターゲット
+$(function () {
+    $("b").click(function () {
+        $(".not-priority-1").toggle("slow");
+    });
+});
+// ボタンが押されたら更新・作成日時を非表示にする。h3がターゲット
+$(function () {
+    $("c").click(function () {
+        $("h3").toggle("slow");
+    });
+});
+// フラッシュメッセージのアニメーション
+$(function () {
+    setTimeout("$('.time-limit').fadeOut('slow')", 2000)
+});
+
+// ToDoリストでチェックボタンを動的(チェックされた、またはされてない状態を保存)にする
+$(function () {
+    $('input:checkbox[name="task"]').click(function () {
+        $.post('/tasks/' + $(this).data('id') + '/toggle');
+    });
+});
+
+// スモールステップでチェックボタンを動的(チェックされた、またはされてない状態を保存)にする
+$(function () {
+    $("input[type=checkbox]").click(function () {
+        $.post('/steps/' + $(this).data('id') + '/toggle');
+    });
 });
 

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
       delete 'destroy_all'
     end
   end
+  post 'goal_create', to: 'steps#goal_create'
+  get 'goal', to: 'steps#goal'
   get 'example', to: 'steps#example'
   root 'users#index'
   resources :its do

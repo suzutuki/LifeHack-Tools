@@ -1,32 +1,3 @@
-<!--ボタンが押されたら更新・作成日時を非表示にする。h3がターゲット-->
-<script>
-    $("c").click(function () {
-        $("h3").toggle("slow");
-    });
-</script>
-
-<!--ボタンが押されたら優先順位,1位以外を非表示にする。not-priority-1がターゲット-->
-<script>
-    $("b").click(function () {
-        $(".not-priority-1").toggle("slow");
-    });
-</script>
-
-<!--Ajaxでチェックボタンを動的にする-->
-<script>
-    $(function () {
-        $("input[type=checkbox]").click(function () {
-            $.post('/tasks/' + $(this).data('id') + '/toggle');
-        });
-    });
-</script>
-<script>
-    $(function () {
-        $("input[type=checkbox]").click(function () {
-            $.post('/steps/' + $(this).data('id') + '/toggle');
-        });
-    });
-</script>
 <script>
     // 本来 Javascript をここに書くべきではありませんが，プログラムの移動方法は講義内で解説します
 
