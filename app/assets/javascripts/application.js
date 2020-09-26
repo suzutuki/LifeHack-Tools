@@ -24,14 +24,14 @@
 
 // ボタンが押されたら優先順位,1位以外を非表示にする。not-priority-1がターゲット
 $(function () {
-    $("b").click(function () {
+    $("trigger_priority").click(function () {
         $(".not-priority-1").toggle("slow");
     });
 });
-// ボタンが押されたら更新・作成日時を非表示にする。h3がターゲット
+// ボタンが押されたら更新・作成日時を非表示にする。tasks-targetがターゲット
 $(function () {
-    $("c").click(function () {
-        $("h3").toggle("slow");
+    $("trigger_time").click(function () {
+        $(".tasks-time").toggle("slow");
     });
 });
 // フラッシュメッセージのアニメーション

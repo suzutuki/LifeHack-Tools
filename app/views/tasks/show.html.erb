@@ -19,8 +19,8 @@
     </div>
   <% end %>
   <% if @user.tasks.any? %>
-    <c class="btn-sticky">更新・作成日時を表示/非表示</c>
-    <b class="btn-sticky">優先順位1のみ表示</b>
+    <trigger_time class="btn-sticky">更新・作成日時を表示/非表示</trigger_time>
+    <trigger_priority class="btn-sticky">優先順位1のみ表示</trigger_priority>
     <%= link_to "アイビー・リー・メソッド", tasks_path, class: "btn-sticky-blue" %>
     <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-double-right fa-3x
                                 faa-horizontal animated-hover fa-pull-right",
@@ -33,8 +33,8 @@
             <h2>ToDo:<%= task.title %></h2>
             <h2>メモ:<%= task.content %></h2>
             <h2>優先順位:<%= task.priority %></h2>
-            <li><h3>更新日時:<%= task.updated_at.to_s(:datetime_jp) %></h3>
-              <h3>作成日時:<%= task.created_at.to_s(:datetime_jp) %></h3></li>
+            <li><h3 class="tasks-time">更新日時:<%= task.updated_at.to_s(:datetime_jp) %>
+              作成日時:<%= task.created_at.to_s(:datetime_jp) %></h3></li>
           </ul>
         </div>
         <div class="panel-right">
@@ -42,9 +42,11 @@
           <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), edit_task_path(task.id)) %>
       </section>
     <% end %>
-    <li class="active">
-      <%= paginate @tasks %>
-    </li>
+    <%= paginate @tasks %>
+    <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover
+ fa-pull-right", style: "color: rgb(80,80,80);"), edit_it_path ) %>
+    <%= link_to(content_tag(:i, '', class: "fas fa-bomb fa-3x faa-horizontal
+ animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), destroy_all_tasks_path, method: :delete, data: {confirm: "全て削除します。本当に削除しますか？"}) %><li class="active">
     </div>
   <% end %>
   </div>

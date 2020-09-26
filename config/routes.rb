@@ -20,9 +20,12 @@ Rails.application.routes.draw do
   get 'hint', to: 'its#hint'
   resources :macs, except: %i(index)
   get 'details', to: 'macs#details'
-  resources :tasks
+  resources :tasks do
+    collection do
+      delete 'destroy_all'
+    end
+  end
   resources :users
-  get 'big_area', to: 'users#big_area'
   get 'index', to: 'tasks#index'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

@@ -1,7 +1,7 @@
 <h1 class="text-center">If thenテクニック
   <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-right fa-x faa-horizontal animated-hover fa-pull-right",
                           style: "color: rgb(80,80,80);"), new_it_path) %></h1>
-  <% if @user.its.empty? %>
+<% if @user.its.empty? %>
   <div class="panel-empty">
     <h1><p class="text_color_grey">If thenテクニックとは？</p></h1>
     <h2>
@@ -44,7 +44,7 @@
  animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), it_path(it.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
   <% end %>
   <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover
- fa-pull-right", style: "color: rgb(80,80,80);"), edit_it_path ) %>
+ fa-pull-right", style: "color: rgb(80,80,80);"), edit_it_path) %>
   <%= link_to(content_tag(:i, '', class: "fas fa-bomb fa-3x faa-horizontal
  animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), destroy_all_its_path, method: :delete, data: {confirm: "全て削除します。本当に削除しますか？"}) %>
 <% end %>

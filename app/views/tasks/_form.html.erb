@@ -1,38 +1,23 @@
-<div class=container>
-  <div class=prev-left>
+<div class="it-width">
+  <div class="prev-left">
     <%= link_to(content_tag(:i, 'Return', class: "fas fa-angle-left fa-3x
       faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), task_path(current_user)) %>
+    <%= link_to(content_tag(:i, '', class: "fas fa-question fa-3x
+                                faa-vertical animated-hover fa-pull-right",
+                            style: "color: rgb(80,80,80);"), hint_path) %>
   </div>
-  <div class="new-todo-list-form">
-    <%= form_with model: @task, local: true do |f| %>
-      <div id="new-list">
-        <p>
-          <%= f.label :"タイトル : あなたが達成したいことを書いてください", class: 'label' %><br>
-          <%= f.text_field :title, class: 'form-field' %>
-        </p>
-        <% if @task.errors.include?(:title) %>
-          <div class="alert alert-danger">
-            <%= @task.errors.messages[:title][0] %>
-          </div>
-        <% end %>
-        <p>
-          <%= f.label :"優先順位 :  優先順位の高い順に自動で並び替わります。", class: 'label' %>
-          <%= f.select :priority, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], {include_blank: '選択してください'}, {class: 'form-box', required: true} %>
-        </p>
-        <% if @task.errors.include?(:priority) %>
-          <div class="alert alert-danger">
-            <%= @task.errors.messages[:priority][0] %>
-          </div>
-        <% end %>
-        <%= f.label :"メモ (50文字まで登録できます)", class: 'label' %>
-        <%= f.text_area :content, class: 'form-area' %>
-        <% if @task.errors.include?(:content) %>
-          <div class="alert alert-danger">
-            <%= @task.errors.messages[:content][0] %>
-          </div>
-        <% end %>
-        <p><%= f.submit "登録", class: "btn-submit" %></p>
+  <%= form_with model: @tasks, url: tasks_path, local: true do |form| %>
+    <% @tasks.collection.each do |task| %>
+      <%= fields_for 'tasks[]', task do |field| %>
+        <%= field.label :"タイトル : あなたが達成したいことを書いてください", class: 'label' %><br>
+        <%= field.text_field :title, class: 'form-field', required: true %>
+        <%= field.label :"優先順位 :  優先順位の高い順に自動で並び替わります。", class: 'label' %>
+        <%= field.select :priority, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], {include_blank: '選択してください'}, {class: 'form-box', required: true} %>
+        <%= field.label :"メモ (50文字まで登録できます)", class: 'label' %>
+        <%= field.text_area :content, class: 'form-area' %>
+      <% end %>
     <% end %>
-    </div>
-  </div>
-  <%= render 'shared/footer_fix' %>
+    <%= form.submit '一括登録' %>
+    <%= link_to '戻る', task_path(current_user) %>
+  <% end %>
+<%= render 'shared/footer_fix' %>

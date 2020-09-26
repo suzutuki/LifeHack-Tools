@@ -12,22 +12,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def big_area
-    @user = User.new
-    @step = @user.steps.page(params[:page]).per(8)
-    @graphdays = @user.steps.order(created_at: "DESC").limit(6).reverse
-    @dayline = Array.new
-    @graphdays.each do |graphday|
-      @dayline.push(graphday.created_at.strftime('%m/%d').to_s)
-    end
-    @graphtimes = @user.steps.order(created_at: "DESC").limit(6).reverse
-    @timeline = Array.new
-    @graphtimes.each do |graphtime|
-      @timeline.push(graphtime.created_at)
-    end
-  end
-
-
   def create
     @user = User.new(user_params)
     if @user.save
