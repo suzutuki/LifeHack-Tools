@@ -1,10 +1,11 @@
+@import "color";
 /* ログインフォームの設定 */
 .login-form {
   font-size: 20px;
   height: 480px;
   margin: 10px auto;
   padding: 40px;
-  border: 2.5px solid #905523;
+  border: 2.5px solid $color-coffee;
   border-radius: 10px;
   overflow: hidden;
   max-width: 80%;
@@ -16,3 +17,10 @@
   overflow: hidden;
 }
 
+.new-user-form {
+  padding: 40px;
+  border: 2.5px solid $color-coffee;
+  margin-top: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+}

@@ -1,45 +1,42 @@
-<div id="view-list-mac">
-  <h1 class="nav-left">MACの原則</h1>
-  <div class="nav-right">
-    <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-double-right fa-3x faa-horizontal animated-hover fa-pull-right",
-                            style: "color: rgb(80,80,80);"), new_mac_path) %>
-  </div>
-</div>
 <% if @user.macs.empty? %>
-  <div class="panel-empty">
-    <h1>MACの原則とは？</h1>
+  <div class="mac-container">
+    <h1 class="text-center">MACの原則とは？</h1>
     <h2>
-      <div class="align-left"><p>現時点で最も効果のあるゴール(目標)設定方法のこと</p>
-        <p>M(Measurable : 測定可能性): ゴールを数字で表すことができる</p>
-        <p>A(Actionable : 行動可能性) : ゴールまでのプロセスを明確化させる</p>
-        <p>C(Competent : 適格性) : 目標達成が自分の価値観に基づいているかどうか</p></div>
+      <div class="align-left"><p>現時点で最も効果のあるゴール(目標)設定方法のこと</p><br>
+        <p>M(Measurable : 測定可能性): ゴールを数字で表すことができる</p><br>
+        <p>A(Actionable : 行動可能性) : ゴールまでのプロセスを明確化させる</p><br>
+        <p>C(Competent : 適格性) : 目標達成が自分の価値観に基づいているかどうか</p><br>
+      </div>
     </h2>
-    <%= link_to "具体的な例を見る", details_path,
-                class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
-  </div>
+    <div class="flex-container">
+      <%= link_to "具体的な例を見る", macs_path,
+                  class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
+      <%= link_to "MACの原則を作る", new_mac_path,
+                  class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
+    </div>
   </div>
 <% end %>
 <% if @user.macs.any? %>
   <% @user.macs.each do |mac| %>
     <section class="panel-mac">
-      <div class="goal">
-        <h1 class="text_color_grey">数値で表せる目標</h1>
-        <h1><%= simple_format(mac.measurable) %></h1>
-      </div>
-      <div class="process">
-        <h1 class="text_color_grey">ゴールまでの具体的なプロセス</h1>
-        <h2><%= simple_format(mac.actionable) %></h2>
-      </div>
-      <div class="process">
-        <h1 class="text_color_grey">目標達成が価値観に基づいているか?</h1>
-        <h1><%= simple_format(mac.competent) %></h1>
-      </div>
-      <div class="flex-container">
-        <h3 class="text_color_grey">更新:<%= mac.updated_at.to_s(:datetime_jp) %>
-          作成:<%= mac.created_at.to_s(:datetime_jp) %></h3>
-        <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), edit_mac_path(mac.id)) %>
-        <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), mac_path(mac.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
-      </div>
+    <div class="goal">
+      <h1 class="text_color_grey">数値で表せる目標</h1>
+      <h1><%= simple_format(mac.measurable) %></h1>
+    </div>
+    <div class="process">
+      <h1 class="text_color_grey">ゴールまでの具体的なプロセス</h1>
+      <h2><%= simple_format(mac.actionable) %></h2>
+    </div>
+    <div class="process">
+      <h1 class="text_color_grey">目標達成が価値観に基づいているか?</h1>
+      <h1><%= simple_format(mac.competent) %></h1>
+    </div>
+    <div class="flex-container">
+      <h3 class="text_color_grey">更新:<%= mac.updated_at.to_s(:datetime_jp) %>
+        作成:<%= mac.created_at.to_s(:datetime_jp) %></h3>
+      <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), edit_mac_path(mac.id)) %>
+      <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), mac_path(mac.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
+    </div>
     </section>
     <c class="btn-sticky">更新・作成日時を表示/非表示</c>
   <% end %>

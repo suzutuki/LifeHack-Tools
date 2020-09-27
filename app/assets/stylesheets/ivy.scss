@@ -1,16 +1,19 @@
 @import "color";
 #ivy {
-  margin: 10px 0 15px 15px;
-  font-size: 20px;
+  margin: 10px 0 0;
+  font-size: 24px;
   color: $color-grey;
   text-align: center;
 }
 
-#ivy-background {
-  //background: $color-grey_background;
-//background: #131313;
-}
-
 .text_color_grey {
   color: $color-grey;
+}
+
+.point {
+  font-size: 30px;
+}
+
+.space {
+  margin: 15px 0;
 }

@@ -1,8 +1,7 @@
 <% provide(:title, "new") %>
 <div class= "site-width">
-  <section id="new-todo-list">
+  <section class="new-todo-list">
     <h1 class="text-center">ToDoリスト！New</h1>
-    <div class="it-width">
       <div class="prev-left">
         <%= link_to(content_tag(:i, 'Return', class: "fas fa-angle-left fa-3x
       faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), task_path(current_user)) %>
@@ -24,4 +23,5 @@
         <%= form.submit '一括登録' %>
         <%= link_to '戻る', task_path(current_user) %>
       <% end %>
+  </section>
 <%= render 'shared/footer_fix' %>

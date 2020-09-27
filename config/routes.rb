@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  root 'users#index'
   get 'simple', to: 'steps#simple'
   get 'sample', to: 'lists#sample'
   get 'swipe', to: 'lists#swipe'
@@ -11,25 +13,32 @@ Rails.application.routes.draw do
   post 'goal_create', to: 'steps#goal_create'
   get 'goal', to: 'steps#goal'
   get 'example', to: 'steps#example'
-  root 'users#index'
+
   resources :its do
     collection do
       delete 'destroy_all'
     end
   end
   get 'hint', to: 'its#hint'
-  resources :macs, except: %i(index)
-  get 'details', to: 'macs#details'
+  resources :macs
   resources :tasks do
     collection do
       delete 'destroy_all'
     end
   end
   resources :users
-  get 'index', to: 'tasks#index'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   post '/tasks/:id/toggle' => 'tasks#toggle'
   post '/steps/:id/toggle' => 'steps#toggle'
+
+
+
+
+
+
+
+
+
 end

@@ -8,6 +8,9 @@ class UsersController < ApplicationController
   def index
   end
 
+  def show
+  end
+
   def new
     @user = User.new
   end
@@ -47,7 +50,7 @@ class UsersController < ApplicationController
   #ストロングパラメーター
   def user_params
     params.require(:user).permit(:name, :email, :password,
-                                 :password_confirmation, steps_attributes: [:step_name])
+                                 :password_confirmation)
   end
 
   #リファクタリング用

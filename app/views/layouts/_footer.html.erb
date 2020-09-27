@@ -5,15 +5,17 @@
         <%= link_to 'LifeHack Tools！', root_url, style: "color: #fff;" %>
         <%= link_to(content_tag(:i, '', class: "fab fa-twitter fa-3x faa-wrench animated-hover",
                                 style: "color: #fff;"), "https://twitter.com/suzutuki0149") %>
+        <%= link_to(content_tag(:i, '', class: "fab fa-font-awesome-alt fa-3x faa-vertical animated-hover",
+                                style: "color: #fff;"), "https://fontawesome.com/") %>
         <% if logged_in? %>
           <%= link_to "M", mac_path(current_user), class: "footer-link" %>
           <%= link_to "I", it_path(current_user), class: "footer-link" %>
           <%= link_to "T", task_path(current_user), class: "footer-link" %>
           <%= link_to "L", list_path(current_user), class: "footer-link" %>
           <%= link_to "S", step_path(current_user), class: "footer-link" %>
+          <%= link_to "LifeHack Toolsを退会する", @user, method: :delete,
+                      data: {confirm: "本当に退会しますか？"}, style: "color: #fff; font-size: 12px;" %>
         <% end %>
-        <%= link_to(content_tag(:i, '', class: "fab fa-font-awesome-alt fa-3x faa-vertical animated-hover",
-                                style: "color: #fff;"), "https://fontawesome.com/") %>
       </li>
     </ul>
   </div>
