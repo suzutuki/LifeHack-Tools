@@ -1,19 +1,17 @@
 <% provide(:title, "edit") %>
 <div class="site-width">
-  <section id="new-todo-list">
     <h1>ToDoリスト！Edit</h1>
     <%= form_with model: current_user, url: task_path, method: :patch, local: true do |form| %>
       <%= form.fields_for :tasks do |field| %>
         <%= field.label :"タイトル : あなたが達成したいことを書いてください", class: 'label' %><br>
         <%= field.text_field :title, class: 'form-field', required: true %>
         <br>
-        <%= field.label :"優先順位 :  優先順位の高い順に自動で並び替わります。", class: 'label' %>
+        <%= field.label :"優先順位 :  優先順位の高い順に自動で並び替わります。※注意！優先順位が重複していると登録できません", class: 'label' %>
         <%= field.select :priority, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], {include_blank: '選択してください'}, {class: 'form-box', required: true} %>
         <%= field.label :"メモ (50文字まで登録できます)", class: 'label' %>
         <%= field.text_area :content, class: 'form-area' %>
       <% end %>
       <%= form.submit '一括編集' %>
       <%= link_to '戻る', task_path(current_user) %>
-      </section>
       </div>
 <% end %>

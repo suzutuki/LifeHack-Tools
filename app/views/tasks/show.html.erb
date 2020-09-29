@@ -25,8 +25,9 @@
     <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-double-right fa-3x
                                 faa-horizontal animated-hover fa-pull-right",
                             style: "color: rgb(80,80,80);"), new_task_path) %>
+    <div class="todo-top"></div>
     <% @user.tasks.each do |task| %>
-      <section class="panel <%= "not-priority-1" if task.priority != 1 %>">
+      <div class="todo <%= "not-priority-1" if task.priority != 1 %>">
         <div class="panel-left">
           <ul class="checkbox">
             <%= check_box_tag 'task', '', task.done, {'data-id' => task.id, class: 'tasks-checkbox'} %>
@@ -39,14 +40,14 @@
         </div>
         <div class="panel-right">
           <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), task_path(task.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
-          <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), edit_task_path(task.id)) %>
-      </section>
+          </div>
+      </div>
     <% end %>
     <li class="active">
 <%= paginate @tasks %>
     </li>
     <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover
- fa-pull-right", style: "color: rgb(80,80,80); margin-bottom: 15px;"), edit_it_path ) %>
+ fa-pull-right", style: "color: rgb(80,80,80); margin-bottom: 15px;"), edit_task_path ) %>
     <%= link_to(content_tag(:i, '', class: "fas fa-bomb fa-3x faa-horizontal
  animated-hover fa-pull-right", style: "color: rgb(80,80,80); margin-bottom: 15px;"), destroy_all_tasks_path, method: :delete, data: {confirm: "全て削除します。本当に削除しますか？"}) %>
     </div>

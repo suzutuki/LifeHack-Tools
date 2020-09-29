@@ -1,14 +1,15 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update,]
   #リファクタリング用
-  before_action :set_target_user, only: [:show, :destroy, :edit, :update]
-  # before_action :admin_user,     only: :destroy
+  # before_action :set_target_user, only: [:show, :destroy, :edit, :update]
+  before_action :admin_user, only: :destroy
 
   def index
   end
 
   def show
+    @users = User.all
   end
 
   def new
@@ -34,9 +35,11 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def update
+    @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       flash[:success] = "変更しました"
       redirect_to root_path
@@ -53,10 +56,10 @@ class UsersController < ApplicationController
                                  :password_confirmation)
   end
 
-  #リファクタリング用
-  def set_target_user
-    @user = User.find(params[:id])
-  end
+  # #リファクタリング用
+  # def set_target_user
+  #   @user = User.find(params[:id])
+  # end
 
   # 正しいユーザーかどうか確認する
   def correct_user

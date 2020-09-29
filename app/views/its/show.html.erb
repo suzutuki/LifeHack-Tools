@@ -19,6 +19,7 @@
   </div>
 <% end %>
 <% if @user.its.any? %>
+  <div class="todo-top"></div>
   <div class="wrapper">
     <div class="column">
       <h1>IF
@@ -38,11 +39,11 @@
       </div>
       <div class="column">
         <h1><%= simple_format(it.behavior) %></h1>
+        <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal
+ animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), it_path(it.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
       </div>
     </div>
-    <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal
- animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), it_path(it.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
-  <% end %>
+    <% end %>
   <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover
  fa-pull-right", style: "color: rgb(80,80,80);"), edit_it_path) %>
   <%= link_to(content_tag(:i, '', class: "fas fa-bomb fa-3x faa-horizontal
