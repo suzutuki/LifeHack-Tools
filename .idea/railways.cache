@@ -1,0 +1,70 @@
+                   Prefix Verb   URI Pattern                                                                              Controller#Action
+                     root GET    /                                                                                        users#index
+                   simple GET    /simple(.:format)                                                                        steps#simple
+                   sample GET    /sample(.:format)                                                                        lists#sample
+                    swipe GET    /swipe(.:format)                                                                         lists#swipe
+                    lists GET    /lists(.:format)                                                                         lists#index
+                          POST   /lists(.:format)                                                                         lists#create
+                 new_list GET    /lists/new(.:format)                                                                     lists#new
+                edit_list GET    /lists/:id/edit(.:format)                                                                lists#edit
+                     list GET    /lists/:id(.:format)                                                                     lists#show
+                          PATCH  /lists/:id(.:format)                                                                     lists#update
+                          PUT    /lists/:id(.:format)                                                                     lists#update
+                          DELETE /lists/:id(.:format)                                                                     lists#destroy
+        destroy_all_steps DELETE /steps/destroy_all(.:format)                                                             steps#destroy_all
+                    steps GET    /steps(.:format)                                                                         steps#index
+                          POST   /steps(.:format)                                                                         steps#create
+                 new_step GET    /steps/new(.:format)                                                                     steps#new
+                edit_step GET    /steps/:id/edit(.:format)                                                                steps#edit
+                     step GET    /steps/:id(.:format)                                                                     steps#show
+                          PATCH  /steps/:id(.:format)                                                                     steps#update
+                          PUT    /steps/:id(.:format)                                                                     steps#update
+                          DELETE /steps/:id(.:format)                                                                     steps#destroy
+              goal_create POST   /goal_create(.:format)                                                                   steps#goal_create
+                     goal GET    /goal(.:format)                                                                          steps#goal
+                  example GET    /example(.:format)                                                                       steps#example
+          destroy_all_its DELETE /its/destroy_all(.:format)                                                               its#destroy_all
+                      its GET    /its(.:format)                                                                           its#index
+                          POST   /its(.:format)                                                                           its#create
+                   new_it GET    /its/new(.:format)                                                                       its#new
+                  edit_it GET    /its/:id/edit(.:format)                                                                  its#edit
+                       it GET    /its/:id(.:format)                                                                       its#show
+                          PATCH  /its/:id(.:format)                                                                       its#update
+                          PUT    /its/:id(.:format)                                                                       its#update
+                          DELETE /its/:id(.:format)                                                                       its#destroy
+                     hint GET    /hint(.:format)                                                                          its#hint
+                     macs GET    /macs(.:format)                                                                          macs#index
+                          POST   /macs(.:format)                                                                          macs#create
+                  new_mac GET    /macs/new(.:format)                                                                      macs#new
+                 edit_mac GET    /macs/:id/edit(.:format)                                                                 macs#edit
+                      mac GET    /macs/:id(.:format)                                                                      macs#show
+                          PATCH  /macs/:id(.:format)                                                                      macs#update
+                          PUT    /macs/:id(.:format)                                                                      macs#update
+                          DELETE /macs/:id(.:format)                                                                      macs#destroy
+        destroy_all_tasks DELETE /tasks/destroy_all(.:format)                                                             tasks#destroy_all
+                    tasks GET    /tasks(.:format)                                                                         tasks#index
+                          POST   /tasks(.:format)                                                                         tasks#create
+                 new_task GET    /tasks/new(.:format)                                                                     tasks#new
+                edit_task GET    /tasks/:id/edit(.:format)                                                                tasks#edit
+                     task GET    /tasks/:id(.:format)                                                                     tasks#show
+                          PATCH  /tasks/:id(.:format)                                                                     tasks#update
+                          PUT    /tasks/:id(.:format)                                                                     tasks#update
+                          DELETE /tasks/:id(.:format)                                                                     tasks#destroy
+                    users GET    /users(.:format)                                                                         users#index
+                          POST   /users(.:format)                                                                         users#create
+                 new_user GET    /users/new(.:format)                                                                     users#new
+                edit_user GET    /users/:id/edit(.:format)                                                                users#edit
+                     user GET    /users/:id(.:format)                                                                     users#show
+                          PATCH  /users/:id(.:format)                                                                     users#update
+                          PUT    /users/:id(.:format)                                                                     users#update
+                          DELETE /users/:id(.:format)                                                                     users#destroy
+                    login GET    /login(.:format)                                                                         sessions#new
+                          POST   /login(.:format)                                                                         sessions#create
+                   logout DELETE /logout(.:format)                                                                        sessions#destroy
+                          POST   /tasks/:id/toggle(.:format)                                                              tasks#toggle
+                          POST   /steps/:id/toggle(.:format)                                                              steps#toggle
+       rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
+rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
+       rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
+update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
+     rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create

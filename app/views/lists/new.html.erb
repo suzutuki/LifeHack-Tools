@@ -1,0 +1,16 @@
+<div class="mac-width">
+  <div class="prev-left">
+    <h1 class="text-center">価値観リストとは？</h1>
+    <%= link_to(content_tag(:i, 'Return', class: "fas fa-angle-left fa-2x
+      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), list_path(current_user)) %>
+    <%= link_to(content_tag(:i, '', class: "fas fa-question fa-2x
+                                faa-vertical animated-hover fa-pull-right",
+                            style: "color: rgb(80,80,80);"), details_path) %></div>
+
+  <div class="question">
+    <h2>価値観リストは全部で８０種類ある価値観の内自分が重要だと思うものを１０個選ぶものです。<br>
+      自分が本当に大事にしているものがなにか自分との対話で知ることができます。<br>
+      まず初めに６つの質問を受けてその回答を入力してください。<br>
+    </h2>
+  </div>
+ <%= render 'form' %>

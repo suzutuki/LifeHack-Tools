@@ -1,0 +1,62 @@
+@import "variables";
+
+.label-list {
+  font-size: 18px;
+  max-width: 1450px;
+  border-left: solid 5px #ffaf58; /*左線（実線 太さ 色）*/
+  color: $color-nobleblack;
+  display: inline-block;
+  padding: 0.5em 1em;
+  background: #fbfbfb;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.29);
+  margin-bottom: 10px;
+}
+
+.question {
+  border-top: 2px solid $color-thin_black;
+  padding: 10px;
+  margin-top: 40px;
+}
+
+.right-position {
+  width: auto;
+  max-width: 880px;
+  margin-bottom: 20px;
+  height: 40px;
+}
+
+input[type="Radio"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform: scale(3);
+}
+
+table {
+  font-size: 30px;
+  border: solid 2px $color-nobleblack;
+  margin-bottom: 20px;
+}
+
+th {
+  padding: 10px;
+}
+
+td {
+  padding: 10px;
+  position: relative;
+  border-top: solid 1px $color-thin_black;
+}
+
+td label {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}

@@ -1,0 +1,64 @@
+@import "variables";
+
+.align-left {
+  font-size: 24px;
+  text-align: left;
+  margin: 20px 0;
+}
+
+.new-mac-form {
+  padding: 20px 40px 40px 40px;
+  border: 2.5px solid $color-nobleblack;
+  margin: 20px 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.mac-width {
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.goal {
+  flex-direction: column;
+  display: flex;
+}
+
+
+.process {
+  border-top: 2px solid $color-thin_black;
+  flex-direction: column;
+  display: flex;
+}
+
+.panel-mac {
+  border: 2.5px solid $color-thin_black;
+  border-radius: 10px;
+  padding: 30px;
+  margin: 10px 150px 30px;
+  overflow: hidden;
+  max-width: 90%;
+}
+
+.icon-position {
+  justify-content: right;
+  flex-direction: row;
+  display: flex;
+}
+
+#view-list-mac {
+  padding: 0 20px;
+  margin: 0 150px;
+  overflow: hidden;
+  max-width: 90%;
+}
+
+.mac-container {
+  border: 2.5px solid $color-coffee;
+  border-radius: 10px;
+  padding: 30px;
+  margin: 15px 100px;
+  overflow: hidden;
+  background: rgba(250, 240, 230, 0.1);
+}

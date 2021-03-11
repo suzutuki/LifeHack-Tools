@@ -1,0 +1,69 @@
+@import "variables";
+
+.small-step {
+  text-align: left;
+  margin: 20px 40px 0;
+  padding: 20px 0 0;
+}
+
+.big_area {
+  border-top: 2px solid $color-nobleblack;
+  text-align: left;
+  margin: 20px 40px 0;
+  padding: 20px 0 0;
+}
+
+.example {
+  border-top: 2px solid $color-nobleblack;
+  text-align: center;
+  margin: 20px 40px;
+  padding: 20px 0;
+}
+
+#chartdiv {
+  width: 90%;
+  height: 500px;
+}
+
+.steps-width {
+  width: 70%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-top: 2px solid $color-thin_grey;
+}
+
+.step-container {
+  padding: 20px 3px 5px 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: 36px;
+  color: $color-nobleblack;
+}
+
+.step-container2 {
+  font-size: 24px;
+  padding: 20px 3px 5px 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.calendar {
+  width: 70%;
+}
+
+.stepbox {
+  margin: auto;
+  position: relative;
+  top: 40px;
+  left: 10px;
+  right: 0;
+  bottom: 0;
+  transform: scale(3);
+  align-items: center;
+}
+
+.border {
+  margin-top: 20px;
+  border-top: 2px solid $color-nobleblack;
+}

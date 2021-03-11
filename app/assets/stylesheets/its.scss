@@ -1,0 +1,31 @@
+@import "variables";
+
+.column {
+  width: 100%;
+}
+@media all and (min-width: 500px) {
+  .wrapper {
+    display: flex;
+  }
+}
+
+.info_1{
+  border-top: 2px solid $color-thin_black;
+  padding: 10px;
+}
+
+.info_2{
+  border-top: 2px solid $color-thin_black;
+  border-left: 2px solid $color-thin_black;
+  padding: 10px;
+}
+
+.color-grey {
+  color: $color-grey;
+  flex-direction: column;
+  display: contents;
+}
+
+.if_text {
+  font-size: 20px;
+}
