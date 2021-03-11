@@ -4,7 +4,7 @@
       <h1 class="text-center">To Do リスト!</h1>
     </div>
   </div>
-  <% if @user.tasks.empty? %>
+  <% if current_user.tasks.empty? %>
     <div class="panel-empty">
       <h1 class="text-center">ToDoリストへようこそ！</h1>
       <h2 class="guidance">
@@ -18,7 +18,7 @@
       </div>
     </div>
   <% end %>
-  <% if @user.tasks.any? %>
+  <% if current_user.tasks.any? %>
     <trigger_time class="btn-sticky">更新・作成日時を表示/非表示</trigger_time>
     <trigger_priority class="btn-sticky">優先順位1のみ表示</trigger_priority>
     <%= link_to "アイビー・リー・メソッド", tasks_path, class: "btn-sticky-blue" %>
@@ -26,7 +26,7 @@
                                 faa-horizontal animated-hover fa-pull-right",
                             style: "color: rgb(80,80,80);"), new_task_path) %>
     <div class="todo-top"></div>
-    <% @user.tasks.each do |task| %>
+    <% current_user.tasks.each do |task| %>
       <div class="todo <%= "not-priority-1" if task.priority != 1 %>">
         <div class="panel-left">
           <ul class="checkbox">

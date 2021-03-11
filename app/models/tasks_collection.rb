@@ -6,7 +6,7 @@ class TaskCollection
   include ActiveModel::AttributeMethods
   include ActiveModel::Validations
   attr_accessor :collection
-  TASK_NUM = 6 # 同時にtaskを作成する数
+  TASK_NUM = 3 # 同時にtaskを作成する数
 
   # 初期化メソッド
   def initialize(current_user, attributes = [])

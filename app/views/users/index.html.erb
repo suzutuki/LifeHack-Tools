@@ -12,6 +12,10 @@
                   class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
       <%= link_to "グラフを見る(ビッグエリア)", steps_path,
                   class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
+      <% if current_user.admin? %>
+        <%= link_to "ユーザーを見る(管理者のみ)", user_path(current_user),
+                    class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
+      <% end %>
     </div>
     </div>
   <% else %>
@@ -20,7 +24,4 @@
                 style: "font-size: 28px; color: #333;" %>
     </div>
   <% end %>
-  <% if current_user.admin? %>
-    <%= link_to "ユーザーを見る(管理者のみ)", user_path(current_user),
-                class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
-  <% end %>
+

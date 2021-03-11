@@ -8,11 +8,30 @@
 .new-todo-list-form {
   padding: 20px 40px 40px 40px;
   border: 2.5px solid $color-coffee;
-  margin: 20px 0;
+  margin: 5px 0;
   border-radius: 10px;
   overflow: hidden;
 }
 
-.new-todo-list {
+.tasks-form-box {
+  margin-top: 10px;
+  width: 33%;
+  height: 40px;
+  display: block;
+}
 
+.tasks-form-field {
+  margin: 5px 0;
+  width: 100%;
+  height: 40px;
+  display: block;
+  box-sizing: border-box;
+}
+
+.tasks-form-area {
+  margin: 5px 0;
+  width: 100%;
+  height: 100px;
+  display: block;
+  box-sizing: border-box;
 }

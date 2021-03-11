@@ -8,8 +8,7 @@ class TasksController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @tasks = @user.tasks.page(params[:page]).per(8)
+    @tasks = current_user.tasks.page(params[:page]).per(8)
   end
 
   def new
@@ -19,7 +18,7 @@ class TasksController < ApplicationController
   def create
     @tasks = TaskCollection.new(current_user, tasks_params)
     if @tasks.save
-      flash[:success] = '成功しました!'
+      flash[:success] = "｢#{@task.title}｣を作成しました!"
       redirect_to task_path(current_user)
     else
       render 'new'
@@ -67,7 +66,7 @@ class TasksController < ApplicationController
 
   # ストロングパラメーターupdate用
   def user_tasks_params
-    params.require(:user).permit(tasks_attributes: [:title, :content, :id, :priority])
+    params.require(:user).permit(tasks_attributes: [:title, :content, :id, :priority, :admin])
   end
 
   # 現在のユーザーが削除対象のtaskを保有しているかどうかを確認します。

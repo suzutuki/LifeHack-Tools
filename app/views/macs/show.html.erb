@@ -1,4 +1,4 @@
-<% if @user.macs.empty? %>
+<% if @macs.empty? %>
   <div class="mac-container">
     <h1 class="text-center">MACの原則とは？</h1>
     <h2>
@@ -16,8 +16,8 @@
     </div>
   </div>
 <% end %>
-<% if @user.macs.any? %>
-  <% @user.macs.each do |mac| %>
+<% if @macs.any? %>
+  <% @macs.each do |mac| %>
     <section class="panel-mac">
     <div class="goal">
       <h1 class="text_color_grey">数値で表せる目標</h1>
@@ -32,13 +32,13 @@
       <h1><%= simple_format(mac.competent) %></h1>
     </div>
     <div class="flex-container">
-      <h3 class="text_color_grey">更新:<%= mac.updated_at.to_s(:datetime_jp) %>
+      <h3 class="tasks-time">更新:<%= mac.updated_at.to_s(:datetime_jp) %>
         作成:<%= mac.created_at.to_s(:datetime_jp) %></h3>
       <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), edit_mac_path(mac.id)) %>
       <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), mac_path(mac.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
     </div>
     </section>
-    <c class="btn-sticky">更新・作成日時を表示/非表示</c>
+    <trigger_time class="btn-sticky">更新・作成日時を表示/非表示</trigger_time>
   <% end %>
 <% end %>
 <%= render 'shared/script' %>
