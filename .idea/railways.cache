@@ -32,7 +32,6 @@
                           PATCH  /its/:id(.:format)                                                                       its#update
                           PUT    /its/:id(.:format)                                                                       its#update
                           DELETE /its/:id(.:format)                                                                       its#destroy
-                     hint GET    /hint(.:format)                                                                          its#hint
                      macs GET    /macs(.:format)                                                                          macs#index
                           POST   /macs(.:format)                                                                          macs#create
                   new_mac GET    /macs/new(.:format)                                                                      macs#new

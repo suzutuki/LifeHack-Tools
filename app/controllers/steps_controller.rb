@@ -2,8 +2,8 @@ class StepsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user, only: :destroy
   before_action :correct_user_destroy_all, only: :destroy_all
-  skip_before_action :verify_authenticity_token
 
+  #chart.jsの設定
   def index
     @user = current_user
     @step = @user.steps
@@ -48,18 +48,21 @@ class StepsController < ApplicationController
     @step = @user.steps
   end
 
-  def destroy
-    @step = Step.find(params[:id])
-    @step.destroy
-    redirect_to request.referrer || root_url
+  def new
+    @steps = StepCollection.new(current_user)
   end
 
-  # 一括削除
-  def destroy_all
-    @steps.destroy_all
-    flash[:danger] = "全て削除しました!"
-    redirect_to request.referrer || root_url
+  def create
+    @steps = StepCollection.new(current_user, steps_params)
+    if @steps.save
+      flash[:success] = '成功しました!'
+      redirect_to step_path(current_user)
+    else
+      render 'new'
+    end
   end
+
+
 
   def example
   end
@@ -76,19 +79,7 @@ class StepsController < ApplicationController
     end
   end
 
-  def new
-    @steps = StepCollection.new(current_user)
-  end
 
-  def create
-    @steps = StepCollection.new(current_user, steps_params)
-    if @steps.save
-      flash[:success] = '成功しました!'
-      redirect_to step_path(current_user)
-    else
-      render 'new'
-    end
-  end
 
   def edit
   end
@@ -100,6 +91,19 @@ class StepsController < ApplicationController
     else
       render 'steps/edit'
     end
+  end
+
+  def destroy
+    @step = Step.find(params[:id])
+    @step.destroy
+    redirect_to request.referrer || root_url
+  end
+
+  # 一括削除
+  def destroy_all
+    @steps.destroy_all
+    flash[:danger] = "全て削除しました!"
+    redirect_to request.referrer || root_url
   end
 
   def toggle

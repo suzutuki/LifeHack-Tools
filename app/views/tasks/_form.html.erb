@@ -4,7 +4,7 @@
       faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), task_path(current_user)) %>
     <%= link_to(content_tag(:i, '', class: "fas fa-question fa-3x
                                 faa-vertical animated-hover fa-pull-right",
-                            style: "color: rgb(80,80,80);"), hint_path) %>
+                            style: "color: rgb(80,80,80);"), tasks_path) %>
   </div>
   <%= form_with model: @tasks, url: tasks_path, local: true do |form| %>
     <% @tasks.collection.each do |task| %>

@@ -14,9 +14,9 @@ class TaskCollection
       self.collection = attributes.map do |value|
         Task.new(
           user_id: current_user.id,
-          content: value['content'],
-          title: value['title'],
-          priority: value['priority']
+          content: value["content"],
+          title: value["title"],
+          priority: value["priority"]
         )
       end
     else
