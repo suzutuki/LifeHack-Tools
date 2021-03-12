@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title><%= full_title(yield(:title)) %></title>
   <%= csrf_meta_tags %>
   <%= Gon::Base.render_data %>
   <meta name="viewport"content="width=device-width, initial-scale=1.0"/>
-
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <script src="https://kit.fontawesome.com/c9ec8f1a4e.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.3.0/font-awesome-animation.min.css
-  <!-- 表示をスマートフォンに対応させる -->
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.3.0/font-awesome-animation.min.css>
+  <link rel="stylesheet" href="styles/vendors/bootstrap-reboot.css" />
+  <link rel="stylesheet" href="styles/vendors/swiper.min.css" />
+  <link rel="stylesheet" href="styles/style.css" />
   <%= render 'layouts/shim' %>
 </head>
 
