@@ -1,4 +1,5 @@
-@import "modules/variables";
+@import "variables";
+
 //ベーススタイル(スマホ用の設定)
 html {
   position: relative;
@@ -34,6 +35,27 @@ img {
 .pb-lg {
   padding-bottom: 80px !important;
 }
+
+.main-title {
+  //継承することで、画面の大きさが変わっても今の画面の設定が適応される
+  @extend .font-lg;
+  font-weight: 600;
+  margin-bottom: 0;
+  // 一行に重ならないようにする
+  display: block;
+}
+.sub-title {
+  @extend .font-sm;
+  color: $cSubTitle;
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+.purple {
+  color: $cWineRed;
+}
+
 
 .content-width {
   width: 90%;
