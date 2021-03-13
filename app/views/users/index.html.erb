@@ -1,7 +1,30 @@
-<div class="container">
+ <div id="global-container">
+    <div id="container">
+      <div id="content">
+        <div class="hero"></div>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="hero__title">Enjoy Rich</div>
+              <%= image_tag 'Dahlia.jpg' %>
+            </div>
+            <div class="swiper-slide">
+              <div class="hero__title">Fantastic</div>
+              <%= image_tag 'Gaillardia.jpg' %>
+            </div>
+            <div class="swiper-slide">
+              <div class="hero__title">Experience</div>
+              <%= image_tag 'Geranium.jpg' %>
+            </div>
+          </div>
+          <div class="hero__footer">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <% if logged_in? %>
     <%= render 'root' %>
-    <div class="link-container">
       <%= link_to "ToDoリスト！", task_path(current_user),
                   class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
       <%= link_to "Small stepとBig area", step_path(current_user),
@@ -16,12 +39,9 @@
         <%= link_to "ユーザーを見る(管理者のみ)", user_path(current_user),
                     class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
       <% end %>
-    </div>
-    </div>
   <% else %>
     <%= render 'root' %>
     <%= link_to "ユーザー登録する！", new_user_path, class: "btn-sticky",
                 style: "font-size: 28px; color: #333;" %>
-    </div>
   <% end %>
 

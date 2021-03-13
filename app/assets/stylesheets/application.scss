@@ -14,56 +14,28 @@
  *= require flatpickr
  *= require flatpickr/themes/material_blue
  */
-@import "modules/base";
-@import "modules/typography";
-@import "modules/header";
-@import "modules/root";
-@import "modules/show_up";
-@import "modules/panel";
-@import "modules/new_edit_layout";
-@import "modules/checkbox";
-@import "modules/debug";
-@import "modules/footer";
-@import "modules/macs";
-@import "modules/style";
-@import "modules/variables";
+@import "vendors/bootstrap-reboot";
 
-//// 変数の設定を読み込む
-//@import 'mixin';
-//@import 'appear';
-//@import 'button';
-//@import 'hero-slider';
-//@import 'text-animation';
-//@import 'image-slide';
-//@import 'mobile-menu';
-//// 順番も重要でこのままでよい
-//
-//// スマホ画面の設定
-//@import "base";
-//
-//// スマホ横向きのときの設定
-//@media (min-width: 480px) {
-//  @import "480up";
-//}
-//
-//// タブレットのときの設定
-//@media (min-width: 600px) {
-//  @import "600up";
-//}
-//
-//@media (min-width: 960px) {
-//  @import "960up";
-//}
-//
-//@media (min-width: 1280px) {
-//  @import "1280up";
-//}
-//// Retinaディスプレイで適用
-//@media (min-resolution: 192dpi)
-//,(-webkit-min-device-pixel-ratio: 2) {
-//  @import "2x";
-//}
-//// 印刷時のみ適用される設定
-//@media print {
-//  @import "print";
-//}
+// 順番も重要でこのままでよい
+
+// スマホ画面の設定
+//@import "breakpoints/flower";
+
+// スマホ横向きのときの設定
+@media (min-width: 480px) {
+  @import "breakpoints/480up";
+}
+
+// タブレットのときの設定
+@media (min-width: 600px) {
+  @import "breakpoints/600up";
+}
+
+@media (min-width: 960px) {
+  @import "breakpoints/960up";
+}
+
+@media (min-width: 1280px) {
+  @import "breakpoints/1280up";
+}
+

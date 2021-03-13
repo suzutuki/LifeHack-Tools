@@ -17,7 +17,7 @@ class TasksController < ApplicationController
   def create
     @tasks = TaskCollection.new(current_user, tasks_params)
     if @tasks.save
-      flash[:success] = "｢#{@task.title}｣を作成しました!"
+      flash[:success] = "作成しました!"
       redirect_to task_path(current_user)
     else
       render 'new'

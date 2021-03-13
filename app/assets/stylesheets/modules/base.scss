@@ -1,11 +1,23 @@
 @import "variables";
 
-//ベーススタイル(スマホ用の設定)
-html {
-  position: relative;
-  min-height: 100%;
+//ベーススタイル(ここではスマホ用の設定をしているよ)
+//html {
+//  position: relative;
+//  min-height: 100%;
+//}
+/* bodyからの設定 */
+body {
+  margin-bottom: 60px;
+  border-top: 6px solid $color-coffee_brown;
+  font-family: "SF Pro JP","SF Pro Text","SF Pro Icons","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","メイリオ","Meiryo","ＭＳ Ｐゴシック","Helvetica Neue","Helvetica","Arial",sans-serif;
+  line-height: 1.47059;
+  background-color: $color-white;
+  letter-spacing: -.022em;
+  color: $color-nobleblack;
+  overflow-x: hidden;
+  font-style: normal;
 }
-
+//画像の基本設定
 img {
   max-width: 100%;
   vertical-align: bottom;
@@ -35,7 +47,11 @@ img {
 .pb-lg {
   padding-bottom: 80px !important;
 }
-
+.content-width {
+  width: 90%;
+  margin: 0 auto;
+  max-width: $contentMaxWidth;
+}
 .main-title {
   //継承することで、画面の大きさが変わっても今の画面の設定が適応される
   @extend .font-lg;
@@ -48,6 +64,7 @@ img {
   @extend .font-sm;
   color: $cSubTitle;
 }
+//後で使い回せる
 .flex {
   display: flex;
   flex-direction: column;
@@ -56,12 +73,6 @@ img {
   color: $cWineRed;
 }
 
-
-.content-width {
-  width: 90%;
-  margin: 0 auto;
-  max-width: $contentMaxWidth;
-}
 li {
   list-style: none;
 }
@@ -71,18 +82,7 @@ li {
   max-width: 880px;
 }
 
-/* bodyからの設定 */
-body {
-  margin-bottom: 60px;
-  border-top: 6px solid $color-coffee_brown;
-  font-family: "SF Pro JP","SF Pro Text","SF Pro Icons","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","メイリオ","Meiryo","ＭＳ Ｐゴシック","Helvetica Neue","Helvetica","Arial",sans-serif;
-  line-height: 1.47059;
-  background-color: $color-white;
-  letter-spacing: -.022em;
-  color: $color-nobleblack;
-  overflow-x: hidden;
-  font-style: normal;
-}
+
 
 .center-position {
   flex-direction: row;
