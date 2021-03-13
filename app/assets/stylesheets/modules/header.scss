@@ -1,33 +1,64 @@
-// header-begin
-header {
+@import "variables";
+@import "mixin";
+@import "base";
+// headerの設定担当
+.header {
+  // 画面の上部に固定
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 80px;
-  //background: rgba(0,0,0,0.8)!important;
-  overflow: hidden;
-  padding: 20px;
-  //justify-content: space-between;
-  .navbar-nav > li > a {
-    padding: 0 !important;
+  height: $navHeight;
+  // 背景色を透明に
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  // ヘッダーを最前面にくるようにする
+  z-index: 100;
+
+  &.triggered {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 10px 0 25px -10px rgba(0, 0, 0, 0.5);
   }
 
-  nav ul li a {
-    display: block;
-    text-decoration: none;
-    height: 200px;
-    color: #333;
+  // スマホ画面ではヘッダー表示しない
+  &__nav {
+    display: none;
+  }
+
+  &__ul {
+    display: flex;
+    // 上下中央揃えにする
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__li {
+    margin-left: 20px;
+
+    & > a {
+      color: $cBlack;
+      text-decoration: none !important;
+      // すべて大文字にする
+      text-transform: uppercase;
+    }
+  }
+
+  & .logo {
+    font-size: 38px;
+    justify-content: center;
+  }
+
+  &__inner {
+    display: flex;
     justify-content: space-between;
-    font-weight: bold;
-    line-height: 1;
-    margin: 5px 10px;
+    align-items: center;
+    // navとコンテンツのラインを同じにする
+    @extend .content-width;
   }
 }
 
-header nav ul li a:hover,
-header nav ul li a:active {
-  background: rgba(250, 240, 200, 0.1);
-  text-decoration: underline;
-}
 
-.navbar {
-  border-radius: 0 !important;
-}
+

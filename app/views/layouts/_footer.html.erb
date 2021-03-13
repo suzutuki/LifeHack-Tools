@@ -2,11 +2,11 @@
   <div class="text">
     <ul>
       <li>
-        <%= link_to 'LifeHack Tools！', root_url, style: "color: #fff;" %>
+        <%= link_to 'LifeHack Tools！', root_url, style: "color: #333;" %>
         <%= link_to(content_tag(:i, '', class: "fab fa-twitter fa-3x faa-wrench animated-hover",
-                                style: "color: #fff;"), "https://twitter.com/suzutuki0149") %>
+                                style: "color: #333;"), "https://twitter.com/suzutuki0149") %>
         <%= link_to(content_tag(:i, '', class: "fab fa-font-awesome-alt fa-3x faa-vertical animated-hover",
-                                style: "color: #fff;"), "https://fontawesome.com/") %>
+                                style: "color: #333;"), "https://fontawesome.com/") %>
         <% if logged_in? %>
           <%= link_to "M", mac_path(current_user), class: "footer-link" %>
           <%= link_to "I", it_path(current_user), class: "footer-link" %>
@@ -14,7 +14,7 @@
           <%= link_to "L", list_path(current_user), class: "footer-link" %>
           <%= link_to "S", step_path(current_user), class: "footer-link" %>
           <%= link_to "LifeHack Toolsを退会する", @user, method: :delete,
-                      data: {confirm: "本当に退会しますか？"}, style: "color: #fff; font-size: 12px;" %>
+                      data: {confirm: "本当に退会しますか？"}, style: "color: #333; font-size: 12px;" %>
         <% end %>
       </li>
     </ul>

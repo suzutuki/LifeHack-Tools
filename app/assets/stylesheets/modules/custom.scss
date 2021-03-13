@@ -1,6 +1,7 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "modules/variables";
+//bootstrapなど置いていたとこ
+//@import "bootstrap-sprockets";
+//@import "bootstrap";
+@import "variables";
 
 .main-width {
   width: 85%;
@@ -19,10 +20,10 @@
 }
 
 .field_with_errors {
-  @extend .has-error;
+  //@extend .has-error;
 
   .form-control {
-    color: $state-danger-text;
+    color: red;
   }
 }
 

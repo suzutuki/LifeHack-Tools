@@ -19,7 +19,6 @@
 //= require jquery_ujs
 //= require jquery
 //= require Chart.min
-//= require bootstrap
 //= require_tree .
 
 // ボタンが押されたら優先順位,1位以外を非表示にする。not-priority-1がターゲット
