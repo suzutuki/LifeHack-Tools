@@ -3,8 +3,6 @@
 @import "base";
 // headerの設定担当
 .header {
-  // 画面の上部に固定
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -37,6 +35,7 @@
 
   &__li {
     margin-left: 20px;
+    font-size: 1.2em;
 
     & > a {
       color: $cBlack;

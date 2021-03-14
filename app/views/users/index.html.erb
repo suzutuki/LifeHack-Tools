@@ -1,29 +1,40 @@
- <div id="global-container">
-    <div id="container">
-      <div id="content">
-        <div class="hero"></div>
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="hero__title">Enjoy Rich</div>
-              <%= image_tag 'Dahlia.jpg' %>
-            </div>
-            <div class="swiper-slide">
-              <div class="hero__title">Fantastic</div>
-              <%= image_tag 'Gaillardia.jpg' %>
-            </div>
-            <div class="swiper-slide">
-              <div class="hero__title">Experience</div>
-              <%= image_tag 'Geranium.jpg' %>
-            </div>
+<% if logged_in? %>
+  <div id="content">
+    <div class="hero">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <!-- スライドの部分 -->
+          <div class="swiper-slide">
+            <!-- 画像の真ん中の文字 -->
+            <div class="hero__title">Magnificence</div>
+            <img src="/assets/Dahlia.jpg" alt="">
           </div>
-          <div class="hero__footer">
+          <div class="swiper-slide">
+            <div class="hero__title">Solidarity</div>
+            <img src="/assets/Gaillardia.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <div class="hero__title">Gentility</div>
+            <img src="/assets/Geranium.jpg" alt="">
           </div>
         </div>
       </div>
     </div>
+    <div id="main-content">
+      <aside class="side left">
+        <div class="side__inner">
+          <a class="twitter icon tween-animate-title" href="#">Twitter</a>
+          <a class="fb icon tween-animate-title" href="#">Facebook</a>
+        </div>
+      </aside>
+      <main>
+        <aside class="side right">
+          <div class="side__inner">
+            <span class="tween-animate-title">&copy;Ota</span>
+          </div>
+        </aside>
+    </div>
   </div>
-  <% if logged_in? %>
     <%= render 'root' %>
       <%= link_to "ToDoリスト！", task_path(current_user),
                   class: "btn-sticky", style: "font-size: 28px; color: #333;" %>

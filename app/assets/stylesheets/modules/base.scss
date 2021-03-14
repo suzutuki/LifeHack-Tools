@@ -53,6 +53,7 @@ img {
   margin: 0 auto;
   max-width: $contentMaxWidth;
 }
+//テキストアニメーションするよ
 .main-title {
   //継承することで、画面の大きさが変わっても今の画面の設定が適応される
   @extend .font-lg;
@@ -61,6 +62,7 @@ img {
   // 一行に重ならないようにする
   display: block;
 }
+//テキストアニメーションするよ
 .sub-title {
   @extend .font-sm;
   color: $cSubTitle;
@@ -72,10 +74,6 @@ img {
 }
 .purple {
   color: $cWineRed;
-}
-
-li {
-  list-style: none;
 }
 
 #container {

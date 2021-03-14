@@ -32,7 +32,6 @@
     <orderEntry type="library" scope="PROVIDED" name="annotate (v3.1.1, Remote: ruby-2.5.8-p224) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ansi (v1.5.0, Remote: ruby-2.5.8-p224) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bindex (v0.8.1, Remote: ruby-2.5.8-p224) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bootstrap-sass (v3.3.7, Remote: ruby-2.5.8-p224) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.4, Remote: ruby-2.5.8-p224) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v2.1.4, Remote: ruby-2.5.8-p224) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="childprocess (v3.0.0, Remote: ruby-2.5.8-p224) [gem]" level="application" />
