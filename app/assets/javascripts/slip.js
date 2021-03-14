@@ -512,7 +512,7 @@ window['Slip'] = (function () {
             if (this.container) this.detach();
 
             // In some cases taps on list elements send *only* click events and no touch events. Spotted only in Chrome 32+
-            // Having event listener on body seems to solve the issue (although AFAIK may disable smooth scrolling as a side-effect)
+            // Having event listener on body seems to solve the issue (although AFAIK may disable smooth scrolling as a sidebar.scss-effect)
             if (!attachedBodyHandlerHack && needsBodyHandlerHack) {
                 attachedBodyHandlerHack = true;
                 document.body.addEventListener('touchstart', nullHandler, false);

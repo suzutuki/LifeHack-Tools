@@ -1,0 +1,88 @@
+@import "mixin";
+@import "variables";
+
+// スマホ画面のときサイド要素を非表示にする
+.side {
+  display: none;
+  // 固定する
+  position: fixed;
+  // 画面の上から７０％から表示する
+  top: 70%;
+  // ここは検証で試してみるとよい
+  transform: translateY(-50%);
+  transition: all 0.3s ease-in;
+
+  & .tween-animate-title {
+    color: $cBlack;
+    text-decoration: none !important;
+    margin: 0 40px;
+    // ロゴと文字の中心のズレを修正
+    vertical-align: middle;
+    letter-spacing: 2px;
+  }
+  // サイドバー左側の設定
+  &.left {
+    left: -50px;
+
+    &.inview {
+      left: 50px;
+    }
+
+    & .side__inner {
+      // 左端を軸とするための設定
+      transform-origin: top center;
+      // 文字を-９０度回転させる
+      transform: rotate(-90deg);
+    }
+  }
+  // サイドバー右側の設定
+  &.right {
+    right: -50px;
+
+    &.inview {
+      right: 50px;
+    }
+
+    & .side__inner {
+      // 右端を軸とするための設定
+      transform-origin: top center;
+      // 文字を９０度回転させる
+      transform: rotate(90deg);
+    }
+  }
+}
+//ツイッターのアイコン
+.icon {
+  position: relative;
+
+  @include p-base($left: -20px, $top: 50%, $width: 1em, $height: 1em) {
+    transform: translateY(-50%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  //ロゴの設定
+  &.twitter {
+    &::before {
+      background-image: url("/twitter.svg")
+    }
+  }
+  //&.fb {
+  //  &::before {
+  //    background-image: url(../images/facebook.svg);
+  //  }
+  //}
+}
+
+.logo {
+  font-size: 42px;
+  display: flex;
+
+  &__img {
+    width: 0.7em;
+  }
+
+  &__Garden {
+    color: $cWineRed;
+  }
+}

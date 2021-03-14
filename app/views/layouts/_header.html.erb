@@ -12,13 +12,13 @@
           <ul class="header__ul">
           <% if logged_in? %>
               <li class="header__li item">
-                <%= link_to "My ToDoリスト！", task_path(current_user) %>
+                <%= link_to "My ToDoリスト！", task_path(current_user), class: "btn filled"%>
               </li>
               <li class="header__li item">
-                <%= link_to 'Config', edit_user_path(current_user) %>
+                <%= link_to 'Config', edit_user_path(current_user), class: "btn filled"%>
               </li>
               <li class="header__li item">
-              <%= link_to "Log out", logout_path, method: :delete,
+              <%= link_to "Log out", logout_path, method: :delete, class: "btn filled",
                           data: { confirm: "ログアウトしますか？" } %>
               </li>
           <% else %>
@@ -38,3 +38,5 @@
         </button>
       </div>
     </header>
+<!--divが2つ閉じられていないのに注意-->
+<!--    footerの前に閉じるのとnavの後とscriptの前に閉じる-->

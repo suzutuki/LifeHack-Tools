@@ -1,0 +1,79 @@
+@import "base";
+@import "variables";
+@import "mixin";
+.world {
+  @extend .content-width;
+  @extend .mb-lg;
+  // 親要素でローカルスタッキングコンテキストを作るために必要
+  &__inner {
+    @extend .flex;
+    justify-content: space-between;
+    // 周りに壁を作る
+    padding: 15px;
+    background-color: $cBgGray;
+    // 下の２つはローカルスタッキングコンテキストを作る設定
+    position: relative;
+    z-index: 0;
+  }
+
+  &__title {
+    // 横線の位置決め
+    position: relative;
+    // 横線を疑似要素で出力する
+    @include p-base(
+            $display: none,
+            $width: 70px,
+            $height: 1px,
+            $top: 50%,
+              // 線の長さ
+            $left: -75px
+    ) {
+      // 棒線が伸びるアニメーション
+      background-color: $cBlack;
+      transform: translateY(-50%) scaleX(0);
+      // 右側を中心に伸びるアニメーション
+      transition: transform 0.3s ease 1.6s;
+      transform-origin: right;
+    }
+  }
+
+  &__sub {
+    @extend .mb-sm;
+  }
+
+  &__img {
+    height: 300px;
+    @extend .mb-sm;
+    //  アニメーションが終わったときに表示したいので
+    transition: box-shadow 1ms linear 0.8s;
+
+    & > img {
+      position: relative;
+      // ボックスシャドウを背面につけるための設定
+      z-index: -1;
+      // 画像には基本object-fitをつける
+      object-fit: cover;
+      // 画像の上部分を中心にしたいので
+      object-position: top;
+      // 外側の親要素タテヨコ100％で画像が表示される
+      width: 100%;
+      height: 100%;
+    }
+
+    &.inview {
+      // 内側にボックスシャドウを付ける設定
+      box-shadow: inset 0 0 30px $cBlack;
+    }
+  }
+
+  &__texts {
+    @extend .pb-sm;
+    // 横線のアニメーションの設定
+    &.inview {
+      & .world__title::before {
+        //右から左に線が伸びるように
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
