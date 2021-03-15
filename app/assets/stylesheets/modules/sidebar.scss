@@ -30,7 +30,7 @@
 
     & .side__inner {
       // 左端を軸とするための設定
-      transform-origin: top center;
+      transform-origin: top left;
       // 文字を-９０度回転させる
       transform: rotate(-90deg);
     }
@@ -45,7 +45,7 @@
 
     & .side__inner {
       // 右端を軸とするための設定
-      transform-origin: top center;
+      transform-origin: top right;
       // 文字を９０度回転させる
       transform: rotate(90deg);
     }

@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   #リファクタリング用
   before_action :set_target_user, only: [ :destroy, :edit, :update]
   before_action :admin_user, only: [:destroy, :show]
-
+  skip_before_action :verify_authenticity_token
   def index
   end
 
