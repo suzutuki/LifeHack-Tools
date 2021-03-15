@@ -12,7 +12,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'font-awesome-sass'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
-gem 'turbolinks', '~> 5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'kaminari'
 gem 'rails-i18n', '~> 5.1'
@@ -24,6 +23,8 @@ gem 'flatpickr'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'jquery-rails', '~>4.3.1'
+# gem 'jquery-turbolinks'
+# gem 'turbolinks', '~> 5'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver

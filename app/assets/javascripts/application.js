@@ -14,12 +14,14 @@
 //= require rails-ujs
 //= require flatpickr
 //= require flatpickr/l10n/ja
-//= require turbolinks
 //= require jquery3
 //= require jquery_ujs
 //= require jquery
 //= require Chart.min
-//= require_tree .
+//= require_directory ./vendors
+//= require_directory ./libs
+//= require_directory ./main
+//= require_tree
 
 // ボタンが押されたら優先順位,1位以外を非表示にする。not-priority-1がターゲット
 $(function () {
