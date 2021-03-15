@@ -10,7 +10,7 @@
       animated-hover", style: "color: #1d1d1f;"), root_path) %>
         <nav class="header__nav">
           <ul class="header__ul">
-          <% if logged_in? %>
+            <% if logged_in? %>
               <li class="header__li item">
                 <%= link_to "My ToDoリスト！", task_path(current_user), class: "btn filled"%>
               </li>
@@ -18,17 +18,17 @@
                 <%= link_to 'Config', edit_user_path(current_user), class: "btn filled"%>
               </li>
               <li class="header__li item">
-              <%= link_to "Log out", logout_path, method: :delete, class: "btn filled",
-                          data: { confirm: "ログアウトしますか？" } %>
+                <%= link_to "Log out", logout_path, method: :delete, class: "btn filled",
+                            data: { confirm: "ログアウトしますか？" } %>
               </li>
-          <% else %>
-            <li class="header__li item">
-              <%= link_to "Log in", login_path%>
-            </li>
-            <li class="header__li item">
-              <%= link_to "Sign-up!", new_user_path%>
-            </li>
-          <% end %>
+            <% else %>
+              <li class="header__li item">
+                <%= link_to "Log in", login_path%>
+              </li>
+              <li class="header__li item">
+                <%= link_to "Sign-up!", new_user_path%>
+              </li>
+            <% end %>
           </ul>
         </nav>
         <button class="mobile-menu__btn">
@@ -38,5 +38,5 @@
         </button>
       </div>
     </header>
-<!--divが2つ閉じられていないのに注意-->
-<!--    footerの前に閉じるのとnavの後とscriptの前に閉じる-->
+    <!--divが2つ閉じられていないのに注意-->
+    <!--    footerの前に閉じるのとnavの後とscriptの前に閉じる-->

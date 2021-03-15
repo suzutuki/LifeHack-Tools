@@ -6,11 +6,12 @@ html {
   min-height: 100%;
   width: 100%;
 }
+
 /* bodyからの設定 */
 body {
   margin-bottom: 60px;
   border-top: 6px solid $color-coffee_brown;
-  font-family: "SF Pro JP","SF Pro Text","SF Pro Icons","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","メイリオ","Meiryo","ＭＳ Ｐゴシック","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-family: "SF Pro JP", "SF Pro Text", "SF Pro Icons", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   line-height: 1.47059;
   background-color: $color-white;
   letter-spacing: -.022em;
@@ -18,41 +19,52 @@ body {
   overflow-x: hidden;
   font-style: normal;
 }
+
 //画像の基本設定
 img {
   max-width: 100%;
   vertical-align: bottom;
 }
+
 //共通クラス
 .font-sm {
   font-size: 14px;
 }
+
 .font-md {
   font-size: 17px;
 }
+
 .font-lr {
   font-size: 17px;
 }
+
 .font-lg {
   font-size: 25px;
 }
+
 .mb-sm {
   margin-bottom: 16px !important;
 }
+
 .mb-lg {
   margin-bottom: 80px !important;
 }
+
 .pb-sm {
   padding-bottom: 16px !important;
 }
+
 .pb-lg {
   padding-bottom: 80px !important;
 }
+
 .content-width {
   width: 90%;
   margin: 0 auto;
   max-width: $contentMaxWidth;
 }
+
 //テキストアニメーションするよ
 .main-title {
   //継承することで、画面の大きさが変わっても今の画面の設定が適応される
@@ -62,16 +74,19 @@ img {
   // 一行に重ならないようにする
   display: block;
 }
+
 //テキストアニメーションするよ
 .sub-title {
   @extend .font-sm;
   color: $cSubTitle;
 }
+
 //後で使い回せる
 .flex {
   display: flex;
   flex-direction: column;
 }
+
 .purple {
   color: $cWineRed;
 }
@@ -88,11 +103,27 @@ img {
   position: relative;
   z-index: 0;
 }
+
 // サイドバーより背面にしたい部分
 main {
   position: relative;
   z-index: -1;
 }
+
+//ロゴの設定
+.logo {
+  font-size: 42px;
+  display: flex;
+
+  &__img {
+    width: 0.7em;
+  }
+
+  &__Garden {
+    color: $cWineRed;
+  }
+}
+
 //.center-position {
 //  flex-direction: row;
 //  display: flex;
