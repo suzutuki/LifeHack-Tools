@@ -40,20 +40,24 @@
         </button>
       </div>
     </header>
+<!--ヘッダーココまで-->
     <!--divが2つ閉じられていないのに注意-->
-    <!--    footerの前に閉じるのとnavの後とscriptの前に閉じる-->
+    <!--footerの前に閉じるのとnavの後とscriptの前に閉じる-->
 <%= render 'layouts/flash_messages' %>
 <!--ココにそれぞれのページの内容-->
 <%= yield %>
-<%#= render 'layouts/footer' %>
+<!--ココからサイドバー右-->
+<%#= render 'layouts/side-right' %>
     </main>
     <aside class="side right">
       <div class="side__inner">
-        <span class="tween-animate-title">&copy;Ota</span>
+        <span>&copy;Ota</span>
       </div>
     </aside>
   </div>
   <!--ローカルスタッキングコンテキストを閉じるためのdiv-->
+<!--ココからフッター-->
+  <%#= render 'layouts/footer' %>
 <footer class="footer appear up">
   <nav class="footer__nav">
     <ul class="footer__ul">
@@ -66,11 +70,13 @@
       <li class="footer__li item"><a href="#">Contact</a></li>
       <li class="footer__li item"><a href="#">Company</a></li>
       <li class="footer__li item"><a href="#">Sitemap</a></li>
-      <div class="footer__copyright item">&copy Ota
+      <div class="footer__copyright item">&copy suzutuki
     </ul>
     </div>
   </nav>
 </footer>
+<%#= render 'layouts/mobile-menu' %>
+<!--ココからモバイルメニュー-->
 <nav class="mobile-menu">
   <div class="logo">
     <img class="logo__img" src="/logo.svg" alt="" />

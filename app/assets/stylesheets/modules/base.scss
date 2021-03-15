@@ -64,7 +64,11 @@ img {
   margin: 0 auto;
   max-width: $contentMaxWidth;
 }
-
+.form-width {
+  width: 55%;
+  margin: 0 auto;
+  max-width: $contentMaxWidth;
+}
 //テキストアニメーションするよ
 .main-title {
   //継承することで、画面の大きさが変わっても今の画面の設定が適応される
@@ -124,8 +128,11 @@ main {
   }
 }
 
-//.center-position {
-//  flex-direction: row;
-//  display: flex;
-//  justify-content: center;
-//}
+.center-position {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+}
+li {
+  list-style: none;
+}

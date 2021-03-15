@@ -1,21 +1,13 @@
-<div id="main-content">
-  <aside class="side left">
-    <div class="side__inner">
-      <a class="twitter icon tween-animate-title" href="#">Twitter</a>
-    </div>
-  </aside>
-  <main>
-<div class="site-width">
-  <div class="new-user-form">
-    <%= form_with model: user, local: true do |f| %>
+ <%= form_with model: user, local: true do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
+   <div class="log-form">
+     <div class="form-title tween-animate-title">Sign-up to LifeHack Tools</div>
       <div class="inputWithIcon">
         <%= f.text_field :name, class: 'form-field', placeholder: 'Your name' %>
         <%= f.email_field :email, class: 'form-field', placeholder: 'Email' %>
         <%= f.password_field :password, class: 'form-field', placeholder: 'パスワード' %>
         <%= f.password_field :password_confirmation, class: 'form-field', placeholder: 'パスワード確認' %>
       </div>
-      <%= f.submit "登録", class: "btn btn-submit" %>
+     <div class="center-position"><%= f.submit "登録", class: " btn float" %></div>
+   </div>
     <% end %>
-  </div>
-<%= render 'shared/footer_fix' %>
