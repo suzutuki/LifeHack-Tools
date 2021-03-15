@@ -1,7 +1,5 @@
  <%= form_with model: user, local: true do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
-   <div class="log-form">
-     <div class="form-title tween-animate-title">Sign-up to LifeHack Tools</div>
       <div class="inputWithIcon">
         <%= f.text_field :name, class: 'form-field', placeholder: 'Your name' %>
         <%= f.email_field :email, class: 'form-field', placeholder: 'Email' %>

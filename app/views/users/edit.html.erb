@@ -1,4 +1,15 @@
 <% provide(:title, "ユーザー情報変更") %>
-<div class="site-width">
-  <h1 class="text-center">ユーザー情報変更</h1>
+<div id="main-content">
+  <aside class="side left">
+    <div class="side__inner">
+      <a class="twitter icon tween-animate-title" href="#">Twitter</a>
+    </div>
+  </aside>
+  <main>
+    <section class="register">
+      <div class="center-position">
+        <h2 class="center-position tween-animate-title">Change user information</h2>
+      </div>
+      <div class="log-form">
+      <div class="form-title tween-animate-title">name, e-mail, password</div>
   <%= render partial: 'form', locals: {user: @user} %>

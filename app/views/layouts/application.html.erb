@@ -14,21 +14,21 @@
           <ul class="header__ul">
             <% if logged_in? %>
               <li class="header__li item">
-                <%= link_to "My ToDoリスト！", task_path(current_user), class: "btn filled"%>
+                <%= link_to "ToDoリスト", task_path(current_user) %>
               </li>
               <li class="header__li item">
-                <%= link_to 'Config', edit_user_path(current_user), class: "btn filled"%>
+                <%= link_to 'Config', edit_user_path(current_user) %>
               </li>
               <li class="header__li item">
-                <%= link_to "Log out", logout_path, method: :delete, class: "btn filled",
+                <%= link_to "Log out", logout_path, method: :delete,
                             data: { confirm: "ログアウトしますか？" } %>
               </li>
             <% else %>
               <li class="header__li item">
-                <%= link_to "Log in", login_path%>
+                <%= link_to "Log in", login_path %>
               </li>
               <li class="header__li item">
-                <%= link_to "Sign-up!", new_user_path%>
+                <%= link_to "Sign-up!", new_user_path %>
               </li>
             <% end %>
           </ul>
@@ -40,13 +40,13 @@
         </button>
       </div>
     </header>
-<!--ヘッダーココまで-->
+    <!--ヘッダーココまで-->
     <!--divが2つ閉じられていないのに注意-->
     <!--footerの前に閉じるのとnavの後とscriptの前に閉じる-->
-<%= render 'layouts/flash_messages' %>
-<!--ココにそれぞれのページの内容-->
-<%= yield %>
-<!--ココからサイドバー右-->
+    <%= render 'layouts/flash_messages' %>
+    <!--ココにそれぞれのページの内容-->
+    <%= yield %>
+    <!--ココからサイドバー右-->
 <%#= render 'layouts/side-right' %>
     </main>
     <aside class="side right">
@@ -56,30 +56,30 @@
     </aside>
   </div>
   <!--ローカルスタッキングコンテキストを閉じるためのdiv-->
-<!--ココからフッター-->
+  <!--ココからフッター-->
   <%#= render 'layouts/footer' %>
-<footer class="footer appear up">
-  <nav class="footer__nav">
-    <ul class="footer__ul">
-      <div class="logo item">
-        <li class="footer__li item">
-          <%= link_to 'LifeHack Tools！', root_url, style: "color: #333;" %>
-        </li>
-      </div>
-      <li class="footer__li item"><a href="#">Service</a></li>
-      <li class="footer__li item"><a href="#">Contact</a></li>
-      <li class="footer__li item"><a href="#">Company</a></li>
-      <li class="footer__li item"><a href="#">Sitemap</a></li>
-      <div class="footer__copyright item">&copy suzutuki
-    </ul>
-    </div>
-  </nav>
+  <footer class="footer appear up">
+    <nav class="footer__nav">
+      <ul class="footer__ul">
+        <div class="logo item">
+          <li class="footer__li item">
+            <%= link_to 'LifeHack Tools！', root_url, style: "color: #333;" %>
+          </li>
+        </div>
+        <li class="footer__li item"><a href="#">Service</a></li>
+        <li class="footer__li item"><a href="#">Contact</a></li>
+        <li class="footer__li item"><a href="#">Company</a></li>
+        <li class="footer__li item"><a href="#">Sitemap</a></li>
+        <div class="footer__copyright item">&copy suzutuki
+      </ul>
+</div>
+</nav>
 </footer>
 <%#= render 'layouts/mobile-menu' %>
 <!--ココからモバイルメニュー-->
 <nav class="mobile-menu">
   <div class="logo">
-    <img class="logo__img" src="/logo.svg" alt="" />
+    <img class="logo__img" src="/logo.svg" alt=""/>
     <span class="logo__ stay">LifeHack</span>
     <span class="logo__world">Tools</span>
   </div>
