@@ -18,16 +18,20 @@
               <span>へようこそ！</span>
             </div>
             <div class="world__description item">
-              <p>仕事や学校が忙しくても
-                <br>何からやれば良いかもう悩みません。
-                <br> あなたがいまやるべきことを
-                <br>抜き出して管理しましょう。
-              </p>
-              <p> ToDoリスト!を活用して、仕事や勉強の効率化に役立ててください！</p>
+              <p> 仕事や学校が忙しくても</p>
+              <p> 何からやれば良いかもう悩みません。</p>
+              <p> あなたがいまやるべきことを</p>
+              <p> 抜き出して管理しましょう。</p>
+              <p> ToDoリスト!を活用して、</p>
+              <p>仕事や勉強の効率化に役立ててください！</p>
             </div>
             <div class="world__btn item">
               <%= link_to "ToDoリストを作成する", new_task_path, class: "btn slide-bg" %>
-              <%= link_to "TIPS:アイビー・リー・メソッド", tasks_path, class: "btn slide-bg" %>
+            </div>
+              <div class="world__btn item">
+              <%= link_to tasks_path, class: "btn-cubic" do%>
+              <span class="hovering">アイビー・リー・メソッド</span><span class="default">TIPS</span>
+              <% end %>
             </div>
           </div>
         </div>
