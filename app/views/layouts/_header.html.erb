@@ -12,21 +12,21 @@
           <ul class="header__ul">
             <% if logged_in? %>
               <li class="header__li item">
-                <%= link_to "My ToDoリスト！", task_path(current_user), class: "btn filled"%>
+                <%= link_to "ToDoリスト", task_path(current_user) %>
               </li>
               <li class="header__li item">
-                <%= link_to 'Config', edit_user_path(current_user), class: "btn filled"%>
+                <%= link_to 'Config', edit_user_path(current_user) %>
               </li>
               <li class="header__li item">
-                <%= link_to "Log out", logout_path, method: :delete, class: "btn filled",
+                <%= link_to "Log out", logout_path, method: :delete,
                             data: { confirm: "ログアウトしますか？" } %>
               </li>
             <% else %>
               <li class="header__li item">
-                <%= link_to "Log in", login_path%>
+                <%= link_to "Log in", login_path %>
               </li>
               <li class="header__li item">
-                <%= link_to "Sign-up!", new_user_path%>
+                <%= link_to "Sign-up!", new_user_path %>
               </li>
             <% end %>
           </ul>
@@ -39,4 +39,4 @@
       </div>
     </header>
     <!--divが2つ閉じられていないのに注意-->
-    <!--    footerの前に閉じるのとnavの後とscriptの前に閉じる-->
+    <!--footerの前に閉じるのとnavの後とscriptの前に閉じる-->

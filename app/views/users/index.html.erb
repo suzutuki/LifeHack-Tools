@@ -17,32 +17,46 @@
             <img src="/Geranium.jpg" alt="">
           </div>
         </div>
-<!--<div class="hero__footer">-->
-        </div>
+        <div class="swiper-pagination"></div>
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <!--<div class="hero__footer">-->
       </div>
+    </div>
+  </div>
+  <section class="content-width">
     <div id="main-content">
       <aside class="side left">
         <div class="side__inner">
-          <a class="twitter icon" href="#">Twitter</a>
+          <a class="twitter icon tween-animate-title" href="#">Twitter</a>
         </div>
       </aside>
       <main>
-      <%= link_to "ToDoリスト！", task_path(current_user),
-                  class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
-      <%= link_to "Small stepとBig area", step_path(current_user),
-                  class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
-      <%= link_to "Macの原則", mac_path(current_user),
-                  class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
-      <%= link_to "If-Thenテクニック", it_path(current_user),
-                  class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
-      <%= link_to "グラフを見る(ビッグエリア)", steps_path,
-                  class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
-      <% if current_user.admin? %>
-        <%= link_to "ユーザーを見る(管理者のみ)", user_path(current_user),
-                    class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
-      <% end %>
-<!--ログインしていない時-->
-  <% else %>
+        <div class="center-position">
+          <div class="world__title main-title item">
+            <div class="world__btn item">
+              <%= link_to "ToDoリスト！", task_path(current_user),
+                          class: "btn solid" %>
+              <%= link_to "Small stepとBig area", step_path(current_user),
+                          class: "btn solid" %>
+              <%= link_to "Macの原則", mac_path(current_user),
+                          class: "btn solid" %>
+              <%= link_to "If-Thenテクニック", it_path(current_user),
+                          class: "btn solid" %>
+              <%= link_to "グラフを見る(ビッグエリア)", steps_path,
+                          class: "btn slide-bg" %>
+              <% if current_user.admin? %>
+                <%= link_to "ユーザーを見る(管理者のみ)", user_path(current_user),
+                            class: "btn slide-bg" %>
+                </div>
+                </div>
+                </div>
+      </section>
+    <% end %>
+
+    <!--ログインしていない時-->
+<% else %>
   <div id="main-content">
     <aside class="side left">
       <div class="side__inner">
@@ -50,36 +64,38 @@
       </div>
     </aside>
     <main>
-    <section class="world">
-    <div class="world__inner">
-      <div class="world__img cover-slide">
-        <img class="img-zoom" src="/Rose-banquet3.jpg" alt=""/>
-      </div>
-      <div class="world__texts appear left">
-        <div class="world__texts-inner">
-          <div class="world__title main-title item">
-            <span class="purple">LifeHack</span>
-            <span>Tools！へようこそ！</span>
+      <section class="world">
+        <div class="world__inner">
+          <div class="world__img cover-slide">
+            <img class="img-zoom" src="/Rose-banquet3.jpg" alt=""/>
           </div>
-          <div class="world__sub sub-title item">ライフハックツール</div>
-          <div class="world__description item">
-            <p>目標達成や習慣化のアシストツールとして
-              <br>LifeHack Tools！を活用して
-            </p>
-            <p> 文字通り人生(Life)をハックしましょう！</p>
-          </div>
-          <div class="world__btn item">
-            <%= link_to "ユーザー登録する！", new_user_path, class: "btn slide-bg" %>
+          <div class="world__texts appear left">
+            <div class="world__texts-inner">
+              <div class="world__title main-title item">
+                <span class="purple">LifeHack</span>
+                <span>Tools！へようこそ！</span>
+              </div>
+              <div class="world__sub sub-title item">ライフハックツール</div>
+              <div class="world__description item">
+                <p>目標達成や習慣化のアシストツールとして
+                  <br>LifeHack Tools！を活用して
+                </p>
+                <p> 文字通り人生(Life)をハックしましょう！</p>
+              </div>
+              <div class="world__btn item">
+                <%= link_to "ユーザー登録する！", new_user_path, class: "btn slide-bg" %>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <% end %>
-<button class="btn float">Button</button>
-<button class="btn filled">Button</button>
-<button class="btn letter-spacing">Button</button>
-<button class="btn shadow">Button</button>
-<button class="btn solid">Button</button>
+      </section>
+<% end %>
+<div class="center-position">
+  <button class="btn float">Button</button>
+  <button class="btn filled">Button</button>
+  <button class="btn letter-spacing">Button</button>
+  <button class="btn shadow">Button</button>
+  <button class="btn solid">Button</button>
+</div>
 </main>
 
