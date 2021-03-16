@@ -1,5 +1,4 @@
 <% provide(:title, ' ユーザー登録') %>
-<!--ヘッダーから来ている-->
 <div id="main-content">
   <aside class="side left">
     <div class="side__inner">
@@ -7,10 +6,16 @@
     </div>
   </aside>
   <main>
-<section class="register">
-  <div class="center-position">
-<h2 class="tween-animate-title">User Registration</h2>
-  </div>
-  <div class="log-form">
-    <div class="form-title tween-animate-title">Sign-up to LifeHack Tools</div>
+    <section class="register">
+      <div class="center-position">
+        <h2 class="tween-animate-title">User Registration</h2>
+      </div>
+      <div class="log-form">
+        <div class="form-title tween-animate-title">Sign-up to LifeHack Tools</div>
 <%= render partial: 'users/form', locals: { user: @user } %>
+  </main>
+  <aside class="side right">
+    <div class="side__inner">
+      <span>&copy;Ota</span>
+    </div>
+  </aside>

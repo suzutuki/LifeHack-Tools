@@ -55,7 +55,8 @@
           </ul>
         </div>
         <div class="panel-right">
-          <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), task_path(task.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
+          <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right",
+                                  style: "color: rgb(80,80,80);"), task_path(task.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
           </div>
       </div>
     <% end %>

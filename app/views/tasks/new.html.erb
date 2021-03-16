@@ -1,9 +1,13 @@
 <% provide(:title, "new") %>
+<div id="main-content">
+  <aside class="side left">
+      <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
+      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), task_path(current_user)) %>
+  </aside>
+  <main>
 <div class="todo-width">
   <h1 class="center-position">ToDoリスト！新規作成</h1>
   <div class="prev-left">
-    <%= link_to(content_tag(:i, '', class: "fas fa-angle-double-left fa-3x
-      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), task_path(current_user)) %>
     <%= link_to(content_tag(:i, '', class: "fas fa-question fa-3x
                                 faa-vertical animated-hover fa-pull-right",
                             style: "color: rgb(80,80,80);"), tasks_path) %>
