@@ -1,50 +1,56 @@
 <% provide(:title, "new") %>
 <div id="main-content">
   <aside class="side left">
-      <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
+    <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
       faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), task_path(current_user)) %>
   </aside>
   <main>
-<div class="todo-width">
-  <h1 class="center-position">ToDoリスト！新規作成</h1>
-  <div class="prev-left">
-    <%= link_to(content_tag(:i, '', class: "fas fa-question fa-3x
-                                faa-vertical animated-hover fa-pull-right",
-                            style: "color: rgb(80,80,80);"), tasks_path) %>
-  </div>
-  <div class="new-todo-list-form">
-    <%= form_with model: @tasks, url: tasks_path, local: true do |form| %>
-      <% @tasks.collection.each do |task| %>
-        <%= fields_for 'tasks[]', task, local: true do |field| %>
-          <h2>
-            <p><%= field.label :"タイトル : あなたが達成したいことを書いてください", class: 'label' %></p><br>
-            <p><%= field.text_field :title, class: 'tasks-form-field'%></p><br>
-            <% if @tasks.errors.include?(:title) %>
-              <div class="alert alert-danger">
-                <%= @tasks.errors.messages[:title][0] %>
-              </div>
+    <section class="todo">
+      <div class="log-form">
+        <div class="form-title tween-animate-title">ToDoリスト新規作成</div>
+      <div class="inputWithIcon">
+        <%= form_with model: @tasks, url: tasks_path, local: true do |form| %>
+          <% @tasks.collection.each do |task| %>
+            <%= fields_for 'tasks[]', task, local: true do |field| %>
+              <h3>
+                <p><%= field.label :"タイトル : あなたが1日で達成したいことを書いてください", class: 'todo__label' %></p><br>
+                <p><%= field.text_field :title, class: 'tasks-form-field', placeholder: '筋トレ 学習 仕事の内容など自由に' %></p><br>
+                <% if @tasks.errors.include?(:title) %>
+                  <div class="alert alert-danger">
+                    <%= @tasks.errors.messages[:title][0] %>
+                  </div>
+                <% end %>
+                <p><%= field.label :"優先順位 :  優先順位の高い順に自動で並び替わります。", class: 'ivy' %></p><br>
+                <p><%= field.select :priority, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+                                    { include_blank: '選択してください' }, { class: 'tasks-form-box', required: true } %></p>
+                <br>
+                <% if @tasks.errors.include?(:priority) %>
+                  <div class="alert alert-danger">
+                    <%= @tasks.errors.messages[:priority][0] %>
+                  </div>
+                <% end %>
+                <p><%= field.label :"メモ (50文字まで登録できます)", class: 'ivy' %></p><br>
+                <p><%= field.text_area :content, class: 'tasks-form-area', placeholder: 'ご自由にどうぞ' %></p><br>
+                <% if @tasks.errors.include?(:content) %>
+                  <div class="alert alert-danger">
+                    <%= @tasks.errors.messages[:content][0] %>
+                  </div>
+                <% end %>
             <% end %>
-            <p><%= field.label :"優先順位 :  優先順位の高い順に自動で並び替わります。", class: 'label' %></p><br>
-            ※注意！優先順位の数字が重複していると登録できません
-            <p><%= field.select :priority, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-                                {include_blank: '選択してください'}, {class: 'tasks-form-box', required: true} %></p><br>
-            <% if @tasks.errors.include?(:priority) %>
-              <div class="alert alert-danger">
-                <%= @tasks.errors.messages[:priority][0] %>
-              </div>
-            <% end %>
-            <p><%= field.label :"メモ (50文字まで登録できます)", class: 'label' %></p><br>
-            <p><%= field.text_area :content, class: 'tasks-form-area' %></p><br>
-            <% if @tasks.errors.include?(:content) %>
-              <div class="alert alert-danger">
-                <%= @tasks.errors.messages[:content][0] %>
-              </div>
-            <% end %>
+          <% end %>
+          </div>
+          <div class="center-position">
+          <div class="world__btn item">
+            <%= form.submit '一括登録', class: "btn filled" %>
+            <%= link_to '戻る', task_path(current_user), class: "btn slide-bg" %>
+          </div>
+          </div>
+          </h3>
         <% end %>
-      <% end %>
-      <%= form.submit '一括登録' %>
-      <%= link_to '戻る', task_path(current_user) %>
-      </h2>
-      </div>
-    <% end %>
-<%= render 'shared/footer_fix' %>
+    </section>
+        <aside class="side right">
+          <%= link_to(content_tag(:i, '', class: "fas fa-question fa-3x
+                                faa-vertical animated-hover fa-pull-right",
+                                  style: "color: rgb(80,80,80);"), tasks_path) %>
+        </aside>
+        </div>

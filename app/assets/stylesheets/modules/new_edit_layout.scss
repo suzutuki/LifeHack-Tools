@@ -1,11 +1,21 @@
 @import "variables";
 //newとeditの部分、フォント整え
-.todo-width{
+.todo {
   width: 80%;
   margin: 0 auto;
   max-width: $contentMaxWidth;
+  &__label {
+  width: 100%;
+  //border: 2px solid #aaa;
+  margin-bottom: 1em;
+  padding: .5em 0;
+  border: none;
+  border-bottom: 1px solid;
+  outline: none;
+  box-sizing: border-box;
+  transition: 0.3s;
 }
-
+}
 #new-list {
   font-size: 24px;
   margin-bottom: 40px;
@@ -21,7 +31,7 @@
 
 .tasks-form-box {
   margin-top: 10px;
-  width: 33%;
+  width: 45%;
   height: 40px;
   display: block;
 }

@@ -14,13 +14,13 @@
 //= require rails-ujs
 //= require flatpickr
 //= require flatpickr/l10n/ja
-//= require jquery3
-//= require jquery_ujs
 //= require jquery
+//= require jquery_ujs
+//= require jquery3
 //= require Chart.min
-//= require_directory ./jquery
 //= require_directory ./vendors
 //= require_directory ./libs
 //= require_directory ./main
-//= require_tree
+//= require_directory ./jquery
+//= require_tree .
 

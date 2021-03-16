@@ -23,7 +23,7 @@ gem 'flatpickr'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'jquery-rails', '~>4.3.1'
-gem 'jquery-turbolinks'
+# gem 'jquery-turbolinks'
 # gem 'turbolinks', '~> 5'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

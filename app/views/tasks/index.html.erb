@@ -1,9 +1,8 @@
 <% provide(:title, ' TIPS') %>
 <div id="main-content">
   <aside class="side left">
-    <div class="side__inner">
-      <a class="twitter icon tween-animate-title" href="#">Twitter</a>
-    </div>
+      <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
+      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), task_path(current_user)) %>
   </aside>
   <main>
     <section class="register appear up">
