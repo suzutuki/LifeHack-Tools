@@ -23,7 +23,11 @@
   @extend .mb-lg;
   overflow: hidden;
 }
-
+.login-position {
+  flex-direction: row-reverse;
+  display: flex;
+  justify-content: center;
+}
 //前の記述消すかも
 //.new-user-form {
 //  padding: 40px;

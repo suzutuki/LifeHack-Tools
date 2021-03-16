@@ -1,5 +1,11 @@
 @import "variables";
 //newとeditの部分、フォント整え
+.todo-width{
+  width: 80%;
+  margin: 0 auto;
+  max-width: $contentMaxWidth;
+}
+
 #new-list {
   font-size: 24px;
   margin-bottom: 40px;
