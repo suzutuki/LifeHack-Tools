@@ -28,6 +28,9 @@
 
 input {
   margin: 30px 0;
+  &submit {
+    background: #1d1d1f!important;
+  }
 }
 
 .inputWithIcon input:focus {

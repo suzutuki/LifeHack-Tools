@@ -2,20 +2,31 @@
 //newとeditの部分、フォント整え
 .todo {
   width: 80%;
-  margin: 0 auto;
+  margin: 4em auto 0;
   max-width: $contentMaxWidth;
+
   &__label {
+    width: 100%;
+    //border: 2px solid #aaa;
+    margin-bottom: 1em;
+    padding: 0.5em 0;
+    border: none;
+    border-bottom: 1px solid;
+    outline: none;
+    box-sizing: border-box;
+    transition: 0.3s;
+  }
+}
+
+.priority {
   width: 100%;
-  //border: 2px solid #aaa;
-  margin-bottom: 1em;
-  padding: .5em 0;
+  padding: 0.25em 0;
   border: none;
-  border-bottom: 1px solid;
   outline: none;
   box-sizing: border-box;
   transition: 0.3s;
 }
-}
+
 #new-list {
   font-size: 24px;
   margin-bottom: 40px;
@@ -42,6 +53,7 @@
   height: 40px;
   display: block;
   box-sizing: border-box;
+  border: 1px solid #333;
 }
 
 .tasks-form-area {
@@ -50,4 +62,15 @@
   height: 100px;
   display: block;
   box-sizing: border-box;
+}
+
+.todo__list {
+  border-bottom: 2.5px solid $color-coffee;
+  border-left: 2.5px solid #905523;
+  border-right: 2.5px solid #905523;
+  border-radius: 0 !important;
+  margin-bottom: 0.1px;
+  padding: 20px;
+  overflow: hidden;
+  background: rgba(250, 240, 230, 0.1);
 }

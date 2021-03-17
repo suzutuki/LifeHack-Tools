@@ -1,20 +1,11 @@
-@import "modules/variables";
+@import "variables";
 //□で囲まれているものの設定Taskなど
 .todo-top {
   margin-top: 10px;
   border-bottom: 2.5px solid $color-coffee;
 }
 
-.todo {
-  border-bottom: 2.5px solid $color-coffee;
-  border-left: 2.5px solid #905523;
-  border-right: 2.5px solid #905523;
-  border-radius: 0 !important;
-  margin-bottom: 0.1px;
-  padding: 20px;
-  overflow: hidden;
-  background: rgba(250, 240, 230, 0.1);
-}
+
 
 .panel-empty {
   border: 2.5px solid $color-thin_black;
