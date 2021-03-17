@@ -77,11 +77,18 @@ img {
   // 一行に重ならないようにする
   display: block;
 }
-
+.main-title-center {
+  @extend .main-title;
+  text-align: center;
+}
 //テキストアニメーションするよ
 .sub-title {
   @extend .font-sm;
   color: $cSubTitle;
+}
+.sub-title-center {
+  @extend .sub-title;
+  text-align: center;
 }
 
 //後で使い回せる
