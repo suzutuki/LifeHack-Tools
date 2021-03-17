@@ -73,6 +73,8 @@
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v3.7.2, Remote: ruby-2.5.8-p224) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thread_safe (v0.3.6, Remote: ruby-2.5.8-p224) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tilt (v2.0.10, Remote: ruby-2.5.8-p224) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="turbolinks (v5.2.1, Remote: ruby-2.5.8-p224) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="turbolinks-source (v5.2.0, Remote: ruby-2.5.8-p224) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="uglifier (v4.2.0, Remote: ruby-2.5.8-p224) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="web-console (v3.7.0, Remote: ruby-2.5.8-p224) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="xpath (v3.2.0, Remote: ruby-2.5.8-p224) [gem]" level="application" />
