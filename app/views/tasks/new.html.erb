@@ -12,8 +12,8 @@
           <% @tasks.collection.each do |task| %>
             <%= fields_for 'tasks[]', task, local: true do |field| %>
               <h3>
-                <p><%= field.label :"タイトル : あなたが1日で達成したいことを書いてください", class: 'todo__label' %></p><br>
-                <p><%= field.text_field :title, class: 'tasks-form-field', placeholder: '筋トレ 学習 仕事の内容など自由に' %></p><br>
+                <p><%= field.label :"タイトル : あなたが1日で達成したいことを書いてください", class: '' %></p><br>
+                <p><%= field.text_field :title, class: 'tasks-form-field', placeholder: '筋トレ 学習 仕事のtodo__label内容など自由に' %></p><br>
                 <% if @tasks.errors.include?(:title) %>
                   <div class="alert alert-danger">
                     <%= @tasks.errors.messages[:title][0] %>
@@ -39,8 +39,8 @@
           <% end %>
           <div class="center-position">
             <div class="world__btn item">
-              <%= form.submit '一括登録', class: "btn float" %>
               <%= link_to '戻る', task_path(current_user), class: "btn float" %>
+              <%= form.submit '一括登録', class: "btn float" %>
             </div>
           </div>
           </div>
