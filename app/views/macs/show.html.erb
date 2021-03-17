@@ -8,8 +8,8 @@
     <main>
       <section class="world">
         <div class="world__inner__reverse">
-          <div class="world__img cover-slide">
-            <img src="/Birthday.jpg" class="img-zoom" alt=""/>
+          <div class="world__img__reverse cover-slide">
+            <img src="/Birthday2.jpg" class="img-zoom" alt=""/>
           </div>
           <div class="world__texts appear left">
             <div class="world__content">
@@ -23,21 +23,17 @@
                 <p>M(Measurable: 測定可能性)<br/>ゴールを数字で表すことができる</p>
                 <p>A(Actionable: 行動可能性)<br/> ゴールまでのプロセスを明確化させる</p>
                 <p>C(Competent: 適格性)<br/>目標達成が自分の価値観に基づいているか?</p>
-              <div class="world__btn item">
-                <button class="btn filled">もっと詳しく</button>
-              </div>
+                <div class="world__btn item">
+                  <%= link_to "MACの原則を作る", new_mac_path, class: "btn slide-bg" %>
+                  <%= link_to mac_path, class: "btn-cubic" do %>
+                    <span class="hovering">具体的な例を見る</span><span class="default">TIPS</span>
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <div class="flex-container">
-        <%= link_to "具体的な例を見る", macs_path,
-                    class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
-        <%= link_to "MACの原則を作る", new_mac_path,
-                    class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
-      </div>
-  </div>
 <% end %>
 <% if @macs.any? %>
   <% @macs.each do |mac| %>

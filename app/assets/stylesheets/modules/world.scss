@@ -69,6 +69,7 @@
     //  アニメーションが終わったときに表示したいので
     transition: box-shadow 1ms linear 0.8s;
 
+
     & > img {
       position: relative;
       // ボックスシャドウを背面につけるための設定
@@ -81,7 +82,20 @@
       width: 100%;
       height: 100%;
     }
-
+    &__reverse {
+      & > img {
+        position: relative;
+        // ボックスシャドウを背面につけるための設定
+        z-index: -1;
+        // 画像には基本object-fitをつける
+        object-fit: cover;
+        // 画像の上部分を中心にしたいので
+        object-position: center;
+        // 外側の親要素タテヨコ100％で画像が表示される
+        width: 100%;
+        height: 100%;
+      }
+    }
     &.inview {
       // 内側にボックスシャドウを付ける設定
       box-shadow: inset 0 0 30px $cBlack;
