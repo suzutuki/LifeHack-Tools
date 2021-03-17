@@ -40,7 +40,6 @@
   </div>
   <ul class="mobile-menu__main">
     <% if logged_in? %>
-      <%= link_to 'Settings', edit_user_path(current_user), class: "btn float" %>
       <%= link_to "Log out", logout_path, method: :delete,
                   data: { confirm: "ログアウトしますか？" }, class: "btn float" %>
       <%= link_to "ToDoリスト！", task_path(current_user), class: "btn solid" %>

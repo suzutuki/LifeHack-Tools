@@ -12,8 +12,8 @@
           <% @tasks.collection.each do |task| %>
             <%= fields_for 'tasks[]', task, local: true do |field| %>
               <h3>
-                <p><%= field.label :"タイトル : あなたが1日で達成したいことを書いてください", class: '' %></p><br>
-                <p><%= field.text_field :title, class: 'tasks-form-field', placeholder: '筋トレ 学習 仕事のtodo__label内容など自由に' %></p><br>
+                <p><%= field.label :"タイトル : あなたが1日で達成したいことを書いてください", class: 'priority' %></p><br>
+                <p><%= field.text_field :title, class: 'tasks-form-field', placeholder: '筋トレ 学習 仕事の内容など自由に' %></p><br>
                 <% if @tasks.errors.include?(:title) %>
                   <div class="alert alert-danger">
                     <%= @tasks.errors.messages[:title][0] %>
@@ -48,6 +48,6 @@
         <% end %>
         </section>
     <aside class="side right">
-      <%= link_to(content_tag(:i, '', class: "fas fa-question fa-3x
-         faa-vertical animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), tasks_path) %>
+      <%= link_to(content_tag(:i, '', class: "fas fa-question faa-vertical animated-hover fa-pull-right",
+                              style: "color: rgb(80,80,80);"), tasks_path) %>
     </aside>

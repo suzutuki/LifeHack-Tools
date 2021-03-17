@@ -1,73 +1,86 @@
-<div id="main-content">
-  <aside class="side left">
-    <div class="side__inner">
-      <a class="twitter icon tween-animate-title" href="#">Twitter</a>
-    </div>
-  </aside>
-  <main>
-    <% if current_user.tasks.empty? %>
-    <section class="world">
-      <div class="world__inner">
-        <div class="world__img cover-slide">
-          <img class="img-zoom" src="/Rose-banquet3.jpg" alt=""/>
-        </div>
-        <div class="world__texts appear left">
-          <div class="world__texts-inner">
-            <div class="world__title main-title item">
-              <span class="coffee">TODOリスト</span>
-              <span>へようこそ！</span>
-            </div>
-            <div class="world__description item">
-              <p> 仕事や学校が忙しくても</p>
-              <p> 何からやれば良いかもう悩みません。</p>
-              <p> あなたがいまやるべきことを</p>
-              <p> 抜き出して管理しましょう。</p>
-              <p> ToDoリスト!を活用して、</p>
-              <p>仕事や勉強の効率化に役立ててください！</p>
-            </div>
-            <div class="world__btn item">
-              <%= link_to "ToDoリストを作成する", new_task_path, class: "btn slide-bg" %>
-              <%= link_to tasks_path, class: "btn-cubic" do%>
-              <span class="hovering">アイビー・リー・メソッド</span><span class="default">TIPS</span>
-              <% end %>
+<% if current_user.tasks.empty? %>
+  <div id="main-content">
+    <aside class="side left">
+      <div class="side__inner">
+        <a class="twitter icon tween-animate-title" href="#">Twitter</a>
+      </div>
+    </aside>
+    <main>
+      <section class="world">
+        <div class="world__inner">
+          <div class="world__img cover-slide">
+            <img class="img-zoom" src="/Rose-banquet3.jpg" alt=""/>
+          </div>
+          <div class="world__texts appear left">
+            <div class="world__texts-inner">
+              <div class="world__title main-title item">
+                <span class="coffee">TODOリスト</span>
+                <span>へようこそ！</span>
+              </div>
+              <div class="world__description item">
+                <p> 仕事や学校が忙しくても</p>
+                <p> 何からやれば良いかもう悩みません。</p>
+                <p> あなたがいまやるべきことを</p>
+                <p> 抜き出して管理しましょう。</p>
+                <p> ToDoリスト!を活用して、</p>
+                <p>仕事や勉強の効率化に役立ててください！</p>
+              </div>
+              <div class="world__btn item">
+                <%= link_to "ToDoリストを作成する", new_task_path, class: "btn slide-bg" %>
+                <%= link_to tasks_path, class: "btn-cubic" do %>
+                  <span class="hovering">アイビー・リー・メソッド</span><span class="default">TIPS</span>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
+      </section>
+<% end %>
+<% if current_user.tasks.any? %>
+  <div id="main-content">
+    <aside class="side left">
+      <div class="side__inner">
+        <a class="twitter icon tween-animate-title" href="#">Twitter</a>
       </div>
-    </section>
-    <% end %>
-  <% if current_user.tasks.any? %>
-    <trigger_time class="btn-sticky">更新・作成日時を表示/非表示</trigger_time>
-    <trigger_priority class="btn-sticky">優先順位1のみ表示</trigger_priority>
-    <%= link_to "アイビー・リー・メソッド", tasks_path, class: "btn-sticky-blue" %>
-    <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-double-right fa-3x
-                                faa-horizontal animated-hover fa-pull-right",
-                            style: "color: rgb(80,80,80);"), new_task_path) %>
-    <div class="todo-top"></div>
+    </aside>
+    <main>
+      <section class="todo appear right">
+      <trigger_time class="btn float">更新・作成日時を表示/非表示</trigger_time>
+      <trigger_priority class="btn float">優先順位1のみ表示</trigger_priority>
+      <%= link_to "アイビー・リー・メソッド", tasks_path, class: "btn float" %>
+        <div class="log-form item">
+          <div class="todo-title item">My ToDo List</div>
     <% current_user.tasks.each do |task| %>
-      <div class="todo <%= "not-priority-1" if task.priority != 1 %>">
-        <div class="panel-left">
-          <ul class="checkbox">
-            <%= check_box_tag 'task', '', task.done, {'data-id' => task.id, class: 'tasks-checkbox'} %>
-            <h2>ToDo:<%= task.title %></h2>
-            <h2>メモ:<%= task.content %></h2>
-            <h2>優先順位:<%= task.priority %></h2>
-            <li><h3 class="tasks-time">更新日時:<%= task.updated_at.to_s(:datetime_jp) %>
-              作成日時:<%= task.created_at.to_s(:datetime_jp) %></h3></li>
+      <div class="todo__list item<%= "not-priority-1" if task.priority != 1 %>">
+        <div class="panel-left item">
+          <ul class="checkbox item">
+            <%= check_box_tag 'task', '', task.done, { 'data-id' => task.id, class: 'tasks-checkbox' } %>
+            <h2 class="todo__label item">ToDo:<%= task.title %></h2>
+            <h2 class="todo__label item">メモ:<%= task.content %></h2>
+              <h2 class="todo__label item">優先順位:<%= task.priority %></h2>
+              <li><h3 class="tasks-time item">Update:<%= task.updated_at.to_s(:datetime_jp) %>
+                create:<%= task.created_at.to_s(:datetime_jp) %></h3></li>
           </ul>
         </div>
         <div class="panel-right">
           <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right",
-                                  style: "color: rgb(80,80,80);"), task_path(task.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
-          </div>
+                                  style: "color: rgb(80,80,80);"), task_path(task.id), method: :delete, data: { confirm: "本当に削除しますか？" }) %>
+        </div>
       </div>
     <% end %>
     <li class="active">
-<%= paginate @tasks %>
+      <%= paginate @tasks %>
     </li>
     <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover
- fa-pull-right", style: "color: rgb(80,80,80); margin-bottom: 15px;"), edit_task_path ) %>
+ fa-pull-right", style: "color: rgb(80,80,80); margin-bottom: 15px;"), edit_task_path) %>
     <%= link_to(content_tag(:i, '', class: "fas fa-bomb fa-3x faa-horizontal
- animated-hover fa-pull-right", style: "color: rgb(80,80,80); margin-bottom: 15px;"), destroy_all_tasks_path, method: :delete, data: {confirm: "全て削除します。本当に削除しますか？"}) %>
-    </div>
-  <% end %>
+ animated-hover fa-pull-right", style: "color: rgb(80,80,80); margin-bottom: 15px;"), destroy_all_tasks_path, method: :delete, data: { confirm: "全て削除します。本当に削除しますか？" }) %>
+<% end %>
+<aside class="side right">
+  <div class="side__inner">
+    <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-double-right fa-2x
+                                faa-horizontal animated-hover fa-pull-right",
+                            style: "color: rgb(80,80,80);"), new_task_path) %>
+  </div>
+</aside>
+</section>

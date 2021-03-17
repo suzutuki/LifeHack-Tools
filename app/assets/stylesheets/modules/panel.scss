@@ -1,11 +1,9 @@
 @import "variables";
 //□で囲まれているものの設定Taskなど
 .todo-top {
-  margin-top: 10px;
-  border-bottom: 2.5px solid $color-coffee;
+  margin-top: 1em;
+  //border-bottom: 2.5px solid $color-coffee;
 }
-
-
 
 .panel-empty {
   border: 2.5px solid $color-thin_black;
@@ -19,6 +17,7 @@
 .panel-left {
   float: left;
   width: 80%;
+  position: relative;
 }
 
 .panel-left p {

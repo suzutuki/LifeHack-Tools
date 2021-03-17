@@ -15,7 +15,7 @@
           <ul class="header__ul">
             <% if logged_in? %>
               <li class="header__li item">
-                <%= link_to "ToDoリスト", task_path(current_user) %>
+                <%= link_to "ToDo", task_path(current_user) %>
               </li>
               <li class="header__li item">
                 <%= link_to 'Config', edit_user_path(current_user) %>
