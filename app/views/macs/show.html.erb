@@ -46,9 +46,9 @@
 <% if @macs.any? %>
   <div id="main-content">
     <aside class="side left">
-      <div class="side__inner">
-        <a class="twitter icon tween-animate-title" href="#">Twitter</a>
-      </div>
+        <%= link_to(content_tag(:i, '', class: "fas fa-question fa-3x
+                                faa-vertical animated-hover fa-pull-right",
+                                style: "color: rgb(80,80,80);"), macs_path) %>
     </aside>
     <main>
   <% @macs.each do |mac| %>

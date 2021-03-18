@@ -1,49 +1,57 @@
-<div class="container">
-  <h1>MACの原則の例</h1>
-  <div class="example_1">
-    <h3>例1(テストや受験、資格などで合格する)</h3><br>
-    <h2>M=メジャラブル(目標を数値化する)</h2><br>
-    <h2>○受験する対象について、1日どのくらいの学習時間が必要なのかを算出する。</h2><br>
-    <h2 class="text_color_grey">×毎日2時間学習する</h2><br>
-    <h2>A＝アクショナブル(ゴールまでの過程(プロセス)を明確化させる)</h2><br>
-    <h2>○過去問などから出題範囲、配点、難易度、傾向などを具体的に調べる。<br>
-      自分の理解できる難易度の参考書を調べる。<br>
-      定期的にテストをしてどれぐらい学習が必要か 学習時間の修正をするなど</h2><br>
-    <h2 class="text_color_grey">×毎日2時間学習するなど</h2><br>
-    <h2>C＝コンピテント(目標達成が価値観に基づいているか考える)</h2><br>
-    <h2>○将来に向けた大学の進学(または自分のスキルアップ)につながるからやる</h2><br>
-    <h2 class="text_color_grey">×なんとなくで決める</h2>
-  </div>
-  <div class="example_2">
-    <h3>例2(ダイエット)</h3><br>
-    <h2>M=メジャラブル(目標を数値化する)</h2><br>
-    <h2>○何月何日までに○キロやせるという期限を設けて願望を数値化する。</h2><br>
-    <h2 class="text_color_grey">×夏までに○キロやせる</h2><br>
-    <h2>A＝アクショナブル(ゴールまでの過程(プロセス)を明確化させる)</h2><br>
-    <h2>○期日までにやせるための具体的なプランを立てる。効果的な運動の回数を調べる。<br>
-      摂取カロリーを計算して減らせるか検討する。運動を習慣化するために協力してもらうなど
-    </h2><br>
-    <h2 class="text_color_grey">×食事を減らして運動をする</h2><br>
-    <h2>C＝コンピテント(目標達成が価値観に基づいているか考える)</h2><br>
-    <h2>○やせることが本当に望んでいることなのか考える</h2><br>
-    <h2 class="text_color_grey">×健康のためまたはモテたいなど</h2>
-  </div>
-  <div class="example_3">
-    <h3>例3(彼氏彼女を作りたい)</h3><br>
-    <h2>M=メジャラブル(目標を数値化する)</h2><br>
-    <h2>○何月何日までに彼氏彼女をつくるという期限を設けて願望を数値化する。</h2><br>
-    <h2 class="text_color_grey">×夏までに10キロやせる</h2><br>
-    <h2>A＝アクショナブル(ゴールまでの過程(プロセス)を明確化させる)</h2><br>
-    <h2>○期日までに彼氏彼女をつくるための具体的なプランを立てる。<br>
-      友人知人から紹介してもらう。マッチングサイトに登録する。合コン、恋活なども視野に入れる
-    </h2><br>
-    <h2 class="text_color_grey">×合コンのみ考える(複数考えない)</h2><br>
-    <h2>C＝コンピテント(目標達成が価値観に基づいているか考える)</h2><br>
-    <h2>○彼氏彼女をつくることが本当に望んでいることなのか考える</h2><br>
-    <h2 class="text_color_grey">×とりあえず恋人がいてほしいからなど</h2>
-  </div>
-  <div class="flex-container">
-<%= link_to "目標設定をする", new_mac_path,
-            class: "btn-sticky", style: "font-size: 28px; color: #333; justify-content: center;" %>
-</div>
-</div>
+<div id="main-content">
+  <aside class="side left">
+      <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
+      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), mac_path(current_user)) %>
+  </aside>
+  <main>
+    <section class="log-form appear up">
+      <div class="content-width">
+        <div class="ivy__title tween-animate-title">MACの原則の例</div>
+          <div class="ivy__title">
+          <h3 class="ivy">例1(テストや受験、資格などで合格する)</h3><br>
+          <h3 class="ivy">M=メジャラブル(目標を数値化する)</h3><br>
+          <h3>○受験する対象について、1日どのくらいの学習時間が必要なのかを算出する。</h3><br>
+          <h3 class="text_color_grey">×毎日2時間学習する</h3><br>
+          <h3>A＝アクショナブル(ゴールまでの過程(プロセス)を明確化させる)</h3><br>
+          <h3>○過去問などから出題範囲、配点、難易度、傾向などを具体的に調べる。<br>
+            自分の理解できる難易度の参考書を調べる。<br>
+            定期的にテストをしてどれぐらい学習が必要か 学習時間の修正をするなど</h3><br>
+          <h2 class="text_color_grey">×毎日2時間学習するなど</h2><br>
+          <h2>C＝コンピテント(目標達成が価値観に基づいているか考える)</h2><br>
+          <h2>○将来に向けた大学の進学(または自分のスキルアップ)につながるからやる</h2><br>
+          <h2 class="text_color_grey">×なんとなくで決める</h2>
+          </div>
+        <div class="example_2">
+          <h3>例2(ダイエット)</h3><br>
+          <h2>M=メジャラブル(目標を数値化する)</h2><br>
+          <h2>○何月何日までに○キロやせるという期限を設けて願望を数値化する。</h2><br>
+          <h2 class="text_color_grey">×夏までに○キロやせる</h2><br>
+          <h2>A＝アクショナブル(ゴールまでの過程(プロセス)を明確化させる)</h2><br>
+          <h2>○期日までにやせるための具体的なプランを立てる。効果的な運動の回数を調べる。<br>
+            摂取カロリーを計算して減らせるか検討する。運動を習慣化するために協力してもらうなど
+          </h2><br>
+          <h2 class="text_color_grey">×食事を減らして運動をする</h2><br>
+          <h2>C＝コンピテント(目標達成が価値観に基づいているか考える)</h2><br>
+          <h2>○やせることが本当に望んでいることなのか考える</h2><br>
+          <h2 class="text_color_grey">×健康のためまたはモテたいなど</h2>
+        </div>
+        <div class="example_3">
+          <h3>例3(彼氏彼女を作りたい)</h3><br>
+          <h2>M=メジャラブル(目標を数値化する)</h2><br>
+          <h2>○何月何日までに彼氏彼女をつくるという期限を設けて願望を数値化する。</h2><br>
+          <h2 class="text_color_grey">×夏までに10キロやせる</h2><br>
+          <h2>A＝アクショナブル(ゴールまでの過程(プロセス)を明確化させる)</h2><br>
+          <h2>○期日までに彼氏彼女をつくるための具体的なプランを立てる。<br>
+            友人知人から紹介してもらう。マッチングサイトに登録する。合コン、恋活なども視野に入れる
+          </h2><br>
+          <h2 class="text_color_grey">×合コンのみ考える(複数考えない)</h2><br>
+          <h2>C＝コンピテント(目標達成が価値観に基づいているか考える)</h2><br>
+          <h2>○彼氏彼女をつくることが本当に望んでいることなのか考える</h2><br>
+          <h2 class="text_color_grey">×とりあえず恋人がいてほしいからなど</h2>
+        </div>
+      </div>
+        <div class="flex-container">
+          <%= link_to "目標設定をする", new_mac_path,
+                      class: "btn-sticky", style: "font-size: 28px; color: #333; justify-content: center;" %>
+        </div>
+    </section>

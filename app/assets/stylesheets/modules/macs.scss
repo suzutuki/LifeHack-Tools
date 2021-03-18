@@ -7,7 +7,7 @@
 }
 
 .mac-width {
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -16,7 +16,6 @@
   flex-direction: column;
   display: flex;
 }
-
 
 .process {
   border-top: 2px solid $color-thin_black;
@@ -27,10 +26,10 @@
 .panel-mac {
   border: 2.5px solid $color-thin_black;
   border-radius: 10px;
+  margin: 0 auto;
   padding: 30px;
-  margin: 10px 150px 30px;
   overflow: hidden;
-  max-width: 90%;
+  max-width: 85%;
 }
 
 .icon-position {
