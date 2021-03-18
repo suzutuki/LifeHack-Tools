@@ -1,33 +1,36 @@
 <div class="mac-width">
-    <%= form_with model: @mac, local: true do |f| %>
+  <%= form_with model: @mac, local: true do |f| %>
     <h3>
-          <%= f.label :"M(Measurable : 数字で表すことができる目標", class: 'todo__label' %><br>
-          <%= f.text_area :measurable, class: 'form-area' %>
-        <% if @mac.errors.include?(:measurable) %>
-          <div class="alert alert-danger">
-            <%= @mac.errors.messages[:measurable][0] %>
-          </div>
-        <% end %>
-          <%= f.label :"A(Actionable :  ゴールまでのプロセスを明確化させる", class: 'priority' %>
-          <%= f.text_area :actionable, class: 'form-area' %>
-        <% if @mac.errors.include?(:actionable) %>
-          <div class="alert alert-danger">
-            <%= @mac.errors.messages[:actionable][0] %>
-          </div>
-        <% end %>
-        <%= f.label :"C(Competent 目標達成が価値観に基づいているか考える", class: 'priority' %>
-        <%= f.text_area :competent, class: 'form-area' %>
-        <% if @mac.errors.include?(:competent) %>
-          <div class="alert alert-danger">
-            <%= @mac.errors.messages[:competent][0] %>
-          </div>
-        <% end %>
-        <p><%= f.submit "登録", class: "btn-submit" %></p>
+      <%= f.label :"M(Measurable : 数字で表すことができる目標", class: 'todo__label' %><br>
+      <%= f.text_area :measurable, class: 'form-area' %>
+      <% if @mac.errors.include?(:measurable) %>
+        <div class="alert alert-danger">
+          <%= @mac.errors.messages[:measurable][0] %>
+        </div>
+      <% end %>
+      <%= f.label :"A(Actionable :  ゴールまでのプロセスを明確化させる", class: 'priority' %>
+      <%= f.text_area :actionable, class: 'form-area' %>
+      <% if @mac.errors.include?(:actionable) %>
+        <div class="alert alert-danger">
+          <%= @mac.errors.messages[:actionable][0] %>
+        </div>
+      <% end %>
+      <%= f.label :"C(Competent 目標達成が価値観に基づいているか考える", class: 'priority' %>
+      <%= f.text_area :competent, class: 'form-area' %>
+      <% if @mac.errors.include?(:competent) %>
+        <div class="alert alert-danger">
+          <%= @mac.errors.messages[:competent][0] %>
+        </div>
+      <% end %>
+      <div class="center-position">
+        <div class="world__btn item">
+          <%= f.submit yield(:button_text), class: "btn float" %>
+        </div>
+      </div>
     </h3>
-    <% end %>
-    </div>
-  </div>
-</section>
+  <% end %>
+</div>
+</div>
 <aside class="side right">
   <%= link_to(content_tag(:i, '', class: "fas fa-question fa-3x
                                 faa-vertical animated-hover fa-pull-right",

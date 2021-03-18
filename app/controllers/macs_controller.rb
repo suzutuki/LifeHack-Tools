@@ -26,7 +26,6 @@ class MacsController < ApplicationController
 
   def edit
     @mac = current_user.macs.find(params[:id])
-    binding.pry
   end
 
   def update

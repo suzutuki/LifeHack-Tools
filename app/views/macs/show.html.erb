@@ -34,8 +34,23 @@
           </div>
         </div>
       </section>
+      <aside class="side right">
+        <div class="side__inner">
+          <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-double-right fa-2x
+                                faa-horizontal animated-hover fa-pull-right",
+                                  style: "color: rgb(80,80,80);"), new_task_path) %>
+        </div>
+      </aside>
+      </section>
 <% end %>
 <% if @macs.any? %>
+  <div id="main-content">
+    <aside class="side left">
+      <div class="side__inner">
+        <a class="twitter icon tween-animate-title" href="#">Twitter</a>
+      </div>
+    </aside>
+    <main>
   <% @macs.each do |mac| %>
     <section class="panel-mac">
       <div class="goal">
@@ -57,7 +72,16 @@
         <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), mac_path(mac.id), method: :delete, data: { confirm: "本当に削除しますか？" }) %>
       </div>
     </section>
-    <trigger_time class="btn-sticky">更新・作成日時を表示/非表示</trigger_time>
   <% end %>
+      <div class="center-position">
+        <trigger_time class="btn float">更新・作成日時を表示/非表示</trigger_time>
+      </div>
 <% end %>
-<%= render 'shared/script' %>
+<aside class="side right">
+  <div class="side__inner">
+    <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-right fa-2x
+                                faa-horizontal animated-hover fa-pull-right",
+                            style: "color: rgb(80,80,80);"), new_mac_path) %>
+  </div>
+</aside>
+</section>
