@@ -33,15 +33,10 @@
 <%#= render 'layouts/mobile-menu' %>
 <!--ココからモバイルメニュー-->
 <nav class="mobile-menu">
-  <div class="logo">
-    <img class="logo__img" src="/logo.svg" alt=""/>
-    <span class="logo__ stay">LifeHack</span>
-    <span class="logo__world">Tools</span>
-  </div>
+  <%= link_to(content_tag(:i, 'HOME', class: "fas fa-home fas faa-vertical
+      animated-hover", style: "color: #1d1d1f;" "font-size: 1.5em"), root_path) %>
   <ul class="mobile-menu__main">
     <% if logged_in? %>
-      <%= link_to "Log out", logout_path, method: :delete,
-                  data: { confirm: "ログアウトしますか？" }, class: "btn float" %>
       <%= link_to "ToDoリスト！", task_path(current_user), class: "btn solid" %>
       <%= link_to "Small stepとBig area", step_path(current_user), class: "btn solid" %>
       <%= link_to "Macの原則", mac_path(current_user), class: "btn solid" %>
@@ -50,6 +45,8 @@
       <% if current_user.admin? %>
         <%= link_to "ユーザーを見る(管理者のみ)", user_path(current_user), class: "btn slide-bg" %>
       <% end %>
+      <%= link_to "Log out", logout_path, method: :delete,
+                  data: { confirm: "ログアウトしますか？" }, class: "btn solid" %>
     <% else %>
       <%= link_to "Log in", login_path, class: "btn float" %>
       <%= link_to "Sign-up!", new_user_path, class: "btn float" %>

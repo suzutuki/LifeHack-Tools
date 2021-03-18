@@ -1,4 +1,11 @@
 <% provide(:title, "new") %>
-<div class="site-width">
-    <h1 class="text-center">MACの原則　新規作成</h1>
+<div id="main-content">
+  <aside class="side left">
+    <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
+      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), mac_path(current_user)) %>
+  </aside>
+  <main>
+    <section class="todo">
+      <div class="log-form">
+        <div class="form-title tween-animate-title"><%= render 'shared/new' %></div>
 <%= render 'form' %>
