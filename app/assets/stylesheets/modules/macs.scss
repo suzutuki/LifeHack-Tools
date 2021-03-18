@@ -17,11 +17,28 @@
   display: flex;
 }
 
+.mac-content {
+  text-align: left;
+  list-style: none;
+  font-weight: 500;
+  color: #1d1d1f;
+}
+
 .process {
   border-top: 2px solid $color-thin_black;
   flex-direction: column;
   display: flex;
 }
+
+.grey {
+  color: $color-grey;
+}
+
+.wrong {
+  @extend .grey;
+  border-bottom: 2px solid;
+}
+
 
 .panel-mac {
   border: 2.5px solid $color-thin_black;
