@@ -25,30 +25,27 @@
       </div>
     </div>
   </div>
-  <section class="content-width">
-    <div id="main-content">
-      <aside class="side left">
-        <div class="side__inner">
-          <a class="twitter icon tween-animate-title" href="#">Twitter</a>
-        </div>
-      </aside>
-      <main>
-        <div class="center-position">
-          <div class="world__title main-title item">
-            <div class="world__btn item">
-              <%= link_to "ToDoリスト！", task_path(current_user), class: "btn solid" %>
-              <%= link_to "Small stepとBig area", step_path(current_user), class: "btn solid" %>
-              <%= link_to "Macの原則", mac_path(current_user), class: "btn solid" %>
-              <%= link_to "If-Thenテクニック", it_path(current_user), class: "btn solid" %>
-              <%= link_to "グラフを見る(ビッグエリア)", steps_path, class: "btn slide-bg" %>
-              <% if current_user.admin? %>
-                <%= link_to "ユーザーを見る(管理者のみ)", user_path(current_user), class: "btn slide-bg" %>
-                </div>
-                </div>
-                </div>
-      </section>
-    <% end %>
-    <!--ログインしていない時-->
+<!--ココは問題なし-->
+  <div id="main-content">
+    <aside class="side left">
+      <div class="side__inner">
+        <a class="twitter icon tween-animate-title" href="#">Twitter</a>
+      </div>
+    </aside>
+  <main>
+    <div class="popular__inner appear up">
+      <div class="popular__container">
+        <%= link_to "ToDoリスト！", task_path(current_user), class: "btn slide-bg" %>
+        <%= link_to "Small stepとBig area", step_path(current_user), class: "btn slide-bg" %>
+        <%= link_to "Macの原則", mac_path(current_user), class: "btn slide-bg" %>
+        <%= link_to "If-Thenテクニック", it_path(current_user), class: "btn slide-bg" %>
+        <%= link_to "グラフを見る(ビッグエリア)", steps_path, class: "btn slide-bg" %>
+        <% if current_user.admin? %>
+          <%= link_to "ユーザーを見る(管理者のみ)", user_path(current_user), class: "btn slide-bg" %>
+          </div>
+          </div>
+        <% end %>
+  <!--ログインしていない時-->
 <% else %>
   <div id="main-content">
     <aside class="side left">

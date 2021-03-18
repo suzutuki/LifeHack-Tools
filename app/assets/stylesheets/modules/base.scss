@@ -1,5 +1,5 @@
 @import "variables";
-
+@import "mixin";
 //ベーススタイル(ここではスマホ用の設定をしているよ)
 html {
   position: relative;
@@ -178,3 +178,63 @@ a:hover {
   background: $color-thin_grey!important;
 }
 
+.popular {
+  &__inner {
+    position: relative;
+    // 下のコメントアウトされているところの設定(グレーの背景)
+    @include p-base($top: 10%, $height: 90%) {
+      background: $cBgGray;
+    }
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 90%;
+    //   background-color: $cBgGray;
+    // }
+  }
+  &__header {
+    // 横幅の余白を追加
+    @extend .content-width;
+  }
+  &__container {
+    // 画像を前面にする
+    position: relative;
+    z-index: 2;
+    @extend .flex;
+    // 横幅の余白を追加
+    width: 100%;
+    margin: 0 auto;
+    max-width: $contentMaxWidth;
+    @extend .pb-sm;
+  }
+
+  &__title {
+    @extend .font-md;
+    @extend .mb-sm;
+  }
+
+  &__btn {
+    text-align: center;
+    flex-basis: 100%;
+    // 余白追加
+    @extend .mb-lg;
+  }
+
+  &__img {
+    height: 150px;
+    // はみ出た部分を非表示
+    overflow: hidden;
+    margin-bottom: 5px;
+
+    & > img {
+      object-fit: cover;
+      // 縮小したとき下で揃える
+      object-position: bottom;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

@@ -46,7 +46,7 @@
   margin: 0 auto;
   padding: 30px;
   overflow: hidden;
-  max-width: 85%;
+  max-width: 80%;
 }
 
 .icon-position {
@@ -55,18 +55,4 @@
   display: flex;
 }
 
-#view-list-mac {
-  padding: 0 20px;
-  margin: 0 150px;
-  overflow: hidden;
-  max-width: 90%;
-}
 
-.mac-container {
-  border: 2.5px solid $color-coffee;
-  border-radius: 10px;
-  padding: 30px;
-  margin: 15px 100px;
-  overflow: hidden;
-  background: rgba(250, 240, 230, 0.1);
-}
