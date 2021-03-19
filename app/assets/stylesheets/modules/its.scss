@@ -1,20 +1,31 @@
 @import "variables";
 @import "base";
+
+.if-title {
+  font-size: 3em;
+}
+
+.if-space {
+  min-height: 85px;
+}
+
 .column {
   width: 100%;
 }
-  .wrapper {
-    display: flex;
-    @extend .content-width;
-  }
 
+.wrapper {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  max-width: $contentMaxWidth;
+}
 
-.info_1{
+.info_1 {
   border-top: 2px solid $color-thin_black;
   padding: 10px;
 }
 
-.info_2{
+.info_2 {
   border-top: 2px solid $color-thin_black;
   border-left: 2px solid $color-thin_black;
   padding: 10px;
@@ -28,4 +39,10 @@
 
 .if_text {
   font-size: 20px;
+}
+
+.sub-title-grey {
+  color: $color-grey;
+  flex-direction: column;
+  display: contents;
 }
