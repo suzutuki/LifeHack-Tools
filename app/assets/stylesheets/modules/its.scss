@@ -1,13 +1,13 @@
 @import "variables";
-
+@import "base";
 .column {
   width: 100%;
 }
-@media all and (min-width: 500px) {
   .wrapper {
     display: flex;
+    @extend .content-width;
   }
-}
+
 
 .info_1{
   border-top: 2px solid $color-thin_black;
