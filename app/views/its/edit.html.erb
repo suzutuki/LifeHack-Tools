@@ -1,13 +1,42 @@
 <% provide(:title, "edit") %>
-<h1 class="text-center">IF-ThenテクニックEdit</h1>
-<%= form_with model: current_user, url: it_path, method: :patch, local: true do |form| %>
-  <%= form.fields_for :its do |field| %>
-    <%= field.label :situation %>
-    <%= field.text_field :situation, class: 'form-field', required: true %>
-    <br>
-    <%= field.label :behavior %>
-    <%= field.text_field :behavior, class: 'form-field', required: true %>
-  <% end %>
-  <%= form.submit '一括編集'%>
-  <%= link_to '戻る', it_path(current_user) %>
-<% end %>
+<% provide(:button_text, '一括編集') %>
+<div id="main-content">
+  <aside class="side left">
+    <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
+      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), it_path(current_user)) %>
+  </aside>
+  <main>
+    <div class="todo">
+      <div class="log-form">
+        <div class="form-title tween-animate-title">IF-Thenテクニック編集</div>
+      </div>
+      <h1 class="text-center">IF-ThenテクニックEdit</h1>
+      <%= form_with model: current_user, url: it_path, method: :patch, local: true do |form| %>
+        <%= form.fields_for :its do |field| %>
+          <div class="wrapper">
+            <div class="column">
+              <p>
+                <%= field.label :situation, class: 'btn float' %>
+                <%= field.text_field :situation, class: 'form-field', required: true %>
+              </p>
+            </div>
+            <div class="column">
+              <p>
+                <%= field.label :behavior, class: 'btn float' %>
+                <%= field.text_field :behavior, class: 'form-field', required: true %>
+              </p>
+            </div>
+          </div>
+        <% end %>
+        <div class="center-position">
+          <%= form.submit yield(:button_text), class: "btn float" %>
+      <% end %>
+      </div>
+    </div>
+    </section>
+    <aside class="side right">
+
+     <%= link_to(content_tag(:i, '', class: "fas fa-question fa-3x
+                                faa-vertical animated-hover fa-pull-right",
+                          style: "color: rgb(80,80,80);"), its_path) %>
+    </aside>

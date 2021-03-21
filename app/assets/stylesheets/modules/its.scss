@@ -11,6 +11,7 @@
 
 .column {
   width: 100%;
+  border-bottom: 1px solid;
 }
 
 .wrapper {
@@ -45,4 +46,8 @@
   color: $color-grey;
   flex-direction: column;
   display: contents;
+}
+
+.if-form {
+  border: 1px solid;
 }

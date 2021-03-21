@@ -18,7 +18,7 @@ class ItsController < ApplicationController
   def create
     @its = ItCollection.new(current_user, its_params)
     if @its.save
-      flash[:success] = "｢#{@its.situation}｣を作成しました！"
+      flash[:success] = "作成しました！"
       redirect_to it_path(current_user)
     else
       render 'its/new'

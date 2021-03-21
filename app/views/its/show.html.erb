@@ -1,75 +1,87 @@
 <% if @its.empty? %>
-<div id="main-content">
-  <aside class="side left">
-    <div class="side__inner">
-      <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-right fa-x faa-horizontal animated-hover fa-pull-right",
-                              style: "color: rgb(80,80,80);"), new_it_path) %>
-    </div>
-  </aside>
-  <main>
-    <section class="world">
-      <div class="world__inner">
-        <div class="world__img cover-slide">
-          <img class="img-zoom" src="/Alstroemeria.jpg" alt=""/>
-        </div>
-        <div class="world__texts appear left">
-          <div class="world__texts-inner">
-            <div class="world__title main-title item">
-              <span class="purple">If thenテクニック</span>
-              <span>へようこそ！</span>
-            </div>
-            <div class="world__sub sub-title item">If thenテクニックとは？</div>
-            <div class="world__description item">
-              <p>現時点でトップクラスの効果がある<br>
-                習慣化の方法です。<br>
-                If:もし〇〇だったら→then:そのときに××する
-              </p>
-              <p> 例:外食する前にジムで運動するなど</p>
-              <p>やるべき行動(then)とそれを行う条件(If)を<br>
-                セットにするのがポイントです。</p>
-            </div>
-            <div class="world__btn item">
-              <%= link_to "具体的な例を見る", its_path, class: "btn slide-bg" %>
-              <%= link_to "If thenテクニックを作る", new_it_path, class: "btn slide-bg"%>
+  <div id="main-content">
+    <aside class="side left">
+      <div class="side__inner">
+        <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-right fa-x faa-horizontal animated-hover fa-pull-right",
+                                style: "color: rgb(80,80,80);"), new_it_path) %>
+      </div>
+    </aside>
+    <main>
+      <section class="world">
+        <div class="world__inner">
+          <div class="world__img cover-slide">
+            <img class="img-zoom" src="/Alstroemeria.jpg" alt=""/>
+          </div>
+          <div class="world__texts appear left">
+            <div class="world__texts-inner">
+              <div class="world__title main-title item">
+                <span class="purple">If thenテクニック</span>
+                <span>へようこそ！</span>
+              </div>
+              <div class="world__sub sub-title item">If thenテクニックとは？</div>
+              <div class="world__description item">
+                <p>現時点でトップクラスの効果がある<br>
+                  習慣化の方法です。<br>
+                  If:もし〇〇だったら→then:そのときに××する
+                </p>
+                <p> 例:外食する前にジムで運動するなど</p>
+                <p>やるべき行動(then)とそれを行う条件(If)を<br>
+                  セットにするのがポイントです。</p>
+              </div>
+              <div class="world__btn item">
+                <%= link_to "具体的な例を見る", its_path, class: "btn slide-bg" %>
+                <%= link_to "If thenテクニックを作る", new_it_path, class: "btn slide-bg" %>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 <% end %>
 <% if @its.any? %>
-  <div class="todo-top"></div>
-  <div class="wrapper">
-    <div class="column">
-      <h1>IF
-        <div class="color-grey">(〇〇という状況の時)→</div>
-      </h1>
-    </div>
-    <div class="column">
-      <h1>THEN
-        <div class="color-grey">(〇〇という行動をする)</div>
-      </h1>
-    </div>
-  </div>
-  <% @its.each do |it| %>
-    <div class="wrapper">
-      <div class="column">
-        <h1><%= simple_format(it.situation) %></h1>
-      </div>
-      <div class="column">
-        <h1><%= simple_format(it.behavior) %></h1>
-        <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal
- animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), it_path(it.id), method: :delete, data: {confirm: "本当に削除しますか？"}) %>
-      </div>
-    </div>
-    <% end %>
-  <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover
- fa-pull-right", style: "color: rgb(80,80,80);"), edit_it_path) %>
-  <%= link_to(content_tag(:i, '', class: "fas fa-bomb fa-3x faa-horizontal
- animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), destroy_all_its_path, method: :delete, data: {confirm: "全て削除します。本当に削除しますか？"}) %>
+  <div id="main-content">
+    <aside class="side left">
+      <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
+      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), mac_path(current_user)) %>
+    </aside>
+    <main>
+      <section class="todo">
+        <div class="if-form">
+          <div class="form-title tween-animate-title center-position">My If Then ルール</div>
+          <div class="wrapper">
+            <div class="column">
+              <h1>IF</h1>
+                <div class="color-grey">(〇〇という状況の時)→</div>
+            </div>
+            <div class="column">
+              <h1>THEN</h1>
+                <div class="color-grey">(〇〇という行動をする)</div>
+            </div>
+          </div>
+          <% @its.each do |it| %>
+            <div class="wrapper">
+              <div class="column">
+                <h2><%= simple_format(it.situation) %></h2>
+              </div>
+              <div class="column">
+                <h2><%= simple_format(it.behavior) %></h2>
+                <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-2x faa-horizontal animated-hover
+                fa-pull-right", style: "color: rgb(80,80,80);"), it_path(it.id),
+                            method: :delete, data: { confirm: "本当に削除しますか？" }) %>
+              </div>
+            </div>
+          <% end %>
+          <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right",
+                                  style: "color: rgb(80,80,80);"), edit_it_path) %>
+          <%= link_to(content_tag(:i, '', class: "fas fa-bomb fa-3x faa-horizontal animated-hover fa-pull-right",
+                                  style: "color: rgb(80,80,80);"), destroy_all_its_path, method: :delete,
+                      data: { confirm: "全て削除します。本当に削除しますか？" }) %>
 <% end %>
+</div>
+</section>
 <aside class="side right">
   <div class="side__inner">
-    <span>&copy;Ota</span>
+    <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-double-right fa-2x
+                                faa-horizontal animated-hover fa-pull-right",
+                            style: "color: rgb(80,80,80);"), new_task_path) %>
   </div>
 </aside>

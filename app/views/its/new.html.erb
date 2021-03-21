@@ -1,39 +1,43 @@
 <% provide(:title, "new") %>
-<section class="todo">
-  <div class="log-form">
-    <div class="form-title tween-animate-title">IF Thenテクニック　新規作成</div>
-<div class="it-width">
-  <div class="prev-left">
-    <%= link_to(content_tag(:i, 'Return', class: "fas fa-angle-left fa-3x
+<% provide(:button_text, '一括登録') %>
+<div id="main-content">
+  <aside class="side left">
+    <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
       faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), it_path(current_user)) %>
-    <%= link_to(content_tag(:i, '', class: "fas fa-question fa-3x
-                                faa-vertical animated-hover fa-pull-right",
-                            style: "color: rgb(80,80,80);"), its_path) %>
-  </div>
-  <%= form_with model: @its, url: its_path, local: true do |form| %>
-    <% @its.collection.each do |it| %>
-      <%= fields_for 'its[]', it do |field| %>
-        <div class="wrapper">
-          <div class="column">
-            <div class="if-list">
-              <p>
-                <%= field.label "If(〇〇という状況の時)→→→", class: 'label' %>
-                <%= field.text_field :situation, class: 'form-field', required: true %>
-              </p>
+  </aside>
+  <main>
+    <div class="todo">
+      <div class="if-form">
+        <div class="form-title tween-animate-title">IF Thenテクニック　新規作成</div>
+      </div>
+      <%= form_with model: @its, url: its_path, local: true do |form| %>
+        <% @its.collection.each do |it| %>
+          <%= fields_for 'its[]', it do |field| %>
+            <div class="wrapper">
+              <div class="column">
+                <p>
+                  <%= field.label "If(〇〇という状況の時)", class: 'btn float' %>
+                  <%= field.text_field :situation, class: 'form-field', required: true %>
+                </p>
+              </div>
+              <div class="column">
+                <p>
+                  <%= field.label "Then(〇〇という行動をする)", class: 'btn float' %>
+                  <%= field.text_field :behavior, class: 'form-field', required: true %>
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="column">
-            <div class="if-list">
-              <p>
-                <%= field.label "Then(〇〇という行動をする)", class: 'label' %>
-                <%= field.text_field :behavior, class: 'form-field', required: true %>
-              </p>
-            </div>
-          </div>
-        </div>
+          <% end %>
+        <% end %>
+        <div class="center-position">
+          <%= form.submit yield(:button_text), class: "btn float" %>
       <% end %>
-    <% end %>
-    <%= form.submit '一括登録' %>
-    <%= link_to '戻る', it_path(current_user) %>
-  <% end %>
-<%= render 'shared/footer_fix' %>
+      </div>
+    </div>
+    </section>
+  </main>
+    <aside class="side right">
+        <%= link_to(content_tag(:i, '', class: "fas fa-question fa-2x
+                                faa-vertical animated-hover fa-pull-right",
+                                style: "color: rgb(80,80,80);"), its_path) %>
+    </aside>

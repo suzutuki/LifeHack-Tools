@@ -14,6 +14,11 @@
     text-align: center;
   }
 
+  &__link {
+  text-decoration: none;
+    color: #333;
+  }
+
   &__ul {
     @extend .flex;
     // パディングやマージンを初期化
@@ -26,6 +31,7 @@
   &__li {
     padding: 0;
     margin: 10px;
+
     & > a {
       color: $cSubTitle;
     }
