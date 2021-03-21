@@ -12,7 +12,7 @@ $(function () {
 });
 // フラッシュメッセージのアニメーション
 $(function () {
-    setTimeout("$('.time-limit').fadeOut('slow')", 3000)
+    setTimeout("$('.time-limit').fadeOut('slow')", 6000)
 });
 
 $(function () {

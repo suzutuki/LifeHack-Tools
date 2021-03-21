@@ -22,14 +22,12 @@
 }
 
 .info_1 {
-  border-top: 2px solid $color-thin_black;
-  padding: 10px;
+  padding: 0 15px;
 }
 
 .info_2 {
-  border-top: 2px solid $color-thin_black;
-  border-left: 2px solid $color-thin_black;
-  padding: 10px;
+  border-left: 1px dotted $color-thin_black;
+  padding: 0 15px;
 }
 
 .color-grey {
