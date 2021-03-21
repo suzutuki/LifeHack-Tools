@@ -34,10 +34,16 @@
   color: $color-grey;
 }
 
-.wrong {
-  @extend .grey;
+.mac-title {
+  color: $color-white;
+  font-size: 1.35em;
+  display: block;
+  background: rgba(42,42,42,0.95);
+  box-shadow: 0 1px 1px;
+  border: 1px solid rgba(0,0,0,.45);
+  font-weight: 200;
+  padding: 0.75em 1em 0.75em 1.5em;
 }
-
 
 .panel-mac {
   border: 2.5px solid $color-thin_black;
@@ -54,4 +60,25 @@
   display: flex;
 }
 
+.mac {
+  width: 100%;
+  margin-bottom: 2em;
+  padding: .5em 0;
+  border: none;
+  border-bottom: 1px solid;
+  outline: none;
+  box-sizing: border-box;
+  transition: 0.3s;
 
+  &__title {
+    color: $color-nobleblack;
+    font-size: 1.35em;
+    display: block;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 0.75em 1em 0.75em 1.5em;
+    box-shadow: 0 1px 1px;
+    border: 1px solid rgba(0, 0, 0, .45);
+    font-weight: 200;
+    margin: 1.5em 0;
+  }
+}
