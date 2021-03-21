@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
       render 'new'
     end
   end
-  
+
   def destroy
     log_out if logged_in?
     flash[:success] = "ログアウトしました！"

@@ -27,16 +27,8 @@ Rails.application.routes.draw do
   resources :users
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
+  get '/easy_login', to: 'users#easy_login'
   delete '/logout', to: 'sessions#destroy'
   post '/tasks/:id/toggle' => 'tasks#toggle'
   post '/steps/:id/toggle' => 'steps#toggle'
-
-
-
-
-
-
-
-
-
 end

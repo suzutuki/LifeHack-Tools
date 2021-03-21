@@ -27,6 +27,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def easy_login
+    user = User.find_or_create_by(email: 'guest@example.com')
+    user.name = "GuestUser"
+    user.password = SecureRandom.urlsafe_base64
+    user.save if !user.id
+    session[:user_id] = user.id
+    redirect_to root_path
+    flash[:notice] = "ゲストユーザーとしてログインしました"
+  end
+
   def destroy
     @user.destroy
     flash[:success] = "退会しました。ご利用ありがとうございました！"

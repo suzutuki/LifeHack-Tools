@@ -1,8 +1,14 @@
-User.create!(name:  "suzutuki",
-             email: "example@railstutorial.org",
-             password:              "renath00",
-             password_confirmation: "renath00",
-             admin: true)
+User.create!([{ name: "suzutuki",
+                email: "example@railstutorial.org",
+                password: "renath00",
+                password_confirmation: "renath00",
+                admin: true }, {
+                name: "guest",
+                email: "test@example.com",
+                password: "guest00",
+                password_confirmation: "guest00",
+                admin: false
+              }
 
 # User.all.each do |user|
 #   user.lists.create!(
