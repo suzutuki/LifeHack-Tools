@@ -15,6 +15,18 @@
     box-sizing: border-box;
     transition: 0.3s;
   }
+
+  &__list {
+    border-bottom: 1px solid $color-nobleblack;
+    border-radius: 0 !important;
+    margin-bottom: 0.1px;
+    padding: 20px;
+    overflow: hidden;
+    background: rgba(250, 240, 230, 0.1);
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
 }
 
 .priority {
@@ -35,21 +47,6 @@
   border: 1px solid #333;
 }
 
-.new-todo-list-form {
-  padding: 20px 40px 40px 40px;
-  border: 2.5px solid $color-coffee;
-  margin: 5px 0;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.tasks-form-box {
-  margin-top: 10px;
-  width: 45%;
-  height: 40px;
-  display: block;
-}
-
 .tasks-form-field {
   margin: 5px 0;
   width: 100%;
@@ -67,11 +64,3 @@
   box-sizing: border-box;
 }
 
-.todo__list {
-  border-bottom: 2.5px solid $color-nobleblack;
-  border-radius: 0 !important;
-  margin-bottom: 0.1px;
-  padding: 20px;
-  overflow: hidden;
-  background: rgba(250, 240, 230, 0.1);
-}
