@@ -12,14 +12,14 @@
           <% @tasks.collection.each do |task| %>
             <%= fields_for 'tasks[]', task, local: true do |field| %>
               <h3>
-                <p><%= field.label :"タイトル : あなたが1日で達成したいことを書いてください", class: 'priority' %></p><br>
+                <p><%= field.label :"タイトル : あなたが1日で達成したいことを書いてください", class: 'btn slide-slow' %></p><br>
                 <p><%= field.text_field :title, class: 'tasks-form-field', placeholder: '筋トレ 学習 仕事の内容など自由に' %></p><br>
                 <% if @tasks.errors.include?(:title) %>
                   <div class="alert alert-danger">
                     <%= @tasks.errors.messages[:title][0] %>
                   </div>
                 <% end %>
-                <p><%= field.label :"優先順位 :  優先順位の高い順に自動で並び替わります。", class: 'priority' %></p><br>
+                <p><%= field.label :"優先順位 :  優先順位の高い順に自動で並び替わります。", class: 'btn slide-slow' %></p><br>
                 <p><%= field.select :priority, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
                                     { include_blank: '選択してください' }, { class: 'tasks-form-box', required: true } %></p>
                 <br>
@@ -28,7 +28,7 @@
                     <%= @tasks.errors.messages[:priority][0] %>
                   </div>
                 <% end %>
-                <p><%= field.label :"メモ (50文字まで登録できます)", class: 'priority' %></p><br>
+                <p><%= field.label :"メモ (50文字まで登録できます)", class: 'btn slide-slow' %></p><br>
                 <p><%= field.text_area :content, class: 'tasks-form-area', placeholder: 'ご自由にどうぞ' %></p><br>
                 <% if @tasks.errors.include?(:content) %>
                   <div class="alert alert-danger">
@@ -43,11 +43,11 @@
               <%= form.submit '一括登録', class: "btn float" %>
             </div>
           </div>
-          </div>
           </h3>
+          </div>
         <% end %>
         </section>
     <aside class="side right">
-      <%= link_to(content_tag(:i, '', class: "fas fa-question faa-vertical animated-hover fa-pull-right",
+      <%= link_to(content_tag(:i, '', class: "fas fa-question faa-vertical  fa-2x animated-hover fa-pull-right",
                               style: "color: rgb(80,80,80);"), tasks_path) %>
     </aside>
