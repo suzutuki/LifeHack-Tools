@@ -22,21 +22,20 @@
         <li><%= link_to(content_tag(:i, '', class: "fab fa-twitter faa-wrench animated-hover item",
                                     style: "color: #333;"), "https://twitter.com/suzutuki0149") %>
         </li>
-      <% if logged_in? %>
-        <li><%= link_to "MAC", mac_path(current_user), class: "footer__link item" %></li>
-        <li><%= link_to "IF-THEN", it_path(current_user), class: "footer__link item" %></li>
-        <li><%= link_to "ToDo", task_path(current_user), class: "footer__link item" %></li>
-        <li><%= link_to "List", list_path(current_user), class: "footer__link item" %></li>
-        <li><%= link_to "Small", step_path(current_user), class: "footer__link item" %></li>
-        <li><%= link_to "LifeHack Toolsを退会する", @user, method: :delete,
-                    data: { confirm: "本当に退会しますか？" }, style: "color: #333; font-size: 12px;" %>
-        </li>
-      <% end %>
-      <li class="footer__li item"><a href="#">Sitemap</a></li>
-      <div class="footer__copyright item">&copy suzutuki
-      </div>
+        <% if logged_in? %>
+          <li><%= link_to "MAC", mac_path(current_user), class: "footer__link item" %></li>
+          <li><%= link_to "IF-THEN", it_path(current_user), class: "footer__link item" %></li>
+          <li><%= link_to "ToDo", task_path(current_user), class: "footer__link item" %></li>
+          <li><%= link_to "List", list_path(current_user), class: "footer__link item" %></li>
+          <li><%= link_to "Small", step_path(current_user), class: "footer__link item" %></li>
+          <li><%= link_to "LifeHack Toolsを退会する", @user, method: :delete,
+                          data: { confirm: "本当に退会しますか？" }, style: "color: #333; font-size: 12px;" %>
+          </li>
+        <% end %>
+        <li class="footer__li item"><a href="#">Sitemap</a></li>
+        <div class="footer__copyright item">&copy suzutuki
+        </div>
     </ul>
-
     </div>
   </nav>
 </footer>
