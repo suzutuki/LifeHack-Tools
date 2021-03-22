@@ -9,7 +9,6 @@
     <div class="todo">
       <div class="log-form">
         <div class="form-title tween-animate-title">IF-Thenテクニック編集</div>
-      </div>
       <h1 class="text-center">IF-ThenテクニックEdit</h1>
       <%= form_with model: current_user, url: it_path, method: :patch, local: true do |form| %>
         <%= form.fields_for :its do |field| %>
@@ -31,9 +30,11 @@
         <div class="center-position">
           <%= form.submit yield(:button_text), class: "btn float" %>
       <% end %>
+        </div>
       </div>
     </div>
     </section>
+  </main>
     <aside class="side right">
 
      <%= link_to(content_tag(:i, '', class: "fas fa-question fa-3x

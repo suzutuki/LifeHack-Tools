@@ -1,4 +1,4 @@
-#chart.jsの設定
+#chart.jsの設定 質問サイトのサンプル
 window.draw_graph = ->
   ctx = document.getElementById("myChart").getContext('2d')
   barNum = 6

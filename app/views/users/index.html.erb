@@ -5,22 +5,23 @@
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <div class="hero__title">Magnificence</div>
-            <img src="/Dahlia.jpg" alt="">
+            <div class="hero__title">ToDoリスト</div>
+            <img src="/Todolist.jpg" alt="">
           </div>
           <div class="swiper-slide">
-            <div class="hero__title">Solidarity</div>
-            <img src="/Gaillardia.jpg" alt="">
+            <div class="hero__title">IF−Thenテクニック</div>
+            <img src="/plan.jpg" alt="">
           </div>
           <div class="swiper-slide">
-            <div class="hero__title">Gentility</div>
-            <img src="/Geranium.jpg" alt="">
+            <div class="hero__title">MACの原則</div>
+            <img src="/Goals.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <div class="hero__title">small step</div>
+            <img src="/Rose-banquet3.jpg" alt="">
           </div>
         </div>
         <div class="swiper-pagination"></div>
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
         <!--<div class="hero__footer">-->
       </div>
     </div>
@@ -40,6 +41,7 @@
           <%= link_to "Macの原則", mac_path(current_user), class: "btn slide-bg" %>
           <%= link_to "If-Thenテクニック", it_path(current_user), class: "btn slide-bg" %>
           <%= link_to "グラフを見る(ビッグエリア)", steps_path, class: "btn slide-bg" %>
+          <%= link_to "グラフを見る(ビッグエリア)", step_path(current_user), class: "btn slide-bg" %>
           <% if current_user.admin? %>
             <%= link_to "ユーザーを見る(管理者のみ)", user_path(current_user), class: "btn slide-bg" %>
             </div>
@@ -62,10 +64,10 @@
           <div class="world__texts appear left">
             <div class="world__texts-inner">
               <div class="world__title main-title item">
-                <span class="purple">LifeHack</span>
-                <span>Tools！へようこそ！</span>
-              </div>
-              <div class="world__sub sub-title item">ライフハックツール</div>
+                <span class="purple">LifeHack Tools</span>
+                <div class="world__sub sub-title item">ライフハックツールズ</div>
+                <span>にようこそ！</span><br>
+             </div>
               <div class="world__description item">
                 <p>目標達成や習慣化のアシストツールとして
                   <br>LifeHack Tools！を活用して

@@ -62,8 +62,6 @@ class StepsController < ApplicationController
     end
   end
 
-
-
   def example
   end
 
@@ -78,8 +76,6 @@ class StepsController < ApplicationController
       redirect_to step_path(current_user)
     end
   end
-
-
 
   def edit
   end
