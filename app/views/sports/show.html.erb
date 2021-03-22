@@ -1,7 +1,17 @@
-<h1>Sports#show</h1>
-<p>Find me in app/views/sports/show.html.erb</p>
-<canvas id="spotsChart" width="200" height="200"></canvas>
-<script>
-    var graphdays = <%== @dayline %>, graphtimes = <%= @timeline %>
-</script>
-　<script>draw_graph();</script>
+<div id="main-content">
+  <aside class="side left">
+    <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
+      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), sport_path(current_user)) %>
+  </aside>
+  <main>
+    <section class="todo">
+      <div class="log-form">
+        <div class="form-title tween-animate-title center-position">HIIT記録</div>
+        <canvas id="spotsChart" width="200" height="200"></canvas>
+        <script>
+            var graphdays = <%== @dayline %>, graphtimes = <%= @timeline %>
+        </script>
+        　<script>draw_graph();</script>
+        　</div>
+    </section>
+  </main>

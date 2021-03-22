@@ -1,2 +1,18 @@
-<h1>Sports#new</h1>
-<p>Find me in app/views/sports/new.html.erb</p>
+<div id="main-content">
+  <aside class="side left">
+    <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
+      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), step_path(current_user)) %>
+  </aside>
+  <main>
+    <section class="todo">
+      <div class="log-form">
+        <div class="form-title tween-animate-title center-position">HIIT記録</div>
+        <%= button_to '行った', "", %>
+          <div class="modal__bg "></div>
+          <div class="modal__content">
+            <%= form_for @sport, url: event_likes_path(@event) do |f| %>
+              <%= f.date_field :day, min: @event.start_on, max: @event.end_on, value: @event.start_on.strftime("%Y-%m-%d") %>に
+              <%= f.submit "行った"%>
+            <% end %>
+          </div>
+        </div>

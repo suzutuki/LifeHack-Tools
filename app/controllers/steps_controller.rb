@@ -12,19 +12,6 @@ class StepsController < ApplicationController
     @dates = @steps.map { |user| user.created_at.strftime('%Y/%m/%d') }
   end
 
-  # @user = User.all
-  # # @steps = current_user.steps.build(step_params)
-  # @graphdays =  @user.steps.order(created_at: "DESC").limit(6).reverse
-  # @dayline = Array.new
-  # @graphdays.each do |graphday|
-  #   @dayline.push(graphday.created_at.strftime('%m/%d').to_s)
-  # end
-  # @graphtimes =  @user.steps.order(created_at: "DESC").limit(6).reverse
-  # @timeline = Array.new
-  # @graphtimes.each do |graphtime|
-  #   @timeline.push(graphtime.created_at)
-  # end
-
   def simple
     # start_day = Date.today-183
     # end_day = Date.today
