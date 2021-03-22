@@ -1,0 +1,168 @@
+//元にあったものをココに格納
+//.container {
+//  width: auto;
+//  max-width: 880px;
+//}
+
+//ここはヘッダーと変えたよ
+//header {
+//  width: 100%;
+//  height: 80px;
+//  //background: rgba(0,0,0,0.8)!important;
+//  overflow: hidden;
+//  padding: 20px;
+//  //justify-content: space-between;
+//  .navbar-nav > li > a {
+//    padding: 0 !important;
+//  }
+//header nav ul li a:hover,
+//header nav ul li a:active {
+//  background: rgba(250, 240, 200, 0.1);
+//  text-decoration: underline;
+//}
+//
+//.navbar {
+//  border-radius: 0 !important;
+//}
+//
+//nav ul li a {
+//  display: block;
+//  text-decoration: none;
+//  height: 200px;
+//  color: #333;
+//  justify-content: space-between;
+//  font-weight: bold;
+//  line-height: 1;
+//  margin: 5px 10px;
+//}
+
+//.flowers {
+//  // 左右に余白を追加:htmlにあまり記述したくないときにオススメ
+//  @extend .content-width;
+//  @extend .mb-lg;
+//
+//  &__inner {
+//    @extend .flex;
+//  }
+//
+//  &__title {
+//    @extend .font-lr;
+//    @extend .mb-sm;
+//  }
+//
+//  &__btn {
+//    text-align: center;
+//    // ボタンの位置を調整する奇数のとき使える
+//    flex-basis: 100%;
+//  }
+//}
+//
+//.popular {
+//  &__inner {
+//    position: relative;
+//    // 下のコメントアウトされているところの設定(グレーの背景)
+//    @include p-base($top: 10%, $height: 90%) {
+//      background: $cBgGray;
+//    }
+//    // &::before {
+//    //   content: '';
+//    //   position: absolute;
+//    //   bottom: 0;
+//    //   left: 0;
+//    //   width: 100%;
+//    //   height: 90%;
+//    //   background-color: $cBgGray;
+//    // }
+//  }
+//  &__header {
+//    // 横幅の余白を追加
+//    @extend .content-width;
+//  }
+//  &__container {
+//    // 画像を前面にする
+//    position: relative;
+//    z-index: 2;
+//    @extend .flex;
+//    // 横幅の余白を追加
+//    @extend .content-width;
+//    @extend .pb-sm;
+//  }
+//
+//  &__title {
+//    @extend .font-md;
+//    @extend .mb-sm;
+//  }
+//
+//  &__btn {
+//    text-align: center;
+//    flex-basis: 100%;
+//    // 余白追加
+//    @extend .mb-lg;
+//  }
+//
+//  &__img {
+//    height: 150px;
+//    // はみ出た部分を非表示
+//    overflow: hidden;
+//    margin-bottom: 5px;
+//
+//    & > img {
+//      object-fit: cover;
+//      // 縮小したとき下で揃える
+//      object-position: bottom;
+//      height: 100%;
+//      width: 100%;
+//    }
+//  }
+//}
+//
+//.logo {
+//  font-size: 42px;
+//  display: flex;
+//
+//  &__img {
+//    width: 0.7em;
+//  }
+//
+//  &__Garden {
+//    color: $cWineRed;
+//  }
+//}
+//
+// フッター元のやつでここから固定、センター
+//.footer {
+//  position: absolute;
+//  bottom: 0;
+//  margin-top: 25px;
+//  width: 100%;
+//  height: 70px;
+//  background-color: $color-coffee_brown;
+//  //background: #1d1d1f;
+//  ul li {
+//    display: inline;
+//  }
+//}
+//
+//footer ul li a:hover,
+//footer ul li a:active {
+//  background: $color-coffee_brown!important;
+//  text-decoration: none;
+//  color: $color-nobleblack;
+//}
+//
+//.text {
+//  text-align: center;
+//}
+//
+//@mixin box_sizing {
+//  -moz-box-sizing: border-box;
+//  -webkit-box-sizing: border-box;
+//  box-sizing: border-box;
+//}
+//
+//.footer-link {
+//  font-size: 40px;
+//  font-weight: bold;
+//  color: $color-white;
+//}
+

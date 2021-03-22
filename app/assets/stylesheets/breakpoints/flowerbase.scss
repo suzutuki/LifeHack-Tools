@@ -1,0 +1,409 @@
+//// Stylesheet: ベーススタイル(スマホ用の設定)
+//body {
+//  font-family: "Kameron", "Noto Sans JP", sans-serif;
+//}
+//img {
+//  max-width: 100%;
+//  vertical-align: bottom;
+//}
+//.font-sm {
+//  font-size: 14px;
+//}
+//.font-md {
+//  font-size: 17px;
+//}
+//.font-lr {
+//  font-size: 17px;
+//}
+//.font-lg {
+//  font-size: 25px;
+//}
+//.mb-sm {
+//  margin-bottom: 16px !important;
+//}
+//.mb-lg {
+//  margin-bottom: 80px !important;
+//}
+//.pb-sm {
+//  padding-bottom: 16px !important;
+//}
+//.pb-lg {
+//  padding-bottom: 80px !important;
+//}
+//.content-width {
+//  width: 90%;
+//  margin: 0 auto;
+//  max-width: $contentMaxWidth;
+//}
+//.main-title {
+//  //継承することで、画面の大きさが変わっても今の画面の設定が適応される
+//  @extend .font-lg;
+//  font-weight: 600;
+//  margin-bottom: 0;
+//  // 一行に重ならないようにする
+//  display: block;
+//}
+//.sub-title {
+//  @extend .font-sm;
+//  color: $cSubTitle;
+//}
+//.flex {
+//  display: flex;
+//  flex-direction: column;
+//}
+//.purple {
+//  color: $cWineRed;
+//}
+//
+//// サイドバーのローカルスタッキングコンテキストを作るための設定
+//#main-content {
+//  position: relative;
+//  z-index: 0;
+//}
+//// サイドバーより背面にしたい
+//main {
+//  position: relative;
+//  z-index: -1;
+//}
+//
+//#container {
+//  background-color: $cWhite;
+//  position: relative;
+//  z-index: 10;
+//  transition: transform 0.5s, box-shadow 0.5s;
+//}
+//
+//.header {
+//  // 画面の上部に固定
+//  position: fixed;
+//  top: 0;
+//  left: 0;
+//  width: 100%;
+//  height: $navHeight;
+//  // 背景色を透明に
+//  background-color: transparent;
+//  display: flex;
+//  align-items: center;
+//  // ヘッダーを最前面にくるようにする
+//  z-index: 100;
+//
+//  &.triggered {
+//    background-color: rgba(255, 255, 255, 0.9);
+//    box-shadow: 10px 0 25px -10px rgba(0, 0, 0, 0.5);
+//  }
+//  // スマホ画面ではヘッダー表示しない
+//  &__nav {
+//    display: none;
+//  }
+//
+//  &__ul {
+//    display: flex;
+//    // 上下中央揃えにする
+//    align-items: center;
+//    padding: 0;
+//    margin: 0;
+//    list-style: none;
+//  }
+//
+//  &__li {
+//    margin-left: 20px;
+//
+//    & > a {
+//      color: $cBlack;
+//      text-decoration: none !important;
+//      // すべて大文字にする
+//      text-transform: uppercase;
+//    }
+//  }
+//
+//  & .logo {
+//    font-size: 38px;
+//    justify-content: center;
+//  }
+//
+//  &__inner {
+//    display: flex;
+//    justify-content: space-between;
+//    align-items: center;
+//    // navとコンテンツのラインを同じにする
+//    @extend .content-width;
+//  }
+//}
+//
+//.world {
+//  @extend .content-width;
+//  @extend .mb-lg;
+//  // 親要素でローカルスタッキングコンテキストを作るために必要
+//  &__inner {
+//    @extend .flex;
+//    justify-content: space-between;
+//    // 周りに壁を作る
+//    padding: 15px;
+//    background-color: $cBgGray;
+//    // 下の２つはローカルスタッキングコンテキストを作る設定
+//    position: relative;
+//    z-index: 0;
+//  }
+//
+//  &__title {
+//    // 横線の位置決め
+//    position: relative;
+//    // 横線を疑似要素で出力する
+//    @include p-base(
+//            $display: none,
+//            $width: 70px,
+//            $height: 1px,
+//            $top: 50%,
+//              // 線の長さ
+//            $left: -75px
+//    ) {
+//      // 棒線が伸びるアニメーション
+//      background-color: $cBlack;
+//      transform: translateY(-50%) scaleX(0);
+//      // 右側を中心に伸びるアニメーション
+//      transition: transform 0.3s ease 1.6s;
+//      transform-origin: right;
+//    }
+//  }
+//
+//  &__sub {
+//    @extend .mb-sm;
+//  }
+//
+//  &__img {
+//    height: 300px;
+//    @extend .mb-sm;
+//    //  アニメーションが終わったときに表示したいので
+//    transition: box-shadow 1ms linear 0.8s;
+//
+//    & > img {
+//      position: relative;
+//      // ボックスシャドウを背面につけるための設定
+//      z-index: -1;
+//      // 画像には基本object-fitをつける
+//      object-fit: cover;
+//      // 画像の上部分を中心にしたいので
+//      object-position: top;
+//      // 外側の親要素タテヨコ100％で画像が表示される
+//      width: 100%;
+//      height: 100%;
+//    }
+//
+//    &.inview {
+//      // 内側にボックスシャドウを付ける設定
+//      box-shadow: inset 0 0 30px $cBlack;
+//    }
+//  }
+//
+//  &__texts {
+//    @extend .pb-sm;
+//    // 横線のアニメーションの設定
+//    &.inview {
+//      & .world__title::before {
+//        //右から左に線が伸びるように
+//        transform: translateY(-50%);
+//      }
+//    }
+//  }
+//}
+//
+//.flowers {
+//  // 左右に余白を追加:htmlにあまり記述したくないときにオススメ
+//  @extend .content-width;
+//  @extend .mb-lg;
+//
+//  &__inner {
+//    @extend .flex;
+//  }
+//
+//  &__title {
+//    @extend .font-lr;
+//    @extend .mb-sm;
+//  }
+//
+//  &__btn {
+//    text-align: center;
+//    // ボタンの位置を調整する奇数のとき使える
+//    flex-basis: 100%;
+//  }
+//}
+//
+//.popular {
+//  &__inner {
+//    position: relative;
+//    // 下のコメントアウトされているところの設定(グレーの背景)
+//    @include p-base($top: 10%, $height: 90%) {
+//      background: $cBgGray;
+//    }
+//    // &::before {
+//    //   content: '';
+//    //   position: absolute;
+//    //   bottom: 0;
+//    //   left: 0;
+//    //   width: 100%;
+//    //   height: 90%;
+//    //   background-color: $cBgGray;
+//    // }
+//  }
+//  &__header {
+//    // 横幅の余白を追加
+//    @extend .content-width;
+//  }
+//  &__container {
+//    // 画像を前面にする
+//    position: relative;
+//    z-index: 2;
+//    @extend .flex;
+//    // 横幅の余白を追加
+//    @extend .content-width;
+//    @extend .pb-sm;
+//  }
+//
+//  &__title {
+//    @extend .font-md;
+//    @extend .mb-sm;
+//  }
+//
+//  &__btn {
+//    text-align: center;
+//    flex-basis: 100%;
+//    // 余白追加
+//    @extend .mb-lg;
+//  }
+//
+//  &__img {
+//    height: 150px;
+//    // はみ出た部分を非表示
+//    overflow: hidden;
+//    margin-bottom: 5px;
+//
+//    & > img {
+//      object-fit: cover;
+//      // 縮小したとき下で揃える
+//      object-position: bottom;
+//      height: 100%;
+//      width: 100%;
+//    }
+//  }
+//}
+//
+//.logo {
+//  font-size: 42px;
+//  display: flex;
+//
+//  &__img {
+//    width: 0.7em;
+//  }
+//
+//  &__Garden {
+//    color: $cWineRed;
+//  }
+//}
+//
+//.footer {
+//  padding: 60px 0;
+//  @extend .content-width;
+//
+//  &__nav {
+//    @extend .flex;
+//    justify-content: space-between;
+//    // 中央揃えにする
+//    align-items: center;
+//    text-align: center;
+//  }
+//
+//  &__ul {
+//    @extend .flex;
+//    // パディングやマージンを初期化
+//    padding: 0;
+//    margin: 0;
+//    list-style: none;
+//  }
+//
+//  &__li {
+//    padding: 0;
+//    margin: 10px;
+//
+//    & > a {
+//      color: $cSubTitle;
+//    }
+//  }
+//
+//  & .logo {
+//    font-size: 38px;
+//    // 中央揃えにする
+//    justify-content: center;
+//  }
+//}
+//// スマホ画面のときサイド要素を非表示にする
+//.side {
+//  display: none;
+//  // 固定する
+//  position: fixed;
+//  // 画面の上から７０％から表示する
+//  top: 70%;
+//  // ここは検証で試してみるとよい
+//  transform: translateY(-50%);
+//  transition: all 0.3s ease-in;
+//
+//  & .tween-animate-title {
+//    color: $cBlack;
+//    text-decoration: none !important;
+//    margin: 0 40px;
+//    // ロゴと文字の中心のズレを修正
+//    vertical-align: middle;
+//    letter-spacing: 2px;
+//  }
+//  // サイドバー左側の設定
+//  &.left {
+//    left: -50px;
+//
+//    &.inview {
+//      left: 50px;
+//    }
+//
+//    & .side__inner {
+//      // 左端を軸とするための設定
+//      transform-origin: top left;
+//      // 文字を-９０度回転させる
+//      transform: rotate(-90deg);
+//    }
+//  }
+//  // サイドバー右側の設定
+//  &.right {
+//    right: -50px;
+//
+//    &.inview {
+//      right: 50px;
+//    }
+//
+//    & .side__inner {
+//      // 右端を軸とするための設定
+//      transform-origin: top right;
+//      // 文字を９０度回転させる
+//      transform: rotate(90deg);
+//    }
+//  }
+//}
+//
+//.icon {
+//  position: relative;
+//
+//  @include p-base($left: -20px, $top: 50%, $width: 1em, $height: 1em) {
+//    transform: translateY(-50%);
+//    background-position: center;
+//    background-repeat: no-repeat;
+//    background-size: contain;
+//  }
+//  //ロゴの設定
+//  &.twitter {
+//    &::before {
+//      background-image: url(../images/twitter.svg);
+//    }
+//  }
+//  &.fb {
+//    &::before {
+//      background-image: url(../images/facebook.svg);
+//    }
+//  }
+//}

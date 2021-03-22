@@ -1,0 +1,144 @@
+@import "mixin";
+// 画像のスライドはここで決めている
+.cover-slide {
+  position: relative;
+  // パン(拡大)したときの余分な部分をカット
+  overflow: hidden;
+
+  &::after {
+    // 疑似要素に必須の設定
+    content: "";
+    position: absolute;
+    z-index: 2;
+    // 画像に必要な設定
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // ココまで
+    background-color: #eaebe6;
+    opacity: 0;
+  }
+
+  &.inview {
+    &::after {
+      opacity: 1;
+
+      @include animation(
+              $name: kf-cover-slide,
+              $duration: 1.6s,
+              $timing-function: ease-in-out
+      );
+    }
+  }
+}
+
+// アニメーションに最適なプロパティ(パフォーマンスが良い)
+@keyframes kf-cover-slide {
+  0% {
+    //   アニメーションの起点の設定
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  50% {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+  50.1% {
+    transform-origin: right;
+    transform: scaleX(1);
+  }
+  100% {
+    transform-origin: right;
+    transform: scaleX(0);
+  }
+}
+
+.img-zoom {
+  // 初期状態は透明にする
+  opacity: 0;
+
+  .inview & {
+    // inviewが発火されたとき透明度解除しつつ、アニメーション
+    opacity: 1;
+    transition: transform 0.3s ease;
+    @include animation(
+            $name: kf-img-show,
+            $duration: 1.6s,
+            $timing-function: ease-in-out,
+              // アニメーションが終わったときの設定を残さない(解除)
+            $fill-mode: normal
+    );
+    // ホバーしたときに拡大するようにする
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+@keyframes kf-img-show {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  // 50％になってからパン(拡大)した画像を出したいので
+  50.1% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// ホバーしたときに暗くする設定
+.hover-darken {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // 画像の上に表示したい
+    z-index: 1;
+    transition: background-color 0.3s ease;
+    pointer-events: none;
+    @include animation(
+            $name: kf-img-show,
+            $duration: 1.6s,
+            $timing-function: ease-in-out,
+            $fill-mode: normal
+    );
+  }
+
+  &:hover::before {
+    background-color: rgba(3, 3, 3, 0.2);
+  }
+}
+
+// .bg-img-zoomを使うときの設定
+.bg-img-zoom {
+  background-image: url(images/image-1.jpg);
+  // リピートなし
+  background-repeat: no-repeat;
+  // ポジションをセンター
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 400px;
+  //   上の.img-zoomの設定を読み込む
+  @extend .img-zoom
+}
+
+.img-bg50 {
+  position: relative;
+  //   アスペクト比を保ちたいときの設定
+  &::before {
+    display: block;
+    content: '';
+    padding-top: 50%;
+  }
+}

@@ -1,0 +1,56 @@
+// Stylesheet: 600px以上のタブレットやモニタで適用
+.flex {
+  // 横に2列したいときの設定
+  flex-direction: row;
+  // これを設定しないとflex-basisが変わらない
+  flex-wrap: wrap;
+}
+
+.flowers {
+  &__item {
+    flex-basis: 50%;
+    margin-bottom: 60px;
+  }
+}
+
+.popular {
+  &__container {
+    // 余白を真ん中にしたい
+    justify-content: space-between;
+  }
+
+  &__item {
+    flex-basis: 47%;
+  }
+}
+
+.world {
+  &__inner {
+    padding: 50px;
+  }
+
+  &__texts,
+  &__img {
+    flex-basis: 47%;
+  }
+
+  &__texts {
+    display: flex;
+    // 文字を下揃えにするときに便利な設定
+    align-items: flex-end;
+  }
+}
+
+.footer {
+
+  & .logo {
+    // 左寄りにする右寄りはflex-end
+    justify-content: flex-start;
+  }
+
+  &__li {
+    // 検証を使いながら位置調整
+    margin-left: 0;
+    margin-right: 30px;
+  }
+}

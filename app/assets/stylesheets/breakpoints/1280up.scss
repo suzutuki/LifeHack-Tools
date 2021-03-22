@@ -1,0 +1,21 @@
+// Stylesheet: 1280px以上のモニタで適用
+//body{
+//  background-color: #1d1d1f;
+//}
+
+.world {
+  &__inner {
+    padding: 50px 100px;
+    //もしかしたら必要ないかも
+    //flex-direction: unset;
+  }
+}
+.popular {
+  &__item {
+    flex-basis: 23%;
+  }
+}
+// サイドバー要素を表示する
+.side {
+  display: block;
+}
