@@ -1,7 +1,7 @@
 <div id="main-content">
   <aside class="side left">
     <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
-      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), it_path(current_user)) %>
+      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), step_path(current_user)) %>
   </aside>
 <main>
   <% if @user.steps.empty? %>
@@ -20,6 +20,7 @@
             <p>週に1,2回自分がなにを目指してステップをクリアしているか見直すためのものです。</p><br>
           </div>
         </h2>
+      </div>
         <div class="center-position">
           <%= link_to "具体的な例を見る", example_path, class: "btn slide-slow" %>
           <%= link_to "グラフを見る(ビッグエリア)", steps_path, class: "btn slide-slow" %>
@@ -27,7 +28,6 @@
           <%= link_to "シンプル", simple_path, class: "btn slide-slow" %>
           <%= link_to "目標を設定する", goal_path, class: "btn slide-slow" %>
         </div>
-      </div>
   <% end %>
   <!--stepが登録されているとき表示-->
   <% if @user.steps.any? %>

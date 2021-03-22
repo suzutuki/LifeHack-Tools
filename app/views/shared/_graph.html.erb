@@ -1,0 +1,101 @@
+<!-- Chart code -->
+<script>
+    am4core.ready(function () {
+        // テーマです。
+        am4core.useTheme(am4themes_animated);
+
+        //始めにインスタンスを作成しています。
+        var chart = am4core.create("chartdiv", am4charts.XYChart);
+
+        //JSON形式で値を渡す
+        <!--        const times = <%#== JSON.dump(@times) %>;-->
+        <!--        const dates = <%#== JSON.dump(@dates) %>;-->
+
+        //表示期間を計算
+        // var firstDate = new Date(dates[0])
+        // var lastDate = new Date(dates.slice(-1)[0])
+        // var termDate = (lastDate - firstDate) / 1000 / 60 / 60 / 24 + 1
+
+        // ここにデータを入力していきます。
+        chart.data = generateChartData();
+
+        // Create axes
+        //ここからはX軸方向について
+        var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+        // X軸の幅の設定
+        dateAxis.renderer.minGridDistance = 60;
+
+        //ここからはY軸方向について
+        var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+
+        // ようやくチャートの設定。上記のデータフィールドの項目を使用します。
+        var series = chart.series.push(new am4charts.LineSeries());
+        // Y軸方向はvisits
+        series.dataFields.valueY = "visits";
+        // X軸方向はdate
+        series.dataFields.dateX = "date";
+        // グラフの線の太さ ※太すぎると変
+        series.strokeWidth = 2;
+        series.minBulletDistance = 10;
+        // tooltipはグラフにカーソルを当てると上部に表示される内容です。
+        series.tooltipText = "{valueY}";
+        series.tooltip.pointerOrientation = "vertical";
+        series.tooltip.background.cornerRadius = 20;
+        // ツールチップの塗りつぶし不透明度
+        series.tooltip.background.fillOpacity = 0.5;
+        series.tooltip.label.padding(12, 12, 12, 12)
+
+        //スクロールバーの設定です
+        chart.scrollbarX = new am4charts.XYChartScrollbar();
+        chart.scrollbarX.series.push(series);
+
+        // カーソル設定です。
+        chart.cursor = new am4charts.XYCursor();
+        chart.cursor.xAxis = dateAxis;
+        chart.cursor.snapToSeries = series;
+
+        // 初期値1200であとは、ランダムで数値をあれやこれやとかえて、
+        // i=1から500まで表現してます。(デモデータ)
+        function generateChartData() {
+            var chartData = [];
+            var firstDate = new Date();
+            // −1000日前からスタート
+            firstDate.setDate(firstDate.getDate() - 1000);
+            var visits = 1200;
+            for (var i = 0; i < 500; i++) {
+                // ここでは日付オブジェクトを作成します。データの中には、日付文字列を持つことができます。
+                // そして、chart.dataDateFormatプロパティを使用して日付のフォーマットを設定します。
+                // ただし、可能な場合は日付オブジェクトを使用します。
+                var newDate = new Date(firstDate);
+                newDate.setDate(newDate.getDate() + i);
+
+                visits += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
+
+                chartData.push({
+                    date: newDate,
+                    visits: visits
+                });
+            }
+            return chartData;
+        }
+
+    }); // end am4core.ready()
+    // 不連続な間隔(日付)で投稿された値を表示する
+    // function generateChartData() {
+    //     var chartData = [];
+    //     for (var j = 0; j < steps.length; j++) {
+    //         for (var i = 0; i < termDate; i++) {
+    //             var newDate = new Date(firstDate)
+    //             newDate.setDate(newDate.getDate() + i); //初日からi日分たす
+    //             if ((new Date(dates[j])) - (newDate) == 0) {
+    //                 step = steps[j]
+    //                 chartData.push({
+    //                     date: newDate,
+    //                     step: step
+    //                 });
+    //             }
+    //         }
+    //     }
+    //     return chartData;
+    // }
+</script>
