@@ -25,6 +25,10 @@ module SessionsHelper
     end
   end
 
+  def guest_user
+    current_user == User.find_by(email: 'guest@example.com')
+  end
+
   # 渡されたユーザーがログイン済みユーザーであればtrueを返す
   def current_user?(user)
     user == current_user

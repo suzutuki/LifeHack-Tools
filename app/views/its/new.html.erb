@@ -7,8 +7,8 @@
   </aside>
   <main>
     <div class="todo">
-      <div class="if-form">
-        <div class="form-title tween-animate-title">IF Thenテクニック　新規作成</div>
+      <div class="log-form">
+        <div class="form-title tween-animate-title center-position">IF-Thenテクニック　新規作成</div>
       <%= form_with model: @its, url: its_path, local: true do |form| %>
         <% @its.collection.each do |it| %>
           <%= fields_for 'its[]', it do |field| %>

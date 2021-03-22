@@ -17,9 +17,11 @@
               <li class="header__li item">
                 <%= link_to 'MAC', mac_path(current_user) %>
               </li>
-              <li class="header__li item">
-                <%= link_to 'Config', edit_user_path(current_user) %>
-              </li>
+              <% if !guest_user %>
+                <li class="header__li item">
+                  <%= link_to 'Config', edit_user_path(current_user) %>
+                </li>
+              <% end %>
               <li class="header__li item">
                 <%= link_to "Log out", logout_path, method: :delete,
                             data: { confirm: "ログアウトしますか？" } %>

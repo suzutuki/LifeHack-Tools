@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   #リファクタリング用
   before_action :set_target_user, only: [ :destroy, :edit, :update]
   before_action :admin_user, only: [:destroy, :show]
+  before_action :ensure_normal_user, only: %i[update destroy]
   skip_before_action :verify_authenticity_token
   def index
   end
@@ -32,9 +33,15 @@ class UsersController < ApplicationController
     user.name = "GuestUser"
     user.password = SecureRandom.urlsafe_base64
     user.save if !user.id
-    session[:user_id] = user.id
+    log_in(user)
     redirect_to root_path
-    flash[:notice] = "ゲストユーザーとしてログインしました"
+    flash[:notice] = "ゲストユーザーとしてログインしました!"
+  end
+
+  def ensure_normal_user
+    if resource.email == 'guest@example.com'
+      redirect_to root_path, alert: 'ゲストユーザーは削除できません。'
+    end
   end
 
   def destroy
