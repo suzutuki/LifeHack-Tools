@@ -1,3 +1,10 @@
+<% provide(:title, "スモールステップの例") %>
+<div id="main-content">
+  <aside class="side left">
+    <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
+      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), step_path(current_user)) %>
+  </aside>
+  <main>
 <div class="content-width">
   <table>
     <tr>
@@ -375,6 +382,10 @@
 </div>
 <div class="flex-container">
   <%= link_to "実際に作ってみる", new_step_path,
-              class: "btn-sticky", style: "font-size: 28px; color: #333;" %>
+              class: "btn slide-slow" %>
 </div>
+    <aside class="side right">
+      <%= link_to(content_tag(:i, '', class: "fas fa-question faa-vertical  fa-2x animated-hover fa-pull-right",
+                              style: "color: rgb(80,80,80);"), tasks_path) %>
+    </aside>
 

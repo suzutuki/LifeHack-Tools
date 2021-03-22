@@ -7,7 +7,7 @@
   <main>
     <section class="todo">
       <div class="log-form">
-        <div class="form-title tween-animate-title">ToDoリストを作成します</div>
+        <div class="form-title tween-animate-title center-position">ToDoリストを作成します</div>
         <%= form_with model: @tasks, url: tasks_path, local: true do |form| %>
           <% @tasks.collection.each do |task| %>
             <%= fields_for 'tasks[]', task, local: true do |field| %>
@@ -46,6 +46,8 @@
           </h3>
           </div>
         <% end %>
+        </section>
+  </main>
     <aside class="side right">
       <%= link_to(content_tag(:i, '', class: "fas fa-question faa-vertical  fa-2x animated-hover fa-pull-right",
                               style: "color: rgb(80,80,80);"), tasks_path) %>

@@ -31,16 +31,13 @@
   <% end %>
   <!--stepが登録されているとき表示-->
   <% if @user.steps.any? %>
-    <div id="view-list-mac">
-      <h1 class="nav-left">スモールステップとビッグエリア</h1>
-      <div class="nav-right">
-        <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-right fa-3x
-      faa-horizontal animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), new_step_path) %>
-      </div>
+    <section class="todo">
+      <div class="log-form">
+        <div class="form-title tween-animate-title center-position">スモールステップとビッグエリアとは？</div>
+        <h2>
     </div>
     <div class="border"></div>
     <% @user.steps.each do |step| %>
-      <div class="steps-width">
         <div class="step-container">
           <%= step.name %>
         </div>
@@ -50,13 +47,12 @@
           <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt  fa-2x faa-horizontal
          animated-hover fa-pull-right", style: "color: rgb(80,80,80); margin: 28px;"), step_path(step.id), method: :delete, data: { confirm: "本当に削除しますか？" }) %>
         </div>
-      </div>
     <% end %>
     <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover
  fa-pull-right", style: "color: rgb(80,80,80);"), edit_step_path) %>
     <%= link_to(content_tag(:i, '', class: "fas fa-bomb fa-3x faa-horizontal
- animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), destroy_all_steps_path, method: :delete, data: { confirm: "全て削除します。本当に削除しますか？" }) %>
-
+ animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), destroy_all_steps_path,
+                method: :delete, data: { confirm: "全て削除します。本当に削除しますか？" }) %>
     <%= link_to "具体的な例を見る", example_path(current_user), class: "btn slide-slow" %>
     <%= link_to "グラフを見る(ビッグエリア)", steps_path, class: "btn slide-slow" %>
     <%= link_to "実際に作ってみる", new_step_path, class: "btn slide-slow" %>
@@ -64,4 +60,8 @@
   <% end %>
   </section>
 </main>
+  <aside class="side right">
+    <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-right faa-horizontal
+     animated-hover", style: "color: rgb(80,80,80);"), new_step_path) %>
+  </aside>
   <%= render 'shared/script' %>

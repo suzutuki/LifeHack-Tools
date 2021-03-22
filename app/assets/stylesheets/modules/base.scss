@@ -238,3 +238,12 @@ a:hover {
     }
   }
 }
+
+th {
+  border-right: 1px solid;
+}
+
+td {
+  @extend th;
+  padding-left: 10px;
+}
