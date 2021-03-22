@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: sports
+#
+#  id         :bigint           not null, primary key
+#  sport_day  :date
+#  sport_time :float(24)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  user_id    :bigint
+#
+# Indexes
+#
+#  index_sports_on_user_id  (user_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (user_id => users.id)
+#
+
+one:
+  user: one
+  sport_day: 2021-03-22
+  sport_time: 1.5
+
+two:
+  user: two
+  sport_day: 2021-03-22
+  sport_time: 1.5

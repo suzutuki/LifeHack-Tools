@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_21_173152) do
+ActiveRecord::Schema.define(version: 2021_03_22_210401) do
 
   create_table "its", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -44,6 +44,15 @@ ActiveRecord::Schema.define(version: 2020_09_21_173152) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_macs_on_user_id"
+  end
+
+  create_table "sports", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.date "sport_day"
+    t.float "sport_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sports_on_user_id"
   end
 
   create_table "steps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -83,6 +92,7 @@ ActiveRecord::Schema.define(version: 2020_09_21_173152) do
   add_foreign_key "its", "users"
   add_foreign_key "lists", "users"
   add_foreign_key "macs", "users"
+  add_foreign_key "sports", "users"
   add_foreign_key "steps", "users"
   add_foreign_key "tasks", "users"
 end

@@ -18,6 +18,8 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :steps, allow_destroy: true
   has_many :tasks, dependent: :destroy
   accepts_nested_attributes_for :tasks, allow_destroy: true
+  has_many :sports, dependent: :destroy
+  accepts_nested_attributes_for :sports, allow_destroy: true
   has_many :macs, dependent: :destroy
   has_many :lists, dependent: :destroy
   attr_accessor :remember_token

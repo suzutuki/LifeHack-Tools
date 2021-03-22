@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy
+    @user.destroy unless !guest_user
     flash[:success] = "退会しました。ご利用ありがとうございました！"
     redirect_to root_path
   end

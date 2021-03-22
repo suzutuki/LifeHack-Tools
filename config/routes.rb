@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :sports
   root 'users#index'
   get 'simple', to: 'steps#simple'
   get 'sample', to: 'lists#sample'
   get 'swipe', to: 'lists#swipe'
   resources :lists
+
   resources :steps do
     collection do
       delete 'destroy_all'
