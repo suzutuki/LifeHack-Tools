@@ -11,9 +11,9 @@
         <div class="modal__content">
           <%= form_with model: @hiit, local: true do |f|  %>
             <%= f.label :created_at, '登録日　', class: 'control-label' %>
-            <%= f.date_field :hiit_day, id: "date-form", type: "text", readonly: "" %>
+            <%= f.date_field :training_day, id: "date-form", type: "text", readonly: "" %>
             <%= f.label :created_at, '運動時間', class: "label" %>
-            <%= f.number_field :hiit_time, class: "label"%>に
+            <%= f.number_field :training_time, class: "label"%>に
             <%= f.submit "登録"%>
           <% end %>
         </div>
