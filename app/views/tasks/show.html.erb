@@ -75,7 +75,8 @@
 <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover
  fa-pull-right", style: "color: rgb(80,80,80); margin-bottom: 15px;"), edit_task_path) %>
 <%= link_to(content_tag(:i, '', class: "fas fa-bomb fa-3x faa-horizontal
- animated-hover fa-pull-right", style: "color: rgb(80,80,80); margin-bottom: 15px;"), destroy_all_tasks_path, method: :delete, data: { confirm: "全て削除します。本当に削除しますか？" }) %>
+ animated-hover fa-pull-right", style: "color: rgb(80,80,80); margin-bottom: 15px;"), destroy_all_tasks_path,
+            method: :delete, data: { confirm: "全て削除します。本当に削除しますか？" }) %>
 
 <aside class="side right">
   <div class="side__inner">

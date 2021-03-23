@@ -11,10 +11,10 @@
           <div class="modal__content">
             <%= form_with model: @sport, local: true do |f|  %>
               <%= f.label :created_at, '登録日　', class: 'control-label' %>
-              <%= f.text_field :sport_date, id: "", type: "text", readonly: "" %>
+              <%= f.date_field :sport_day, id: "date-form", type: "text", readonly: "" %>
               <%= f.label :created_at, '運動時間', class: "label" %>
               <%= f.number_field :sport_time, class: "label"%>に
-              <%= f.submit "行った"%>
+              <%= f.submit "登録"%>
             <% end %>
           </div>
         </div>
