@@ -1,7 +1,7 @@
 class SportsController < ApplicationController
+  before_action :logged_in_user, only: [:create, :destroy]
 
   def index
-
   end
   
   def create
@@ -39,6 +39,7 @@ class SportsController < ApplicationController
 
   def show
     @user = current_user
+    @sports = current_user.macs
     @graphdays =  @user.sports.order(sport_day: "DESC").limit(6).reverse
     @dayline = Array.new
     @graphdays.each do |graphday|
@@ -50,18 +51,6 @@ class SportsController < ApplicationController
       @timeline.push(graphtime.sport_time)
     end
   end
-  # @user = current_user
-  # @steps = current_user.steps.build(step_params)
-  # @graphdays =  @user.steps.order(created_at: "DESC").limit(6).reverse
-  # @dayline = Array.new
-  # @graphdays.each do |graphday|
-  #   @dayline.push(graphday.created_at.strftime('%m/%d').to_s)
-  # end
-  # @graphtimes =  @user.steps.order(created_at: "DESC").limit(6).reverse
-  # @timeline = Array.new
-  # @graphtimes.each do |graphtime|
-  #   @timeline.push(graphtime.created_at)
-  # end
 
   private
   # ストロングパラメーター

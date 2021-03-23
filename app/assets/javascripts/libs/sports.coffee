@@ -1,9 +1,11 @@
 window.draw_graph = ->
+  if document.getElementById("sportsChart") == null
+    return
   ctx = document.getElementById("sportsChart").getContext('2d')
   sportsChart = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: graphsdays,#ここは日付が表示される　X軸に当たる
+      labels: graphdays,#ここは日付が表示される　X軸に当たる
       datasets: [{
         label: '運動時間',
         data: graphtimes,#ここは時間が表示される　Y軸に当たる

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update, :destroy]
-  before_action :correct_user, only: [:edit, :update,]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   #リファクタリング用
   before_action :set_target_user, only: [ :destroy, :edit, :update]
   before_action :admin_user, only: [:destroy, :show]
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy unless !guest_user
+    @user.destroy
     flash[:success] = "退会しました。ご利用ありがとうございました！"
     redirect_to root_path
   end
@@ -71,7 +71,7 @@ class UsersController < ApplicationController
   # 正しいユーザーかどうか確認する
   def correct_user
     @user = User.find(params[:id])
-    redirect_to(root_url) unless current_user?(@user)
+    redirect_to(root_url) unless current_user?(@user) && !guest_user
   end
 
   # 管理者かどうか確認する
