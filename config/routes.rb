@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'hiits/create'
+  get 'hiits/destroy'
+  get 'hiits/new'
+  get 'hiits/edit'
+  get 'hiits/show'
+  get 'hiits/index'
   resources :sports
   root 'users#index'
   get 'simple', to: 'steps#simple'
