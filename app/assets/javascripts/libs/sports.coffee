@@ -2,8 +2,17 @@ window.draw_graph = ->
   if document.getElementById("sportsChart") == null
     return
   ctx = document.getElementById("sportsChart").getContext('2d')
+  #  横軸の数を決めているよ
+  barNum = 10
+  labels = new Array(barNum)
+  bgColors = new Array(barNum)
+  bdColors = new Array(barNum)
+  for i in [0...barNum]
+    labels[i] = 'data' + i
+    bgColors[i] = 'rgba(75, 192, 192, 0.2)'
+    bdColors[i] = 'rgba(75, 192, 192, 1)'
   sportsChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'line',
     data: {
       labels: graphdays,#ここは日付が表示される　X軸に当たる
       datasets: [{
