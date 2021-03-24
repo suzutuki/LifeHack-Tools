@@ -41,8 +41,7 @@
                                   style: "color: rgb(80,80,80);"), new_task_path) %>
         </div>
       </aside>
-<% end %>
-<% if @macs.any? %>
+<% else %>
   <div id="main-content">
     <aside class="side left">
         <%= link_to(content_tag(:i, '', class: "fas fa-question fa-3x
@@ -67,8 +66,11 @@
       <div class="flex-container">
         <h3 class="tasks-time">更新:<%= mac.updated_at.to_s(:datetime_jp) %>
           作成:<%= mac.created_at.to_s(:datetime_jp) %></h3>
-        <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), edit_mac_path(mac.id)) %>
-        <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), mac_path(mac.id), method: :delete, data: { confirm: "本当に削除しますか？" }) %>
+        <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right",
+                                style: "color: rgb(80,80,80);"), edit_mac_path(mac.id)) %>
+        <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right",
+                                style: "color: rgb(80,80,80);"), mac_path(mac.id),
+                    method: :delete, data: { confirm: "本当に削除しますか？" }) %>
       </div>
     </section>
   <% end %>

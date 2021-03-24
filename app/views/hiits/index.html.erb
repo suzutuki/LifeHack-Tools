@@ -1,9 +1,38 @@
 <div id="main-content">
   <aside class="side left">
     <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
-      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), step_path(current_user)) %>
+      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), root_path) %>
   </aside>
   <main>
+    <section class="world">
+      <div class="world__inner">
+        <div class="world__img cover-slide">
+          <img class="img-zoom" src="/plan.jpg" alt=""/>
+        </div>
+        <div class="world__texts appear left">
+          <div class="world__texts-inner">
+            <div class="world__title main-title item">
+              <span class="coffee">ex</span>
+              <span>へようこそ！</span>
+            </div>
+            <div class="world__description item">
+              <p>運動の習慣化は難易度が高く</p>
+              <p>挫折しやすいと言われています</p>
+              <p>そこで、運動記録</p>
+              <p>人間のモチベーションを作るのは気合ではなく</p>
+              <p>自分が前に進んでいるという感覚が重要なので、</p>
+              <p>仕事や勉強の効率化に役立ててください！</p>
+            </div>
+            <div class="world__btn item">
+              <%= link_to "ToDoリストを作成する", new_task_path, class: "btn slide-bg" %>
+              <%= link_to tasks_path, class: "btn-cubic" do %>
+                <span class="hovering">アイビー・リー・メソッド</span><span class="default">TIPS</span>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="todo">
       <div class="log-form">
         <div class="form-title tween-animate-title center-position">HIIT記録</div>
