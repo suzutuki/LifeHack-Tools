@@ -19,5 +19,7 @@
 #
 class Hiit < ApplicationRecord
   belongs_to :user
-  validates :training_time, numericality: { greater_than_or_equal_to: 0 }
+  validates :training_time, numericality:
+    { greater_than_or_equal_to: 0, less_than_or_equal_to: 1000,
+      message: '運動時間は0以上1000分以下である必要があります' }
 end

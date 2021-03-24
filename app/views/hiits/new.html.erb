@@ -14,6 +14,11 @@
             <%= f.date_field :training_day, id: "date-form", type: "text", readonly: "" %>
             <%= f.label :created_at, '運動時間', class: "label" %>
             <%= f.number_field :training_time, class: "label"%>に
+            <% if @hiit.errors.include?(:training_time) %>
+              <div class="alert alert-danger">
+                <%= @hiit.errors.messages[:training_time][0] %>
+              </div>
+            <% end %>
             <%= f.submit "登録"%>
           <% end %>
         </div>

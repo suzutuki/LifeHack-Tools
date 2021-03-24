@@ -29,15 +29,15 @@
       <%= link_to "アイビー・リー・メソッド", tasks_path, class: "btn float" %>
       <div class="todo-form item">
         <div class="todo-title item">MY training record</div>
-        <% @hiits.each do |hiit| %>
+        <% @hiits.each do |hiits| %>
           <div class="todo__list item">
             <div class="panel-left item">
-              <h2 class="todo__label item">運動した日:<%= hiit.training_day %></h2>
-              <h2 class="todo__label item">運動時間(分):<%= hiit.training_time %></h2>
+              <h2 class="todo__label item">運動した日:<%= hiits.training_day %></h2>
+              <h2 class="todo__label item">運動時間(分):<%= hiits.training_time %></h2>
             </div>
             <div class="panel-right">
               <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right",
-                                      style: "color: rgb(80,80,80);"), edit_hiit_path(hiit.id), method: :delete, data: { confirm: "本当に削除しますか？" }) %>
+                                      style: "color: rgb(80,80,80);"), hiit_path(hiits.id), method: :delete, data: { confirm: "本当に削除しますか？" }) %>
             </div>
           </div>
         <% end %>

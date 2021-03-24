@@ -1,5 +1,7 @@
 class HiitsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
+  before_action :correct_user,   only: :destroy
+  skip_before_action :verify_authenticity_token
 
   def index
   end
