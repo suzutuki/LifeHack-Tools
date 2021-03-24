@@ -1,7 +1,7 @@
 <div id="main-content">
   <aside class="side left">
     <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
-      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), step_path(current_user)) %>
+      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), hiit_path(current_user)) %>
   </aside>
   <main>
     <section class="todo">
@@ -9,7 +9,7 @@
         <div class="form-title tween-animate-title center-position">HIIT記録</div>
         <div class="modal__bg "></div>
         <div class="modal__content">
-          <%= form_with model: @sport, local: true do |f|  %>
+          <%= form_with model: @hiit, local: true do |f|  %>
             <%= f.label :created_at, '登録日　', class: 'control-label' %>
             <%= f.date_field :training_day, id: "date-form", type: "text", readonly: "" %>
             <%= f.label :created_at, '運動時間', class: "label" %>

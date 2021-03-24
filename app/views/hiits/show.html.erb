@@ -1,17 +1,47 @@
-<div id="main-content">
-  <aside class="side left">
-    <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
+<% if @hiits.any? %>
+  <div id="main-content">
+    <aside class="side left">
+      <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
       faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), hiit_path(current_user)) %>
-  </aside>
-  <main>
-    <section class="todo">
-      <div class="log-form">
-        <div class="form-title tween-animate-title center-position">HIIT記録</div>
-        <canvas id="sportsChart" width="500" height="500"></canvas>
-        <script>
-            var graphdays = <%== @dayline %>, graphtimes = <%= @timeline %>
-        </script>
-        　<script>draw_graph();</script>
-      </div>
-    </section>
-  </main>
+    </aside>
+    <main>
+      <section class="todo">
+        <div class="log-form">
+          <div class="form-title tween-animate-title center-position">HIIT記録</div>
+          <canvas id="sportsChart" width="500" height="500"></canvas>
+          <script>
+              var graphdays = <%== @dayline %>, graphtimes =
+              <%= @timeline %>
+          </script>
+          　
+          <script>draw_graph();</script>
+        </div>
+        <div class="center-position">
+          <%= link_to "グラフを見る", hiit_path(current_user), class: "btn slide-slow" %>
+          <%= link_to "運動記録をつける", new_hiit_path, class: "btn slide-slow" %>
+          <%= link_to "編集する", edit_hiit_path(@hiits.ids), class: "btn slide-slow" %>
+          <%= link_to "シンプル", simple_path, class: "btn slide-slow" %>
+        </div>
+
+    <section class="todo appear right">
+      <trigger_time class="btn float">更新・作成日時を表示/非表示</trigger_time>
+      <trigger_priority class="btn float">優先順位1のみ表示</trigger_priority>
+      <%= link_to "アイビー・リー・メソッド", tasks_path, class: "btn float" %>
+      <div class="todo-form item">
+        <div class="todo-title item">MY training record</div>
+        <% @hiits.each do |hiit| %>
+          <div class="todo__list item">
+            <div class="panel-left item">
+              <h2 class="todo__label item">運動した日:<%= hiit.training_day %></h2>
+              <h2 class="todo__label item">運動時間(分):<%= hiit.training_time %></h2>
+            </div>
+            <div class="panel-right">
+              <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right",
+                                      style: "color: rgb(80,80,80);"), edit_hiit_path(hiit.id), method: :delete, data: { confirm: "本当に削除しますか？" }) %>
+            </div>
+          </div>
+        <% end %>
+<% end %>
+</div>
+</section>
+</main>

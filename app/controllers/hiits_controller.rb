@@ -39,13 +39,13 @@ class HiitsController < ApplicationController
 
   def show
     @user = current_user
-    @hiits = current_user.macs
+    @hiits = current_user.hiits
     @graphdays =  @user.hiits.order(training_day: "DESC").limit(6).reverse
     @dayline = Array.new
     @graphdays.each do |graphday|
       @dayline.push(graphday.training_day.strftime('%m/%d').to_s)
     end
-    @graphtimes =  @user.trainings.order(training_day: "DESC").limit(6).reverse
+    @graphtimes =  @user.hiits.order(training_day: "DESC").limit(6).reverse
     @timeline = Array.new
     @graphtimes.each do |graphtime|
       @timeline.push(graphtime.training_time)
