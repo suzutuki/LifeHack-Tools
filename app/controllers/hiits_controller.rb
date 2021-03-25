@@ -6,6 +6,21 @@ class HiitsController < ApplicationController
   def index
   end
 
+  def show
+    @user = current_user
+    @hiits = @user.hiits
+    @graphdays =  @user.hiits.order(training_day: "DESC").limit(1000).reverse
+    @dayline = Array.new
+    @graphdays.each do |graphday|
+      @dayline.push(graphday.training_day.strftime('%Y/%m/%d').to_s)
+    end
+    @graphtimes =  @user.hiits.order(training_day: "DESC").limit(1000).reverse
+    @timeline = Array.new
+    @graphtimes.each do |graphtime|
+      @timeline.push(graphtime.training_time)
+    end
+  end
+
   def create
     @hiit = current_user.hiits.build(hiit_params)
     if @hiit.save
@@ -25,12 +40,6 @@ class HiitsController < ApplicationController
     end
   end
 
-  def destroy
-    @hiits.destroy
-    redirect_to 'hiits/index'
-  end
-
-
   def new
     @hiit = current_user.hiits.new
   end
@@ -39,34 +48,9 @@ class HiitsController < ApplicationController
     @hiit = current_user.hiits.find(params[:id])
   end
 
-  def show
-    @user = current_user
-    @hiits = @user.hiits
-    @graphdays =  @user.hiits.order(training_day: "DESC").limit(1000).reverse
-    @dayline = Array.new
-    @graphdays.each do |graphday|
-      @dayline.push(graphday.training_day.strftime('%Y/%m/%d').to_s)
-    end
-    @graphtimes =  @user.hiits.order(training_day: "DESC").limit(1000).reverse
-    @timeline = Array.new
-    @graphtimes.each do |graphtime|
-      @timeline.push(graphtime.training_time)
-    end
-    # start_day = Date.today-183
-    # end_day = Date.today
-    # gon.monthly = (start_day..end_day).select {|day| day.day == 1}
-    # gon.monthly.each_with_index do |month, i|
-    #   newmonth = month.strftime("%Y年%m月")
-    #   gon.monthly[i] = newmonth
-    # end
-    # sum = 0
-    # array = Hiit.where(user_id: current_user.id).where(training_day: start_day..end_day).group("DATE_FORMAT(training_day, '%Y年%m月%d日')").count
-    # gon.data = array.values # この段階でイベントへ行っていない月は0で配列に加えておきたい
-    # gon.linedata = []
-    # gon.data.each do |data|
-    #   sum += data
-    #   gon.linedata << sum
-    # end
+  def destroy
+    @hiit.destroy
+    redirect_to request.referrer || root_url
   end
 
   private

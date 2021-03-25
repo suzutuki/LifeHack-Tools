@@ -13,7 +13,6 @@
 #
 class User < ApplicationRecord
   has_many :hiits, dependent: :destroy
-  accepts_nested_attributes_for :hiits, allow_destroy: true
   has_many :its, dependent: :destroy
   accepts_nested_attributes_for :its, allow_destroy: true
   has_many :steps, dependent: :destroy
