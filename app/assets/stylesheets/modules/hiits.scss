@@ -1,0 +1,25 @@
+@import "variables";
+//hiitで使われているスタイル
+.box {
+  position: relative;
+  display: inline-block;
+  background-color: $cWhite;
+  border: 1px solid $cBlack;
+  font-weight: 600;
+  padding: 10px 40px;
+  margin: 10px auto;
+  color: $cBlack;
+}
+
+.hiit-title {
+  color: $color-coffee_brown;
+  font-size: 1.35em;
+  display: block;
+  background: rgba(42,42,42,0.95);
+  text-transform: uppercase;
+  padding: 0.75em 1em 0.75em 1.5em;
+  box-shadow: 0 1px 1px;
+  border: 1px solid rgba(0,0,0,.45);
+  font-weight: 200;
+  margin-bottom: 1.5em;
+}

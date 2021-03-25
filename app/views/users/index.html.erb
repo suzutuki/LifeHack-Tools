@@ -42,7 +42,6 @@
           <%= link_to "If-Thenテクニック", it_path(current_user), class: "btn slide-bg" %>
           <%= link_to "グラフを見る(ビッグエリア)", steps_path, class: "btn slide-bg" %>
           <%= link_to "グラフを見る(ビッグエリア)", step_path(current_user), class: "btn slide-bg" %>
-          <%= link_to "筋トレ", sports_path(current_user), class: "btn slide-bg" %>
           <%= link_to "HIIT", hiits_path, class: "btn slide-bg" %>
           <% if current_user.admin? %>
             <%= link_to "ユーザーを見る(管理者のみ)", user_path(current_user), class: "btn slide-bg" %>

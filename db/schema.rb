@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2021_03_23_222311) do
     t.bigint "user_id"
     t.date "training_day"
     t.integer "training_time"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_hiits_on_user_id"

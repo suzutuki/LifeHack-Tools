@@ -8,30 +8,33 @@
       <section class="todo">
         <div class="log-form">
           <div class="form-title tween-animate-title center-position">HIIT記録</div>
-          <canvas id="sportsChart" width="500" height="500"></canvas>
+          <div class="chart-container" style="position: relative; width: 100%; height: 400px;">
+          <canvas id="sportsChart"></canvas>
+          </div>
           <script>
-              var graphdays = <%== @dayline %>, graphtimes =
-              <%= @timeline %>
+              var graphdays = <%== @dayline %>, graphtimes = <%= @timeline %>
           </script>
-          　
           <script>draw_graph();</script>
         </div>
         <div class="center-position">
           <%= link_to "運動記録をつける", new_hiit_path, class: "btn slide-slow" %>
-          <%= link_to "編集する", edit_hiit_path(@hiits.ids), class: "btn slide-slow" %>
           <%= link_to "シンプル", simple_path, class: "btn slide-slow" %>
         </div>
-    <section class="todo-form appear right">
+      </section>
+      <section class="form-width">
+    <div class="todo-form appear right">
         <div class="todo-title item">MY training record</div>
         <% @hiits.each do |hiits| %>
-          <div class="todo__list item">
-              <h2 class="todo__label item">運動した日: <%= hiits.training_day %></h2>
-              <h2 class="todo__label item">運動時間(分): <%= hiits.training_time %>分</h2>
-              <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover",
+          <div class="todo__list item ">
+            <h2 class="item center-position">運動した日: <%= hiits.training_day %></h2>
+              <h2 class="item center-position">運動時間: <%= hiits.training_time %>分</h2>
+                <div class="center-position">
+              <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-2x faa-vertical animated-hover",
                                       style: "color: rgb(80,80,80);"), edit_hiit_path(hiits.id)) %>
-              <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover",
+              <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-2x faa-horizontal animated-hover center-position",
                                       style: "color: rgb(80,80,80);"), hiit_path(hiits.id), method: :delete, data: { confirm: "本当に削除しますか？" }) %>
           </div>
+              </div>
         <% end %>
 <% end %>
 </div>

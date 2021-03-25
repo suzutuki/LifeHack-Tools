@@ -3,6 +3,7 @@
 # Table name: hiits
 #
 #  id            :bigint           not null, primary key
+#  content       :text(65535)
 #  training_day  :date
 #  training_time :integer
 #  created_at    :datetime         not null

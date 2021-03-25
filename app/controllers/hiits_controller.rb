@@ -41,23 +41,38 @@ class HiitsController < ApplicationController
 
   def show
     @user = current_user
-    @hiits = current_user.hiits
-    @graphdays =  @user.hiits.order(training_day: "DESC").limit(6).reverse
+    @hiits = @user.hiits
+    @graphdays =  @user.hiits.order(training_day: "DESC").limit(1000).reverse
     @dayline = Array.new
     @graphdays.each do |graphday|
-      @dayline.push(graphday.training_day.strftime('%m/%d').to_s)
+      @dayline.push(graphday.training_day.strftime('%Y/%m/%d').to_s)
     end
-    @graphtimes =  @user.hiits.order(training_day: "DESC").limit(6).reverse
+    @graphtimes =  @user.hiits.order(training_day: "DESC").limit(1000).reverse
     @timeline = Array.new
     @graphtimes.each do |graphtime|
       @timeline.push(graphtime.training_time)
     end
+    # start_day = Date.today-183
+    # end_day = Date.today
+    # gon.monthly = (start_day..end_day).select {|day| day.day == 1}
+    # gon.monthly.each_with_index do |month, i|
+    #   newmonth = month.strftime("%Y年%m月")
+    #   gon.monthly[i] = newmonth
+    # end
+    # sum = 0
+    # array = Hiit.where(user_id: current_user.id).where(training_day: start_day..end_day).group("DATE_FORMAT(training_day, '%Y年%m月%d日')").count
+    # gon.data = array.values # この段階でイベントへ行っていない月は0で配列に加えておきたい
+    # gon.linedata = []
+    # gon.data.each do |data|
+    #   sum += data
+    #   gon.linedata << sum
+    # end
   end
 
   private
   # ストロングパラメーター
   def hiit_params
-    params.require(:hiit).permit(:training_day, :training_time)
+    params.require(:hiit).permit(:training_day, :training_time, :content)
   end
 
   # 現在のユーザーが削除対象のhiitを保有しているかどうかを確認します。
