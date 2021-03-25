@@ -1,13 +1,48 @@
 //bootstrapなど置いていたとこ
-@import "bootstrap";
 @import "variables";
-
+@import "base";
 .main-width {
   width: 85%;
   margin: 0 auto;
   overflow: hidden;
 }
+.alert-width {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  height: 45px;
+  font-size: 28px;
+}
 
+.alert {
+  @extend .font-lg;
+
+  &__alert {
+
+    &-success {
+      background: #D5EDDA;
+      color: #50835B;
+      @extend .alert-width;
+    }
+
+    &-notice {
+      background: #CBE5FE;
+      color: #3F71A0;
+      @extend .alert-width;
+    }
+
+    &-danger {
+      background: #F7D7DA;
+      color: #8E424E;
+      @extend .alert-width;
+    }
+}
+}
+
+
+.alert-sucess {
+  background: chartreuse;
+}
 //エラーメッセージの設定
 #error_explanation {
   color: red;

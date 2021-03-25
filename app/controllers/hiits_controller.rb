@@ -26,8 +26,8 @@ class HiitsController < ApplicationController
   end
 
   def destroy
-    @hiit.destroy
-    redirect_to request.referrer || root_url
+    @hiits.destroy
+    redirect_to 'hiits/index'
   end
 
 

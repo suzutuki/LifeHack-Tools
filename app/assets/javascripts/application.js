@@ -12,7 +12,6 @@
 //
 //= require activestorage
 //= require rails-ujs
-//= require bootstrap
 //= require flatpickr
 //= require flatpickr/l10n/ja
 //= require jquery
