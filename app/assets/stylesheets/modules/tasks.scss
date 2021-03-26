@@ -1,4 +1,5 @@
 @import "variables";
+@import "base";
 //ToDoリストの中の設定
 ul h2 {
   margin: 10px 0 15px 15px;
@@ -10,7 +11,10 @@ ul h2 {
   margin: 10px 0 15px 15px;
 }
 
-
+.my__todo {
+  @extend .content-width;
+  width: 65%;
+}
 
 //Todoリストのチェックボックス
 .tasks-checkbox {

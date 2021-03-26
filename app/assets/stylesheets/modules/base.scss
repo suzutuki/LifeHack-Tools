@@ -23,7 +23,7 @@ img {
   vertical-align: bottom;
 }
 
-//共通クラス
+//共通クラスextendで使用
 .font-sm {
   font-size: 14px;
 }
@@ -61,11 +61,13 @@ img {
   margin: 0 auto;
   max-width: $contentMaxWidth;
 }
+
 .form-width {
   width: 55%;
   margin: 0 auto;
   max-width: $contentMaxWidth;
 }
+
 //テキストアニメーションするよ
 .main-title {
   //継承することで、画面の大きさが変わっても今の画面の設定が適応される
@@ -75,15 +77,18 @@ img {
   // 一行に重ならないようにする
   display: block;
 }
+
 .main-title-center {
   @extend .main-title;
   text-align: center;
 }
+
 //テキストアニメーションするよ
 .sub-title {
   @extend .font-sm;
   color: $cSubTitle;
 }
+
 .sub-title-center {
   @extend .sub-title;
   text-align: center;
@@ -98,9 +103,15 @@ img {
 .purple {
   color: $cWineRed;
 }
+
 .coffee {
   color: $color-coffee_brown;
 }
+
+.sienna {
+  color: $color-sienna;
+}
+
 #container {
   background-color: $cWhite;
   position: relative;
@@ -139,6 +150,7 @@ main {
   display: flex;
   justify-content: center;
 }
+
 li {
   list-style: none;
 }
@@ -174,7 +186,7 @@ p {
 }
 
 a:hover {
-  background: $color-thin_grey!important;
+  background: $color-thin_grey !important;
 }
 
 .popular {
@@ -194,10 +206,12 @@ a:hover {
     //   background-color: $cBgGray;
     // }
   }
+
   &__header {
     // 横幅の余白を追加
     @extend .content-width;
   }
+
   &__container {
     // 画像を前面にする
     position: relative;

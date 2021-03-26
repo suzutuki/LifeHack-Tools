@@ -1,5 +1,5 @@
+<%= render 'layouts/side-left' %>
 <% if current_user.tasks.empty? %>
-    <%= render 'layouts/side-root' %>
     <main>
       <section class="world">
         <div class="world__inner">
@@ -9,7 +9,7 @@
           <div class="world__texts appear left">
             <div class="world__texts-inner">
               <div class="world__todo main-title item">
-                <span class="coffee">TODOリスト</span>
+                <span class="sienna">ToDoリスト</span>
                 <span>へようこそ！</span>
               </div>
               <div class="world__description item">
@@ -32,14 +32,8 @@
       </section>
 <% end %>
 <% if current_user.tasks.any? %>
-  <div id="main-content">
-    <aside class="side left">
-      <div class="side__inner">
-        <a class="twitter icon tween-animate-title" href="#">Twitter</a>
-      </div>
-    </aside>
     <main>
-      <section class="todo appear right">
+      <section class="my__todo appear right">
         <trigger_time class="btn float">更新・作成日時を表示/非表示</trigger_time>
         <trigger_priority class="btn float">優先順位1のみ表示</trigger_priority>
         <%= link_to "アイビー・リー・メソッド", tasks_path, class: "btn float" %>
@@ -74,10 +68,8 @@
             method: :delete, data: { confirm: "全て削除します。本当に削除しますか？" }) %>
 
 <aside class="side right">
-  <div class="side__inner">
-    <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-double-right fa-2x
+    <%= link_to(content_tag(:i, 'Create', class: "fas fa-angle-right fa-2x
                                 faa-horizontal animated-hover fa-pull-right",
                             style: "color: rgb(80,80,80);"), new_task_path) %>
-  </div>
 </aside>
 </section>
