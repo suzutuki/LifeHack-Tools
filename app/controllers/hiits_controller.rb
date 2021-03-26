@@ -22,6 +22,9 @@ class HiitsController < ApplicationController
   end
 
   def create
+    # if
+    # hiit == current_user.hiits.select {|trainig_day| trainig_day }.sum
+    # end
     @hiit = current_user.hiits.build(hiit_params)
     if @hiit.save
       flash[:success] = "作成しました!"
