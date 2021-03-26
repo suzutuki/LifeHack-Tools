@@ -1,10 +1,5 @@
 <% provide(:title, ' ユーザー登録') %>
-<div id="main-content">
-  <aside class="side left">
-    <div class="side__inner">
-      <a class="twitter icon tween-animate-title" href="#">Twitter</a>
-    </div>
-  </aside>
+<%= render 'layouts/side-root' %>
   <main>
     <section class="register">
       <div class="center-position">
@@ -14,8 +9,3 @@
         <div class="form-title tween-animate-title">Sign-up to LifeHack Tools</div>
 <%= render partial: 'users/form', locals: { user: @user } %>
   </main>
-  <aside class="side right">
-    <div class="side__inner">
-      <span>&copy;Ota</span>
-    </div>
-  </aside>

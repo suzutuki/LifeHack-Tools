@@ -64,6 +64,19 @@
     opacity: 0;
     transition: opacity 0.3s ease 1s, transform 0.3s ease 1s;
   }
+  &__todo {
+    @extend .hero__title;
+    top: 90%;
+    left: 65%;
+  }
+  &__if {
+    @extend .hero__title;
+    font-size: 28px;
+  }
+  &__mac {
+    @extend .hero__title;
+    top: 90%;
+  }
 }
 
 //  &__footer {

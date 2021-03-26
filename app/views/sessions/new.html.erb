@@ -1,11 +1,6 @@
 <% provide(:title, "ログイン") %>
 <!--ヘッダーから来ている-->
-<div id="main-content">
-  <aside class="side left">
-    <div class="side__inner">
-      <a class="twitter icon tween-animate-title" href="#">Twitter</a>
-    </div>
-  </aside>
+<%= render 'layouts/side-root' %>
   <main>
     <section class="register appear up">
       <div class="center-position">
@@ -23,14 +18,9 @@
             <span class="check-right item">次回ログインを省略する</span>
           <% end %>
           <div class="login-position">
-            <%= f.submit "Login ", class: "btn btn-filled item" %>
+            <%= f.submit "Login ", class: "btn float item" %>
       <% end %>
       <br>
       <%= link_to "はじめての方はこちら", new_user_path, class: "btn slide-bg" %>
       </div>
       </div>
-      <aside class="side right">
-        <div class="side__inner">
-          <span>&copy;Ota</span>
-        </div>
-      </aside>

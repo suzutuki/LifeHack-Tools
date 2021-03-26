@@ -5,7 +5,7 @@
         <li class="footer__li item">
           <%= link_to 'LifeHack Tools！', root_url, style: "footer__link item" %></li>
       </div>
-      <li><%= link_to(content_tag(:i, '', class: "fab fa-twitter faa-wrench animated-hover item",
+      <li><%= link_to(content_tag(:i, '', class: "fab fa-twitter faa-wrench animated-hover fa-2x item",
                                   style: "color: #333;"), "https://twitter.com/suzutuki0149") %>
       </li>
       <% if logged_in? && !guest_user %>
@@ -19,17 +19,12 @@
     </div>
   </nav>
 </footer>
-<!--ココからモバイルメニュー-->
 <nav class="mobile-menu">
   <%= link_to(content_tag(:i, 'HOME', class: "fas fa-home fas faa-vertical
       animated-hover", style: "color: #1d1d1f;" "font-size: 1.5em"), root_path) %>
   <ul class="mobile-menu__main">
     <% if logged_in? %>
-      <%= link_to "ToDoリスト！", task_path(current_user), class: "btn solid" %>
-      <%= link_to "Small stepとBig area", step_path(current_user), class: "btn solid" %>
-      <%= link_to "Macの原則", mac_path(current_user), class: "btn solid" %>
-      <%= link_to "If-Thenテクニック", it_path(current_user), class: "btn solid" %>
-      <%= link_to "グラフを見る(ビッグエリア)", steps_path, class: "btn slide-bg" %>
+      <%= render 'users/link' %>
       <% if current_user.admin? %>
         <%= link_to "ユーザーを見る(管理者のみ)", user_path(current_user), class: "btn slide-bg" %>
       <% end %>

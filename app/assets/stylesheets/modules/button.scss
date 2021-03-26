@@ -84,6 +84,35 @@
       }
     }
   }
+
+  &.slide-wine {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      background-color: $cWineRed;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      transition: transform 0.3s;
+      z-index: -1;
+    }
+
+    &:hover {
+      color: $cBlack;
+
+      &::before {
+        transform: none;
+      }
+    }
+  }
+
   &.slide-slow {
     position: relative;
     overflow: hidden;
@@ -95,6 +124,118 @@
       width: 100%;
       height: 100%;
       background-color: $cWineRed;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      transition: transform 0.3s;
+      z-index: -1;
+    }
+
+    &:hover {
+      color: $cBlack;
+
+      &::before {
+        transform: none;
+      }
+    }
+  }
+
+  &.slide-red {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      background-color: #FEE2E8;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      transition: transform 0.3s;
+      z-index: -1;
+    }
+
+    &:hover {
+      color: $cBlack;
+
+      &::before {
+        transform: none;
+      }
+    }
+  }
+
+  &.slide-blue {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      background-color: #D9EDFB;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      transition: transform 0.3s;
+      z-index: -1;
+    }
+
+    &:hover {
+      color: $cBlack;
+
+      &::before {
+        transform: none;
+      }
+    }
+  }
+
+  &.slide-yellow {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      background-color: #FEF5E0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      transition: transform 0.3s;
+      z-index: -1;
+    }
+
+    &:hover {
+      color: $cBlack;
+
+      &::before {
+        transform: none;
+      }
+    }
+  }
+
+  &.slide-green {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      background-color: #DDF2F2;
       position: absolute;
       top: 0;
       left: 0;
@@ -111,6 +252,7 @@
       }
     }
   }
+
   &.cover-3d {
     position: relative;
     z-index: 1;

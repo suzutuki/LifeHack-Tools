@@ -181,7 +181,7 @@ a:hover {
   &__inner {
     position: relative;
     // 下のコメントアウトされているところの設定(グレーの背景)
-    @include p-base($top: 10%, $height: 90%) {
+    @include p-base($top: 0%, $height: 90%) {
       background: $cBgGray;
     }
     // &::before {

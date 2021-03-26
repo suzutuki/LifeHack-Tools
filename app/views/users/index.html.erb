@@ -1,3 +1,4 @@
+<% provide(:title, "Home") %>
 <!--ログインしているときの画面-->
 <% if logged_in? %>
   <div id="content">
@@ -5,20 +6,20 @@
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <div class="hero__title">ToDoリスト</div>
-            <img src="/Todolist.jpg" alt="">
+            <div class="hero__todo">ToDoリスト</div>
+            <img src="/Todolist.jpg">
           </div>
           <div class="swiper-slide">
-            <div class="hero__title">IF−Thenテクニック</div>
-            <img src="/plan.jpg" alt="">
+            <div class="hero__if">IF−Thenテクニック</div>
+            <img src="/plan.jpg">
           </div>
           <div class="swiper-slide">
-            <div class="hero__title">MACの原則</div>
-            <img src="/Goals.jpg" alt="">
+            <div class="hero__mac">MACの原則</div>
+            <img src="/Goals.jpg">
           </div>
           <div class="swiper-slide">
             <div class="hero__title">small step</div>
-            <img src="/Rose-banquet3.jpg" alt="">
+            <img src="/Rose-banquet3.jpg">
           </div>
         </div>
         <div class="swiper-pagination"></div>
@@ -28,21 +29,10 @@
   </div>
   <!--ココは問題なし-->
   <div id="main-content">
-    <aside class="side left">
-      <div class="side__inner">
-        <a class="twitter icon tween-animate-title" href="#">Twitter</a>
-      </div>
-    </aside>
     <main>
       <div class="popular__inner appear up">
         <div class="popular__container">
-          <%= link_to "ToDoリスト！", task_path(current_user), class: "btn slide-bg" %>
-          <%= link_to "Small stepとBig area", step_path(current_user), class: "btn slide-bg" %>
-          <%= link_to "Macの原則", mac_path(current_user), class: "btn slide-bg" %>
-          <%= link_to "If-Thenテクニック", it_path(current_user), class: "btn slide-bg" %>
-          <%= link_to "グラフを見る(ビッグエリア)", steps_path, class: "btn slide-bg" %>
-          <%= link_to "グラフを見る(ビッグエリア)", step_path(current_user), class: "btn slide-bg" %>
-          <%= link_to "HIIT", hiit_path(current_user), class: "btn slide-bg" %>
+          <%= render 'link' %>
           <% if current_user.admin? %>
             <%= link_to "ユーザーを見る(管理者のみ)", user_path(current_user), class: "btn slide-bg" %>
             </div>
@@ -51,11 +41,6 @@
           <!--ログインしていない時-->
 <% else %>
   <div id="main-content">
-    <aside class="side left">
-      <div class="side__inner">
-        <a class="twitter icon tween-animate-title" href="#">Twitter</a>
-      </div>
-    </aside>
     <main>
       <section class="world">
         <div class="world__inner">
@@ -68,7 +53,7 @@
                 <span class="purple">LifeHack Tools</span>
                 <div class="world__sub sub-title item">ライフハックツールズ</div>
                 <span>にようこそ！</span><br>
-             </div>
+              </div>
               <div class="world__description item">
                 <p>目標達成や習慣化のアシストツールとして
                   <br>LifeHack Tools！を活用して
@@ -85,8 +70,3 @@
       </section>
 <% end %>
 </main>
-<aside class="side right">
-  <div class="side__inner">
-    <span>&copy;Ota</span>
-  </div>
-</aside>
