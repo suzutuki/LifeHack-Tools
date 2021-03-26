@@ -1,10 +1,5 @@
 <% if current_user.tasks.empty? %>
-  <div id="main-content">
-    <aside class="side left">
-      <div class="side__inner">
-        <a class="twitter icon tween-animate-title" href="#">Twitter</a>
-      </div>
-    </aside>
+    <%= render 'layouts/side-root' %>
     <main>
       <section class="world">
         <div class="world__inner">
@@ -13,7 +8,7 @@
           </div>
           <div class="world__texts appear left">
             <div class="world__texts-inner">
-              <div class="world__title main-title item">
+              <div class="world__todo main-title item">
                 <span class="coffee">TODOリスト</span>
                 <span>へようこそ！</span>
               </div>

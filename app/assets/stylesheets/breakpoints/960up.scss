@@ -75,6 +75,12 @@
       display: block;
     }
   }
+  &__todo {
+    @extend .world__title;
+    &::before {
+      display: block;
+    }
+  }
 }
 
 .footer {
