@@ -31,15 +31,6 @@ class HiitsController < ApplicationController
     end
   end
 
-  def update
-    if current_user.hiits.update(hiit_params)
-      flash[:success] = "編集しました!"
-      redirect_to hiit_path(current_user)
-    else
-      render 'hiits/edit'
-    end
-  end
-
   def new
     @hiit = current_user.hiits.new
   end
@@ -48,6 +39,15 @@ class HiitsController < ApplicationController
     @hiit = current_user.hiits.find(params[:id])
   end
 
+  def update
+    @hiit = current_user.hiits.find(params[:id])
+    if @hiit.update(hiit_params)
+      flash[:success] = "編集しました!"
+      redirect_to hiit_path(current_user)
+    else
+      render 'hiits/edit'
+    end
+  end
   def destroy
     @hiit.destroy
     redirect_to request.referrer || root_url
