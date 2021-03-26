@@ -8,9 +8,9 @@ class Main {
         // headerやsideのDOMをクエリーセレクターで取得
         this.header = document.querySelector('.header');
         this.sides = document.querySelectorAll('.side');
-        // 配列にScrollObserverのインスタンスを格納する 変数_observerを初期化
+        // 配列にScrollObserverのインスタンスを格納する 変数_observersを初期化
         this._observers = [];
-        // _scrollInitを呼ぶ
+        // _Initを呼ぶ
         this._init();
     }
 // インスタンス化されたオブジェクトが配列に格納される(セッターメソッド)
@@ -28,7 +28,7 @@ class Main {
         this.hero = new HeroSlider('.swiper-container');
         Pace.on('done', this._paceDone.bind(this));
     }
-// ロードが完了した段階でアニメーションするようにする
+    // ロードが完了した段階でアニメーションするようにする
     _paceDone() {
         this._scrollInit();
     }

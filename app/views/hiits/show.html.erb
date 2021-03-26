@@ -45,13 +45,9 @@
         <div class="log-form">
           <div class="form-title tween-animate-title center-position">運動記録</div>
           <div class="chart-container" style="position: relative; width: 100%; height: 400px;">
-            <canvas id="sportsChart"></canvas>
+            <canvas id="My_Chart"></canvas>
           </div>
-          <script>
-              var graphdays = <%== @dayline %>, graphtimes =
-              <%= @timeline %>
-          </script>
-          <script>draw_graph();</script>
+          <%= render 'shared/chart' %>
         </div>
         <div class="center-position">
           <%= link_to "運動記録をつける", new_hiit_path, class: "btn slide-slow" %>

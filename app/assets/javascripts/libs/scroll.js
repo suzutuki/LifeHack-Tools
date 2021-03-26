@@ -1,6 +1,6 @@
 // スクロールの監視を定義する
 class ScrollObserver {
-    //   第2引数にコールバック関数第三引数にオプション
+    //第2引数にコールバック関数第三引数にオプション
     constructor(els, cb, options) {
       this.els = document.querySelectorAll(els);
       const defaultOptions = {

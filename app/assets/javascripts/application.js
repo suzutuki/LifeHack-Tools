@@ -23,4 +23,3 @@
 //= require_directory ./main
 //= require_directory ./jquery
 //= require_tree .
-

@@ -1,7 +1,7 @@
 window.draw_graph = ->
-  if document.getElementById("sportsChart") == null
+  if document.getElementById("My_Chart") == null
     return
-  ctx = document.getElementById("sportsChart").getContext('2d')
+  ctx = document.getElementById("My_Chart").getContext('2d')
   #  横軸の数を決めているよ
   barNum = 7
   labels = new Array(barNum)

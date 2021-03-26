@@ -1,0 +1,26 @@
+<div id="main-content">
+  <aside class="side left">
+    <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
+      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), hiit_path(current_user)) %>
+  </aside>
+  <main>
+    <section class="register">
+      <div class="log-form">
+        <div class="form-title tween-animate-title center-position">運動記録</div>
+        <%= form_with model: @hiit, local: true do |f| %>
+          <%= f.date_field :training_day, id: "date-form", type: "text", readonly: "", required: true,
+                           placeholder: '運動した日をクリックしてカレンダーで選択', class: "form-field btn" %>
+          <% if @hiit.errors.include?(:training_day) %>
+            <div class="alert alert-danger ">
+              <%= @hiit.errors.messages[:training_day][0] %>
+            </div>
+          <% end %>
+          <%= f.number_field :training_time, required: true, placeholder: '運動時間を分単位で選択' %>
+          <%= f.label '運動メモ', class: "box center-position" %>
+          <%= f.text_area :content, class: "form-area center-position", placeholder: '例： スクワットを〇〇分、腹筋を〇〇分、プランクを〇〇分など' %>
+          </div>
+          <%= f.submit yield(:button_text), class: "btn slide-slow center-position" %>
+        <% end %>
+        </section>
+  </main>
+<%= render 'shared/datetime' %>
