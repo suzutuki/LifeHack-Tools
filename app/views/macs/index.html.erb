@@ -1,50 +1,51 @@
+<% provide(:title, "例") %>
 <div id="main-content">
   <aside class="side left">
-    <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
+    <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-2x
       faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), mac_path(current_user)) %>
   </aside>
   <main>
     <section class="mac-width appear up">
       <div class="log-form">
         <div class="ivy__title item center-position">MACの原則の例</div>
-          <div class="mac-title item">例1:テストや受験、資格などで合格する</div>
+        <div class="mac-title item">例1:テストや受験、資格などで合格する</div>
         <div class="mac__title">
           <h3>M=メジャラブル(目標を数値化する)</h3><br>
           <h4>○受験する対象について、1日どのくらいの学習時間が必要なのかを算出する。</h4><br>
-          <h3 class="grey item">×毎日2時間学習するなど</h3><br>
+          <h3 class="grey__mac item">×毎日2時間学習するなど</h3><br>
           <h3>A＝アクショナブル(ゴールまでの過程(プロセス)を明確化させる)</h3><br>
           <h4>○過去問などから出題範囲、配点、難易度、傾向などを具体的に調べる。<br>
             自分の理解できる難易度の参考書を調べる。<br>
             定期的にテストをしてどれぐらい学習が必要か 学習時間の修正をするなど</h4><br>
-          <h3 class="grey item">×毎日2時間学習するなど</h3><br>
+          <h3 class="grey__mac item">×毎日2時間学習するなど</h3><br>
           <h3>C＝コンピテント(目標達成が価値観に基づいているか考える)</h3><br>
           <h4>○将来に向けた大学の進学(または自分のスキルアップ)につながるからやる</h4><br>
           <h3 class="grey">×なんとなくで決める</h3>
         </div>
+        <div class="mac-title item">例2:ダイエット</div>
         <div class="mac__title">
-          <div class="form-title item">例2:ダイエット</div>
           <h3>M=メジャラブル(目標を数値化する)</h3><br>
           <h4>○何月何日までに○キロやせるという期限を設けて願望を数値化する。</h4><br>
-          <h3 class="grey item">×夏までに○キロやせる</h3><br>
+          <h3 class="grey__mac item">×夏までに○キロやせる</h3><br>
           <h3>A＝アクショナブル(ゴールまでの過程(プロセス)を明確化させる)</h3><br>
           <h4>○期日までにやせるための具体的なプランを立てる。効果的な運動の回数を調べる。<br>
             摂取カロリーを計算して減らせるか検討する。運動を習慣化するために協力してもらうなど
           </h4><br>
-          <h3 class="grey item">×食事を減らして運動をする</h3><br>
+          <h3 class="grey__mac item">×食事を減らして運動をする</h3><br>
           <h4>C＝コンピテント(目標達成が価値観に基づいているか考える)</h4><br>
           <h4>○やせることが本当に望んでいることなのか考える</h4><br>
-          <h3 class="grey item">×健康のためまたはモテたいなど</h3>
+          <h3 class="grey__mac item">×健康のためまたはモテたいなど</h3>
         </div>
+        <div class="mac-title item">例3:彼氏彼女を作りたい</div>
         <div class="mac__title item">
-          <div class="form-title item">例3:彼氏彼女を作りたい</div>
           <h3>M=メジャラブル(目標を数値化する)</h3><br>
           <h4>○何月何日までに彼氏彼女をつくるという期限を設けて願望を数値化する。</h4><br>
-          <h3 class="grey item">×彼氏彼女を作る</h3><br>
+          <h3 class="grey__mac item">×彼氏彼女を作る</h3><br>
           <h3>A＝アクショナブル(ゴールまでの過程(プロセス)を明確化させる)</h3><br>
           <h4>○期日までに彼氏彼女をつくるための具体的なプランを立てる。<br>
             友人知人から紹介してもらう。マッチングサイトに登録する。合コン、恋活なども視野に入れる
           </h4><br>
-          <h3 class="grey item">×合コンのみ考える(複数考えない)</h3><br>
+          <h3 class="grey__mac item">×合コンのみ考える(複数考えない)</h3><br>
           <h4>C＝コンピテント(目標達成が価値観に基づいているか考える)</h4><br>
           <h4>○彼氏彼女をつくることが本当に望んでいることなのか考える</h4><br>
           <h3 class="grey item">×とりあえず恋人がいてほしいからなど</h3>
@@ -52,15 +53,13 @@
         <div class="world__title item">
           <div class="center-position item">
             <%= link_to "目標設定をする", new_mac_path,
-                        class: "btn slide-bg" %>
+                        class: "btn slide-wine" %>
           </div>
         </div>
     </section>
   </main>
-        <aside class="side right">
-          <div class="side__inner">
-            <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-double-right fa-2x
+  <aside class="side right">
+    <%= link_to(content_tag(:i, 'Create', class: "fas fa-angle-right fa-2x
                                 faa-horizontal animated-hover fa-pull-right",
-                                    style: "color: rgb(80,80,80);"), new_task_path) %>
-          </div>
-        </aside>
+                            style: "color: rgb(80,80,80);"), new_mac_path) %>
+  </aside>

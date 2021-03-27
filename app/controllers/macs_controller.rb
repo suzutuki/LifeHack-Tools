@@ -29,7 +29,8 @@ class MacsController < ApplicationController
   end
 
   def update
-    if current_user.macs.update(mac_params)
+    @mac = current_user.macs.find(params[:id])
+    if @mac.update(mac_params)
       flash[:success] = "編集しました!"
       redirect_to mac_path(current_user)
     else
@@ -39,6 +40,7 @@ class MacsController < ApplicationController
 
   def destroy
     @mac.destroy
+    flash[:danger] = "目標｢#{@mac.measurable}｣を削除しました！"
     redirect_to request.referrer || root_url
   end
 

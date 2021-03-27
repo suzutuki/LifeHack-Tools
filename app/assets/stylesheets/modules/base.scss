@@ -6,7 +6,6 @@ html {
   position: relative;
 }
 
-/* bodyからの設定 */
 body {
   border-top: 6px solid $color-coffee_brown;
   font-family: "SF Pro JP", "SF Pro Text", "SF Pro Icons", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -81,13 +80,12 @@ img {
   &-center {
     @extend .main-title;
     position: relative;
-    text-align: center;
     @include p-base(
             $display: none,
-            $width: 145px,
+            $width: 270px,
             $height: 1px,
             $top: 36%,
-            $left: 255px
+            $left: 210px
     ) {
       // 棒線が伸びるアニメーション
       background-color: $cBlack;

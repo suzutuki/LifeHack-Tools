@@ -1,63 +1,9 @@
 @import "variables";
-
+@import "base";
 .align-left {
   font-size: 24px;
   text-align: left;
   margin: 20px 0;
-}
-
-.mac-width {
-  width: 80%;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.goal {
-  flex-direction: column;
-  display: flex;
-}
-
-.mac-content {
-  text-align: left;
-  list-style: none;
-  font-weight: 500;
-  color: #1d1d1f;
-}
-
-.process {
-  border-top: 2px solid $color-thin_black;
-  flex-direction: column;
-  display: flex;
-}
-
-.grey {
-  color: $color-grey;
-}
-
-.mac-title {
-  color: $color-white;
-  font-size: 1.35em;
-  display: block;
-  background: rgba(42,42,42,0.95);
-  box-shadow: 0 1px 1px;
-  border: 1px solid rgba(0,0,0,.45);
-  font-weight: 200;
-  padding: 0.75em 1em 0.75em 1.5em;
-}
-
-.panel-mac {
-  border: 2.5px solid $color-thin_black;
-  border-radius: 10px;
-  margin: 0 auto;
-  padding: 30px;
-  overflow: hidden;
-  max-width: 80%;
-}
-
-.icon-position {
-  justify-content: right;
-  flex-direction: row;
-  display: flex;
 }
 
 .mac {
@@ -80,4 +26,72 @@
     border: 1px solid rgba(0, 0, 0, .45);
     font-weight: 200;
   }
+
+  &-form {
+    box-shadow: 0 2px 5px rgba(0,0,0,.25);
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  &-width {
+    width: 70%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  &-content {
+    text-align: left;
+    list-style: none;
+    font-weight: 500;
+    color: #1d1d1f;
+  }
+
+  &-title {
+    color: $color-white;
+    font-size: 1.35em;
+    display: block;
+    background: rgba(42, 42, 42, 0.95);
+    box-shadow: 0 1px 1px;
+    border: 1px solid rgba(0, 0, 0, .45);
+    font-weight: 200;
+    padding: 0.75em 1em 0.75em 1.5em;
+    text-align: center;
+  }
 }
+
+
+.goal {
+  font-size: 2.3em;
+  font-weight: 800;
+}
+
+.process {
+  border-top: 1px dotted $color-thin_black;
+  @extend .goal;
+}
+
+.grey {
+  color: $color-grey;
+
+
+  &__mac {
+    color: $color-grey;
+    border-bottom: 0.5px dotted;
+  }
+}
+
+
+.panel-mac {
+  border: 2.5px solid $color-thin_black;
+  margin: 0 auto;
+  padding: 30px;
+  overflow: hidden;
+  @extend .mb-sm;
+}
+
+.icon-position {
+  justify-content: right;
+  flex-direction: row;
+  display: flex;
+}
+

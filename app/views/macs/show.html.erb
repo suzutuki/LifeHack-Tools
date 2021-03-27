@@ -1,10 +1,5 @@
+<%= render 'layouts/side-left' %>
 <% if @macs.empty? %>
-  <div id="main-content">
-    <aside class="side left">
-      <div class="side__inner">
-        <a class="twitter icon tween-animate-title" href="#">Twitter</a>
-      </div>
-    </aside>
     <main>
       <section class="world">
         <div class="world__inner__reverse">
@@ -15,7 +10,7 @@
             <div class="world__content__reverse">
               <div class="world__mac main-title-center item">
                 <span class="purple">MACの原則</span>
-                <div class="world__sub sub-title-center item">MACの原則とは？</div>
+                <div class="world__sub sub-title item">MACの原則とは？</div>
               </div>
               <div class="world__description item">
                 <p>現時点で効果の高い<br/>ゴール(目標)設定方法のこと</p>
@@ -32,44 +27,44 @@
             </div>
           </div>
         </div>
-      </section>
 <% else %>
-  <main id="main-content">
-    <aside class="side left">
-      <%= link_to(content_tag(:i, '', class: "fas fa-question fa-3x
-                                faa-vertical animated-hover fa-pull-right",
-                              style: "color: rgb(80,80,80);"), macs_path) %>
-    </aside>
     <main>
+      <div class="mac-width">
       <% @macs.each do |mac| %>
-        <section class="panel-mac">
+          <div class="mac-title item">My Goal<%= (mac.id) %></div>
+          <div class="panel-mac">
           <div class="goal">
-            <h1 class="text_color_grey">数値で表せる目標</h1>
-            <h1><%= simple_format(mac.measurable) %></h1>
+            <div class="text_color_grey">M: 数値で表せる目標</div>
+            <%= simple_format(mac.measurable) %>
           </div>
           <div class="process">
-            <h1 class="text_color_grey">ゴールまでの具体的なプロセス</h1>
-            <h2><%= simple_format(mac.actionable) %></h2>
+            <div class="text_color_grey">A: ゴールまでの具体的なプロセス</div>
+            <%= simple_format(mac.actionable) %>
           </div>
           <div class="process">
-            <h1 class="text_color_grey">目標達成が価値観に基づいているか?</h1>
-            <h1><%= simple_format(mac.competent) %></h1>
+            <div class="text_color_grey">C: 目標達成が価値観に基づいているか?</div>
+            <%= simple_format(mac.competent) %>
           </div>
           <div class="flex-container">
-            <h3 class="tasks-time">更新:<%= mac.updated_at.to_s(:datetime_jp) %>
-              作成:<%= mac.created_at.to_s(:datetime_jp) %></h3>
+            <h3 class="tasks-time">update:<%= mac.updated_at.to_s(:datetime_jp) %>
+              create:<%= mac.created_at.to_s(:datetime_jp) %></h3>
             <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right",
                                     style: "color: rgb(80,80,80);"), edit_mac_path(mac.id)) %>
             <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right",
                                     style: "color: rgb(80,80,80);"), mac_path(mac.id),
                         method: :delete, data: { confirm: "本当に削除しますか？" }) %>
           </div>
-        </section>
-        </main>
+        </div>
       <% end %>
       <div class="center-position">
-        <trigger_time class="btn float">更新・作成日時を表示/非表示</trigger_time>
+        <trigger_time class="btn float">ON/OFF</trigger_time>
       </div>
 <% end %>
+</section>
 </main>
+<aside class="side right">
+  <%= link_to(content_tag(:i, 'Create', class: "fas fa-angle-right fa-2x
+                                faa-horizontal animated-hover fa-pull-right",
+                          style: "color: rgb(80,80,80);"), new_mac_path) %>
+</aside>
 
