@@ -6,6 +6,6 @@
         <%= f.password_field :password, class: 'form-field', placeholder: 'パスワード' %>
         <%= f.password_field :password_confirmation, class: 'form-field', placeholder: 'パスワード確認' %>
       </div>
-     <div class="center-position"><%= f.submit "登録", class: " btn float" %></div>
+     <div class="center-position"><%= f.submit yield(:button_text), class: " btn float" %></div>
    </div>
     <% end %>

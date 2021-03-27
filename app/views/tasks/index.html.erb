@@ -1,41 +1,29 @@
 <% provide(:title, ' TIPS') %>
-<div id="main-content">
-  <aside class="side left">
-      <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
-      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), task_path(current_user)) %>
-  </aside>
+<%= render 'layouts/side-refferer' %>
   <main>
-    <section class="register appear up">
+    <section class="ivy__width appear up">
       <div class="log-form">
-        <div class="ivy__title item">TIPS:アイビー・リー・メソッドとは？</div>
+        <div class="form-title item">TIPS: アイビー・リー・メソッドとは？</div>
         <div class="ivy__description item">
           <p>具体的には以下の6つの方法を行うことです。</p>
         </div>
-        <br>
-        <p class="ivy item">1. 明日(今日でもOK)やるべきことを6つメモする。</p><br>
-        <p class="ivy item">2. 6項目を重要だと思う順に優先順位1,2,3,4,5,6と番号をふる。</p><br>
-        <p class="ivy item">3. このメモの順番に従ってやるべきことをすすめる。</p><br>
-        <p class="ivy item">4. もし全部できなかったら、悔やむことなく忘れる。</p><br>
-        <p class="ivy item">5. その後明日のための6つの項目を新しくメモする。</p><br>
+        <p class="ivy item">1. 明日(今日でもOK)やるべきことを6つメモする。</p>
+        <p class="ivy item">2. 6項目を重要だと思う順に優先順位1,2,3,4,5,6と番号をふる。</p>
+        <p class="ivy item">3. このメモの順番に従ってやるべきことをすすめる。</p>
+        <p class="ivy item">4. もし全部できなかったら、悔やむことなく忘れる。</p>
+        <p class="ivy item">5. その後明日のための6つの項目を新しくメモする。</p>
         <p class="ivy item">6. 1~5を丁寧に繰り返す。</p>
-      </div>
-      <p class="btn-sticky item">※ポイント</p><br>
-      <p class="item"> 優先順位1番が終わるまで、1番意外しない。<br>
-        2番目以降は見ないようにします。</p><br>
-      <p class="sub-title item">大切な優先順位1位以外を非表示にして、<br>
-        本当に大事なことに全力で取り掛かりましょう！</p>
-      <p class="btn-sticky__blue item">プラスα(優先順位0番を作る)</p><br>
-      <p class="item">取り組みやすいダウンサイジング<br>
-        したサブ目標(または作業)を設定します。
-      <p class="sub-title item">簡単な作業で手を動かすことによってやる気や集中力のスイッチを入れます。</p><br>
-      </h2>
-      <div class="world__btn item">
-        <%= link_to "ToDoリストに戻る", task_path(current_user), class: "btn slide-bg" %>
-        <%= link_to "ToDoリストを作る", new_task_path, class: "btn slide-bg" %>
+        <p class="btn-sticky item mb-sm">※ポイント</p><br>
+        <p class="item mb-sm"> 優先順位1番が終わるまで、1番意外しない。2番目以降は見ないようにします。<br>
+        <p class="sub-title item mb-sm">大切な優先順位1以外を非表示にして、本当に大事なことに全力で取り掛かりましょう！</p>
+        <p class="btn-sticky__blue item mb-sm">プラスα(優先順位0番を作る)</p><br>
+        <p class="item mb-sm">取り組みやすいダウンサイジングしたサブ目標(または作業)を設定します。</p>
+        <p class="sub-title item">簡単な作業で手を動かすことによってやる気や集中力のスイッチを入れます。</p><br>
+        </h2>
+        <div class="world__btn center-position item">
+          <%= link_to "ToDoリストに戻る", task_path(current_user), class: "btn slide-bg" %>
+          <%= link_to "ToDoリストを作る", new_task_path, class: "btn slide-bg" %>
+        </div>
       </div>
     </section>
-    <aside class="side right">
-      <div class="side__inner">
-        <span>&copy;Ota</span>
-      </div>
-    </aside>
+<%= render 'layouts/side-right' %>

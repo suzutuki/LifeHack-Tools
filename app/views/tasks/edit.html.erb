@@ -1,36 +1,25 @@
 <% provide(:title, "edit") %>
-<div id="main-content">
-  <aside class="side left">
-    <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
-      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), task_path(current_user)) %>
-  </aside>
-  <main>
-    <section class="todo">
-      <div class="log-form">
+<% provide(:button_text, "一括編集") %>
+<%= render 'form' %>
         <div class="form-title tween-animate-title">ToDoリストを一括編集</div>
         <%= form_with model: current_user, url: task_path, method: :patch, local: true do |form| %>
           <h3>
             <%= form.fields_for :tasks do |field| %>
-              <%= field.label :"タイトル : あなたが達成したいことを書いてください", class: 'btn slide-slow' %><br>
-              <%= field.text_field :title, class: 'tasks-form-box', required: true %>
+              <%= field.label :"タイトル : あなたが達成したいことを書いてください", class: 'btn slide-red' %><br>
+              <%= field.text_field :title, class: 'tasks-form-field', required: true %>
               <br>
-              <%= field.label :"優先順位 :  優先順位の高い順に自動で並び替わります。", class: 'btn slide-slow' %>
+              <%= field.label :"優先順位 :  優先順位の高い順に自動で並び替わります。", class: 'btn slide-yellow' %>
               <%= field.select :priority, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], { include_blank: '選択してください' }, { class: 'form-box', required: true } %>
-              <%= field.label :"メモ (50文字まで登録できます)", class: 'btn slide-slow' %>
+              <%= field.label :"メモ (50文字まで登録できます)", class: 'btn slide-blue' %>
               <%= field.text_area :content, class: 'tasks-form-area', placeholder: 'ご自由にどうぞ' %>
             <% end %>
             <div class="center-position">
               <div class="world__btn item">
                 <%= link_to '戻る', task_path(current_user), class: "btn float" %>
-                <%= form.submit '一括編集', class: "btn float" %>
+                <%= form.submit yield(:button_text), class: "btn float" %>
               </div>
             </div>
           </h3>
           </div>
         <% end %>
-        </section>
-  </main>
-    <aside class="side right">
-      <%= link_to(content_tag(:i, '', class: "fas fa-question fa-2x
-         faa-vertical animated-hover fa-pull-right", style: "color: rgb(80,80,80);"), tasks_path) %>
-    </aside>
+<%= render 'form-field' %>

@@ -1,8 +1,9 @@
 <% provide(:title, "ユーザー情報変更") %>
+<% provide(:button_text, '編集') %>
 <%= render 'layouts/side-root' %>
   <main>
     <section class="register">
         <h2 class="center-position tween-animate-title">Change user information</h2>
       <div class="log-form">
         <div class="form-title tween-animate-title center-position">name, e-mail, password</div>
-<%= render partial: 'form', locals: { user: @user } %>
+<%= render partial: 'users/form', locals: { user: @user } %>
