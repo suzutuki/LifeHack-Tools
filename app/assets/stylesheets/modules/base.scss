@@ -1,5 +1,6 @@
 @import "variables";
 @import "mixin";
+
 //ベーススタイル(ここではスマホ用の設定をしているよ)
 html {
   position: relative;
@@ -76,11 +77,26 @@ img {
   margin-bottom: 0;
   // 一行に重ならないようにする
   display: block;
-}
 
-.main-title-center {
-  @extend .main-title;
-  text-align: center;
+  &-center {
+    @extend .main-title;
+    position: relative;
+    text-align: center;
+    @include p-base(
+            $display: none,
+            $width: 145px,
+            $height: 1px,
+            $top: 36%,
+            $left: 255px
+    ) {
+      // 棒線が伸びるアニメーション
+      background-color: $cBlack;
+      transform: translateY(-50%) scaleX(0);
+      // 右側を中心に伸びるアニメーション
+      transition: transform 0.3s ease 1.6s;
+      transform-origin: left;
+    }
+  }
 }
 
 //テキストアニメーションするよ

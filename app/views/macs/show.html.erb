@@ -12,14 +12,13 @@
             <img src="/Goals.jpg" class="img-zoom" alt=""/>
           </div>
           <div class="world__texts appear left">
-            <div class="world__content">
-              <div class="main-title-center item">
-                <span class="purple">MAC</span>
-                <span>の原則 </span>
+            <div class="world__content__reverse">
+              <div class="world__mac main-title-center item">
+                <span class="purple">MACの原則</span>
+                <div class="world__sub sub-title-center item">MACの原則とは？</div>
               </div>
-              <div class="world__sub sub-title-center item">MACの原則とは？</div>
-              <div class="world__description-reverse item">
-                <p>現時点で最も効果のある<br/>ゴール(目標)設定方法のこと</p>
+              <div class="world__description item">
+                <p>現時点で効果の高い<br/>ゴール(目標)設定方法のこと</p>
                 <p>M(Measurable: 測定可能性)<br/>ゴールを数字で表すことができる</p>
                 <p>A(Actionable: 行動可能性)<br/>ゴールまでのプロセスを明確化させる</p>
                 <p>C(Competent: 適格性)<br/>目標達成が自分の価値観に基づいているか?</p>
@@ -34,55 +33,43 @@
           </div>
         </div>
       </section>
-      <aside class="side right">
-        <div class="side__inner">
-          <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-double-right fa-2x
-                                faa-horizontal animated-hover fa-pull-right",
-                                  style: "color: rgb(80,80,80);"), new_task_path) %>
-        </div>
-      </aside>
 <% else %>
-  <div id="main-content">
+  <main id="main-content">
     <aside class="side left">
-        <%= link_to(content_tag(:i, '', class: "fas fa-question fa-3x
+      <%= link_to(content_tag(:i, '', class: "fas fa-question fa-3x
                                 faa-vertical animated-hover fa-pull-right",
-                                style: "color: rgb(80,80,80);"), macs_path) %>
+                              style: "color: rgb(80,80,80);"), macs_path) %>
     </aside>
     <main>
-  <% @macs.each do |mac| %>
-    <section class="panel-mac">
-      <div class="goal">
-        <h1 class="text_color_grey">数値で表せる目標</h1>
-        <h1><%= simple_format(mac.measurable) %></h1>
-      </div>
-      <div class="process">
-        <h1 class="text_color_grey">ゴールまでの具体的なプロセス</h1>
-        <h2><%= simple_format(mac.actionable) %></h2>
-      </div>
-      <div class="process">
-        <h1 class="text_color_grey">目標達成が価値観に基づいているか?</h1>
-        <h1><%= simple_format(mac.competent) %></h1>
-      </div>
-      <div class="flex-container">
-        <h3 class="tasks-time">更新:<%= mac.updated_at.to_s(:datetime_jp) %>
-          作成:<%= mac.created_at.to_s(:datetime_jp) %></h3>
-        <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right",
-                                style: "color: rgb(80,80,80);"), edit_mac_path(mac.id)) %>
-        <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right",
-                                style: "color: rgb(80,80,80);"), mac_path(mac.id),
-                    method: :delete, data: { confirm: "本当に削除しますか？" }) %>
-      </div>
-    </section>
-  <% end %>
+      <% @macs.each do |mac| %>
+        <section class="panel-mac">
+          <div class="goal">
+            <h1 class="text_color_grey">数値で表せる目標</h1>
+            <h1><%= simple_format(mac.measurable) %></h1>
+          </div>
+          <div class="process">
+            <h1 class="text_color_grey">ゴールまでの具体的なプロセス</h1>
+            <h2><%= simple_format(mac.actionable) %></h2>
+          </div>
+          <div class="process">
+            <h1 class="text_color_grey">目標達成が価値観に基づいているか?</h1>
+            <h1><%= simple_format(mac.competent) %></h1>
+          </div>
+          <div class="flex-container">
+            <h3 class="tasks-time">更新:<%= mac.updated_at.to_s(:datetime_jp) %>
+              作成:<%= mac.created_at.to_s(:datetime_jp) %></h3>
+            <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right",
+                                    style: "color: rgb(80,80,80);"), edit_mac_path(mac.id)) %>
+            <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right",
+                                    style: "color: rgb(80,80,80);"), mac_path(mac.id),
+                        method: :delete, data: { confirm: "本当に削除しますか？" }) %>
+          </div>
+        </section>
+        </main>
+      <% end %>
       <div class="center-position">
         <trigger_time class="btn float">更新・作成日時を表示/非表示</trigger_time>
       </div>
 <% end %>
-<aside class="side right">
-  <div class="side__inner">
-    <%= link_to(content_tag(:i, 'Create！', class: "fas fa-angle-right fa-2x
-                                faa-horizontal animated-hover fa-pull-right",
-                            style: "color: rgb(80,80,80);"), new_mac_path) %>
-  </div>
-</aside>
 </main>
+

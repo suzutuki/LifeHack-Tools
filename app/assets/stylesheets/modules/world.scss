@@ -29,12 +29,12 @@
     }
   }
 
-  &__description-reverse {
-    padding-left: 67px;
-  }
-
   &__content {
     padding: 20px 30px;
+
+    &__reverse {
+      padding: 40px 60px;
+    }
   }
 
   &__title {
@@ -63,11 +63,20 @@
             $display: none,
             $width: 70px,
             $height: 1px,
-            $top: 25%,
+            $top: 47%,
             $left: -75px
     )
   }
-
+  &__mac {
+    @extend .world__title;
+    @include p-base(
+            $display: none,
+            $width: 70px,
+            $height: 1px,
+            $top: 47%,
+            $left: 750px
+    )
+  }
 
   &__sub {
     @extend .mb-sm;
