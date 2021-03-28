@@ -6,6 +6,12 @@
   margin: 20px 0;
 }
 
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .mac {
   width: 100%;
   margin-bottom: 2em;
@@ -25,6 +31,7 @@
     box-shadow: 0 1px 1px;
     border: 1px solid rgba(0, 0, 0, .45);
     font-weight: 200;
+    margin-bottom: 20px;
   }
 
   &-form {
@@ -72,8 +79,6 @@
 
 .grey {
   color: $color-grey;
-
-
   &__mac {
     color: $color-grey;
     border-bottom: 0.5px dotted;

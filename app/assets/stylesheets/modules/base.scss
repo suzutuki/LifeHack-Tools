@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  border-top: 6px solid $color-coffee_brown;
+  border-top: 6px solid $color-button-red;
   font-family: "SF Pro JP", "SF Pro Text", "SF Pro Icons", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   line-height: 1.47059;
   background-color: $color-white;
@@ -44,6 +44,9 @@ img {
   margin-bottom: 16px !important;
 }
 
+.mb-md {
+  margin-bottom: 32px !important;
+}
 .mb-lg {
   margin-bottom: 80px !important;
 }
@@ -191,8 +194,6 @@ h2 {
 
 h3 {
   text-align: left;
-  list-style: none;
-
 }
 
 p {
@@ -210,17 +211,14 @@ a:hover {
     @include p-base($top: 0%, $height: 90%) {
       background: $cBgGray;
     }
-    // &::before {
-    //   content: '';
-    //   position: absolute;
-    //   bottom: 0;
-    //   left: 0;
-    //   width: 100%;
-    //   height: 90%;
-    //   background-color: $cBgGray;
-    // }
   }
 
+  &__if {
+    position: relative;
+    @include p-base($top: 0%, $height: 90%) {
+      background: rgba(254,227,232, 0.5);
+    }
+  }
   &__header {
     // 横幅の余白を追加
     @extend .content-width;
@@ -247,7 +245,7 @@ a:hover {
     text-align: center;
     flex-basis: 100%;
     // 余白追加
-    @extend .mb-lg;
+    @extend .mb-sm;
   }
 
   &__img {

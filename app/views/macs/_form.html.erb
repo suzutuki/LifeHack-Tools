@@ -1,21 +1,21 @@
   <%= form_with model: @mac, local: true do |f| %>
     <h3>
       <%= f.label :"M(Measurable : 数字で表すことができる目標", class: 'btn slide-red' %><br>
-      <%= f.text_area :measurable, class: 'form-area', placeholder: '例: 何月何日までに○キロやせるという期限を設けて願望を数値化する。'%>
+      <%= f.text_area :measurable, class: 'form-area mb-md', placeholder: '例: 何月何日までに○キロやせるという期限を設けて願望を数値化する。'%>
       <% if @mac.errors.include?(:measurable) %>
         <div class="alert alert-danger">
           <%= @mac.errors.messages[:measurable][0] %>
         </div>
       <% end %>
       <%= f.label :"A(Actionable :  ゴールまでのプロセスを明確化させる", class: 'btn slide-green' %>
-      <%= f.text_area :actionable, class: 'form-area', placeholder: '例: 期日までにやせるための具体的なプランを立てる。'  %>
+      <%= f.text_area :actionable, class: 'form-area mb-md', placeholder: '例: 期日までにやせるための具体的なプランを立てる。'  %>
       <% if @mac.errors.include?(:actionable)%>
         <div class="alert alert-danger">
           <%= @mac.errors.messages[:actionable][0] %>
         </div>
       <% end %>
       <%= f.label :"C(Competent 目標達成が価値観に基づいているか考える", class: 'btn slide-slow' %>
-      <%= f.text_area :competent, class: 'form-area', placeholder: '例: やせることが本当に望んでいることなのか考える' %>
+      <%= f.text_area :competent, class: 'form-area mb-md', placeholder: '例: やせることが本当に望んでいることなのか考える' %>
       <% if @mac.errors.include?(:competent) %>
         <div class="alert alert-danger">
           <%= @mac.errors.messages[:competent][0] %>

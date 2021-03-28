@@ -8,7 +8,7 @@
 //}
 
 .swiper-slide {
-  height: 500px!important;
+  height: 500px !important;
   // 拡大してはみ出た部分を表示しない
   overflow: hidden;
 
@@ -64,65 +64,67 @@
     opacity: 0;
     transition: opacity 0.3s ease 1s, transform 0.3s ease 1s;
   }
+
   &__todo {
     @extend .hero__title;
     top: 90%;
     left: 65%;
   }
+
   &__if {
     @extend .hero__title;
     font-size: 28px;
   }
+
   &__mac {
     @extend .hero__title;
     top: 90%;
   }
+
+  &__footer {
+    position: absolute;
+    left: 68%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    z-index: 2;
+    height: 68px;
+    width: 32px;
+    // はみ出した部分を見せない
+    overflow: hidden;
+  }
+
+  &__downarrow {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 6px;
+    // アニメーションを付けるために必要
+    @include animation(
+            $name: kf-arrow-anime,
+            $iteration-count: infinite,
+            $duration: 2s,
+            $timing-function: linear
+    );
+  }
+
+  &__scrolltext {
+    position: absolute;
+    // 90度回転
+    transform: rotate(90deg);
+    color: $color-nobleblack;
+    left: -8px;
+    top: 15px;
+    font-size: 1.2em;
+  }
 }
 
-//  &__footer {
-//    position: absolute;
-//    left: 50%;
-//    bottom: 20px;
-//    transform: translateX(-50%);
-//    z-index: 2;
-//    height: 68px;
-//    width: 32px;
-//    // アニメーションで上下に動いているように見えなくする
-//    overflow: hidden;
-//  }
-//
-//  &__downarrow {
-//    position: absolute;
-//    left: 0;
-//    bottom: 0;
-//    width: 6px;
-//    // アニメーションを付けるために必要
-//    @include animation(
-//      $name: kf-arrow-anime,
-//      $iteration-count: infinite,
-//      $duration: 2s,
-//      $timing-function: linear
-//    );
-//  }
-//
-//  &__scrolltext {
-//    position: absolute;
-//    // 90度回転
-//    transform: rotate(90deg);
-//    color: rgba(255, 255, 255, 0.7);
-//    left: -8px;
-//    top: 15px;
-//    font-size: 1.2em;
-//  }
-//}
-//
-//@keyframes kf-arrow-anime {
-//  0%,
-//  50%,
-//  100% {
-//    transform: translateY(-10%);
-//  }
-//  30% {
-//    transform: none;
-//  }
-//}
+@keyframes kf-arrow-anime {
+  0%,
+  50%,
+  100% {
+    transform: translateY(-10%);
+  }
+  30% {
+    transform: none;
+  }
+}

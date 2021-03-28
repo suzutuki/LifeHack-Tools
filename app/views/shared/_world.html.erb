@@ -1,0 +1,9 @@
+<main>
+  <section class="world">
+    <div class="world__<%= yield(:world_background) %>">
+      <div class="world__img cover-slide">
+        <img src=<%= yield(:image_text) %> class="img-zoom"/>
+      </div>
+      <div class="world__texts appear left">
+        <div class="world__texts-inner">
+          <div class="world__<%= yield(:world_class) %> main-title item">

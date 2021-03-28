@@ -1,4 +1,5 @@
 @import "variables";
+@import "base";
 // ボタンはすべてここで決めている
 .btn {
   position: relative;
@@ -86,22 +87,12 @@
   }
 
   &.slide-wine {
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
+    @extend .slide-bg;
+    @extend .mb-md;
 
     &::before {
-      content: "";
-      display: inline-block;
-      width: 100%;
-      height: 100%;
+      @extend .slide-bg::before;
       background-color: rgba(143,70,105, 0.7);
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: translateX(-100%);
-      transition: transform 0.3s;
-      z-index: -1;
     }
 
     &:hover {
@@ -119,17 +110,8 @@
     z-index: 1;
 
     &::before {
-      content: "";
-      display: inline-block;
-      width: 100%;
-      height: 100%;
       background-color: $cWineRed;
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: translateX(-100%);
-      transition: transform 0.3s;
-      z-index: -1;
+      @extend .slide-bg::before;
     }
 
     &:hover {
@@ -142,22 +124,12 @@
   }
 
   &.slide-red {
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
+    @extend .slide-slow;
+    @extend .mb-md;
 
     &::before {
-      content: "";
-      display: inline-block;
-      width: 100%;
-      height: 100%;
+      @extend .slide-bg::before;
       background-color: $color-button-red;
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: translateX(-100%);
-      transition: transform 0.3s;
-      z-index: -1;
     }
 
     &:hover {
@@ -170,22 +142,12 @@
   }
 
   &.slide-blue {
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
+    @extend .slide-slow;
+    @extend .mb-md;
 
     &::before {
-      content: "";
-      display: inline-block;
-      width: 100%;
-      height: 100%;
+      @extend .slide-bg::before;
       background-color: $color-button-blue;
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: translateX(-100%);
-      transition: transform 0.3s;
-      z-index: -1;
     }
 
     &:hover {
@@ -198,22 +160,12 @@
   }
 
   &.slide-yellow {
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
+    @extend .slide-slow;
+    @extend .mb-md;
 
     &::before {
-      content: "";
-      display: inline-block;
-      width: 100%;
-      height: 100%;
+      @extend .slide-bg::before;
       background-color: $color-button-yellow;
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: translateX(-100%);
-      transition: transform 0.3s;
-      z-index: -1;
     }
 
     &:hover {
@@ -226,22 +178,13 @@
   }
 
   &.slide-green {
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
+    @extend .slide-bg;
+    @extend .mb-md;
+
 
     &::before {
-      content: "";
-      display: inline-block;
-      width: 100%;
-      height: 100%;
+      @extend .slide-bg::before;
       background-color: $color-button-green;
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: translateX(-100%);
-      transition: transform 0.3s;
-      z-index: -1;
     }
 
     &:hover {

@@ -1,14 +1,10 @@
+<% provide(:title, "ToDoリスト Home") %>
+<% provide(:image_text,"/Todolist.jpg") %>
+<% provide(:world_class, "todo") %>
+<% provide(:world_background, "todo__background") %>
 <%= render 'layouts/side-left' %>
 <% if current_user.tasks.empty? %>
-    <main>
-      <section class="world">
-        <div class="world__inner">
-          <div class="world__img cover-slide">
-            <img class="img-zoom" src="/Todolist.jpg" alt=""/>
-          </div>
-          <div class="world__texts appear left">
-            <div class="world__texts-inner">
-              <div class="world__todo main-title item">
+  <%= render 'shared/world' %>
                 <span class="sienna">ToDoリスト</span>
                 <span>へようこそ！</span>
               </div>
@@ -30,6 +26,7 @@
           </div>
         </div>
       </section>
+    </main>
 <% end %>
 <% if current_user.tasks.any? %>
     <main>
@@ -57,14 +54,14 @@
               </div>
             </div>
           <% end %>
+          <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover
+ fa-pull-right", style: "color: rgb(80,80,80); margin-bottom: 15px;"), edit_task_path) %>
+          <%= link_to(content_tag(:i, '', class: "fas fa-bomb fa-3x faa-horizontal
+ animated-hover fa-pull-right", style: "color: rgb(80,80,80); margin-bottom: 15px;"), destroy_all_tasks_path,
+                      method: :delete, data: { confirm: "全て削除します。本当に削除しますか？" }) %>
          <% end %>
 <li class="active item">
   <%= paginate @tasks %>
 </li>
-<%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover
- fa-pull-right", style: "color: rgb(80,80,80); margin-bottom: 15px;"), edit_task_path) %>
-<%= link_to(content_tag(:i, '', class: "fas fa-bomb fa-3x faa-horizontal
- animated-hover fa-pull-right", style: "color: rgb(80,80,80); margin-bottom: 15px;"), destroy_all_tasks_path,
-            method: :delete, data: { confirm: "全て削除します。本当に削除しますか？" }) %>
 </section>
 </main>
