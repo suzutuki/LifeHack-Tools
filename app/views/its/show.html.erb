@@ -30,12 +30,7 @@
     </div>
   </div>
   </section>
-<% else %>>
-  <div id="main-content">
-    <aside class="side left">
-      <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
-      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), mac_path(current_user)) %>
-    </aside>
+<% else %>
     <main>
       <section class="todo">
         <div class="if-form">
@@ -63,12 +58,20 @@
               </div>
             </div>
           <% end %>
+        </div>
+          <div class="adjust">
           <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right",
                                   style: "color: rgb(80,80,80);"), edit_it_path) %>
           <%= link_to(content_tag(:i, '', class: "fas fa-bomb fa-3x faa-horizontal animated-hover fa-pull-right",
                                   style: "color: rgb(80,80,80);"), destroy_all_its_path, method: :delete,
                       data: { confirm: "全て削除します。本当に削除しますか？" }) %>
-        </div>
+          </div>
+
       </section>
 <% end %>
 </main>
+<aside class="side right">
+  <%= link_to(content_tag(:i, 'Create', class: "fas fa-angle-right fa-2x
+                                faa-horizontal animated-hover fa-pull-right",
+                          style: "color: rgb(80,80,80);"), new_it_path) %>
+</aside>

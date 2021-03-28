@@ -1,20 +1,17 @@
 @import "variables";
 @import "base";
 
-.if-title {
-  font-size: 3em;
+.if-then{
+  width: 80%;
+  @extend .content-width;
 }
-
 .if-space {
   min-height: 85px;
 }
 
-
 .wrapper {
-  display: flex;
   width: 100%;
-  margin: 0 auto;
-  max-width: $contentMaxWidth;
+  @extend .content-width;
 }
 
 .info_1 {
@@ -23,7 +20,6 @@
 }
 
 .info_2 {
-
   padding: 0 15px;
 }
 
@@ -45,4 +41,8 @@
 
 .if-form {
   border: 1px solid;
+}
+
+.adjust {
+  margin-bottom: 30px;
 }
