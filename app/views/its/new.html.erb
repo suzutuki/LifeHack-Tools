@@ -1,43 +1,32 @@
 <% provide(:title, "new") %>
+<% provide(:text, '新規作成') %>
 <% provide(:button_text, '一括登録') %>
-<div id="main-content">
-  <aside class="side left">
-    <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
-      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), it_path(current_user)) %>
-  </aside>
-  <main>
-    <div class="todo">
-      <div class="log-form">
-        <div class="form-title tween-animate-title center-position">IF-Thenテクニック　新規作成</div>
-      <%= form_with model: @its, url: its_path, local: true do |form| %>
-        <% @its.collection.each do |it| %>
-          <%= fields_for 'its[]', it do |field| %>
-            <div class="wrapper">
-              <div class="column">
-                <p>
-                  <%= field.label "If(〇〇という状況の時)", class: 'btn slide-red' %>
-                  <%= field.text_field :situation, class: 'form-field', required: true %>
-                </p>
-              </div>
-              <div class="column">
-                <p>
-                  <%= field.label "Then(〇〇という行動をする)", class: 'btn slide-blue' %>
-                  <%= field.text_field :behavior, class: 'form-field', required: true %>
-                </p>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-          </div>
-        <div class="center-position">
-          <%= form.submit yield(:button_text), class: "btn float" %>
-      <% end %>
-    </div>
-    </div>
-    </section>
-  </main>
-    <aside class="side right">
-        <%= link_to(content_tag(:i, '', class: "fas fa-question fa-2x
-                                faa-vertical animated-hover fa-pull-right",
-                                style: "color: rgb(80,80,80);"), its_path) %>
-    </aside>
+<%= render 'form' %>
+<%= form_with model: @its, url: its_path, local: true do |form| %>
+  <% @its.collection.each do |it| %>
+    <%= fields_for 'its[]', it do |field| %>
+      <div class="wrapper">
+        <div class="column">
+          <p>
+            <%= field.label "If(〇〇という状況の時には)", class: 'btn slide-red' %>
+            <%= field.text_field :situation, class: 'form-field', required: true %>
+          </p>
+        </div>
+        <div class="column">
+          <p>
+            <%= field.label "Then(〇〇という行動)", class: 'btn slide-blue' %>
+            <%= field.text_field :behavior, class: 'form-field', required: true %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  </div>
+  <div class="center-position">
+    <%= form.submit yield(:button_text), class: "btn float" %>
+<% end %>
+</div>
+</div>
+</section>
+</main>
+<%= render 'side-right' %>
