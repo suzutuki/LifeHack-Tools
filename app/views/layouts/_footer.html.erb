@@ -9,7 +9,7 @@
                                   style: "color: #333;"), "https://twitter.com/suzutuki0149") %>
       </li>
       <% if logged_in? && !guest_user %>
-        <li><%= link_to "LifeHack Toolsを退会する", @user, method: :delete,
+        <li><%= link_to "退会する", @user, method: :delete,
                         data: { confirm: "本当に退会しますか？" }, style: "color: #333; font-size: 12px;" %>
         </li>
       <% end %>
@@ -25,6 +25,11 @@
   <ul class="mobile-menu__main">
     <% if logged_in? %>
       <%= render 'users/link' %>
+      <% if logged_in? && !guest_user %>
+        <li><%= link_to "LifeHack Toolsを退会", @user, method: :delete,
+                        data: { confirm: "本当に退会しますか？" }, class: "btn solid" %>
+        </li>
+      <% end %>
       <% if current_user.admin? %>
         <%= link_to "ユーザーを見る(管理者のみ)", user_path(current_user), class: "btn slide-bg" %>
       <% end %>

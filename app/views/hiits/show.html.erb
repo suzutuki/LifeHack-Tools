@@ -2,6 +2,7 @@
 <% provide(:image_text, "/exercise.jpg") %>
 <% provide(:world_class, "title") %>
 <% provide(:world_background, "exercise__background") %>
+<% provide(:add_background, "__exercise") %>
 <div id="main-content">
   <aside class="side left">
     <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
@@ -60,7 +61,6 @@
           <div class="todo-title item">MY training record</div>
           <% @hiits.each do |hiit| %>
             <div class="todo__list item ">
-
               <h2 class="item">運動時間: <%= hiit.training_time %>分</h2>
               <h2 class="item">運動日: <%= hiit.training_day %></h2>
               <h2 class="item">メモ: <%= hiit.content %></h2>
@@ -74,3 +74,8 @@
     </div>
     </section>
     </main>
+    <aside class="side right">
+      <%= link_to(content_tag(:i, 'Create', class: "fas fa-angle-right fa-2x
+                                faa-horizontal animated-hover fa-pull-right",
+                              style: "color: rgb(80,80,80);"), new_hiit_path) %>
+    </aside>

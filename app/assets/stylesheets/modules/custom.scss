@@ -37,6 +37,11 @@
       @extend .alert-width;
     }
 }
+  &-danger {
+    background: #F7D7DA;
+    color: $cWineRed;
+    @extend .alert-width;
+  }
 }
 
 

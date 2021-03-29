@@ -1,4 +1,4 @@
-<% provide(:title, "new") %>
+<% provide(:title, "ToDoリスト　新規作成") %>
 <% provide(:button_text, "一括登録") %>
 <%= render 'form' %>
 <div class="form-title tween-animate-title center-position">ToDoリストを作成します</div>
@@ -7,7 +7,8 @@
     <%= fields_for 'tasks[]', task, local: true do |field| %>
       <h3>
         <%= field.label :"タイトル : あなたが1日で達成したいことを書いてください", class: 'btn slide-red' %><br>
-        <%= field.text_field :title, class: 'tasks-form-field', placeholder: '筋トレ 学習 仕事の内容など自由に' %><br>
+        <%= field.text_field :title, class: 'tasks-form-field', required: true,
+                             include_blank: '選択してください', placeholder: '筋トレ 学習 仕事の内容など自由に' %><br>
         <% if @tasks.errors.include?(:title) %>
           <div class="alert alert-danger">
             <%= @tasks.errors.messages[:title][0] %>

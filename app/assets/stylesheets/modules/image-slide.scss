@@ -31,6 +31,15 @@
       );
     }
   }
+
+  &__exercise {
+    @extend .cover-slide;
+
+    &::after {
+      @extend .cover-slide::after;
+      background-color: rgba(143, 70, 105, 0.05) !important;
+    }
+  }
 }
 
 // アニメーションに最適なプロパティ(パフォーマンスが良い)
@@ -116,29 +125,5 @@
 
   &:hover::before {
     background-color: rgba(3, 3, 3, 0.2);
-  }
-}
-
-// .bg-img-zoomを使うときの設定
-.bg-img-zoom {
-  background-image: url(images/image-1.jpg);
-  // リピートなし
-  background-repeat: no-repeat;
-  // ポジションをセンター
-  background-position: center;
-  background-size: cover;
-  width: 100%;
-  height: 400px;
-  //   上の.img-zoomの設定を読み込む
-  @extend .img-zoom
-}
-
-.img-bg50 {
-  position: relative;
-  //   アスペクト比を保ちたいときの設定
-  &::before {
-    display: block;
-    content: '';
-    padding-top: 50%;
   }
 }

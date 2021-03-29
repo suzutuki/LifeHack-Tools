@@ -92,6 +92,7 @@ class Main {
         this.observers = new ScrollObserver('.nav-trigger', this._navAnimation.bind(this), {once: false});
 // カバースライドに対してのインスタンス化利用するためにthis.が必要
         this.observers = new ScrollObserver('.cover-slide', this._inviewAnimation);
+        this.observers = new ScrollObserver('.cover-slide__exercise', this._inviewAnimation);
 // this._navAnimation.bind(this)でないとエラー(プライベートメソッド内でthisを使っているため)
         this.observers = new ScrollObserver('.appear', this._inviewAnimation, {rootMargin: "-100px 0px"});
         // テキストアニメーションの設定
