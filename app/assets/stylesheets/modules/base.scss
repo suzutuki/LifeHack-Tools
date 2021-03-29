@@ -219,6 +219,14 @@ a:hover {
       background: rgba(254,227,232, 0.5);
     }
   }
+
+
+  &__exercise {
+    position: relative;
+    @include p-base($top: 0%, $height: 90%) {
+      background: rgba(143, 70, 105, 0.13);
+    }
+  }
   &__header {
     // 横幅の余白を追加
     @extend .content-width;

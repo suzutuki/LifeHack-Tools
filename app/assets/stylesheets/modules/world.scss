@@ -36,6 +36,12 @@
     background: rgba(217,237,251, 0.8);
   }
 
+  &__exercise__background {
+    flex-direction: unset;
+    @extend .world__inner;
+    background: rgba(143, 70, 105, 0.13);
+  }
+
   &__content {
     padding: 20px 30px;
 

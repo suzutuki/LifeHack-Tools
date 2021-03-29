@@ -1,3 +1,7 @@
+<% provide(:title, "ToDoリスト Home") %>
+<% provide(:image_text, "/exercise.jpg") %>
+<% provide(:world_class, "title") %>
+<% provide(:world_background, "exercise__background") %>
 <div id="main-content">
   <aside class="side left">
     <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
@@ -10,36 +14,34 @@
           <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
       faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), root_path) %>
         </aside>
-        <main>
-          <section class="world">
-            <div class="world__inner">
-              <div class="world__img cover-slide">
-                <img class="img-zoom" src="/plan.jpg" alt=""/>
-              </div>
-              <div class="world__texts appear left">
-                <div class="world__texts-inner">
-                  <div class="world__title main-title item">
-                    <span class="purple">Exercise Tracking</span>
-                    <div class="world__sub sub-title item">エクササイズトラッキング</div>
-                    <span>へようこそ！</span>
-                  </div>
-                  <div class="world__description item">
-                    <p>運動の習慣化は難易度が高く、</p>
-                    <p>挫折しやすいと言われています。</p>
-                    <p>そこで、運動記録をつけて視覚的に見ることで</p>
-                    <p>モチベーションを上げていきましょう！</p>
-                  </div>
-                  <div class="world__btn item">
-                    <%= link_to new_hiit_path, class: "btn-cubic" do %>
-                      <span class="hovering">GO!</span><span class="default">運動記録を作成する</span>
-                    <% end %>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </main>
-        <%= link_to "運動記録をつける", new_hiit_path, class: "btn slide-slow" %>
+        <%= render 'shared/world' %>
+        <span class="purple">Exercise Tracking</span>
+        <div class="world__sub sub-title item">エクササイズトラッキング</div>
+        <span>へようこそ！</span>
+      </div>
+      <div class="world__description item">
+        <p>運動の習慣化は難易度が高く、</p>
+        <p>挫折しやすいと言われています。</p>
+        <p>そこで、運動記録をつけてチェックすることで</p>
+        <p>モチベーションを上げていきましょう！</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="popular__exercise appear up">
+        <div class="popular__container">
+          <div class="popular__btn item">
+            <%= link_to hiits_path, class: "btn-cubic" do %>
+              <span class="hovering">GO!</span><span class="default">イメージ</span>
+            <% end %>
+            <%= link_to new_hiit_path, class: "btn-cubic" do %>
+              <span class="hovering">GO!</span><span class="default">運動記録を作成する</span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      </section>
+      </main>
     <% else %>
       <section class="todo">
         <div class="log-form">
@@ -62,13 +64,13 @@
               <h2 class="item">運動時間: <%= hiit.training_time %>分</h2>
               <h2 class="item">運動日: <%= hiit.training_day %></h2>
               <h2 class="item">メモ: <%= hiit.content %></h2>
-                  <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-2x faa-vertical animated-hover",
-                                          style: "color: rgb(80,80,80);"), edit_hiit_path(hiit.id)) %>
-                  <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-2x faa-horizontal animated-hover fa-pull-right",
-                                          style: "color: rgb(80,80,80);"), hiit_path(hiit.id), method: :delete, data: { confirm: "本当に削除しますか？" }) %>
+              <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-2x faa-vertical animated-hover",
+                                      style: "color: rgb(80,80,80);"), edit_hiit_path(hiit.id)) %>
+              <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-2x faa-horizontal animated-hover fa-pull-right",
+                                      style: "color: rgb(80,80,80);"), hiit_path(hiit.id), method: :delete, data: { confirm: "本当に削除しますか？" }) %>
             </div>
           <% end %>
     <% end %>
     </div>
     </section>
-  </main>
+    </main>
