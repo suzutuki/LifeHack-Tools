@@ -8,11 +8,6 @@
       <li><%= link_to(content_tag(:i, '', class: "fab fa-twitter faa-wrench animated-hover fa-2x item",
                                   style: "color: #333;"), "https://twitter.com/suzutuki0149") %>
       </li>
-      <% if logged_in? && !guest_user %>
-        <li><%= link_to "退会する", @user, method: :delete,
-                        data: { confirm: "本当に退会しますか？" }, style: "color: #333; font-size: 12px;" %>
-        </li>
-      <% end %>
       <li class="footer__li item"><a href="#">Sitemap</a></li>
       <div class="footer__copyright item">&copy suzutuki
     </ul>

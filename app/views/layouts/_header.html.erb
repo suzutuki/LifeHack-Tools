@@ -6,8 +6,10 @@
     <div class="nav-trigger"></div>
     <header class="header">
       <div class="header__inner">
-        <%= link_to(content_tag(:i, 'LifeHack Tools', class: "fas fa-home fa-2x fas faa-vertical
-      animated-hover", style: "color: #1d1d1f;"), root_path) %>
+        <div class="logo item">
+          <span class="logo__Flower">
+            <%= link_to "LifeHack tools", task_path(current_user), class: "logo__Garden" %>
+        </div>
         <nav class="header__nav">
           <ul class="header__ul">
             <% if logged_in? %>
