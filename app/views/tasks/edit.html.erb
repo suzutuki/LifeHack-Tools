@@ -1,6 +1,6 @@
 <% provide(:title, "ToDoリスト 編集") %>
 <% provide(:button_text, "一括編集") %>
-<% provide(:form_title, "一括編集") %>
+<% provide(:form_title, "一括編集します") %>
 <%= render 'form' %>
 <%= form_with model: current_user, url: task_path, method: :patch, local: true do |form| %>
   <h3>

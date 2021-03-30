@@ -1,6 +1,6 @@
 <% provide(:title, "ToDoリスト 新規作成") %>
 <% provide(:button_text, "一括登録") %>
-<% provide(:form_title, "作成します") %>
+<% provide(:form_title, "一括作成します") %>
 <%= render 'form' %>
 <%= form_with model: @tasks, url: tasks_path, local: true do |form| %>
   <% @tasks.collection.each do |task| %>
