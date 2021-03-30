@@ -4,8 +4,11 @@
 //フッターの設定はここだでな
 .footer {
   padding: 30px 0;
-  width: 100%;
-  //background: #FEE2E8;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  z-index: 100;
 
   &__nav {
     @extend .flex;
@@ -26,8 +29,12 @@
     }
   }
 
-  &__copyright {
-    font-size: 24px;
+  &__blog {
+    margin-left: 20px;
+    font-size: 34px;
+    font-weight: 600;
+    color: $color-nobleblack !important;
+    text-decoration: none !important;
   }
 
   &__ul {

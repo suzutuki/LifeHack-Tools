@@ -1,81 +1,65 @@
-<% provide(:title, "ToDoリスト Home") %>
+<% provide(:title, "Exercise Home") %>
 <% provide(:image_text, "/exercise.jpg") %>
 <% provide(:world_class, "title") %>
 <% provide(:world_background, "exercise__background") %>
 <% provide(:add_background, "__exercise") %>
-<div id="main-content">
-  <aside class="side left">
-    <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
-      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), root_path) %>
-  </aside>
-  <main>
-    <% if @hiits.empty? %>
-      <div id="main-content">
-        <aside class="side left">
-          <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
-      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), root_path) %>
-        </aside>
-        <%= render 'shared/world' %>
-        <span class="purple">Exercise Tracking</span>
-        <div class="world__sub sub-title item">エクササイズトラッキング</div>
-        <span>へようこそ！</span>
+<%= render 'layouts/side-root' %>
+<% if @hiits.empty? %>
+  <%= render 'shared/world' %>
+  <span class="purple">Exercise Tracking</span>
+  <div class="world__sub sub-title item">エクササイズトラッキング</div>
+  <span>へようこそ！</span>
+  </div>
+  <div class="world__description item">
+    <p>運動の習慣化は難易度が高く、</p>
+    <p>挫折しやすいと言われています。</p>
+    <p>そこで、運動記録をつけてチェックすることで</p>
+    <p>モチベーションを上げていきましょう！</p>
+  </div>
+  </div>
+  </div>
+  </div>
+  <div class="popular__exercise appear up">
+    <div class="popular__container">
+      <div class="popular__btn item">
+        <%= link_to hiits_path, class: "btn-cubic" do %>
+          <span class="hovering">GO!</span><span class="default">イメージ</span>
+        <% end %>
+        <%= link_to new_hiit_path, class: "btn-cubic" do %>
+          <span class="hovering">GO!</span><span class="default">運動記録を作成する</span>
+        <% end %>
       </div>
-      <div class="world__description item">
-        <p>運動の習慣化は難易度が高く、</p>
-        <p>挫折しやすいと言われています。</p>
-        <p>そこで、運動記録をつけてチェックすることで</p>
-        <p>モチベーションを上げていきましょう！</p>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div class="popular__exercise appear up">
-        <div class="popular__container">
-          <div class="popular__btn item">
-            <%= link_to hiits_path, class: "btn-cubic" do %>
-              <span class="hovering">GO!</span><span class="default">イメージ</span>
-            <% end %>
-            <%= link_to new_hiit_path, class: "btn-cubic" do %>
-              <span class="hovering">GO!</span><span class="default">運動記録を作成する</span>
-            <% end %>
-          </div>
-        </div>
-      </div>
-      </section>
-      </main>
-    <% else %>
-      <section class="todo">
-        <div class="log-form">
-          <div class="form-title tween-animate-title center-position">運動記録</div>
-          <div class="chart-container" style="position: relative; width: 100%; height: 400px;">
-            <canvas id="My_Chart"></canvas>
-          </div>
-          <%= render 'shared/chart' %>
-        </div>
-        <div class="center-position">
-          <%= link_to "運動記録をつける", new_hiit_path, class: "btn slide-slow" %>
-        </div>
-      </section>
-      <section class="form-width">
-        <div class="todo-form appear right">
-          <div class="todo-title item">MY training record</div>
-          <% @hiits.each do |hiit| %>
-            <div class="todo__list item ">
-              <h2 class="item">運動時間: <%= hiit.training_time %>分</h2>
-              <h2 class="item">運動日: <%= hiit.training_day %></h2>
-              <h2 class="item">メモ: <%= hiit.content %></h2>
-              <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-2x faa-vertical animated-hover",
-                                      style: "color: rgb(80,80,80);"), edit_hiit_path(hiit.id)) %>
-              <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-2x faa-horizontal animated-hover fa-pull-right",
-                                      style: "color: rgb(80,80,80);"), hiit_path(hiit.id), method: :delete, data: { confirm: "本当に削除しますか？" }) %>
-            </div>
-          <% end %>
-    <% end %>
     </div>
-    </section>
-    </main>
-    <aside class="side right">
-      <%= link_to(content_tag(:i, 'Create', class: "fas fa-angle-right fa-2x
+  </div>
+<% else %>
+  <div class="todo">
+    <div class="log-form">
+      <div class="form-title tween-animate-title center-position">運動記録</div>
+      <%= render 'shared/chart' %>
+    </div>
+    <div class="center-position">
+      <%= link_to "運動記録をつける", new_hiit_path, class: "btn slide-wine" %>
+    </div>
+  </div>
+  <section class="form-width">
+    <div class="todo-form appear right">
+      <div class="todo-title item">My training record</div>
+      <% @hiits.each do |hiit| %>
+        <div class="todo__list item ">
+          <h2 class="item">運動時間: <%= hiit.training_time %>分</h2>
+          <h2 class="item">運動日: <%= hiit.training_day %></h2>
+          <h2 class="item">メモ: <%= hiit.content %></h2>
+          <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-2x faa-vertical animated-hover",
+                                  style: "color: rgb(80,80,80);"), edit_hiit_path(hiit.id)) %>
+          <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-2x faa-horizontal animated-hover fa-pull-right",
+                                  style: "color: rgb(80,80,80);"), hiit_path(hiit.id), method: :delete, data: { confirm: "本当に削除しますか？" }) %>
+        </div>
+      <% end %>
+      <aside class="side right">
+        <%= link_to(content_tag(:i, 'Create', class: "fas fa-angle-right fa-2x
                                 faa-horizontal animated-hover fa-pull-right",
-                              style: "color: rgb(80,80,80);"), new_hiit_path) %>
-    </aside>
+                                style: "color: rgb(80,80,80);"), new_hiit_path) %>
+      </aside>
+<% end %>
+</section>
+</main>

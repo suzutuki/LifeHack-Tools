@@ -125,10 +125,6 @@ img {
   color: $color-coffee_brown;
 }
 
-.sienna {
-  color: $color-sienna;
-}
-
 #container {
   background-color: $cWhite;
   position: relative;
@@ -277,13 +273,4 @@ a:hover {
       width: 100%;
     }
   }
-}
-
-th {
-  border-right: 1px solid;
-}
-
-td {
-  @extend th;
-  padding-left: 10px;
 }

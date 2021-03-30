@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-
   resources :hiits
-  resources :sports
   root 'users#index'
-  resources :lists
   resources :its do
     collection do
       delete 'destroy_all'
@@ -21,5 +18,5 @@ Rails.application.routes.draw do
   get '/easy_login', to: 'users#easy_login'
   delete '/logout', to: 'sessions#destroy'
   post '/tasks/:id/toggle' => 'tasks#toggle'
-  post '/steps/:id/toggle' => 'steps#toggle'
+  get '/about', to: 'users#about'
 end

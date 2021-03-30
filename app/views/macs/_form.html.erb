@@ -14,7 +14,7 @@
           <%= @mac.errors.messages[:actionable][0] %>
         </div>
       <% end %>
-      <%= f.label :"C(Competent 目標達成が価値観に基づいているか考える", class: 'btn slide-slow' %>
+      <%= f.label :"C(Competent 目標達成が価値観に基づいているか考える", class: 'btn slide-wine' %>
       <%= f.text_area :competent, class: 'form-area mb-md', placeholder: '例: やせることが本当に望んでいることなのか考える' %>
       <% if @mac.errors.include?(:competent) %>
         <div class="alert alert-danger">

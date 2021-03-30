@@ -8,6 +8,9 @@ class UsersController < ApplicationController
   def index
   end
 
+  def about
+  end
+
   def show
     @users = User.all
   end

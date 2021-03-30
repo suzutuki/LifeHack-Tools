@@ -1,3 +1,4 @@
+<% provide(:title, "If-thenルールの例") %>
 <div id="main-content">
   <aside class="side left">
     <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
@@ -55,3 +56,8 @@
       </div>
     </div>
   </section>
+  <aside class="side right">
+    <%= link_to(content_tag(:i, 'Create', class: "fas fa-angle-right fa-2x
+                                faa-horizontal animated-hover fa-pull-right",
+                            style: "color: rgb(80,80,80);"), new_it_path) %>
+  </aside>

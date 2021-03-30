@@ -10,17 +10,24 @@
       <li><%= link_to(content_tag(:i, '', class: "fab fa-twitter faa-wrench animated-hover fa-2x item",
                                   style: "color: #333;"), "https://twitter.com/suzutuki0149") %>
       </li>
-      <div class="footer__copyright item">&copy suzutuki
+      <li>
+      <%= link_to 'My blog', "https://suzutukiblog.com/", class: "footer__blog item" %>
+      </li>
+      <li>
+        <%= link_to 'About', about_path, class: "footer__blog item" %>
+      </li>
     </ul>
     </div>
   </nav>
 </footer>
 <nav class="mobile-menu">
-  <%= link_to(content_tag(:i, 'HOME', class: "fas fa-home fas faa-vertical
-      animated-hover", style: "color: #1d1d1f;" "font-size: 1.5em"), root_path) %>
+  <%= link_to 'LifeHack Tools', root_url, class: " logo mobile__life item" %>
   <ul class="mobile-menu__main">
     <% if logged_in? %>
-      <%= render 'users/link' %>
+      <%= link_to "MACの原則", mac_path(current_user), class: "btn slide-red-slow" %>
+      <%= link_to "ToDoリスト", task_path(current_user), class: "btn slide-green-slow" %>
+      <%= link_to "If-Thenテクニック", it_path(current_user), class: "btn slide-blue-slow" %>
+      <%= link_to "Exercise Tracking", hiit_path(current_user), class: "btn slide-wine-slow" %>
       <% if logged_in? && !guest_user %>
         <li><%= link_to "LifeHack Toolsを退会", @user, method: :delete,
                         data: { confirm: "本当に退会しますか？" }, class: "btn solid" %>

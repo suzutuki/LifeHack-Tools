@@ -27,10 +27,4 @@ $(function () {
     });
 });
 
-// スモールステップでチェックボタンを動的(チェックされた、またはされてない状態を保存)にする
-// $(function () {
-//     $("input[type=checkbox]").click(function () {
-//         $.post('/steps/' + $(this).data('id') + '/toggle');
-//     });
-// });
 
