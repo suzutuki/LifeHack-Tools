@@ -3,12 +3,13 @@
     <ul class="footer__ul">
       <div class="logo item">
         <li class="footer__li item">
-          <%= link_to 'LifeHack Tools！', root_url, style: "footer__link item" %></li>
+          <%= link_to 'LifeHack', root_url, class: "footer__link item" %>
+          <%= link_to 'Tools', root_url, class: "footer__link__tools item" %>
+        </li>
       </div>
       <li><%= link_to(content_tag(:i, '', class: "fab fa-twitter faa-wrench animated-hover fa-2x item",
                                   style: "color: #333;"), "https://twitter.com/suzutuki0149") %>
       </li>
-      <li class="footer__li item"><a href="#">Sitemap</a></li>
       <div class="footer__copyright item">&copy suzutuki
     </ul>
     </div>

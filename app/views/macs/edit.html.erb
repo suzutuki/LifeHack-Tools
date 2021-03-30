@@ -1,12 +1,9 @@
-<% provide(:title, "edit") %>
+<% provide(:title, "MACの原則 編集") %>
 <% provide(:button_text, '編集') %>
-<div id="main-content">
-  <aside class="side left">
-    <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
-      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), mac_path(current_user)) %>
-  </aside>
+<% provide(:form_text, 'を編集します') %>
+<%= render 'side-left' %>
   <main>
     <section class="todo">
       <div class="log-form">
-        <div class="form-title tween-animate-title center-position">MACの原則:<%= render 'shared/edit' %></div>
+        <div class="form-title tween-animate-title center-position">MACの原則を<%= yield(:form_text) %></div>
 <%= render 'form' %>

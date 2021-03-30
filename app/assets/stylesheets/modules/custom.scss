@@ -1,11 +1,13 @@
 //bootstrapなど置いていたとこ
 @import "variables";
 @import "base";
+
 .main-width {
   width: 85%;
   margin: 0 auto;
   overflow: hidden;
 }
+
 .alert-width {
   display: inline-block;
   width: 100%;
@@ -36,18 +38,20 @@
       color: $cWineRed;
       @extend .alert-width;
     }
-}
+  }
+
   &-danger {
-    background: #F7D7DA;
-    color: $cWineRed;
-    @extend .alert-width;
+    @extend .alert__alert-danger;
+  }
+
+  &-success {
+    @extend .alert__alert-success;
   }
 }
 
 
-.alert-sucess {
-  background: chartreuse;
-}
+
+
 //エラーメッセージの設定
 #error_explanation {
   color: red;

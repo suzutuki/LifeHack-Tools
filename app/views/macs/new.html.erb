@@ -1,5 +1,6 @@
-<% provide(:title, "new") %>
+<% provide(:title, "MACの原則 新規作成") %>
 <% provide(:button_text, '登録') %>
+<% provide(:form_text, 'を新規作成します') %>
 <div id="main-content">
   <aside class="side left">
     <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
@@ -8,5 +9,5 @@
   <main>
     <section class="mac-form">
       <div class="log-form">
-        <div class="form-title tween-animate-title">MACの原則:<%= render 'shared/new' %></div>
+        <div class="form-title tween-animate-title">MACの原則<%= yield(:form_text) %></div>
 <%= render 'form' %>

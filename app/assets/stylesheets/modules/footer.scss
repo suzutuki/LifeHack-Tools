@@ -16,8 +16,18 @@
   }
 
   &__link {
-  text-decoration: none;
-    color: #333;
+    text-decoration: none !important;
+    color: $cWineRed;
+    font-weight: 600;
+
+    &__tools {
+      @extend .footer__link;
+      color: $color-nobleblack !important;
+    }
+  }
+
+  &__copyright {
+    font-size: 24px;
   }
 
   &__ul {
@@ -34,7 +44,8 @@
     margin: 10px;
 
     & > a {
-      color: $cSubTitle;
+      color: $cWineRed;
+      text-decoration: none !important;
     }
   }
 

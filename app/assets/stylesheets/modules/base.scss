@@ -157,8 +157,15 @@ main {
     width: 0.7em;
   }
 
-  &__Garden {
-    color: $cWineRed;
+  &__lifehack {
+    color: $cWineRed !important;
+    font-weight: 600;
+    text-decoration: none !important;
+  }
+
+  &__tools {
+    @extend .logo__lifehack;
+    color: $color-nobleblack !important;
   }
 }
 

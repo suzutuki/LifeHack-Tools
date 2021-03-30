@@ -1,25 +1,25 @@
-<% provide(:title, "edit") %>
+<% provide(:title, "ToDoリスト 編集") %>
 <% provide(:button_text, "一括編集") %>
+<% provide(:form_title, "一括編集") %>
 <%= render 'form' %>
-        <div class="form-title tween-animate-title">ToDoリストを一括編集</div>
-        <%= form_with model: current_user, url: task_path, method: :patch, local: true do |form| %>
-          <h3>
-            <%= form.fields_for :tasks do |field| %>
-              <%= field.label :"タイトル : あなたが達成したいことを書いてください", class: 'btn slide-red' %><br>
-              <%= field.text_field :title, class: 'tasks-form-field mb-md', required: true %>
-              <br>
-              <%= field.label :"優先順位 :  優先順位の高い順に自動で並び替わります。", class: 'btn slide-yellow' %>
-              <%= field.select :priority, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], { include_blank: '選択してください' }, { class: 'form-box mb-md', required: true } %>
-              <%= field.label :"メモ (50文字まで登録できます)", class: 'btn slide-blue' %>
-              <%= field.text_area :content, class: 'tasks-form-area mb-md', placeholder: 'ご自由にどうぞ' %>
-            <% end %>
-            <div class="center-position">
-              <div class="world__btn item">
-                <%= link_to '戻る', task_path(current_user), class: "btn float" %>
-                <%= form.submit yield(:button_text), class: "btn float" %>
-              </div>
-            </div>
-          </h3>
-          </div>
-        <% end %>
-<%= render 'form-field' %>
+<%= form_with model: current_user, url: task_path, method: :patch, local: true do |form| %>
+  <h3>
+    <%= form.fields_for :tasks do |field| %>
+      <%= field.label :"タイトル : あなたが達成したいことを書いてください", class: 'btn slide-red' %><br>
+      <%= field.text_field :title, class: 'tasks-form-field mb-md', required: true %>
+      <br>
+      <%= field.label :"優先順位 :  優先順位の高い順に自動で並び替わります。", class: 'btn slide-yellow' %>
+      <%= field.select :priority, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], { include_blank: '選択してください' }, { class: 'form-box mb-md', required: true } %>
+      <%= field.label :"メモ (50文字まで登録できます)", class: 'btn slide-blue' %>
+      <%= field.text_area :content, class: 'tasks-form-area mb-md', placeholder: 'ご自由にどうぞ' %>
+    <% end %>
+    <div class="center-position">
+      <div class="world__btn item">
+        <%= link_to '戻る', task_path(current_user), class: "btn float" %>
+        <%= form.submit yield(:button_text), class: "btn float" %>
+      </div>
+    </div>
+  </h3>
+  </div>
+<% end %>
+<%= render 'side-right' %>
