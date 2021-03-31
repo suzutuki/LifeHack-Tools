@@ -1,12 +1,24 @@
-![LifeHack tools](https://user-images.githubusercontent.com/61527476/113099173-8444fb00-9234-11eb-9b06-efd2a1fb93f1.jpg)
+![Lifehack](https://user-images.githubusercontent.com/61527476/113125422-89647300-9251-11eb-8811-a81b9d310f9a.png)
 
+<h2 align="center">LifeHack Tools : あなたの習慣化や目標達成をアシストします</h2>
 
-# README
+##App URL
 
+###アプリケーションの機能一覧
 
-application up and running.
+かんたんログイン(ワンクリックログイン)機能
 
-Things you may want to cover:
+サインアップ、ログイン機能(email, パスワード, パスワード確認)Remember me機能
+
+記事作成・編集機能
+
+記事一括作成・一括編集・一括削除機能
+
+グラフ作成機能・編集機能
+
+フラッシュメッセージ、
+
+アプリケーション内で使用している技術一覧
 
 * Ruby version
 
