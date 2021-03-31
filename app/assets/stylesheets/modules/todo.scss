@@ -5,6 +5,10 @@
   margin: 4em auto 0;
   max-width: $contentMaxWidth;
 
+  &-form {
+    border: 1px solid #333;
+  }
+
   &__label {
     width: 100%;
     margin-bottom: 1em;
@@ -23,6 +27,7 @@
     padding: 20px;
     overflow: hidden;
     background: rgba(250, 240, 230, 0.1);
+
     &:last-child {
       border-bottom: 0;
     }
@@ -43,24 +48,22 @@
   margin-bottom: 40px;
 }
 
-.todo-form {
-  border: 1px solid #333;
-}
+.tasks-form {
 
-.tasks-form-field {
-  margin: 5px 0;
-  width: 100%;
-  height: 40px;
-  display: block;
-  box-sizing: border-box;
-  border: 1px solid #333;
-}
+  &-field {
+    margin: 5px 0;
+    width: 100%;
+    height: 40px;
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid #333;
+  }
 
-.tasks-form-area {
-  margin: 5px 0;
-  width: 100%;
-  height: 100px;
-  display: block;
-  box-sizing: border-box;
+  &-area {
+    margin: 5px 0;
+    width: 100%;
+    height: 100px;
+    display: block;
+    box-sizing: border-box;
+  }
 }
-

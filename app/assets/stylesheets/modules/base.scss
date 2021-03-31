@@ -71,7 +71,7 @@ img {
   max-width: $contentMaxWidth;
 }
 
-//テキストアニメーションするよ
+//テキストアニメーションする
 .main-title {
   //継承することで、画面の大きさが変わっても今の画面の設定が適応される
   @extend .font-lg;
@@ -100,7 +100,7 @@ img {
   }
 }
 
-//テキストアニメーションするよ
+//テキストアニメーションする
 .sub-title {
   @extend .font-sm;
   color: $cSubTitle;
@@ -144,27 +144,6 @@ main {
   z-index: -1;
 }
 
-//ロゴの設定
-.logo {
-  font-size: 42px;
-  display: flex;
-
-  &__img {
-    width: 0.7em;
-  }
-
-  &__lifehack {
-    color: $cWineRed !important;
-    font-weight: 600;
-    text-decoration: none !important;
-  }
-
-  &__tools {
-    @extend .logo__lifehack;
-    color: $color-nobleblack !important;
-  }
-}
-
 .center-position {
   flex-direction: row;
   display: flex;
@@ -173,34 +152,6 @@ main {
 
 li {
   list-style: none;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  color: $color-nobleblack;
-}
-
-h1 {
-  font-size: 3em;
-  letter-spacing: -3px;
-}
-
-h2 {
-  display: block;
-  font-size: 1.5em;
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
-  font-weight: bold;
-}
-
-h3 {
-  text-align: left;
-}
-
-p {
-  margin: 5px 0;
 }
 
 a:hover {

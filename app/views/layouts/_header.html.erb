@@ -1,4 +1,3 @@
-<!--モバイルメニューとヘッダー担当-->
 <body>
 <div id="global-container">
   <div id="container">
@@ -6,10 +5,9 @@
     <div class="nav-trigger"></div>
     <header class="header">
       <div class="header__inner">
-        <div class="logo item">
-          <span class="logo__Flower">
-            <%= link_to "LifeHack", root_path, class: "logo__lifehack " %>
-            <%= link_to "Tools", root_path, class: "logo__tools" %>
+        <div class="header__home item">
+          <%= link_to "LifeHack", root_path, class: "header__home" %>
+          <%= link_to "Tools", root_path, class: "header__hack" %>
         </div>
         <nav class="header__nav">
           <ul class="header__ul">
@@ -48,5 +46,3 @@
         </button>
       </div>
     </header>
-    <!--divが2つ閉じられていないのに注意-->
-    <!--footerの前に閉じるのとnavの後とscriptの前に閉じる-->

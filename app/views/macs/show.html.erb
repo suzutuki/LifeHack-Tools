@@ -1,11 +1,11 @@
 <% provide(:title, "My Goal") %>
-<%= render 'layouts/side-left' %>
+<%= render 'layouts/side-root' %>
 <% if @macs.empty? %>
   <main>
     <section class="world">
       <div class="world__inner__reverse">
         <div class="world__img__reverse cover-slide">
-          <img src= "/Goals.jpg" class="img-zoom" />
+          <img src="/Goals.jpg" class="img-zoom"/>
         </div>
         <div class="world__texts appear left">
           <div class="world__content__reverse">
@@ -14,26 +14,26 @@
               <div class="world__sub sub-title item">MACの原則とは？</div>
             </div>
             <div class="world__description item">
-                <p>現時点で効果の高い<br/>ゴール(目標)設定方法のこと</p>
-                <p>M(Measurable: 測定可能性)<br/>ゴールを数字で表すことができる</p>
-                <p>A(Actionable: 行動可能性)<br/>ゴールまでのプロセスを明確化させる</p>
-                <p>C(Competent: 適格性)<br/>目標達成が自分の価値観に基づいているか?</p>
-                <div class="world__btn item">
-                  <%= link_to "MACの原則を作る", new_mac_path, class: "btn slide-bg" %>
-                  <%= link_to macs_path, class: "btn-cubic" do %>
-                    <span class="hovering">具体的な例を見る</span><span class="default">TIPS</span>
-                  <% end %>
-                </div>
+              <p>現時点で効果の高い<br/>ゴール(目標)設定方法のこと</p>
+              <p>M(Measurable: 測定可能性)<br/>ゴールを数字で表すことができる</p>
+              <p>A(Actionable: 行動可能性)<br/>ゴールまでのプロセスを明確化させる</p>
+              <p>C(Competent: 適格性)<br/>目標達成が自分の価値観に基づいているか?</p>
+              <div class="world__btn item">
+                <%= link_to "MACの原則を作る", new_mac_path, class: "btn slide-bg" %>
+                <%= link_to macs_path, class: "btn-cubic" do %>
+                  <span class="hovering">具体的な例を見る</span><span class="default">TIPS</span>
+                <% end %>
               </div>
             </div>
           </div>
         </div>
+      </div>
 <% else %>
-    <main>
-      <div class="mac-width">
+  <main>
+    <div class="mac-width">
       <% @macs.each do |mac| %>
-          <div class="mac-title item">My Goal<%= (mac.id) %></div>
-          <div class="panel-mac">
+        <div class="mac-title item">My Goal<%= (mac.id) %></div>
+        <div class="panel-mac">
           <div class="goal">
             <div class="text_color_grey">M: 数値で表せる目標</div>
             <%= simple_format(mac.measurable) %>
@@ -60,11 +60,7 @@
       <div class="center-position">
         <trigger_time class="btn float">ON/OFF</trigger_time>
       </div>
-        <aside class="side right">
-          <%= link_to(content_tag(:i, 'Create', class: "fas fa-angle-right fa-2x
-                                faa-horizontal animated-hover fa-pull-right",
-                                  style: "color: rgb(80,80,80);"), new_mac_path) %>
-        </aside>
+      <%= render 'side-right' %>
 <% end %>
 </section>
 </main>

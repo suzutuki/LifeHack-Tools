@@ -4,10 +4,9 @@
 // スマホ画面のときサイド要素を非表示にする
 .side {
   display: none;
-  // 固定する
   position: fixed;
-  // 画面の上から７０％から表示する
-  top: 70%;
+  // 画面の上から60％から表示する
+  top: 60%;
   // ここは検証で試してみるとよい
   transform: translateY(-50%);
   transition: all 0.3s ease-in;
@@ -51,7 +50,7 @@
     }
   }
 }
-//ツイッターのアイコン
+
 .icon {
   position: relative;
 
@@ -61,19 +60,9 @@
     background-repeat: no-repeat;
     background-size: contain;
   }
-  //ロゴの設定
-  &.twitter {
-    &::before {
-      background-image: url("/twitter.svg")
-    }
-  }
-  //&.fb {
-  //  &::before {
-  //    background-image: url(../images/facebook.svg);
-  //  }
-  //}
+
 }
-//ロゴお花とか
+//ロゴ
 .logo {
   font-size: 42px;
   display: flex;

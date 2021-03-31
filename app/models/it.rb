@@ -20,6 +20,4 @@
 class It < ApplicationRecord
   belongs_to :user
   default_scope -> { order(created_at: :asc) }
-  # validates :situation, presence: {message: '状況を設定してください。?にヒントがあります。'}, length: { maximum: 255}
-  # validates :behavior, presence: {message: '行動を設定してください。?にヒントがあります。'}, length: { maximum: 255}
 end

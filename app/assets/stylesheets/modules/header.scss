@@ -20,6 +20,19 @@
     box-shadow: 10px 0 25px -10px rgba(0, 0, 0, 0.5);
   }
 
+  &__home {
+    font-size: 38px;
+    display: flex;
+    color: $cWineRed !important;
+    font-weight: 600;
+    text-decoration: none !important;
+  }
+
+  &__hack {
+    @extend .header__home;
+    color: $color-nobleblack !important;
+  }
+
   // スマホ画面ではヘッダー表示しない
   &__nav {
     display: none;
@@ -43,11 +56,6 @@
       text-decoration: none !important;
       text-transform: uppercase;
     }
-  }
-
-  & .logo {
-    font-size: 38px;
-    justify-content: center;
   }
 
   &__inner {

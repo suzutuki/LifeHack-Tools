@@ -1,8 +1,9 @@
 <% provide(:title, "グラフイメージ") %>
 <% provide(:image_text, "/graphimage.png") %>
-<div id="main-content">
+<%= render 'layouts/side-refferer' %>
 <h2 class="tween-animate-title center-position">グラフイメージ</h2>
 <main>
     <div class="content-width center-position">
         <img src=<%= yield(:image_text) %>/>
       </div>
+<%= render 'side-right' %>

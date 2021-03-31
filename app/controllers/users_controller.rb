@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def index
   end
 
-  def about
+  def how_to
   end
 
   def show

@@ -2,7 +2,7 @@
 <% provide(:image_text, "/Todolist.jpg") %>
 <% provide(:world_class, "todo") %>
 <% provide(:world_background, "todo__background") %>
-<%= render 'layouts/side-left' %>
+<%= render 'layouts/side-root' %>
 <% if current_user.tasks.empty? %>
   <%= render 'shared/world' %>
   <span class="purple">ToDoリスト</span>
@@ -43,14 +43,11 @@
                 <h2 class="todo__label item">ToDo: <%= task.title %></h2>
                 <h2 class="todo__label item">メモ: <%= task.content %></h2>
                 <h2 class="todo__label item">優先順位: <%= task.priority %></h2>
-                <li><h3 class="tasks-time item">Update:<%= task.updated_at.to_s(:datetime_jp) %>
-                  create:<%= task.created_at.to_s(:datetime_jp) %></h3></li>
-              </ul>
-            </div>
-            <div class="panel-right item">
-              <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-3x faa-horizontal animated-hover fa-pull-right",
+                <li><h4 class="tasks-time item">Update:<%= task.updated_at.to_s(:datetime_jp) %>
+                  create:<%= task.created_at.to_s(:datetime_jp) %>
+                  <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-2x faa-horizontal animated-hover fa-pull-right",
                                       style: "color: rgb(80,80,80);"), task_path(task.id), method: :delete, data: { confirm: "本当に削除しますか？" }) %>
-            </div>
+                </h4></li></ul></div>
           </div>
         <% end %>
         <aside class="side right">

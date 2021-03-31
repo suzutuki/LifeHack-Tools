@@ -1,11 +1,7 @@
 <% provide(:title, "MACの原則 新規作成") %>
 <% provide(:button_text, '登録') %>
 <% provide(:form_text, 'を新規作成します') %>
-<div id="main-content">
-  <aside class="side left">
-    <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
-      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), mac_path(current_user)) %>
-  </aside>
+ <%= render 'layouts/side-refferer' %>
   <main>
     <section class="mac-form">
       <div class="log-form">

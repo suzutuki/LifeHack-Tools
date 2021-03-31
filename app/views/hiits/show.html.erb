@@ -14,7 +14,7 @@
     <p>運動の習慣化は難易度が高く、</p>
     <p>挫折しやすいと言われています。</p>
     <p>そこで、運動記録をつけてチェックすることで</p>
-    <p>モチベーションを上げていきましょう！</p>
+    <p>モチベーションを上げて習慣化していきましょう！</p>
   </div>
   </div>
   </div>
@@ -55,11 +55,7 @@
                                   style: "color: rgb(80,80,80);"), hiit_path(hiit.id), method: :delete, data: { confirm: "本当に削除しますか？" }) %>
         </div>
       <% end %>
-      <aside class="side right">
-        <%= link_to(content_tag(:i, 'Create', class: "fas fa-angle-right fa-2x
-                                faa-horizontal animated-hover fa-pull-right",
-                                style: "color: rgb(80,80,80);"), new_hiit_path) %>
-      </aside>
+        <%= render 'side-right' %>
 <% end %>
 </section>
 </main>

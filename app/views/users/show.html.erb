@@ -1,9 +1,5 @@
 <% provide(:title, "ユーザー管理") %>
-<div id="main-content">
-  <aside class="side left">
-    <%= link_to(content_tag(:i, '', class: "fas fa-angle-left fa-3x
-      faa-horizontal animated-hover", style: "color: rgb(80,80,80);"), task_path(current_user)) %>
-  </aside>
+<%= render 'layouts/side-root' %>
   <main>
     <section class="todo">
       <div class="log-form">

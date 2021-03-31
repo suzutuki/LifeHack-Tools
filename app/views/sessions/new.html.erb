@@ -1,25 +1,25 @@
 <% provide(:title, "ログイン") %>
 <%= render 'layouts/side-root' %>
-  <main>
-    <section class="register appear up">
-      <div class="center-position">
-        <h2 class="item">Log in</h2>
-      </div>
-      <%= form_with scope: :session, url: login_path, local: true do |f| %>
-        <div class="log-form">
-          <div class="form-title item">log in to your account</div>
-          <div class="inputWithIcon item">
-            <%= f.email_field :email, class: 'form-field', placeholder: 'Email' %>
-            <%= f.password_field :password, class: 'form-field', placeholder: 'password' %>
-          </div>
-          <%= f.label :次回ログインを省略する, class: "checkbox inline" do %>
-            <%= f.check_box :remember_me, class: "remember_me" %>
-            <span class="check-right item">次回ログインを省略する</span>
-          <% end %>
-          <div class="login-position">
-            <%= f.submit "Login ", class: "btn float item" %>
-      <% end %>
-      <br>
-      <%= link_to "はじめての方はこちら", new_user_path, class: "btn slide-bg" %>
-      </div>
-      </div>
+<main>
+  <section class="register appear up">
+    <div class="center-position">
+      <h2 class="item">Log in</h2>
+    </div>
+    <%= form_with scope: :session, url: login_path, local: true do |f| %>
+      <div class="log-form">
+        <div class="form-title item">log in to your account</div>
+        <div class="inputWithIcon item">
+          <%= f.email_field :email, class: 'form-field', placeholder: 'Email' %>
+          <%= f.password_field :password, class: 'form-field', placeholder: 'password' %>
+        </div>
+        <%= f.label :次回ログインを省略する, class: "checkbox inline" do %>
+          <%= f.check_box :remember_me, class: "remember_me" %>
+          <span class="check-right item">次回ログインを省略する</span>
+        <% end %>
+        <div class="login-position">
+          <%= f.submit "Login ", class: "btn float item" %>
+    <% end %>
+    <br>
+    <%= link_to "はじめての方はこちら", new_user_path, class: "btn slide-bg" %>
+    </div>
+    </div>

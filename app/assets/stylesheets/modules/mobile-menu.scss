@@ -1,6 +1,7 @@
 @import "variables";
 @import "mixin";
 @import "base";
+
 $cMenuClose: Black;
 $cMenuOpen: Black;
 
@@ -10,13 +11,15 @@ $cMenuOpen: Black;
   top: 60px;
   width: 300px;
   z-index: -100;
-  max-height: 70%!important;
-  & .logo {
+  max-height: 70% !important;
+
+  &__life {
     font-size: 32px;
     text-decoration: none !important;
-    color: $cWineRed;
+    color: $color-nobleblack !important;
     font-weight: 600;
   }
+
   // BEM(Block Element Modifier)
   &__btn {
     background-color: unset;
@@ -37,6 +40,7 @@ $cMenuOpen: Black;
       }
     }
   }
+
   // 黒い膜をつける
   &__cover {
     position: absolute;
@@ -51,12 +55,14 @@ $cMenuOpen: Black;
     cursor: pointer;
     z-index: 200;
   }
+
   &__main {
     padding: 0;
     // ３Dアニメーションをしたいとき親の要素につける
     perspective: 2000px;
     transform-style: preserve-3d;
   }
+
   &__item {
     // ・をけす
     list-style: none;
@@ -66,6 +72,7 @@ $cMenuOpen: Black;
     transition: transform 0.3s, opacity 0.2s;
     opacity: 0;
   }
+
   &__link {
     // 左右いっぱいに広がるようにする
     display: block;
@@ -83,13 +90,16 @@ $cMenuOpen: Black;
     box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
     opacity: 1;
   }
+
   // クリックされたときの記述を書く
   & .mobile-menu {
     z-index: 0;
+
     &__cover {
       opacity: 1;
-      visibility: visible!important;
+      visibility: visible !important;
     }
+
     &__item {
       transform: none;
       opacity: 1;
@@ -100,6 +110,7 @@ $cMenuOpen: Black;
         }
       }
     }
+
     &__btn {
       & > span {
         background-color: $cMenuOpen;
@@ -108,10 +119,12 @@ $cMenuOpen: Black;
           transition-delay: 70ms;
           transform: translateY(11px) rotate(135deg);
         }
+
         &:nth-child(2) {
           transition-delay: 0s;
           transform: translateX(-18px) scaleX(0);
         }
+
         &:nth-child(3) {
           transition-delay: 140ms;
           transform: translateY(-11px) rotate(-135deg);

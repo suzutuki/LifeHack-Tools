@@ -31,21 +31,6 @@ ActiveRecord::Schema.define(version: 2021_03_23_222311) do
     t.index ["user_id"], name: "index_its_on_user_id"
   end
 
-  create_table "lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.text "answer"
-    t.boolean "done"
-    t.text "event"
-    t.text "respect"
-    t.text "disdain"
-    t.text "boss"
-    t.text "guidance"
-    t.text "question"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_lists_on_user_id"
-  end
-
   create_table "macs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.text "measurable"
@@ -54,29 +39,6 @@ ActiveRecord::Schema.define(version: 2021_03_23_222311) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_macs_on_user_id"
-  end
-
-  create_table "sports", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.date "sport_day"
-    t.float "sport_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.float "start_on"
-    t.float "end_on"
-    t.index ["user_id"], name: "index_sports_on_user_id"
-  end
-
-  create_table "steps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.date "day"
-    t.integer "event_id"
-    t.text "name"
-    t.string "goal"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean "done"
-    t.index ["user_id"], name: "index_steps_on_user_id"
   end
 
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -103,9 +65,6 @@ ActiveRecord::Schema.define(version: 2021_03_23_222311) do
 
   add_foreign_key "hiits", "users"
   add_foreign_key "its", "users"
-  add_foreign_key "lists", "users"
   add_foreign_key "macs", "users"
-  add_foreign_key "sports", "users"
-  add_foreign_key "steps", "users"
   add_foreign_key "tasks", "users"
 end

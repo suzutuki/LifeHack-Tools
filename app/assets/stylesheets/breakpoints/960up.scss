@@ -30,11 +30,10 @@
   }
 }
 
-// ハンバーガーメニューを非表示にする(モバイル用でないため)
 .mobile-menu {
-  //&__btn {
-  //  display: none;
-  //}
+  &__btn {
+    display: block;
+  }
 }
 
 .popular {
