@@ -6,9 +6,19 @@ ul h2 {
   font-size: 30px;
 }
 
-.tasks-time {
-  color: rgb(80, 80, 80);
-  margin: 10px 0 15px 15px;
+.tasks {
+
+  &-time {
+    color: rgb(80, 80, 80);
+    margin: 10px 0 15px 15px;
+  }
+
+  //Todoリストのチェックボックス
+  &-checkbox {
+    width: 10%;
+    transform: scale(3);
+    margin: 0 auto !important;
+  }
 }
 
 .my__todo {
@@ -16,12 +26,6 @@ ul h2 {
   width: 65%;
 }
 
-//Todoリストのチェックボックス
-.tasks-checkbox {
-  width: 10%;
-  transform: scale(3);
-  margin: 0 auto!important;
-}
 
 .bomb {
   margin: 10px 0;
@@ -32,9 +36,10 @@ ul h2 {
   font-size: 1.35em;
   display: block;
   text-align: center;
-  background: rgba(42,42,42,0.95);
+  background: rgba(42, 42, 42, 0.95);
   padding: 0.75em 1em 0.75em 1.5em;
   box-shadow: 0 1px 1px;
-  border: 1px solid rgba(0,0,0,.45);
+  border: 1px solid rgba(0, 0, 0, .45);
   font-weight: 200;
 }
+

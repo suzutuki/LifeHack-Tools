@@ -5,12 +5,12 @@
 <%= form_with model: current_user, url: task_path, method: :patch, local: true do |form| %>
   <h3>
     <%= form.fields_for :tasks do |field| %>
-      <%= field.label :"タイトル : あなたが達成したいことを書いてください", class: 'btn slide-red' %><br>
+      <%= field.label :"タイトル : あなたが達成したいことを書いてください", class: "mb-md" %>
       <%= field.text_field :title, class: 'tasks-form-field mb-md', required: true %>
-      <br>
-      <%= field.label :"優先順位 :  優先順位の高い順に自動で並び替わります。", class: 'btn slide-yellow' %>
-      <%= field.select :priority, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], { include_blank: '選択してください' }, { class: 'form-box mb-md', required: true } %>
-      <%= field.label :"メモ (50文字まで登録できます)", class: 'btn slide-blue' %>
+      <%= field.label :"優先順位 :  優先順位の高い順に自動で並び替わります。", class: "mb-md" %>
+      <%= field.select :priority, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+                       { include_blank: '選択してください' }, { class: 'tasks-form-box mb-md', required: true } %>
+      <%= field.label :"メモ (50文字まで登録できます)", class: "mb-md" %>
       <%= field.text_area :content, class: 'tasks-form-area mb-md', placeholder: 'ご自由にどうぞ' %>
     <% end %>
     <div class="center-position">

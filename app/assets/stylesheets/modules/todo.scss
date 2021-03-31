@@ -60,10 +60,11 @@
   }
 
   &-area {
-    margin: 5px 0;
-    width: 100%;
+    @extend .tasks-form-field;
     height: 100px;
-    display: block;
-    box-sizing: border-box;
+  }
+
+  &-box {
+    @extend .tasks-form-field;
   }
 }
