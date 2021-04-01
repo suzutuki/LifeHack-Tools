@@ -10,3 +10,9 @@ default: &default
 development:
   <<: *default
   database: lifehack_development
+
+production:
+  <<: *default
+  database:
+  username:
+  password:
