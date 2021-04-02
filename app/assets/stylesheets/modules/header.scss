@@ -7,18 +7,10 @@
   left: 0;
   width: 100%;
   height: $navHeight;
-  // 背景色を透明に
-  background-color: transparent;
   display: flex;
   align-items: center;
   margin-bottom: 1em;
-  // ヘッダーを最前面にくるようにする
   z-index: 100;
-
-  &.triggered {
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 10px 0 25px -10px rgba(0, 0, 0, 0.5);
-  }
 
   &__home {
     font-size: 38px;
@@ -61,8 +53,8 @@
   &__inner {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     // navとコンテンツのラインを同じにする
+    align-items: center;
     @extend .content-width;
   }
 }
