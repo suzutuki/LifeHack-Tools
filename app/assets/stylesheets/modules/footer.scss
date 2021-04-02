@@ -4,11 +4,11 @@
 //フッターの設定はここだでな
 .footer {
   padding: 30px 0;
-  width: 90%;
-  margin: 0 auto;
+  @extend .content-width;
   display: flex;
   align-items: center;
   z-index: 100;
+
 
   &__nav {
     @extend .flex;
@@ -19,9 +19,9 @@
   }
 
   &__link {
-    text-decoration: none !important;
     color: $cWineRed;
     font-weight: 600;
+    margin-left: 3px;
 
     &__tools {
       @extend .footer__link;
@@ -30,12 +30,15 @@
   }
 
   &__blog {
-    margin-left: 20px;
     font-size: 34px;
-    font-weight: 600;
+    font-weight: 300;
     color: $color-nobleblack !important;
   }
 
+  &__others {
+    @extend .footer__blog;
+    margin-left: 20px;
+  }
   &__ul {
     @extend .flex;
     // パディングやマージンを初期化

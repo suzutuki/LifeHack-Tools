@@ -1,17 +1,6 @@
 <%= render 'layouts/head' %>
 <%= render 'layouts/header' %>
-<!--モバイルメニューとヘッダー担当-->
-<!--ヘッダーココまで-->
-<!--divが2つ閉じられていないのに注意-->
-<!--footerの前に閉じるのとnavの後とscriptの前に閉じる-->
 <%= render 'layouts/flash_messages' %>
-<!--ココにそれぞれのページの内容-->
 <%= yield %>
 </div>
-<!--ローカルスタッキングコンテキストを閉じるためのdiv-->
-<!--ココからフッター-->
 <%= render 'layouts/footer' %>
-
-
-
-

@@ -88,7 +88,7 @@ class Main {
     _scrollInit() {
 // セッターメソッドを呼んでいて右辺の値が(val)に格納される
 // this._navAnimation.bind(this)でないとエラー(プライベートメソッド内でthisを使っているため)
-        // スクロール監視が何度でも発動するように{once: false}する
+// スクロール監視が何度でも発動するように{once: false}する
         this.observers = new ScrollObserver('.nav-trigger', this._navAnimation.bind(this), {once: false});
 // カバースライドに対してのインスタンス化利用するためにthis.が必要
         this.observers = new ScrollObserver('.cover-slide', this._inviewAnimation);
@@ -100,7 +100,7 @@ class Main {
 //  スワイパーコンテナーを監視する
         this.observers = new ScrollObserver('.swiper-container', this._toggleSlideAnimation.bind(this), {once: false});
 // rootMarginで発火するタイミングを制御できる
-        this.observers = new ScrollObserver('#main-content', this._sideAnimation.bind(this), {once: false, rootMargin: "-300px 0px"});
+        this.observers = new ScrollObserver('#main-content', this._sideAnimation.bind(this), {once: false, rootMargin: "-200px 0px"});
     }
 }
  

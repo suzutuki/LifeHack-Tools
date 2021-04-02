@@ -19,14 +19,16 @@
     &__reverse {
       @extend .world__inner;
       @extend .flex;
-      flex-direction: row-reverse;
       background-color: rgba(254,227,232, 0.4);
     }
   }
 
+  &__btn {
+    vertical-align: center;
+  }
+
   &__if {
     @extend .world__inner;
-    flex-direction: unset;
     background: rgba(254,227,232, 0.5);
   }
 
@@ -37,17 +39,12 @@
   }
 
   &__exercise__background {
-    flex-direction: unset;
     @extend .world__inner;
     background: rgba(143, 70, 105, 0.13);
   }
 
   &__content {
     padding: 20px 30px;
-
-    &__reverse {
-      padding: 40px 60px;
-    }
   }
 
   &__title {
@@ -127,6 +124,7 @@
       height: 100%;
     }
     &__reverse {
+      height: 300px;
       & > img {
         position: relative;
         // ボックスシャドウを背面につけるための設定

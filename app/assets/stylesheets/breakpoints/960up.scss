@@ -58,6 +58,11 @@
     flex-direction: unset;
   }
 
+  &__exercise__background {
+    flex-direction: unset;
+    background: rgba(143, 70, 105, 0.13);
+  }
+
   &__mac__background {
     @extend .world__todo__background;
   }
@@ -68,6 +73,10 @@
     &__reverse {
       height: 525px;
     }
+  }
+
+  &__content__reverse {
+    padding: 40px 60px;
   }
 
   &__description {
@@ -128,7 +137,6 @@
   box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
 }
 
-// サイドバー要素を表示する後で消すかも
 .side {
-  display: block;
+  display: none;
 }

@@ -4,15 +4,14 @@
 
 .pace-done #global-container {
   // ゆっくりとコンテンツを表示
-  transition: opacity 1.2s !important;
+  transition: opacity 1s;
   height: 100%!important;
-  opacity: 1;
+  opacity: 1 !important;
 }
 
-.pace-running #global-container {
+#global-container {
   // 画面が更新されている間はコンテンツを非表示
-  opacity: 0 !important;
-
+  opacity: 0;
 }
 
 .pace {
