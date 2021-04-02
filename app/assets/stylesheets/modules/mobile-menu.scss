@@ -12,6 +12,8 @@ $cMenuOpen: Black;
   width: 300px;
   z-index: -100;
   max-height: 70% !important;
+  opacity: 0;
+  transition: 1s;
 
   &__life {
     font-size: 32px;
@@ -94,6 +96,7 @@ $cMenuOpen: Black;
   // クリックされたときの記述を書く
   & .mobile-menu {
     z-index: 0;
+    opacity: 1;
 
     &__cover {
       opacity: 1;
