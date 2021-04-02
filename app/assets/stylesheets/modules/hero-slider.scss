@@ -2,10 +2,10 @@
 @import "mixin";
 @import "base";
 // ヒーロースライダーの設定はここで決めている
-//.swiper-container {
-//  //!important;にすると表示おかしくなるので一旦起き
-//  overflow: visible !important;
-//}
+.swiper-container {
+  //!important;にすると表示おかしくなるので一旦起き
+  //overflow: visible !important;
+}
 
 .swiper-slide {
   height: 500px !important;
