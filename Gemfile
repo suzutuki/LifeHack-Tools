@@ -22,21 +22,22 @@ gem 'flatpickr'
 # gem 'capistrano-rails', group: :development
 gem 'jquery-rails', '~>4.3.1'
 gem 'jquery-turbolinks'
+
 # gem 'turbolinks', '~> 5'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
-  gem 'mysql2'
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
+  gem 'mysql2'
 end
 
 group :test do
   gem 'rails-controller-testing', '1.0.2'
-  gem 'minitest',                 '5.10.3'
-  gem 'minitest-reporters',       '1.1.14'
-  gem 'guard',                    '2.16.2'
-  gem 'guard-minitest',           '2.4.4'
+  gem 'minitest', '5.10.3'
+  gem 'minitest-reporters', '1.1.14'
+  gem 'guard', '2.16.2'
+  gem 'guard-minitest', '2.4.4'
 end
 group :development do
   gem 'web-console', '>= 3.3.0'
@@ -48,5 +49,6 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
 end
-group :production do
+group :production, :staging do
+  gem 'unicorn', '5.4.1'
 end
