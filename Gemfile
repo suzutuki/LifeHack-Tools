@@ -17,16 +17,11 @@ gem 'rails-i18n', '~> 5.1'
 gem 'jbuilder', '~> 2.5'
 gem 'chart-js-rails', '~> 0.1.4'
 gem 'flatpickr'
-# gem 'redis', '~> 4.0'
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 gem 'jquery-rails', '~>4.3.1'
 gem 'jquery-turbolinks'
 
-# gem 'turbolinks', '~> 5'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'mysql2'
@@ -39,6 +34,7 @@ group :test do
   gem 'guard', '2.16.2'
   gem 'guard-minitest', '2.4.4'
 end
+
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
@@ -49,6 +45,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
 end
+
 group :production, :staging do
   gem 'unicorn', '5.4.1'
 end

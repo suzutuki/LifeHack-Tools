@@ -29,8 +29,7 @@
   </main>
 <% else %>
   <main>
-    <section class="my__todo appear right">
-      <trigger_time class="btn float item">ON/OFF</trigger_time>
+    <section class="my__todo appear left">
       <trigger_priority class="btn float item">優先順位1のみ表示</trigger_priority>
       <%= link_to "アイビー・リー・メソッド", tasks_path, class: "btn float item" %>
       <div class="todo-form item">
@@ -50,14 +49,13 @@
                 </h4></li></ul></div>
           </div>
         <% end %>
-        <aside class="side right">
-          <%= link_to(content_tag(:i, 'Create', class: "fas fa-angle-right fa-2x
-                                faa-horizontal animated-hover fa-pull-right",
-                                  style: "color: rgb(80,80,80);"), new_task_path) %>
-        </aside>
         <li class="active item">
           <%= paginate @tasks %>
         </li>
+        <div class="center-position">
+          <trigger_time class="btn float item">ON/OFF</trigger_time>
+          <%= link_to "ToDoリストを作成する", new_task_path, class: "btn slide-bg" %>
+        </div>
     </section>
     <div class="adjust">
       <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover
