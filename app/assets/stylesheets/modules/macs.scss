@@ -1,6 +1,7 @@
 @import "variables";
 @import "base";
 @import "button";
+
 .align-left {
   font-size: 24px;
   text-align: left;
@@ -36,7 +37,7 @@
   }
 
   &-form {
-    box-shadow: 0 2px 5px rgba(0,0,0,.25);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
     width: 60%;
     margin: 0 auto;
   }
@@ -80,6 +81,7 @@
 
 .grey {
   color: $color-grey;
+
   &__mac {
     color: $color-grey;
     border-bottom: 0.5px dotted;
@@ -101,7 +103,4 @@
   display: flex;
 }
 
-.mac-form-red {
-  @import "button";
-  cursor: none;
-}
+
