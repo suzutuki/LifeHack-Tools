@@ -1,5 +1,6 @@
 @import "variables";
 @import "base";
+@import "button";
 .align-left {
   font-size: 24px;
   text-align: left;
@@ -100,3 +101,7 @@
   display: flex;
 }
 
+.mac-form-red {
+  @import "button";
+  cursor: none;
+}
