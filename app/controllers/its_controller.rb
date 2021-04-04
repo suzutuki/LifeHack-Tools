@@ -8,7 +8,7 @@ class ItsController < ApplicationController
   end
 
   def show
-    @its = current_user.its
+    @its = current_user.its.page(params[:page]).per(10)
   end
 
   def new

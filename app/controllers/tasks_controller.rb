@@ -7,7 +7,7 @@ class TasksController < ApplicationController
   end
 
   def show
-    @tasks = current_user.tasks.page(params[:page]).per(11)
+    @tasks = current_user.tasks
   end
 
   def new

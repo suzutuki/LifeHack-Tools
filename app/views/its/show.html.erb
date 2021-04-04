@@ -59,7 +59,11 @@
             </div>
           </div>
         <% end %>
+        <li class="active item">
+          <%= paginate @its %>
+        </li>
       </div>
+        <%= link_to "If thenルールを作る", new_it_path, class: "btn slide-bg" %>
       <div class="adjust">
         <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right",
                                 style: "color: rgb(80,80,80);"), edit_it_path) %>

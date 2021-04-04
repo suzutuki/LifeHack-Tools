@@ -52,15 +52,12 @@
             </div>
           </div>
         <% end %>
-        <li class="active item">
-          <%= paginate @tasks %>
-        </li>
-        <div class="center-position">
-          <trigger_time class="btn float item">ON/OFF</trigger_time>
-          <%= link_to "ToDoリストを作成する", new_task_path, class: "btn slide-bg" %>
-        </div>
     </section>
-    <div class="adjust">
+    <div class="center-position my__todo">
+      <trigger_time class="btn float item">ON/OFF</trigger_time>
+      <%= link_to "ToDoリストを作成する", new_task_path, class: "btn slide-bg" %>
+    </div>
+    <div class="adjust my__todo">
       <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover
  fa-pull-right", style: "color: rgb(80,80,80); margin-bottom: 15px;"), edit_task_path) %>
       <%= link_to(content_tag(:i, '', class: "fas fa-bomb fa-3x faa-horizontal
