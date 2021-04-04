@@ -3,6 +3,7 @@ class TasksController < ApplicationController
   before_action :correct_user, only: :destroy
   before_action :correct_user_destroy_all, only: :destroy_all
   skip_before_action :verify_authenticity_token
+
   def index
   end
 
@@ -57,6 +58,7 @@ class TasksController < ApplicationController
   end
 
   private
+
   # ストロングパラメーターcreate用
   def tasks_params
     params.require(:tasks)
