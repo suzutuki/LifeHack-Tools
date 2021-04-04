@@ -7,7 +7,7 @@ class TasksController < ApplicationController
   end
 
   def show
-    @tasks = current_user.tasks.page(params[:page]).per(8)
+    @tasks = current_user.tasks.page(params[:page]).per(11)
   end
 
   def new
@@ -57,7 +57,6 @@ class TasksController < ApplicationController
   end
 
   private
-
   # ストロングパラメーターcreate用
   def tasks_params
     params.require(:tasks)

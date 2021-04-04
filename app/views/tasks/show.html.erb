@@ -45,8 +45,11 @@
                 <li><h4 class="tasks-time item">Update:<%= task.updated_at.to_s(:datetime_jp) %>
                   create:<%= task.created_at.to_s(:datetime_jp) %>
                   <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-2x faa-horizontal animated-hover fa-pull-right",
-                                      style: "color: rgb(80,80,80);"), task_path(task.id), method: :delete, data: { confirm: "本当に削除しますか？" }) %>
-                </h4></li></ul></div>
+                                          style: "color: rgb(80,80,80);"), task_path(task.id), method: :delete, data: { confirm: "本当に削除しますか？" }) %>
+                </h4>
+                </li>
+              </ul>
+            </div>
           </div>
         <% end %>
         <li class="active item">

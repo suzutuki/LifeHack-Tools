@@ -12,12 +12,13 @@
 #  updated_at      :datetime         not null
 #
 class User < ApplicationRecord
-  has_many :hiits, dependent: :destroy
+  has_many :macs, dependent: :destroy
   has_many :its, dependent: :destroy
   accepts_nested_attributes_for :its, allow_destroy: true
   has_many :tasks, dependent: :destroy
   accepts_nested_attributes_for :tasks, allow_destroy: true
-  has_many :macs, dependent: :destroy
+  has_many :hiits, dependent: :destroy
+
   attr_accessor :remember_token
   before_save { email.downcase! }
   validates :name, length: { maximum: 15 }
