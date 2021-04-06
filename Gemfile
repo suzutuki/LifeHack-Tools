@@ -19,6 +19,8 @@ gem 'chart-js-rails', '~> 0.1.4'
 gem 'flatpickr'
 gem 'jquery-rails', '~>4.3.1'
 gem 'jquery-turbolinks'
+gem 'carrierwave'
+gem 'fog'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
