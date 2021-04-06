@@ -20,6 +20,8 @@
 /node_modules
 /yarn-error.log
 /.env
+# アップロードされたテスト画像を無視する
+/public/uploads
 
 .byebug_history
 
