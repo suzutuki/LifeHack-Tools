@@ -9,7 +9,7 @@
   </div>
   <%= f.label :プロフィール画像をアップロードできます。 %>
   <div class="file-upload_area">
-    <%= f.file_field :image, class: 'file-upload_input' %>
+    <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png,image/jpg', class: 'file-upload_input' %>
   </div>
   <div class="center-position">
     <%= f.submit yield(:button_text), class: " btn float" %>
