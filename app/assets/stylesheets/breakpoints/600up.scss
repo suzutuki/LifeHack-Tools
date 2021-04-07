@@ -24,6 +24,14 @@
   }
 }
 
+.register {
+  width: 55%;
+  margin: 0 auto;
+  max-width: 1070px;
+  margin-bottom: 80px !important;
+  overflow: hidden;
+}
+
 .world {
   &__inner {
     padding: 50px;
@@ -32,7 +40,6 @@
       flex-direction: row-reverse;
     }
   }
-
 
   &__if {
     flex-direction: unset;

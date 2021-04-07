@@ -35,13 +35,39 @@ input {
   }
 }
 
-.inputWithIcon input:focus {
-  //border-color: #333!important;
+input[type="file"]:focus {
+  outline: 1px;
 }
-
+.file-upload_area {
+  margin-bottom: 20px;
+  position: relative;
+  .file-upload_input {
+    //margin-left: 35px;
+    &::before {
+      background: $cWhite;
+      color: $color-nobleblack;
+      content: 'ファイルを選択';
+      font-size: 21px;
+      left: 0;
+      position: absolute;
+      top: 31px;
+      display: inline-block;
+      border: 1px solid $cBlack;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none !important;
+    }
+  }
+  input[type="file"]::-webkit-file-upload-button {
+    //background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent));
+    background-color: $cWhite;
+    border: 0;
+    //margin: 0 20px 0 0;
+  }
+}
 .inputWithIcon input {
   width: 100%;
-  //border: 2px solid #aaa;
   margin-bottom: 2em;
   padding: .5em 0;
   border: none;

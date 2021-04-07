@@ -1,12 +1,18 @@
 <%= form_with model: user, local: true do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
-      <div class="inputWithIcon">
-        <%= f.text_field :name, class: 'form-field', placeholder: 'Your name' %>
-        <%= f.email_field :email, class: 'form-field', placeholder: 'Email' %>
-        <%= f.password_field :password, class: 'form-field', placeholder: 'パスワード' %>
-        <%= f.password_field :password_confirmation, class: 'form-field', placeholder: 'パスワード確認' %>
-      </div>
-     <div class="center-position"><%= f.submit yield(:button_text), class: " btn float" %></div>
-   </div>
-  <%= f.file_field :picture %>
-    <% end %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="inputWithIcon">
+    <%= f.text_field :name, class: 'form-field', placeholder: 'Your name' %>
+    <%= f.email_field :email, class: 'form-field', placeholder: 'Email' %>
+    <%= f.password_field :password, class: 'form-field', placeholder: 'パスワード' %>
+    <%= f.password_field :password_confirmation, class: 'form-field', placeholder: 'パスワード確認' %>
+  </div>
+  <%= f.label :プロフィール画像をアップロードできます。 %>
+  <div class="file-upload_area">
+    <%= f.file_field :image, class: 'file-upload_input' %>
+  </div>
+  <div class="center-position">
+    <%= f.submit yield(:button_text), class: " btn float" %>
+  </div>
+  </div>
+
+<% end %>

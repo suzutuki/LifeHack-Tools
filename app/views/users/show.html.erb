@@ -10,6 +10,9 @@
               <h3 class="todo__label">
                 <%= user.name %>
                 <%= user.email %>
+                <% if @user.image? %>
+                  <%= image_tag @user.image.url %>
+                <% end %>
                 <% if current_user.admin? && !current_user?(user) %>
                   <%= link_to "このユーザーを削除します", user, method: :delete,
                               data: { confirm: "本当にユーザーを削除しますか？" }, class: 'btn slide-wine' %>
