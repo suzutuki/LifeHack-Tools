@@ -5,6 +5,7 @@
 #  id              :bigint           not null, primary key
 #  admin           :boolean          default(FALSE)
 #  email           :string(255)
+#  image           :string(255)
 #  name            :string(255)
 #  password_digest :string(255)
 #  remember_digest :string(255)
@@ -18,6 +19,7 @@ class User < ApplicationRecord
   has_many :tasks, dependent: :destroy
   accepts_nested_attributes_for :tasks, allow_destroy: true
   has_many :hiits, dependent: :destroy
+  mount_uploader :image, ImageUploader
 
   attr_accessor :remember_token
   before_save { email.downcase! }
