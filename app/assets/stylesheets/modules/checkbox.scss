@@ -42,7 +42,6 @@ input[type="file"]:focus {
   margin-bottom: 20px;
   position: relative;
   .file-upload_input {
-    //margin-left: 35px;
     &::before {
       background: $cWhite;
       color: $color-nobleblack;
@@ -50,7 +49,7 @@ input[type="file"]:focus {
       font-size: 21px;
       left: 0;
       position: absolute;
-      top: 31px;
+      top: 29px;
       display: inline-block;
       border: 1px solid $cBlack;
       font-weight: 600;
@@ -60,10 +59,8 @@ input[type="file"]:focus {
     }
   }
   input[type="file"]::-webkit-file-upload-button {
-    //background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent));
     background-color: $cWhite;
     border: 0;
-    //margin: 0 20px 0 0;
   }
 }
 .inputWithIcon input {
