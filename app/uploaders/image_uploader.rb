@@ -4,12 +4,25 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
+
   # このアップローダで使用するストレージの種類を選択します。
   # developmentとtest以外はS3を使用
   if Rails.env.development? || Rails.env.test?
     storage :file
   else
     storage :fog
+  end
+
+  # 画像の上限を640x480にする
+  process :resize_to_limit => [640, 480]
+
+  # サムネイルを生成する設定
+  version :thumb100 do
+    process :resize_to_limit => [100, 100]
+  end
+
+  version :thumb30 do
+    process :resize_to_limit => [30, 30]
   end
 
   # アップロードされたファイルが保存されるディレクトリを上書きします。
