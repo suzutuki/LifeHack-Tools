@@ -220,6 +220,7 @@ ja:
     attributes:
       user:
         name: 名前
+        image: 画像
         The form x_ contains: フォームにはxのエラーが含まれています。
         error: エラー
         confirmation_sent_at: パスワード確認送信時刻

@@ -28,7 +28,7 @@
     <% if logged_in? %>
       <%= link_to "MACの原則", mac_path(current_user), class: "btn slide-red-slow" %>
       <%= link_to "ToDoリスト", task_path(current_user), class: "btn slide-green-slow" %>
-      <%= link_to "If-Thenテクニック", it_path(current_user), class: "btn slide-blue-slow" %>
+      <%= link_to "If-Thenテクニック", it_path(current_user), class: "btn slide-yellow-slow" %>
       <%= link_to "Exercise Tracking", hiit_path(current_user), class: "btn slide-wine-slow" %>
       <% if logged_in? && !guest_user %>
         <li><%= link_to "LifeHack Toolsを退会", @user, method: :delete,

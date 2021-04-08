@@ -201,6 +201,22 @@
           transform: none;
         }
       }
+      &-slow {
+        @extend .slide-bg;
+
+        &::before {
+          @extend .slide-yellow::before;
+          transition: transform 0.6s;
+        }
+
+        &:hover {
+          color: $cBlack;
+
+          &::before {
+            transform: none;
+          }
+        }
+      }
     }
 
     &-green {
