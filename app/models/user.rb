@@ -68,9 +68,7 @@ class User < ApplicationRecord
 
   # アップロードされた画像のサイズをバリデーションする
   def check_image
-    if !['.jpg', '.png', '.gif'].include?(File.extname(name).downcase)
-      errors.add(:image, "JPG, PNG, GIFのみアップロードできます。")
-    elsif image.size > 1.megabyte
+    if image.size > 1.megabyte
       errors.add(:image, "1MBまでアップロードできます")
     end
   end
