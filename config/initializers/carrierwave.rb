@@ -11,9 +11,10 @@ CarrierWave.configure do |config|
   if Rails.env.production?
     config.storage :fog
     config.fog_provider = 'fog/aws'
-    config.fog_directory  = 'suzutuki-s3' # バケット名
+    # config.fog_directory  = 'suzutuki-s3' # バケット名
+    config.fog_directory = Rails.application.credentials.aws[:S3_bucket]
     config.fog_public = false
-    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/suzutuki-s3'
+    config.asset_host = Rails.application.credentials.aws[:S3_asset_host]
     config.fog_credentials = {
       provider: 'AWS',
       # credentialsで管理する場合

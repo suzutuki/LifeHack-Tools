@@ -2,9 +2,6 @@
 <%= render 'layouts/side-root' %>
 <main>
   <section class="register appear up">
-    <div class="center-position">
-      <h2 class="item">Log in</h2>
-    </div>
     <%= form_with scope: :session, url: login_path, local: true do |f| %>
       <div class="log-form">
         <div class="form-title item">log in to your account</div>

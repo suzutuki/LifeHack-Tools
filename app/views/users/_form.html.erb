@@ -2,7 +2,6 @@
   <%= image_tag user.image.thumb.url if user.image? %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="inputWithIcon">
-    <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
     <%= f.text_field :name, class: 'form-field', placeholder: 'Your name' %>
     <%= f.email_field :email, class: 'form-field', placeholder: 'Email' %>
     <%= f.password_field :password, class: 'form-field', placeholder: 'パスワード' %>
@@ -11,6 +10,7 @@
   <%= f.label :プロフィール画像をアップロードできます。 %>
   <div class="file-upload_area">
     <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png,image/jpg', class: 'file-upload_input' %>
+    <%= f.hidden_field :image_cache %>
   </div>
   <div class="center-position">
     <%= f.submit yield(:button_text), class: " btn float" %>
