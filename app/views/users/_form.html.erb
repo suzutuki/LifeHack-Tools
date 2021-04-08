@@ -2,6 +2,7 @@
   <%= image_tag user.image.url if user.image? %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="inputWithIcon">
+    <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
     <%= f.text_field :name, class: 'form-field', placeholder: 'Your name' %>
     <%= f.email_field :email, class: 'form-field', placeholder: 'Email' %>
     <%= f.password_field :password, class: 'form-field', placeholder: 'パスワード' %>
@@ -15,5 +16,4 @@
     <%= f.submit yield(:button_text), class: " btn float" %>
   </div>
   </div>
-
 <% end %>

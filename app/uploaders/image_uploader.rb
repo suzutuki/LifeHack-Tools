@@ -33,7 +33,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   # 許可する画像の拡張子
-  def extension_whitelist
+  def extension_allowlist
     %w(jpg jpeg gif png)
   end
 
