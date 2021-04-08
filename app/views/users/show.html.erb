@@ -1,25 +1,23 @@
 <% provide(:title, "ユーザー管理") %>
 <%= render 'layouts/side-root' %>
-  <main>
-    <section class="todo">
-      <div class="log-form">
-        <div class="form-title tween-animate-title">ユーザー管理画面</div>
+<main>
+  <section class="todo">
+    <div class="log-form">
+      <div class="form-title tween-animate-title">ユーザー管理画面</div>
+      <div class="content-width">
         <% @users.each do |user| %>
-          <li>
-            <div class="content-width">
-              <h3 class="todo__label">
-                <%= user.name %>
-                <%= user.email %>
-                <% if @user.image? %>
-                  <%= image_tag @user.image.url %>
-                <% end %>
-                <% if current_user.admin? && !current_user?(user) %>
-                  <%= link_to "このユーザーを削除します", user, method: :delete,
-                              data: { confirm: "本当にユーザーを削除しますか？" }, class: 'btn slide-wine' %>
-                  </h3>
-                  </div>
-                  </li>
-                <% end %>
+          <h4>
+            <%= user.name %>
+            <%= user.email %>
+            <% if user.image? %>
+              <%= image_tag user.image.url %>
+            <% end %>
+            <% if current_user.admin? && !current_user?(user) %>
+              <%= link_to "このユーザーを削除します", user, method: :delete,
+                          data: { confirm: "本当にユーザーを削除しますか？" }, class: 'btn slide-wine' %>
+              </h4>
+              </div>
+            <% end %>
         <% end %>
-    </section>
-  </main>
+  </section>
+</main>

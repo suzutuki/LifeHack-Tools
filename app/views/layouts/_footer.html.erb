@@ -5,18 +5,12 @@
         <li class="footer__li item">
           <%= link_to 'LifeHack', root_url, class: "footer__link" %>
           <%= link_to 'Tools', root_url, class: "footer__link__tools" %>
-        </li>
-      </div>
 
-      <li>
-      <%= link_to 'My blog', "https://suzutukiblog.com/", class: "footer__blog" %>
-      </li>
-      <li>
+        <%= link_to 'My blog', "https://suzutukiblog.com/", class: "footer__blog" %>
         <%= link_to 'How to use', how_to_path, class: "footer__others" %>
-      </li>
-      <li>
-      <%= link_to "Log out", logout_path, method: :delete,
-                  data: { confirm: "ログアウトしますか？" }, class: "footer__others" %>
+        <%= link_to "Log out", logout_path, method: :delete,
+                    data: { confirm: "ログアウトしますか？" }, class: "footer__others" %>
+      </div>
       </li>
     </ul>
     </div>

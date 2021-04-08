@@ -1,5 +1,5 @@
 <%= form_with model: user, local: true do |f| %>
-  <%= image_tag user.image.url if user.image? %>
+  <%= image_tag user.image.thumb.url if user.image? %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="inputWithIcon">
     <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>

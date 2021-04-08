@@ -32,6 +32,40 @@
   overflow: hidden;
 }
 
+.todo {
+  width: 60%;
+  margin: 4em auto 0;
+  max-width: 1070px;
+
+  &-form {
+    border: 1px solid #333;
+  }
+
+  &__label {
+    width: 100%;
+    margin-bottom: 1em;
+    padding: 0.5em 0;
+    border: none;
+    border-bottom: 1px solid;
+    outline: none;
+    box-sizing: border-box;
+    transition: 0.3s;
+  }
+
+  &__list {
+    border-bottom: 1px solid #333;
+    border-radius: 0 !important;
+    margin-bottom: 0.1px;
+    padding: 20px;
+    overflow: hidden;
+    background: rgba(250, 240, 230, 0.1);
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}
+
 .world {
   &__inner {
     padding: 50px;
