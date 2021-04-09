@@ -15,9 +15,10 @@
             <% if current_user.admin? && !current_user?(user) %>
               <%= link_to "このユーザーを削除します", user, method: :delete,
                           data: { confirm: "本当にユーザーを削除しますか？" }, class: 'btn slide-wine' %>
-              </h4>
-              </div>
             <% end %>
+          </h4>
         <% end %>
+      </div>
+    </div>
   </section>
 </main>

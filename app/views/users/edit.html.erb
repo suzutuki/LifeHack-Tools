@@ -3,7 +3,7 @@
 <%= render 'layouts/side-root' %>
 <div id="main-content">
   <main>
-    <%= form_with model: @user, local: true do |f| %>
+    <%= form_with model: @user, local: true do |user| %>
       <section class="world">
         <div class="world__inner">
           <div class="world__img">
@@ -11,20 +11,24 @@
           </div>
           <div class="world__texts appear left">
             <div class="world__texts-inner">
-              <%= render 'shared/error_messages', object: f.object %>
+              <%= render 'shared/error_messages', object: user.object %>
               <div class="world__title__edit main-title item">
                 ユーザー情報変更
               </div>
               <div class="world__description item">
-                <%= f.text_field :name, class: 'form-field', placeholder: 'Your name' %>
-                <%= f.email_field :email, class: 'form-field', placeholder: 'Email' %>
-                <%= f.password_field :password, class: 'form-field', placeholder: 'パスワード' %>
-                <%= f.password_field :password_confirmation, class: 'form-field', placeholder: 'パスワード確認' %>
-                <%= f.label :プロフィール画像を変更できます。 %>
+                <%= user.text_field :name, class: 'form-field', placeholder: 'Your name' %>
+                <%= user.email_field :email, class: 'form-field', placeholder: 'Email' %>
+                <%= user.password_field :password, class: 'form-field', placeholder: 'パスワード' %>
+                <%= user.password_field :password_confirmation, class: 'form-field', placeholder: 'パスワード確認' %>
+                <%= user.label :プロフィール画像を変更できます。 %>
                 <div class="file-upload_area">
-                  <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png,image/jpg', class: 'file-upload_input' %>
+                  <%= user.file_field :image, accept: 'image/jpeg,image/gif,image/png,image/jpg', class: 'file-upload_input' %>
                 </div>
-                <%= f.submit yield(:button_text), class: " btn float" %>
+                <% if logged_in? && !guest_user %>
+                  <%= link_to "LifeHack Toolsを退会", @user, method: :delete,
+                              data: { confirm: "本当に退会しますか？" }, class: "btn float" %>
+                <% end %>
+                <%= user.submit yield(:button_text), class: " btn float" %>
               </div>
             </div>
           </div>

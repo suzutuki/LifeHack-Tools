@@ -23,11 +23,6 @@
       <%= link_to "ToDoリスト", task_path(current_user), class: "btn slide-green-slow" %>
       <%= link_to "If-Thenテクニック", it_path(current_user), class: "btn slide-yellow-slow" %>
       <%= link_to "Exercise Tracking", hiit_path(current_user), class: "btn slide-wine-slow" %>
-      <% if logged_in? && !guest_user %>
-        <li><%= link_to "LifeHack Toolsを退会", @user, method: :delete,
-                        data: { confirm: "本当に退会しますか？" }, class: "btn solid" %>
-        </li>
-      <% end %>
       <% if current_user.admin? %>
         <%= link_to "ユーザーを見る(管理者のみ)", user_path(current_user), class: "btn slide-bg" %>
       <% end %>
