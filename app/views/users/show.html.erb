@@ -10,7 +10,7 @@
             <%= user.name %>
             <%= user.email %>
             <% if user.image? %>
-              <%= image_tag user.image.url %>
+              <%= image_tag user.image.thumb100.url %>
             <% end %>
             <% if current_user.admin? && !current_user?(user) %>
               <%= link_to "このユーザーを削除します", user, method: :delete,

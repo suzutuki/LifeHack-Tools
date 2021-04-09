@@ -11,6 +11,7 @@
           </div>
           <div class="world__texts appear left">
             <div class="world__texts-inner">
+              <%= render 'shared/error_messages', object: f.object %>
               <div class="world__title__edit main-title item">
                 ユーザー情報変更
               </div>
@@ -22,7 +23,6 @@
                 <%= f.label :プロフィール画像を変更できます。 %>
                 <div class="file-upload_area">
                   <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png,image/jpg', class: 'file-upload_input' %>
-                  <%= f.hidden_field :image_cache %>
                 </div>
                 <%= f.submit yield(:button_text), class: " btn float" %>
               </div>

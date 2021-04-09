@@ -31,7 +31,6 @@ class User < ApplicationRecord
             uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: { minimum: 5 }, allow_nil: true
-  validate  :check_image
     class << self
 
     # 渡された文字列のハッシュ値を返す
@@ -64,12 +63,4 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
 
-  private
-
-  # アップロードされた画像のサイズをバリデーションする
-  def check_image
-    if image.size > 1.megabyte
-      errors.add(:image, "1MBまでアップロードできます")
-    end
-  end
 end
