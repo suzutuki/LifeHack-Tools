@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/easy_login', to: 'users#easy_login'
   delete '/logout', to: 'sessions#destroy'
-  delete '/withdrawal', to: 'users#destroy'
   post '/tasks/:id/toggle' => 'tasks#toggle'
   get '/how_to', to: 'users#how_to'
 end
