@@ -39,14 +39,6 @@ class ImageUploader < CarrierWave::Uploader::Base
     process :resize_to_limit => [400, 400]
   end
 
-  version :thumb100 do
-    process :resize_to_limit => [100, 100]
-  end
-
-  version :thumb30 do
-    process :resize_to_limit => [30, 30]
-  end
-
   # 拡張子が同じでないとGIFをJPGとかにコンバートできないので、ファイル名を変更
   def filename
     super.chomp(File.extname(super)) + '.jpg' if original_filename.present?
