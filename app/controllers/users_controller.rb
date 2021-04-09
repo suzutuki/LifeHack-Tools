@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update, :destroy]
-  before_action :correct_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update,]
   #リファクタリング用
-  before_action :set_target_user, only: [ :destroy, :edit, :update]
-  before_action :admin_user, only: [:destroy, :show]
+  before_action :set_target_user, only: [:destroy, :edit, :update]
+  before_action :admin_user, only: [:show]
   skip_before_action :verify_authenticity_token
+
   def index
   end
 
@@ -40,13 +41,6 @@ class UsersController < ApplicationController
     flash[:notice] = "ゲストユーザーとしてログインしました!"
   end
 
-  def destroy
-    @user.destroy
-    flash[:success] = "退会しました。ご利用ありがとうございました！"
-    user
-    redirect_to users_url
-  end
-
   def edit
   end
 
@@ -57,6 +51,11 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @user.destroy if correct_user || admin_user
+    flash[:success] = "退会しました。ご利用ありがとうございました！"
   end
 
   private
