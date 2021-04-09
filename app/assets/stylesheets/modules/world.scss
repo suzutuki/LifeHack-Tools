@@ -86,9 +86,18 @@
             $top: 47%,
             $left: 750px
     )
-
   }
 
+  &__edit {
+    @extend .world__title;
+    @include p-base(
+            $display: none,
+            $width: 70px,
+            $height: 1px,
+            $top: 47%,
+            $left: 750px
+    )
+  }
   &__its {
     @extend .world__title;
     @include p-base(

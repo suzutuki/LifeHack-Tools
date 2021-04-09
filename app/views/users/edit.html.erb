@@ -3,53 +3,33 @@
 <%= render 'layouts/side-root' %>
 <div id="main-content">
   <main>
-    <section class="world">
-      <div class="world__inner">
-        <div class="world__img cover-slide">
-          <img src="/lifehack.jpg" class="img-zoom"/>
+    <%= form_with model: @user, local: true do |f| %>
+      <section class="world">
+        <div class="world__inner">
+          <div class="world__img">
+            <%= image_tag @user.image.thumb.url if @user.image? %>
+          </div>
+          <div class="world__texts appear left">
+            <div class="world__texts-inner">
+              <div class="world__title__edit main-title item">
+                ユーザー情報変更
+              </div>
+              <div class="world__description item">
+                <%= f.text_field :name, class: 'form-field', placeholder: 'Your name' %>
+                <%= f.email_field :email, class: 'form-field', placeholder: 'Email' %>
+                <%= f.password_field :password, class: 'form-field', placeholder: 'パスワード' %>
+                <%= f.password_field :password_confirmation, class: 'form-field', placeholder: 'パスワード確認' %>
+                <%= f.label :プロフィール画像を変更できます。 %>
+                <div class="file-upload_area">
+                  <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png,image/jpg', class: 'file-upload_input' %>
+                  <%= f.hidden_field :image_cache %>
+                </div>
+                <%= f.submit yield(:button_text), class: " btn float" %>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="world__texts appear left">
-          <div class="world__texts-inner">
-            <div class="world__title main-title item">
-  <span class="purple">LifeHack Tools</span>
-  <div class="world__sub sub-title item">ライフハックツールズ</div>
-  <span>にようこそ！</span><br>
-</div>
-<div class="world__description item">
-  <p>目標達成や習慣化のアシストツールとして
-    <br>LifeHack Tools！を活用して
-  </p>
-  <p> 文字通り人生(Life)をハックしましょう！</p>
-</div>
-<div class="world__btn item">
-  <%= link_to "ユーザー登録", new_user_path, class: "btn slide-bg" %>
-  <%= link_to "ログイン", login_path, method: :get, class: 'btn slide-bg' %>
-  <%= link_to "ワンクリックログイン", easy_login_path, method: :get, class: 'btn slide-bg' %>
-</div>
-</div>
-</div>
-</div>
-</section>
-  <%= form_with model: @user, local: true do |f| %>
-    <%= image_tag @user.image.thumb.url if @user.image?%>
-  <section class="register">
-    <div class="log-form">
-      <div class="form-title tween-animate-title center-position">ユーザー情報を変更します</div>
-        <div class="inputWithIcon">
-          <%= f.text_field :name, class: 'form-field', placeholder: 'Your name' %>
-          <%= f.email_field :email, class: 'form-field', placeholder: 'Email' %>
-          <%= f.password_field :password, class: 'form-field', placeholder: 'パスワード' %>
-          <%= f.password_field :password_confirmation, class: 'form-field', placeholder: 'パスワード確認' %>
-        </div>
-        <%= f.label :プロフィール画像をアップロードできます。 %>
-        <div class="file-upload_area">
-          <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png,image/jpg', class: 'file-upload_input' %>
-          <%= f.hidden_field :image_cache %>
-        </div>
-        <div class="center-position">
-          <%= f.submit yield(:button_text), class: " btn float" %>
-        </div>
-        </div>
-      <% end %>
-      </section>
-</main>
+      </div>
+    <% end %>
+    </section>
+    </main>
