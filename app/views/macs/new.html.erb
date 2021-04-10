@@ -1,9 +1,5 @@
 <% provide(:title, "MACの原則 新規作成") %>
 <% provide(:button_text, '登録') %>
-<% provide(:form_text, 'を新規作成します') %>
+<% provide(:form_text, '新規作成します') %>
 <%= render 'layouts/side-refferer' %>
-<main>
-  <section class="mac__form">
-    <div class="log-form">
-      <div class="form-title tween-animate-title">MACの原則<%= yield(:form_text) %></div>
 <%= render 'form' %>

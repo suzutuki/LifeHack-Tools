@@ -36,7 +36,6 @@
         <div class="todo__title item">My ToDo List</div>
         <% current_user.tasks.each do |task| %>
           <div class="todo__list item<%= "not-priority-1" if task.priority != 1 %>">
-            <div class="panel-left item">
               <ul class="checkbox item">
                 <%= check_box_tag 'task', '', task.done, { 'data-id' => task.id, class: 'tasks__checkbox' } %>
                 <h2 class="todo__label item">ToDo: <%= task.title %></h2>
@@ -50,8 +49,6 @@
                 </li>
               </ul>
             </div>
-          </div>
-
         <% end %>
     </section>
     <div class="center-position todo__framework">

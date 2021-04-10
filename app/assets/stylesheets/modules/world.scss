@@ -3,8 +3,8 @@
 @import "mixin";
 
 .world {
-  @extend .content-width;
-  @extend .mb-lg;
+  width: 90%;
+  margin: 0 auto;
   // 親要素でローカルスタッキングコンテキストを作るために必要
   &__inner {
     @extend .flex;
@@ -45,6 +45,10 @@
 
   &__content {
     padding: 20px 30px;
+
+    &__reverse {
+      padding: 0;
+    }
   }
 
   &__title {

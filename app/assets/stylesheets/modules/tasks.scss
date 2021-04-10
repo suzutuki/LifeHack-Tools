@@ -55,19 +55,6 @@
     width: 90%;
   }
 
-  &__title {
-    color: $color-nobleblack;
-    font-size: 1.35em;
-    display: block;
-    background: rgba(143, 70, 105, 0.5);
-    text-transform: uppercase;
-    padding: 0.75em 1em 0.75em 1.5em;
-    border: 1px solid rgba(0, 0, 0, .45);
-    font-weight: 200;
-    text-align: center;
-    margin: 1.5em 0;
-  }
-
   &__description {
     margin: 10px 0 30px;
     font-size: 24px;

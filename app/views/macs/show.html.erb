@@ -32,8 +32,8 @@
   <main>
     <div class="mac__width">
       <% @macs.each do |mac| %>
-        <div class="mac-title item">My Goal<%= (mac.id) %></div>
-        <div class="panel-mac">
+        <div class="mac__example item">My Goal<%= (mac.id) %></div>
+        <div class="panel__mac">
           <div class="goal">
             <div class="text_color_grey">M: 数値で表せる目標</div>
             <%= simple_format(mac.measurable) %>
@@ -47,7 +47,7 @@
             <%= simple_format(mac.competent) %>
           </div>
           <div class="flex-container">
-            <h3 class="tasks-time">update:<%= mac.updated_at.to_s(:datetime_jp) %>
+            <h3 class="tasks__time">update:<%= mac.updated_at.to_s(:datetime_jp) %>
               create:<%= mac.created_at.to_s(:datetime_jp) %></h3>
             <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover fa-pull-right",
                                     style: "color: rgb(80,80,80);"), edit_mac_path(mac.id)) %>
@@ -59,8 +59,9 @@
       <% end %>
       <div class="center-position">
         <trigger_time class="btn float">ON/OFF</trigger_time>
+        <%= link_to "具体的な例を見る", macs_path, class: "btn slide-bg" %>
       </div>
-      <%= render 'side-right' %>
+      <%= render 'side-right-mac' %>
 <% end %>
 </section>
 </main>

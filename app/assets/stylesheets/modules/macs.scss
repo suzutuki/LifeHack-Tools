@@ -2,12 +2,6 @@
 @import "base";
 @import "button";
 
-.align-left {
-  font-size: 24px;
-  text-align: left;
-  margin: 20px 0;
-}
-
 .flex-container {
   display: flex;
   flex-direction: row;
@@ -38,13 +32,12 @@
 
   &__form {
     box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
-    width: 60%;
+    width: 90%;
     margin: 0 auto;
   }
 
   &__width {
-    width: 70%;
-    margin: 0 auto;
+    @extend .content-width;
     overflow: hidden;
   }
 
@@ -55,7 +48,7 @@
     color: #1d1d1f;
   }
 
-  &-title {
+  &__example {
     color: $color-white;
     font-size: 1.35em;
     display: block;
@@ -67,7 +60,6 @@
     text-align: center;
   }
 }
-
 
 .goal {
   font-size: 2.3em;
@@ -88,8 +80,7 @@
   }
 }
 
-
-.panel-mac {
+.panel__mac {
   border: 2.5px solid $color-thin_black;
   margin: 0 auto;
   padding: 30px;

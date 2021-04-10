@@ -1,14 +1,30 @@
 @import "variables";
 @import "base";
 
-.if-then{
-  width: 80%;
-  @extend .content-width;
-}
-.if-space {
-  min-height: 85px;
-}
+.if {
+  &__then {
+    width: 90%;
+    @extend .content-width;
+  }
 
+  &__space {
+    min-height: 85px;
+  }
+
+  &__form {
+    border: 1px solid;
+  }
+
+  &__text {
+    font-size: 20px;
+  }
+
+  &__width {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+}
 .wrapper {
   width: 100%;
   @extend .content-width;
@@ -30,28 +46,14 @@
   font-size: 28px;
 }
 
-.if_text {
-  font-size: 20px;
-}
-
 .sub-title-grey {
   color: $color-grey;
   flex-direction: column;
   display: contents;
 }
 
-.if-form {
-  border: 1px solid;
-}
-
 .adjust {
   margin-bottom: 30px;
-}
-
-.it-width {
-  width: 90%;
-  margin: 0 auto;
-  overflow: hidden;
 }
 
 .column {

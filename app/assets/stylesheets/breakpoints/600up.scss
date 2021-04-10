@@ -73,6 +73,7 @@
 }
 
 .world {
+
   &__inner {
     padding: 50px;
 
@@ -140,4 +141,25 @@
     margin: 0 auto;
     max-width: 1070px;
   }
+}
+
+.mac {
+  &__form {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  &__width {
+    width: 70%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+}
+
+.if {
+  &__then {
+    width: 80%;
+  }
+
 }

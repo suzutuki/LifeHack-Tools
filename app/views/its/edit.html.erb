@@ -1,7 +1,7 @@
 <% provide(:title, "If-thenルール編集") %>
 <% provide(:text, '編集') %>
 <% provide(:button_text, '一括編集') %>
-<%= render 'form' %>
+<%= render 'form-title' %>
       <%= form_with model: current_user, url: it_path, method: :patch, local: true do |form| %>
         <%= form.fields_for :its do |field| %>
           <div class="wrapper">

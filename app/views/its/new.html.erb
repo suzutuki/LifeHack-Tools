@@ -1,7 +1,7 @@
 <% provide(:title, "If-thenルール新規作成") %>
 <% provide(:text, '新規作成') %>
 <% provide(:button_text, '一括登録') %>
-<%= render 'form' %>
+<%= render 'form-title' %>
 <%= form_with model: @its, url: its_path, local: true do |form| %>
   <% @its.collection.each do |it| %>
     <%= fields_for 'its[]', it do |field| %>
