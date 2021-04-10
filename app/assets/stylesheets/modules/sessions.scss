@@ -2,19 +2,19 @@
 @import "base";
 /* ログインフォームの設定 */
 .log-form {
-  box-shadow: 0 2px 5px rgba(0,0,0,.25);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
 }
 
 .form-title {
   color: $color-white;
   font-size: 1.35em;
   display: block;
-  background: rgba(42,42,42,0.95);
+  background: rgba(42, 42, 42, 0.95);
   text-transform: uppercase;
   padding: 0.75em 1em 0.75em 1.5em;
   box-shadow: 0 1px 1px;
   text-align: center;
-  border: 1px solid rgba(0,0,0,.45);
+  border: 1px solid rgba(0, 0, 0, .45);
   font-weight: 200;
   margin-bottom: 1.5em;
 }
