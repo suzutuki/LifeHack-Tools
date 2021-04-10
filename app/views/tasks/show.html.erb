@@ -29,7 +29,7 @@
   </main>
 <% else %>
   <main>
-    <section class="my__todo appear left">
+    <section class="todo__framework appear left">
       <trigger_priority class="btn float item">優先順位1のみ表示</trigger_priority>
       <%= link_to "アイビー・リー・メソッド", tasks_path, class: "btn float item" %>
       <div class="todo__form item">
@@ -53,11 +53,11 @@
           </div>
         <% end %>
     </section>
-    <div class="center-position my__todo">
+    <div class="center-position todo__framework">
       <trigger_time class="btn float item">ON/OFF</trigger_time>
       <%= link_to "ToDoリストを作成する", new_task_path, class: "btn slide-bg" %>
     </div>
-    <div class="adjust my__todo">
+    <div class="adjust todo__framework">
       <%= link_to(content_tag(:i, '', class: "fas fa-edit fa-3x faa-vertical animated-hover
  fa-pull-right", style: "color: rgb(80,80,80); margin-bottom: 15px;"), edit_task_path) %>
       <%= link_to(content_tag(:i, '', class: "fas fa-bomb fa-3x faa-horizontal

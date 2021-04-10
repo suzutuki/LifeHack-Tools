@@ -1,4 +1,5 @@
 @import "variables";
+@import "base";
 //ToDOリストで使っているスタイルをここに書く
 .todo {
   width: 90%;
@@ -8,7 +9,9 @@
   &__form {
     border: 1px solid #333;
   }
-
+  &__framework {
+    @extend .content-width;
+  }
   &__label {
     width: 100%;
     margin-bottom: 1em;

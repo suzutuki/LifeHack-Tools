@@ -2,10 +2,6 @@
 @import "base";
 //ToDoリストの中の設定
 
-.my__todo {
-  @extend .content-width;
-}
-
 .tasks {
 
   &__time {

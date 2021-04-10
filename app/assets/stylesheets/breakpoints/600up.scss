@@ -32,16 +32,16 @@
   overflow: hidden;
 }
 
-.my__todo {
-  margin: 0 auto;
-  max-width: 1070px;
-  width: 65%;
-}
-
 .todo {
   width: 60%;
   margin: 4em auto 0;
   max-width: 1070px;
+
+  &__framework {
+    margin: 0 auto;
+    max-width: 1070px;
+    width: 65%;
+  }
 
   &__form {
     border: 1px solid #333;
