@@ -16,3 +16,30 @@
     color: $cWineRed !important;
   }
 }
+
+.file-upload_area {
+  position: relative;
+
+  .file-upload_input {
+    &::before {
+      background: $cWhite;
+      color: $color-nobleblack;
+      content: 'ファイルを選択';
+      font-size: 22px;
+      left: 0;
+      position: absolute;
+      top: 29px;
+      display: inline-block;
+      border: 1px solid $cBlack;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none !important;
+    }
+  }
+
+  input[type="file"]::-webkit-file-upload-button {
+    background-color: $cWhite;
+    border: 0;
+  }
+}

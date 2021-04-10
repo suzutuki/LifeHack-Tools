@@ -6,9 +6,14 @@ ul h2 {
   font-size: 30px;
 }
 
+
+.my__todo {
+  @extend .content-width;
+}
+
 .tasks {
 
-  &-time {
+  &__time {
     color: rgb(80, 80, 80);
     margin: 10px 0 15px 15px;
   }
@@ -21,24 +26,30 @@ ul h2 {
   }
 }
 
-.my__todo {
-  @extend .content-width;
-  width: 65%;
+.tasks-form {
+
+  &-field {
+    margin: 5px 0;
+    width: 100%;
+    height: 40px;
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid #333;
+  }
+
+  &-area {
+    @extend .tasks-form-field;
+    height: 100px;
+  }
+
+  &-box {
+    @extend .tasks-form-field;
+  }
 }
 
 .bomb {
   margin: 10px 0;
 }
 
-.todo-title {
-  color: $color-white;
-  font-size: 1.35em;
-  display: block;
-  text-align: center;
-  background: rgba(42, 42, 42, 0.95);
-  padding: 0.75em 1em 0.75em 1.5em;
-  box-shadow: 0 1px 1px;
-  border: 1px solid rgba(0, 0, 0, .45);
-  font-weight: 200;
-}
+
 

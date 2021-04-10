@@ -1,11 +1,11 @@
 @import "variables";
-//ToDOリストで使っているスタイルをここに設置
+//ToDOリストで使っているスタイルをここに書く
 .todo {
   width: 90%;
   margin: 4em auto 0;
   max-width: $contentMaxWidth;
 
-  &-form {
+  &__form {
     border: 1px solid #333;
   }
 
@@ -18,6 +18,18 @@
     outline: none;
     box-sizing: border-box;
     transition: 0.3s;
+  }
+
+  &__title {
+    color: $color-white;
+    font-size: 1.35em;
+    display: block;
+    text-align: center;
+    background: rgba(42, 42, 42, 0.95);
+    padding: 0.75em 1em 0.75em 1.5em;
+    box-shadow: 0 1px 1px;
+    border: 1px solid rgba(0, 0, 0, .45);
+    font-weight: 200;
   }
 
   &__list {
@@ -33,7 +45,6 @@
     }
   }
 }
-
 .priority {
   width: 100%;
   padding: 0.25em 0;
@@ -48,23 +59,3 @@
   margin-bottom: 40px;
 }
 
-.tasks-form {
-
-  &-field {
-    margin: 5px 0;
-    width: 100%;
-    height: 40px;
-    display: block;
-    box-sizing: border-box;
-    border: 1px solid #333;
-  }
-
-  &-area {
-    @extend .tasks-form-field;
-    height: 100px;
-  }
-
-  &-box {
-    @extend .tasks-form-field;
-  }
-}

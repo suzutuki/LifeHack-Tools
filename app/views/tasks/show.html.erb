@@ -32,8 +32,8 @@
     <section class="my__todo appear left">
       <trigger_priority class="btn float item">優先順位1のみ表示</trigger_priority>
       <%= link_to "アイビー・リー・メソッド", tasks_path, class: "btn float item" %>
-      <div class="todo-form item">
-        <div class="todo-title item">My ToDo List</div>
+      <div class="todo__form item">
+        <div class="todo__title item">My ToDo List</div>
         <% current_user.tasks.each do |task| %>
           <div class="todo__list item<%= "not-priority-1" if task.priority != 1 %>">
             <div class="panel-left item">
@@ -42,7 +42,7 @@
                 <h2 class="todo__label item">ToDo: <%= task.title %></h2>
                 <h2 class="todo__label item">メモ: <%= task.content %></h2>
                 <h2 class="todo__label item">優先順位: <%= task.priority %></h2>
-                <li><h4 class="tasks-time item">Update:<%= task.updated_at.to_s(:datetime_jp) %>
+                <li><h4 class="tasks__time item">Update:<%= task.updated_at.to_s(:datetime_jp) %>
                   create:<%= task.created_at.to_s(:datetime_jp) %>
                   <%= link_to(content_tag(:i, '', class: "fas fa-trash-alt fa-2x faa-horizontal animated-hover fa-pull-right",
                                           style: "color: rgb(80,80,80);"), task_path(task.id), method: :delete, data: { confirm: "本当に削除しますか？" }) %>
