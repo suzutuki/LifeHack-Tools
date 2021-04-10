@@ -1,7 +1,7 @@
 <% provide(:title, "ToDoリスト 編集") %>
 <% provide(:button_text, "一括編集") %>
 <% provide(:form_title, "一括編集します") %>
-<%= render 'form' %>
+<%= render 'form-title' %>
 <%= form_with model: current_user, url: task_path, method: :patch, local: true do |form| %>
   <h3>
     <%= form.fields_for :tasks do |field| %>
@@ -22,4 +22,4 @@
   </h3>
   </div>
 <% end %>
-<%= render 'side-right' %>
+<%= render 'side-right-task' %>

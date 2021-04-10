@@ -1,7 +1,7 @@
 <% provide(:title, "ToDoリスト 新規作成") %>
 <% provide(:button_text, "一括登録") %>
 <% provide(:form_title, "一括作成します") %>
-<%= render 'form' %>
+<%= render 'form-title' %>
 <%= form_with model: @tasks, url: tasks_path, local: true do |form| %>
   <% @tasks.collection.each do |task| %>
     <%= fields_for 'tasks[]', task, local: true do |field| %>
@@ -36,4 +36,4 @@
   </h3>
   </div>
 <% end %>
-<%= render 'side-right' %>
+<%= render 'side-right-task' %>
