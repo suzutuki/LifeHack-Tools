@@ -38,7 +38,7 @@
           <div class="todo__list item<%= "not-priority-1" if task.priority != 1 %>">
             <div class="panel-left item">
               <ul class="checkbox item">
-                <%= check_box_tag 'task', '', task.done, { 'data-id' => task.id, class: 'tasks-checkbox' } %>
+                <%= check_box_tag 'task', '', task.done, { 'data-id' => task.id, class: 'tasks__checkbox' } %>
                 <h2 class="todo__label item">ToDo: <%= task.title %></h2>
                 <h2 class="todo__label item">メモ: <%= task.content %></h2>
                 <h2 class="todo__label item">優先順位: <%= task.priority %></h2>

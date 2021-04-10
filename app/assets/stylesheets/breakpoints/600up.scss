@@ -133,3 +133,11 @@
     overflow: hidden;
   }
 }
+
+.ivy {
+  &__width {
+    width: 70%;
+    margin: 0 auto;
+    max-width: 1070px;
+  }
+}
