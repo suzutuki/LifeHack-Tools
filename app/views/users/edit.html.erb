@@ -1,5 +1,5 @@
 <% provide(:title, "ユーザー情報変更") %>
-<% provide(:button_text, "編集") %>
+<% provide(:button_text, "ユーザー情報を編集") %>
 <%= render 'layouts/side-root' %>
 <div id="main-content">
   <main>
@@ -12,10 +12,8 @@
           <div class="world__texts appear left">
             <div class="world__texts-inner">
               <%= render 'shared/error_messages', object: user.object %>
-              <div class="world__title__edit main-title item">
-                ユーザー情報変更
-              </div>
-              <div class="world__description item">
+              <div class="world__title__edit main-title item">ユーザー情報変更</div>
+              <div class="world__description item mb-sm">
                 <%= user.text_field :name, class: 'form-field', placeholder: 'Your name' %>
                 <%= user.email_field :email, class: 'form-field', placeholder: 'Email' %>
                 <%= user.password_field :password, class: 'form-field', placeholder: 'パスワード' %>
@@ -24,12 +22,12 @@
                 <div class="file-upload_area">
                   <%= user.file_field :image, accept: 'image/jpeg,image/gif,image/png,image/jpg', class: 'file-upload_input' %>
                 </div>
-                <% if logged_in? && !guest_user %>
-                  <%= link_to "LifeHack Toolsを退会", @user, method: :delete,
-                              data: { confirm: "本当に退会しますか？" }, class: "btn float" %>
-                <% end %>
                 <%= user.submit yield(:button_text), class: " btn float" %>
               </div>
+              <% if logged_in? && !guest_user %>
+                <%= link_to "LifeHack Toolsを退会", @user, method: :delete,
+                            data: { confirm: "本当に退会しますか？" }, class: "btn float item" %>
+              <% end %>
             </div>
           </div>
         </div>

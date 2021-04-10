@@ -1,8 +1,7 @@
 class ImageUploader < CarrierWave::Uploader::Base
-  # Include RMagick or MiniMagick support:
+
   # 画像サイズを取得するためにRMagick使用
   include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
 
   # このアップローダで使用するストレージの種類を選択します。
   # developmentとtest以外はS3を使用

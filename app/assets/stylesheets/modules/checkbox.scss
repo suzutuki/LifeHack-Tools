@@ -39,14 +39,13 @@ input[type="file"]:focus {
   outline: 1px;
 }
 .file-upload_area {
-  margin-bottom: 20px;
   position: relative;
   .file-upload_input {
     &::before {
       background: $cWhite;
       color: $color-nobleblack;
       content: 'ファイルを選択';
-      font-size: 21px;
+      font-size: 22px;
       left: 0;
       position: absolute;
       top: 29px;
