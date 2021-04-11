@@ -48,6 +48,7 @@
 
 .world {
   margin-bottom: 80px;
+
   &__inner {
     display: flex;
     flex-direction: unset;
@@ -141,7 +142,14 @@
   display: none;
 }
 
-.form-field {
-  width: 100%;
-  margin: 24px auto;
+.form {
+
+  &-field {
+    width: 100%;
+    margin: 24px auto;
+  }
+
+  &-width {
+    width: 55%;
+  }
 }

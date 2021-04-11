@@ -42,8 +42,8 @@
     </div>
   </div>
   <section class="form-width">
-    <div class="todo-form appear right">
-      <div class="todo-title item">My training record</div>
+    <div class="todo__form appear right">
+      <div class="todo__title item">My training record</div>
       <% @hiits.each do |hiit| %>
         <div class="todo__list item ">
           <h2 class="item">運動時間: <%= hiit.training_time %>分</h2>
@@ -55,7 +55,7 @@
                                   style: "color: rgb(80,80,80);"), hiit_path(hiit.id), method: :delete, data: { confirm: "本当に削除しますか？" }) %>
         </div>
       <% end %>
-        <%= render 'side-right' %>
+      <%= render 'side-right' %>
 <% end %>
 </section>
 </main>

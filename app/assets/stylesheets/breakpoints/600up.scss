@@ -12,6 +12,7 @@
     margin-bottom: 60px;
   }
 }
+
 .column {
   width: 100%;
   padding: 0 10px;
@@ -173,4 +174,11 @@
 
 .info_2 {
   padding: 0 15px;
+}
+
+.hiit {
+  &__form {
+    @extend .register;
+    overflow: visible;
+  }
 }

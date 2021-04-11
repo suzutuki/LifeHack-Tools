@@ -76,12 +76,6 @@ img {
   overflow: hidden;
 }
 
-.form-width {
-  width: 55%;
-  margin: 0 auto;
-  max-width: $contentMaxWidth;
-}
-
 //テキストアニメーションする
 .main-title {
   //継承することで、画面の大きさが変わっても今の画面の設定が適応される
