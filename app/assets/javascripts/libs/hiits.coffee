@@ -4,11 +4,6 @@ window.draw_graph = ->
 #getContextメソッドで描画機能を有効にします。getContextメソッドに指定できる引数は'2d'のみです。
   ctx = document.getElementById("My_Chart").getContext('2d')
 
-  barNum = []
-  labels = new Array(barNum)
-  bgColors = new Array(barNum)
-  bdColors = new Array(barNum)
-
   exercise_Chart = new Chart(ctx, {
     type: 'bar',
     data: {
