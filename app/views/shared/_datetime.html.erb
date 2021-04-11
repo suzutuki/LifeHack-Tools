@@ -1,6 +1,6 @@
 <script>
     const today = new Date(new Date().setHours(0, 0, 0, 0))
-    const a_month_ago = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate())
+    const months = new Date(today.getFullYear(), today.getMonth() - 12, today.getDate())
 
     // ● カレンダー
     // 選択できない日付データ（自由に変更できます。）
@@ -13,8 +13,7 @@
     flatpickr('#date-form', {
         // スマートフォンでもカレンダーに「flatpickr」を使用
         disableMobile: true,
-        // 1ヶ月前から本日まで選択可
-        minDate: a_month_ago,
+        minDate: months,
         // 選択できない日付
         disable: disable_dates
     });

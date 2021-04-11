@@ -1,6 +1,6 @@
 class HiitsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
-  before_action :correct_user,   only: :destroy
+  before_action :correct_user, only: :destroy
   skip_before_action :verify_authenticity_token
 
   def index
@@ -9,22 +9,19 @@ class HiitsController < ApplicationController
   def show
     @user = current_user
     @hiits = @user.hiits
-    @graphdays =  @user.hiits.order(training_day: "DESC").limit(1000).reverse
+    @graphdays = @hiits.order(training_day: 'DESC').limit(1000).reverse
     @dayline = Array.new
     @graphdays.each do |graphday|
       @dayline.push(graphday.training_day.strftime('%Y/%m/%d').to_s)
     end
-    @graphtimes =  @user.hiits.order(training_day: "DESC").limit(1000).reverse
-    @timeline = Array.new
+    @graphtimes = @hiits.order(training_day: 'DESC').limit(1000).reverse
+    @minuteline = Array.new
     @graphtimes.each do |graphtime|
-      @timeline.push(graphtime.training_time)
+      @minuteline.push(graphtime.training_time)
     end
   end
 
   def create
-    # if
-    # hiit == current_user.hiits.select {|trainig_day| trainig_day }.sum
-    # end
     @hiit = current_user.hiits.build(hiit_params)
     if @hiit.save
       flash[:success] = "作成しました!"
@@ -51,12 +48,14 @@ class HiitsController < ApplicationController
       render 'hiits/edit'
     end
   end
+
   def destroy
     @hiit.destroy
     redirect_to request.referrer || root_url
   end
 
   private
+
   # ストロングパラメーター
   def hiit_params
     params.require(:hiit).permit(:training_day, :training_time, :content)

@@ -19,6 +19,7 @@
     vertical-align: middle;
     letter-spacing: 2px;
   }
+
   // サイドバー左側の設定
   &.left {
     left: -50px;
@@ -34,6 +35,7 @@
       transform: rotate(-90deg);
     }
   }
+
   // サイドバー右側の設定
   &.right {
     right: 50px;
@@ -48,28 +50,3 @@
     }
   }
 }
-
-//.icon {
-//  position: relative;
-//
-//  @include p-base($left: -20px, $top: 50%, $width: 1em, $height: 1em) {
-//    transform: translateY(-50%);
-//    background-position: center;
-//    background-repeat: no-repeat;
-//    background-size: contain;
-//  }
-//
-//}
-////ロゴ
-//.logo {
-//  font-size: 42px;
-//  display: flex;
-//
-//  &__img {
-//    width: 0.7em;
-//  }
-//
-//  &__Garden {
-//    color: $cWineRed;
-//  }
-//}

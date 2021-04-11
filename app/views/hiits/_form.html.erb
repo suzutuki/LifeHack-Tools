@@ -6,7 +6,7 @@
   <main>
     <section class="hiit__form">
       <div class="log-form">
-        <div class="form-title tween-animate-title center-position">運動記録</div>
+        <div class="form-title tween-animate-title center-position">運動記録の<%= yield(:exercise_text)%></div>
         <%= form_with model: @hiit, local: true do |f| %>
           <%= f.date_field :training_day, id: "date-form", type: "text", readonly: "",
                            placeholder: 'クリックして運動した日をカレンダーで選択', class: "form-field btn" %>

@@ -126,10 +126,6 @@ img {
   color: $cWineRed;
 }
 
-.coffee {
-  color: $color-coffee_brown;
-}
-
 .white {
   background: $cWhite !important;
 }
@@ -170,7 +166,7 @@ a:hover {
 .popular {
   &__inner {
     position: relative;
-    // 下のコメントアウトされているところの設定(グレーの背景)
+    // グレーの背景
     @include p-base($top: 0%, $height: 90%) {
       background: $cBgGray;
     }
