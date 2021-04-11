@@ -12,6 +12,10 @@
     margin-bottom: 60px;
   }
 }
+.column {
+  width: 100%;
+  padding: 0 10px;
+}
 
 .popular {
   &__container {
@@ -161,5 +165,12 @@
   &__then {
     width: 80%;
   }
+}
 
+.info_1 {
+  padding: 0 15px;
+}
+
+.info_2 {
+  padding: 0 15px;
 }

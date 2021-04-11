@@ -25,18 +25,20 @@
     overflow: hidden;
   }
 }
+
 .wrapper {
   width: 100%;
+  display: flex;
   @extend .content-width;
 }
 
 .info_1 {
-  padding: 0 15px;
+  padding: 0 5px;
   border-right: 1px dotted $color-thin_black;
 }
 
 .info_2 {
-  padding: 0 15px;
+  padding: 0 5px;
 }
 
 .color-grey {
@@ -58,18 +60,19 @@
 
 .column {
   width: 100%;
-  padding: 0 10px;
+  min-width: 49%;
 }
+
 @media all and (min-width: 500px) {
   .wrapper {
     display: flex;
   }
 }
 
-.if-list {
-  font-size: 40px;
-  margin: 20px 0;
-}
+//.if-list {
+//  font-size: 40px;
+//  margin: 20px 0;
+//}
 
 .process {
   border-top: 2px solid $color-thin_black;
