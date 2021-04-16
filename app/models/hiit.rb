@@ -20,6 +20,7 @@
 #
 class Hiit < ApplicationRecord
   belongs_to :user
+  default_scope -> { order(:training_day) }
   validates :training_day, presence:{ message: '運動した日を指定してください' }
   validates :training_time, numericality:
     { greater_than_or_equal_to: 0, less_than_or_equal_to: 1000,

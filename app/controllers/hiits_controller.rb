@@ -7,14 +7,13 @@ class HiitsController < ApplicationController
   end
 
   def show
-    @user = current_user
-    @hiits = @user.hiits
-    @graphdays = @hiits.order(training_day: 'DESC').limit(1000).reverse
+    @hiits = current_user.hiits
+    @graphdays = @hiits.order(:training_day).limit(1000)
     @dayline = Array.new
     @graphdays.each do |graphday|
       @dayline.push(graphday.training_day.strftime('%Y/%m/%d').to_s)
     end
-    @graphtimes = @hiits.order(training_day: 'DESC').limit(1000).reverse
+    @graphtimes = @hiits.order(:training_day).limit(1000)
     @minuteline = Array.new
     @graphtimes.each do |graphtime|
       @minuteline.push(graphtime.training_time)
