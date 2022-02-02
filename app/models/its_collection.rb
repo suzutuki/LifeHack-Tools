@@ -1,9 +1,14 @@
 # Itのコレクションモデル
 class ItCollection
+#   persisted?メソッドとidメソッドの定義のため
   include ActiveModel::Conversion
+#   命名やルーティングの管理を支援するクラスメソッドを多数追加
   extend ActiveModel::Naming
+#   オブジェクトとRails国際化（i18n）フレームワーク間の統合機能を提供
   extend ActiveModel::Translation
+#   クラスのメソッドにカスタムのプレフィックスやサフィックスを追加
   include ActiveModel::AttributeMethods
+  #   クラスオブジェクトをActive Recordスタイルで検証できる。
   include ActiveModel::Validations
   attr_accessor :collection
   IT_NUM = 3 # 同時にitを作成する数
