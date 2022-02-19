@@ -1,4 +1,4 @@
-FROM ruby:3.0.0
+FROM ruby:2.5.1
 ENV RUBYOPT -EUTF-8
 RUN apt-get update -qq && apt-get -y install vim &&apt-get install -y build-essential nodejs
 RUN mkdir /lifehack
