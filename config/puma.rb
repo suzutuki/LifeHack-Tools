@@ -6,7 +6,7 @@ threads min_threads_count, max_threads_count
 preload_app!
 
 rackup DefaultRackup
-# port        ENV['PORT']     || 3000
+# port  ENV['PORT'] || 3000
 bind "unix:///var/www/LifeHack-Tools/tmp/sockets/puma.sock"
 pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 
