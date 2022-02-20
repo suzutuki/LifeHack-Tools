@@ -7,8 +7,7 @@ preload_app!
 
 rackup DefaultRackup
 # port        ENV['PORT']     || 3000
-bind "unix:///var/www/LifeHack-Tools/tmp/sockets/puma.sock"
-environment ENV.fetch("RAILS_ENV") { "development" }
+bind "unix:///var/www/test_app/tmp/sockets/puma.sock"
 pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 
 plugin :tmp_restart
