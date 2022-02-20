@@ -7,13 +7,10 @@ preload_app!
 
 rackup DefaultRackup
 # port        ENV['PORT']     || 3000
-bind "unix:///var/www/test_app/tmp/sockets/puma.sock"
+bind "unix:///var/www/LifeHack-Tools/tmp/sockets/puma.sock"
 pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 
 plugin :tmp_restart
 on_worker_boot do
-  # Worker specific setup for Rails 4.1+
-  # See: https://devcenter.heroku.com/articles/
-  # deploying-rails-applications-with-the-puma-web-server#on-worker-boot
   ActiveRecord::Base.establish_connection
 end
