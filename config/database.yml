@@ -1,6 +1,6 @@
 default: &default
   adapter: mysql2
-  encoding: utf8
+  encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password: password
@@ -13,7 +13,11 @@ development:
 
 production:
   <<: *default
-  host: <%= Rails.application.credentials.rds[:host] %>
-  database: <%= Rails.application.credentials.rds[:database] %>
-  username: <%= Rails.application.credentials.rds[:username] %>
-  password: <%= Rails.application.credentials.rds[:password] %>
+  database: Lifehack_production
+  adapter: mysql2
+  charset: utf8mb4
+  collation: utf8mb4_general_ci
+  host: <%= Rails.application.credentials.db[:endpoint] %>
+  username: <%= Rails.application.credentials.db[:user_name] %>
+  password: <%= Rails.application.credentials.db[:password] %>
+  timeout: 1000
