@@ -122,7 +122,7 @@
       @extend .mb-md;
 
       &::before {
-        @extend .slide-bg::before;
+        @extend .slide-bg, ::before;
         background-color: $color-button-red;
       }
 
