@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_04_07_201509) do
 
-  create_table "hiits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "hiits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "user_id"
     t.date "training_day"
     t.integer "training_time"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_04_07_201509) do
     t.index ["user_id"], name: "index_hiits_on_user_id"
   end
 
-  create_table "its", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "its", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "user_id"
     t.text "situation"
     t.text "behavior"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2021_04_07_201509) do
     t.index ["user_id"], name: "index_its_on_user_id"
   end
 
-  create_table "macs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "macs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "user_id"
     t.text "measurable"
     t.text "actionable"
@@ -41,13 +41,13 @@ ActiveRecord::Schema.define(version: 2021_04_07_201509) do
     t.index ["user_id"], name: "index_macs_on_user_id"
   end
 
-  create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "title"
     t.boolean "done"
     t.text "content"
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2021_04_07_201509) do
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password_digest"
