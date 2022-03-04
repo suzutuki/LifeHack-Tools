@@ -74,7 +74,7 @@ Remember me機能(bcrypt)・退会機能(ユーザー情報削除機能)
 
 画像投稿機能(fog-aws, rmagick, carrierwave)
 
-フレンドリーフォワード
+フレンドリーフォワーディング機能
 
 
 
