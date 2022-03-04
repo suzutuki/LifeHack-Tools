@@ -13,7 +13,26 @@ Exercise Tracking(運動時間を記録してグラフ化します)
 
 ![Lifehack](https://user-images.githubusercontent.com/61527476/113125422-89647300-9251-11eb-8811-a81b9d310f9a.png)
 
-App URL https://suzutuki-portfolio.com/
+##App URL https://suzutuki-portfolio.com/
+
+使用技術
+
+・Ruby          2.5.1
+・Ruby on Rails 5.2.3
+・Mysql         8.0
+・nginx         1.20.0
+・puma
+・AWS
+   ・VPC
+   ・EC2
+   ・RDS
+   ・Route53
+   ・S3
+   ・Certificate Manager
+   ・IAM
+・Docker/Docker-compose
+・minitest
+
 
 アプリケーションの機能一覧
 
@@ -31,27 +50,31 @@ App URL https://suzutuki-portfolio.com/
 
 スクロール検知機能
 
-テキストアニメーション(JS)
-
-記事一括作成・一括編集・一括削除機能
+テキストアニメーション
 
 グラフ作成機能・編集機能(chart-js-rails)
 
-カレンダー(flatpickr)機能
+カレンダー(flatpickr)
 
 モバイルメニュー
 
 2:Ruby on Rails
 
-かんたんログイン(ワンクリックログイン)機能
+かんたんログイン(ワンクリックログイン)機能・サインアップ・ログイン・ログアウト機能、
 
-サインアップ、ログイン・ログアウト機能、Remember me機能(bcrypt) 退会機能(ユーザー削除)
+Remember me機能(bcrypt)・退会機能(ユーザー情報削除機能)
 
-記事作成・編集機能(CRUD)
+記事作成・編集機能・記事削除
 
-ページネーション(kaminari)機能
+記事一括作成・一括編集・一括削除機能
+
+ページネーション機能(kaminari)
 
 フラッシュメッセージ
+
+画像投稿機能(fog-aws, rmagick, carrierwave)
+
+フレンドリーフォワード
 
 
 
