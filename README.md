@@ -2,24 +2,33 @@
 
 <h2 align="center">LifeHack Tools : あなたの習慣化や目標達成をアシストします</h2>
 
-##App URL
+App URL https://suzutuki-portfolio.com/
 
-###アプリケーションの機能一覧
+アプリケーションの機能一覧
 
-かんたんログイン(ワンクリックログイン)機能
+ヒーロースライダー機能(Swiper)
 
-サインアップ、ログイン機能、Remember me機能(bcrypt)
-記事作成・編集機能
+ページローダー機能(pace.js)
 
-ページネーション(kaminari)
+テキストアニメーション(JS)
 
 記事一括作成・一括編集・一括削除機能
 
 グラフ作成機能・編集機能(chart-js-rails)
 
-カレンダー(flatpickr)
+カレンダー(flatpickr)、機能
+
+かんたんログイン(ワンクリックログイン)機能
+
+サインアップ、ログイン機能、Remember me機能(bcrypt)
+
+記事作成・編集機能
+
+ページネーション(kaminari)
 
 フラッシュメッセージ、
+
+ログイン機能
 
 アプリケーション内で使用している技術一覧
 
