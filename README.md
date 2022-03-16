@@ -27,6 +27,8 @@ Exercise Tracking(運動時間を記録してグラフ化します)
 ・Mysql         8.0<br>
 ・nginx         1.20.0<br>
 ・puma<br>
+・Docker/Docker-compose<br>
+・minitest<br>
 * AWS
    * VPC
    * EC2
@@ -35,8 +37,6 @@ Exercise Tracking(運動時間を記録してグラフ化します)
    * S3
    * Certificate Manager
    * IAM
-・Docker/Docker-compose<br>
-・minitest<br>
 
 ## アプリケーション内で使用している技術一覧
 
