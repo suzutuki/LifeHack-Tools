@@ -27,14 +27,14 @@ Exercise Tracking(運動時間を記録してグラフ化します)
 ・Mysql         8.0<br>
 ・nginx         1.20.0<br>
 ・puma<br>
-・AWS<br>
-   ・VPC<br>
-   ・EC2<br>
-   ・RDS<br>
-   ・Route53<br>
-   ・S3<br>
-   ・Certificate Manager<br>
-   ・IAM<br>
+・AWS
+   ・VPC
+   ・EC2
+   ・RDS
+   ・Route53
+   ・S3
+   ・Certificate Manager
+   ・IAM
 ・Docker/Docker-compose<br>
 ・minitest<br>
 
