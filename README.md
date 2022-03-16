@@ -17,7 +17,8 @@ Exercise Tracking(運動時間を記録してグラフ化します)
 
 ## インフラ構成図
 
-<img width="1176" alt="スクリーンショット 2022-03-16 12 31 40" src="https://user-images.githubusercontent.com/61527476/158511699-146a2189-2e9a-40b9-826d-c8d490084f02.png">
+<img width="1204" alt="インフラ構成図" src="https://user-images.githubusercontent.com/61527476/158512827-cf490ac3-582f-41a4-9acb-e14c67eecd4a.png">
+
 
 ## 使用技術
 
