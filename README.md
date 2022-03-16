@@ -13,9 +13,13 @@ Exercise Tracking(運動時間を記録してグラフ化します)
 
 ![Lifehack](https://user-images.githubusercontent.com/61527476/113125422-89647300-9251-11eb-8811-a81b9d310f9a.png)
 
-##App URL https://suzutuki-portfolio.com/
+## App URL https://suzutuki-portfolio.com/
 
-使用技術
+## インフラ構成図
+
+<img width="1176" alt="スクリーンショット 2022-03-16 12 31 40" src="https://user-images.githubusercontent.com/61527476/158511699-146a2189-2e9a-40b9-826d-c8d490084f02.png">
+
+## 使用技術
 
 ・Ruby          2.5.1
 ・Ruby on Rails 5.2.3
@@ -33,12 +37,9 @@ Exercise Tracking(運動時間を記録してグラフ化します)
 ・Docker/Docker-compose
 ・minitest
 
+## アプリケーション内で使用している技術一覧
 
-アプリケーションの機能一覧
-
-アプリケーション内で使用している技術一覧
-
-1:JavaScript
+### 1:JavaScript
 
 ヒーロースライダー機能(Swiper)
 
@@ -58,7 +59,7 @@ Exercise Tracking(運動時間を記録してグラフ化します)
 
 モバイルメニュー
 
-2:Ruby on Rails
+### 2:Ruby on Rails
 
 かんたんログイン(ワンクリックログイン)機能・サインアップ・ログイン・ログアウト機能、
 
@@ -75,6 +76,3 @@ Remember me機能(bcrypt)・退会機能(ユーザー情報削除機能)
 画像投稿機能(fog-aws, rmagick, carrierwave)
 
 フレンドリーフォワーディング機能
-
-
-
