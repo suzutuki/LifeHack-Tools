@@ -5,6 +5,7 @@ class TasksController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
+    @tasks = ask.all
   end
 
   def show
@@ -21,7 +22,7 @@ class TasksController < ApplicationController
       flash[:success] = "作成しました!"
       redirect_to task_path(current_user)
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -33,7 +34,7 @@ class TasksController < ApplicationController
       flash[:success] = "編集しました!"
       redirect_to task_path(current_user)
     else
-      render 'tasks/edit'
+      render "tasks/edit"
     end
   end
 
@@ -66,7 +67,7 @@ class TasksController < ApplicationController
 
   #ストロングパラメーター
   def task_params
-    params.require(:step).permit(:title, :content, :priority, :id,)
+    params.require(:step).permit(:title, :content, :priority, :id)
   end
 
   # ストロングパラメーターupdate用
