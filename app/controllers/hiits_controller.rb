@@ -1,7 +1,6 @@
 class HiitsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user, only: :destroy
-  skip_before_action :verify_authenticity_token
 
   def index
   end
@@ -11,7 +10,7 @@ class HiitsController < ApplicationController
     @graphdays = @hiits.order(:training_day).limit(1000)
     @dayline = Array.new
     @graphdays.each do |graphday|
-      @dayline.push(graphday.training_day.strftime('%Y/%m/%d').to_s)
+      @dayline.push(graphday.training_day.strftime("%Y/%m/%d").to_s)
     end
     @graphtimes = @hiits.order(:training_day).limit(1000)
     @minuteline = Array.new
@@ -26,7 +25,7 @@ class HiitsController < ApplicationController
       flash[:success] = "作成しました!"
       redirect_to hiit_path(current_user)
     else
-      render 'hiits/new'
+      render "hiits/new"
     end
   end
 
@@ -44,7 +43,7 @@ class HiitsController < ApplicationController
       flash[:success] = "編集しました!"
       redirect_to hiit_path(current_user)
     else
-      render 'hiits/edit'
+      render "hiits/edit"
     end
   end
 

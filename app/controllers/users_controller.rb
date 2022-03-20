@@ -1,10 +1,9 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update, :destroy]
-  before_action :correct_user, only: [:edit, :update,]
+  before_action :correct_user, only: [:edit, :update]
   #リファクタリング用
   before_action :set_target_user, only: [:destroy, :edit, :update]
   before_action :admin_user, only: [:show]
-  skip_before_action :verify_authenticity_token
 
   def index
   end
@@ -27,12 +26,12 @@ class UsersController < ApplicationController
       flash[:success] = "ユーザー登録に成功しました!"
       redirect_to root_path
     else
-      render 'new'
+      render "new"
     end
   end
 
   def easy_login
-    user = User.find_or_create_by(email: 'guest@example.com')
+    user = User.find_or_create_by(email: "guest@example.com")
     user.name = "GuestUser"
     user.password = SecureRandom.urlsafe_base64
     user.save if !user.id
@@ -49,7 +48,7 @@ class UsersController < ApplicationController
       flash[:success] = "ユーザー情報を変更しました！"
       redirect_to root_path
     else
-      render 'edit'
+      render "edit"
     end
   end
 
