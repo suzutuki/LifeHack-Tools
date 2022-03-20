@@ -11,7 +11,7 @@ Exercise Tracking(運動時間を記録してグラフ化します)
 
 レスポンシブ対応しているのでスマホからもご確認いただけます。
 
-![Image from Gyazo](https://user-images.githubusercontent.com/61527476/159157056-dce376c9-eb2b-49ff-ba72-9fd8fe7b37ee.gif)
+h![Image from Gyazo](https://user-images.githubusercontent.com/61527476/159157056-dce376c9-eb2b-49ff-ba72-9fd8fe7b37ee.gif)
 
 ## App URL https://suzutuki-portfolio.com/
 
