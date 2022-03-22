@@ -7,7 +7,8 @@ end
 
 gem 'rails', '~> 5.2.3'
 gem 'puma'
-gem 'sass-rails', '~> 5.0'
+gem 'sassc', '2.1.0'
+gem 'sass-rails', '~> 6.0'
 gem 'font-awesome-sass'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'

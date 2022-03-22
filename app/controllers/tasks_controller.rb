@@ -65,7 +65,7 @@ class TasksController < ApplicationController
 
   #ストロングパラメーター
   def task_params
-    params.require(:step).permit(:title, :content, :priority, :id)
+    params.require(:task).permit(:title, :content, :priority, :id)
   end
 
   # ストロングパラメーターupdate用
