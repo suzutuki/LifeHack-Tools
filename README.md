@@ -9,9 +9,12 @@ If-Thenテクニック(現時点で効果の高い習慣化を助けるツール
 
 Exercise Tracking(運動時間を記録してグラフ化します)
 
-レスポンシブ対応しているのでスマホからもご確認いただけます。
+レスポンシブ対応ですのでスマホからもご確認いただけます。
 
-![Lifehack](https://user-images.githubusercontent.com/61527476/113125422-89647300-9251-11eb-8811-a81b9d310f9a.png)
+↓↓ワンクリックログインができます。(普通のサインアップとログイン機能もあります)
+
+![63af91e7515778ca6fc4f11626207010](https://user-images.githubusercontent.com/61527476/159157213-24f40994-5a83-4f3a-aa4b-62c93c56d437.gif)
+
 
 ## App URL https://suzutuki-portfolio.com/
 
@@ -80,8 +83,4 @@ Exercise Tracking(運動時間を記録してグラフ化します)
 
 7. 画像投稿機能(fog-aws, rmagick, carrierwave)
 
-<<<<<<< HEAD
-・Ruby 2.5.1 ・Ruby on Rails 5.2.3 ・Mysql 8.0 ・nginx 1.20.0 ・puma ・AWS ・VPC ・EC2 ・RDS ・Route53 ・S3 ・Certificate Manager ・IAM ・Docker/Docker-compose ・minitest
-=======
 8. フレンドリーフォワーディング機能
->>>>>>> 375098e81d82df9505412dfdc9490dc0e9373eae
