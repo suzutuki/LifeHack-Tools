@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', '~> 5.2.3'
-gem 'puma'
+gem "puma", ">= 5.6.4"
 gem 'sassc', '2.1.0'
 gem 'sass-rails', '~> 6.0'
 gem 'font-awesome-sass'
