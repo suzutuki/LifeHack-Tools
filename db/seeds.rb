@@ -1,12 +1,1 @@
-User.create!([{ name: "suzutuki",
-                email: "example1@railstutorial.org",
-                password: "renath",
-                password_confirmation: "renath" },
-              { name: "suzutuki",
-                email: "example2@railstutorial.org",
-                password: "renath",
-                password_confirmation: "renath" },
-              { name: "suzutuki",
-                email: "example3@railstutorial.org",
-                password: "renath",
-                password_confirmation: "renath" }])
+
