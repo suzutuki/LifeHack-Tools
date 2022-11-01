@@ -1,5 +1,5 @@
-# This file loads Spring without using Bundler, in order to be fast.
-# It gets overwritten when you run the `spring binstub` command.
+# このファイルは高速にするためにBundlerを使わずにSpringをロードします。
+# このファイルは `spring binstub` コマンドを実行すると上書きされます。
 
 unless defined?(Spring)
   require 'rubygems'
