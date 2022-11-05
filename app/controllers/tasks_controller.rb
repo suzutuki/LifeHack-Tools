@@ -7,7 +7,7 @@ class TasksController < ApplicationController
   end
 
   def show
-    @tasks = current_user.tasks
+    @tasks = current_user.tasks.preload(:tasks)
   end
 
   def new
