@@ -17,3 +17,4 @@ ja:
       min_size_error: "ファイルを%{min_size}以上のサイズにしてください"
       max_size_error: "ファイルを%{max_size}未満のサイズにしてください"
   date:
+    messages:
