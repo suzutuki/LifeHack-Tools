@@ -1,3 +1,4 @@
+#springに関する
 %w(
   .ruby-version
   .rbenv-vars
