@@ -1,33 +1,20 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
+# config/localesディレクトリにあるファイルは国際化のために使われる
+# で、Railsによって自動的に読み込まれます。英語以外のロケールを使いたい場合は
+# 英語以外のロケールを使いたい場合は、このディレクトリに必要なファイルを追加してください。
+# ロケールを利用するためには、`I18n.t`を利用します。
+# I18n.t 'hello'
+# ビューでは、これはただの `t` にエイリアスされます。
+# <%= t('hello') %>
+# 別のロケールを使う場合は、 `I18n.locale` で設定する。
+# I18n.locale = :es
+# この場合、config/locales/es.ymlの情報が利用されます。
+# 以下のキーはエスケープする必要があります。
+# デフォルトの国際化バックエンドでは取得できません:
 # true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
+# 代わりにシングルクォートで囲んでください。
 # en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
+# 'true': 'foo'
+# もっと詳しく知りたい方は、Rails国際化ガイドをお読みください。
+# http://guides.rubyonrails.org/i18n.html で入手できます。
 en:
   hello: "Hello world"
