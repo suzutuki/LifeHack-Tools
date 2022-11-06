@@ -1,3 +1,4 @@
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../Gemfile', __dir__)
 
-require 'bundler/setup' # Set up gems listed in the Gemfile.
+# Gemfile に記載されている gems をセットアップします。
+require 'bundler/setup' 
